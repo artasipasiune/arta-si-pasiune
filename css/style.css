@@ -1,20 +1,21 @@
-/* =========================================
+/* ==========================================================
    ARTĂ ȘI PASIUNE
-   ========================================= */
+   Identitate vizuală unitară
+   ========================================================== */
 
 :root {
   --burgundy: #5a1825;
   --burgundy-dark: #351018;
   --ivory: #f7f0e5;
-  --cream: #efe4d3;
+  --ivory-soft: #f3e8d9;
   --gold: #b69a68;
   --text: #493b38;
 }
 
 
-/* =========================================
+/* ==========================================================
    RESET
-   ========================================= */
+   ========================================================== */
 
 * {
   margin: 0;
@@ -28,9 +29,13 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
+
   font-family: "Cormorant Garamond", Georgia, serif;
+
   background: var(--ivory);
   color: var(--text);
+
   line-height: 1.65;
 }
 
@@ -40,46 +45,79 @@ img {
 }
 
 
-/* =========================================
+/* ==========================================================
    HERO
-   ========================================= */
+   ========================================================== */
 
 .hero {
   position: relative;
+
   width: 100%;
   min-height: 100vh;
 
   background-image: url("../imagini/hero.png");
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
 
   overflow: hidden;
 }
 
 
+/* umbră pentru lizibilitatea textului */
+
 .hero-overlay {
   position: absolute;
   inset: 0;
 
-  background: linear-gradient(
-    90deg,
-    rgba(25, 8, 12, 0.67) 0%,
-    rgba(25, 8, 12, 0.48) 30%,
-    rgba(25, 8, 12, 0.20) 55%,
-    rgba(25, 8, 12, 0.04) 100%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(25, 8, 12, 0.66) 0%,
+      rgba(25, 8, 12, 0.45) 32%,
+      rgba(25, 8, 12, 0.17) 60%,
+      rgba(25, 8, 12, 0.03) 100%
+    );
 
   z-index: 1;
 }
 
 
-/* =========================================
-   BARA DE SUS
-   ========================================= */
+/* trecerea HERO -> DESPRE NOI */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 120px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(247, 240, 229, 0) 0%,
+      rgba(247, 240, 229, 0.15) 30%,
+      rgba(247, 240, 229, 0.58) 68%,
+      var(--ivory) 100%
+    );
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
 
 .navbar {
   position: absolute;
+
   top: 0;
   left: 0;
 
@@ -92,25 +130,25 @@ img {
   align-items: center;
   justify-content: space-between;
 
-  background: rgba(247, 240, 229, 0.94);
+  background:
+    rgba(247, 240, 229, 0.94);
 
-  border-bottom: 1px solid
-    rgba(90, 24, 37, 0.15);
+  border-bottom:
+    1px solid rgba(90, 24, 37, 0.13);
 
   z-index: 10;
 }
 
 
-/* SIGLĂ */
-
 .logo-link {
   display: flex;
   align-items: center;
+
   text-decoration: none;
 }
 
+
 .logo {
-  display: block;
   width: 125px;
   height: auto;
 }
@@ -121,8 +159,10 @@ img {
 .menu {
   display: flex;
   align-items: center;
+
   gap: 38px;
 }
+
 
 .menu a {
   position: relative;
@@ -146,6 +186,7 @@ img {
     color 0.25s ease;
 }
 
+
 .menu a::after {
   content: "";
 
@@ -164,22 +205,25 @@ img {
   transition: width 0.3s ease;
 }
 
+
 .menu a:hover {
   color: var(--burgundy);
   opacity: 0.72;
 }
+
 
 .menu a:hover::after {
   width: 100%;
 }
 
 
-/* =========================================
+/* ==========================================================
    TEXT HERO
-   ========================================= */
+   ========================================================== */
 
 .hero-content {
   position: relative;
+
   z-index: 3;
 
   min-height: 100vh;
@@ -187,10 +231,11 @@ img {
 
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: flex-start;
 
-  padding: 130px 8% 60px;
+  padding: 130px 8% 100px;
 
   color: var(--ivory);
 }
@@ -206,12 +251,18 @@ img {
 
   letter-spacing: 4px;
 
-  color: rgba(247, 240, 229, 0.92);
+  color:
+    rgba(247, 240, 229, 0.92);
 }
 
 
 .hero-title {
   margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size:
     clamp(58px, 6.2vw, 96px);
@@ -235,11 +286,15 @@ img {
 .hero-tagline {
   margin-top: 23px;
 
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
   font-size:
     clamp(28px, 2.5vw, 41px);
 
   font-weight: 400;
-
   font-style: italic;
 
   line-height: 1.15;
@@ -268,49 +323,61 @@ img {
 }
 
 
-/* =========================================
+/* ==========================================================
    DESPRE NOI
-   ========================================= */
+   ========================================================== */
 
 .about {
   position: relative;
 
+  margin-top: -1px;
+
+  padding:
+    125px 7%
+    135px;
+
   background:
     linear-gradient(
       135deg,
-      #f8f2e8 0%,
-      #f3e8d9 55%,
-      #eee0ce 100%
+      var(--ivory) 0%,
+      #f6eee3 48%,
+      var(--ivory-soft) 100%
     );
-
-  padding: 115px 7% 125px;
 
   overflow: hidden;
 }
 
 
-/* ornament foarte discret */
+/* ornament de fundal foarte discret */
 
 .about::before {
   content: "";
 
   position: absolute;
 
-  width: 420px;
-  height: 420px;
+  width: 550px;
+  height: 550px;
 
-  left: -230px;
-  top: -190px;
+  right: -330px;
+  bottom: -300px;
 
-  border: 1px solid
-    rgba(182, 154, 104, 0.18);
+  border:
+    1px solid
+    rgba(182, 154, 104, 0.14);
 
   border-radius: 50%;
+
+  pointer-events: none;
 }
 
 
+/* ==========================================================
+   STRUCTURĂ DESPRE NOI
+   ========================================================== */
+
 .about-container {
   position: relative;
+
   z-index: 2;
 
   width: 100%;
@@ -321,88 +388,106 @@ img {
   display: grid;
 
   grid-template-columns:
-    minmax(0, 0.95fr)
-    minmax(420px, 1.05fr);
+    minmax(0, 0.92fr)
+    minmax(420px, 1.08fr);
 
-  gap: 85px;
+  gap: 95px;
 
   align-items: center;
 }
 
 
-/* =========================================
-   TEXT DESPRE NOI
-   ========================================= */
+/* ==========================================================
+   TEXT
+   ========================================================== */
 
 .about-content {
-  max-width: 650px;
+  max-width: 620px;
 }
 
 
+/* ascundem CINE SUNTEM */
+
 .section-label {
-  margin-bottom: 10px;
-
-  color: var(--gold);
-
-  font-size: 13px;
-  font-weight: 600;
-
-  letter-spacing: 4px;
+  display: none;
 }
 
 
 .about h2 {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
   color: var(--burgundy);
 
   font-size:
-    clamp(50px, 5vw, 72px);
+    clamp(52px, 5vw, 74px);
 
   font-weight: 500;
 
-  line-height: 0.95;
+  line-height: 1;
 
   letter-spacing: 0.5px;
 }
 
 
 .about-line {
-  width: 64px;
+  width: 66px;
   height: 1px;
 
-  margin: 25px 0 30px;
+  margin:
+    26px 0
+    31px;
 
   background: var(--gold);
 }
 
 
 .about h3 {
-  margin-bottom: 27px;
+  margin-bottom: 29px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   color: var(--burgundy-dark);
 
   font-size:
-    clamp(27px, 2.4vw, 37px);
+    clamp(27px, 2.3vw, 36px);
 
-  font-weight: 500;
+  font-weight: 400;
+  font-style: italic;
 
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 
 .about-content p {
-  margin-bottom: 18px;
+  margin-bottom: 19px;
 
-  color: #584946;
+  max-width: 600px;
+
+  color: #594a46;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
   font-size: 18px;
+  font-weight: 400;
 
-  line-height: 1.72;
+  line-height: 1.75;
 }
 
 
-/* =========================================
-   TEXT ASCUNS / CITEȘTE MAI MULT
-   ========================================= */
+/* ==========================================================
+   CITEȘTE MAI MULT
+   ========================================================== */
 
 .about-more {
   max-height: 0;
@@ -411,7 +496,8 @@ img {
 
   opacity: 0;
 
-  transform: translateY(-8px);
+  transform:
+    translateY(-5px);
 
   transition:
     max-height 0.8s ease,
@@ -421,28 +507,33 @@ img {
 
 
 .about-more.open {
-  max-height: 1400px;
+  max-height: 1500px;
 
   opacity: 1;
 
-  transform: translateY(0);
+  transform:
+    translateY(0);
 
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 
 .read-more-btn {
-  margin-top: 12px;
+  margin-top: 14px;
 
-  padding: 0 0 8px;
+  padding:
+    0 0 8px;
 
   display: inline-flex;
+
   align-items: center;
 
   gap: 12px;
 
-  border: none;
-  border-bottom: 1px solid var(--gold);
+  border: 0;
+
+  border-bottom:
+    1px solid var(--gold);
 
   background: transparent;
 
@@ -468,24 +559,29 @@ img {
 
 .read-more-btn:hover {
   color: var(--gold);
+
   gap: 17px;
 }
 
 
 .read-arrow {
   font-size: 18px;
+
   line-height: 1;
 }
 
 
-/* =========================================
+/* ==========================================================
    IMAGINE DESPRE NOI
-   ========================================= */
+   ========================================================== */
 
 .about-visual {
   position: relative;
 
+  min-height: 620px;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
 }
@@ -495,71 +591,112 @@ img {
   position: relative;
 
   width: 100%;
-  max-width: 690px;
-
-  padding: 18px;
+  max-width: 720px;
 }
 
 
-/* ramă aurie fină */
-
-.about-image-frame::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  border: 1px solid
-    rgba(182, 154, 104, 0.48);
-
-  transform: translate(13px, 13px);
-
-  pointer-events: none;
-}
-
+/* imagine integrată, fără ramă rigidă */
 
 .about-image-frame img {
   position: relative;
-  z-index: 2;
 
   width: 100%;
   height: auto;
 
   object-fit: contain;
 
-  mix-blend-mode: multiply;
-
   filter:
-    saturate(0.92)
-    contrast(1.02);
+    saturate(0.88)
+    contrast(0.98);
+
+  /*
+     marginile imaginii se pierd ușor
+     în fundalul crem
+  */
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
 }
 
 
-/* =========================================
+/* lumină discretă în jurul imaginii */
+
+.about-visual::before {
+  content: "";
+
+  position: absolute;
+
+  width: 85%;
+  height: 85%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(182, 154, 104, 0.11) 0%,
+      rgba(182, 154, 104, 0.04) 48%,
+      transparent 72%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ==========================================================
+   SECȚIUNILE VIITOARE
+   ========================================================== */
+
+#proiecte,
+#galerie,
+#contact {
+  position: relative;
+
+  background: var(--ivory);
+}
+
+
+/* ==========================================================
    TABLETĂ
-   ========================================= */
+   ========================================================== */
 
 @media (max-width: 1000px) {
 
   .navbar {
     height: 82px;
+
     padding: 0 4%;
   }
+
 
   .logo {
     width: 105px;
   }
 
+
   .menu {
     gap: 18px;
   }
 
+
   .menu a {
     font-size: 12px;
+
     letter-spacing: 0.8px;
   }
 
@@ -577,7 +714,7 @@ img {
 
     padding:
       115px 6%
-      45px;
+      90px;
   }
 
 
@@ -594,12 +731,12 @@ img {
   }
 
 
-  /* DESPRE */
+  /* DESPRE NOI */
 
   .about {
     padding:
-      90px 6%
-      100px;
+      100px 7%
+      110px;
   }
 
 
@@ -611,11 +748,13 @@ img {
 
 
   .about-content {
-    max-width: 760px;
+    max-width: 720px;
   }
 
 
   .about-visual {
+    min-height: auto;
+
     justify-content: flex-start;
   }
 
@@ -627,9 +766,9 @@ img {
 }
 
 
-/* =========================================
+/* ==========================================================
    TELEFON
-   ========================================= */
+   ========================================================== */
 
 @media (max-width: 620px) {
 
@@ -637,7 +776,8 @@ img {
     min-height: 74px;
     height: auto;
 
-    padding: 8px 4%;
+    padding:
+      8px 4%;
   }
 
 
@@ -653,6 +793,7 @@ img {
 
   .menu a {
     font-size: 9px;
+
     letter-spacing: 0.3px;
   }
 
@@ -670,12 +811,13 @@ img {
 
     padding:
       105px 6%
-      40px;
+      80px;
   }
 
 
   .hero-small {
     font-size: 12px;
+
     letter-spacing: 1.8px;
   }
 
@@ -702,14 +844,8 @@ img {
 
   .about {
     padding:
-      75px 7%
-      85px;
-  }
-
-
-  .section-label {
-    font-size: 11px;
-    letter-spacing: 3px;
+      80px 7%
+      90px;
   }
 
 
@@ -725,22 +861,18 @@ img {
 
   .about-content p {
     font-size: 17px;
-    line-height: 1.65;
+
+    line-height: 1.68;
   }
 
 
   .about-container {
-    gap: 40px;
+    gap: 45px;
   }
 
 
   .about-image-frame {
-    padding: 8px;
-  }
-
-
-  .about-image-frame::before {
-    transform: translate(7px, 7px);
+    max-width: 100%;
   }
 
 }
