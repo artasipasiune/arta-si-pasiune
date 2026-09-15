@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Artă și Pasiune | Asociația Cultural-Educativă</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #252525;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* MENIU */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      min-height: 76px;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 18px;
+      color: #5f3d98;
+    }
+
+    .menu {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #222;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: 0.2s;
+    }
+
+    .menu a:hover {
+      color: #ec008c;
+    }
+
+    /* PRIMA PAGINA */
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 25px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 25%, rgba(236,0,140,.08), transparent 25%),
+        radial-gradient(circle at 85% 70%, rgba(95,61,152,.10), transparent 27%),
+        #fff;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      color: #ec008c;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 22px;
+      color: #202020;
+    }
+
+    .hero h1 span {
+      color: #5f3d98;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 35px;
+      font-size: 19px;
+      color: #666;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #5f3d98;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 30px;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #ec008c;
+      transform: translateY(-2px);
+    }
+
+    /* SECTIUNI */
+    section {
+      padding: 95px 25px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: #ec008c;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 40px;
+      margin-bottom: 25px;
+      color: #242424;
+    }
+
+    .lead {
+      max-width: 800px;
+      font-size: 18px;
+      color: #666;
+    }
+
+    /* DESPRE */
+    #despre {
+      background: #fafafa;
+    }
+
+    /* PROIECTE */
+    .projects {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      min-height: 270px;
+      padding: 35px;
+      border: 1px solid #eeeeee;
+      border-radius: 18px;
+      background: white;
+      box-shadow: 0 12px 35px rgba(0,0,0,.05);
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(0,0,0,.09);
+    }
+
+    .card-number {
+      color: #ec008c;
+      font-weight: 800;
+      margin-bottom: 30px;
+    }
+
+    .card h3 {
+      font-size: 25px;
+      margin-bottom: 15px;
+      color: #5f3d98;
+    }
+
+    .card p {
+      color: #666;
+    }
+
+    /* GALERIE */
+    #galerie {
+      background: #5f3d98;
+      color: white;
+    }
+
+    #galerie h2,
+    #galerie .lead {
+      color: white;
+    }
+
+    #galerie .section-label {
+      color: #ffb3dd;
+    }
+
+    .gallery-placeholder {
+      margin-top: 40px;
+      padding: 70px 25px;
+      text-align: center;
+      border: 1px dashed rgba(255,255,255,.5);
+      border-radius: 18px;
+      color: rgba(255,255,255,.8);
+    }
+
+    /* CONTACT */
+    .contact-box {
+      margin-top: 40px;
+      padding: 40px;
+      background: #fafafa;
+      border-radius: 18px;
+    }
+
+    .contact-box p {
+      margin: 8px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #171717;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        flex-direction: column;
+        padding: 18px;
+        gap: 14px;
+      }
+
+      .menu {
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .menu a {
+        font-size: 11px;
+      }
+
+      .hero {
+        min-height: 70vh;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="brand">ARTĂ ȘI PASIUNE</div>
+
+    <ul class="menu">
+      <li><a href="#acasa">ACASĂ</a></li>
+      <li><a href="#despre">DESPRE NOI</a></li>
+      <li><a href="#proiecte">PROIECTE</a></li>
+      <li><a href="#galerie">GALERIE</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<section class="hero" id="acasa">
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      CULTURĂ • EDUCAȚIE • PASIUNE
+    </div>
+
+    <h1>
+      Artă care inspiră.<br>
+      <span>Pasiune care unește.</span>
+    </h1>
+
+    <p>
+      Asociația Cultural-Educativă „Artă și Pasiune”
+      susține inițiative culturale și educaționale,
+      oferind copiilor și tinerilor contexte în care
+      talentul, creativitatea și expresia artistică pot evolua.
+    </p>
+
+    <a class="button" href="#despre">
+      Descoperă asociația
+    </a>
+
+  </div>
+</section>
+
+
+<section id="despre">
+  <div class="container">
+
+    <div class="section-label">DESPRE NOI</div>
+
+    <h2>Artă. Educație. Comunitate.</h2>
+
+    <p class="lead">
+      Asociația Cultural-Educativă „Artă și Pasiune”
+      dezvoltă și susține activități dedicate educației,
+      culturii și promovării talentului artistic.
+      Prin proiectele sale, asociația creează oportunități
+      de participare, afirmare și dezvoltare pentru copii
+      și tineri.
+    </p>
+
+  </div>
+</section>
+
+
+<section id="proiecte">
+  <div class="container">
+
+    <div class="section-label">PROIECTE</div>
+
+    <h2>Inițiativele noastre</h2>
+
+    <p class="lead">
+      Proiecte prin care transformăm pasiunea pentru artă
+      în experiențe, întâlniri și oportunități.
+    </p>
+
+    <div class="projects">
+
+      <div class="card">
+        <div class="card-number">01</div>
+
+        <h3>Simfonia Toamnei</h3>
+
+        <p>
+          Festival dedicat tinerelor talente,
+          creat pentru a oferi copiilor și tinerilor
+          un cadru de exprimare artistică,
+          experiență scenică și valorizare a performanței.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-number">+</div>
+
+        <h3>Proiecte viitoare</h3>
+
+        <p>
+          Noi inițiative culturale și educaționale
+          vor fi prezentate aici pe măsură ce sunt dezvoltate.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section id="galerie">
+  <div class="container">
+
+    <div class="section-label">GALERIE</div>
+
+    <h2>Momente care rămân</h2>
+
+    <p class="lead">
+      Imagini din proiectele, evenimentele și activitățile
+      Asociației Cultural-Educative „Artă și Pasiune”.
+    </p>
+
+    <div class="gallery-placeholder">
+      Galeria foto va fi completată în curând.
+    </div>
+
+  </div>
+</section>
+
+
+<section id="contact">
+  <div class="container">
+
+    <div class="section-label">CONTACT</div>
+
+    <h2>Să ținem legătura.</h2>
+
+    <p class="lead">
+      Pentru informații despre proiecte, evenimente
+      și activitățile asociației, ne puteți contacta.
+    </p>
+
+    <div class="contact-box">
+      <p><strong>Asociația Cultural-Educativă „Artă și Pasiune”</strong></p>
+      <p>Bacău, România</p>
+      <p>Datele de contact vor fi completate.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<footer>
+  © 2026 Asociația Cultural-Educativă „Artă și Pasiune”.
+  Toate drepturile rezervate.
+</footer>
+
+</body>
+</html>
