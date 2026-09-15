@@ -1,435 +1,873 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Artă și Pasiune | Asociația Cultural-Educativă</title>
+<title>Artă și Pasiune | Asociația Cultural-Educativă</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
-    html {
-      scroll-behavior: smooth;
-    }
+:root{
+  --ivory:#f5f0e7;
+  --cream:#ebe1d2;
+  --wine:#741d2b;
+  --plum:#4b315f;
+  --gold:#b7955b;
+  --ink:#201d1d;
+  --soft:#706a65;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #252525;
-      background: #ffffff;
-      line-height: 1.6;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    /* MENIU */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.97);
-      border-bottom: 1px solid #eeeeee;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      min-height: 76px;
-      padding: 0 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+body{
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:'Montserrat',sans-serif;
+  line-height:1.7;
+}
 
-    .brand {
-      font-weight: 800;
-      letter-spacing: 1px;
-      font-size: 18px;
-      color: #5f3d98;
-    }
+a{
+  color:inherit;
+}
 
-    .menu {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
+/* NAV */
 
-    .menu a {
-      text-decoration: none;
-      color: #222;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      transition: 0.2s;
-    }
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(245,240,231,.95);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(183,149,91,.35);
+}
 
-    .menu a:hover {
-      color: #ec008c;
-    }
+nav{
+  max-width:1250px;
+  min-height:82px;
+  margin:auto;
+  padding:0 35px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-    /* PRIMA PAGINA */
-    .hero {
-      min-height: 82vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 70px 25px;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 15% 25%, rgba(236,0,140,.08), transparent 25%),
-        radial-gradient(circle at 85% 70%, rgba(95,61,152,.10), transparent 27%),
-        #fff;
-    }
+.brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:25px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:var(--wine);
+}
 
-    .hero-content {
-      max-width: 900px;
-    }
+.menu{
+  display:flex;
+  gap:34px;
+  list-style:none;
+}
 
-    .eyebrow {
-      color: #ec008c;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 3px;
-      margin-bottom: 22px;
-    }
+.menu a{
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:600;
+  position:relative;
+}
 
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 78px);
-      line-height: 1.05;
-      margin-bottom: 22px;
-      color: #202020;
-    }
+.menu a:after{
+  content:"";
+  position:absolute;
+  height:1px;
+  width:0;
+  left:0;
+  bottom:-8px;
+  background:var(--gold);
+  transition:.3s;
+}
 
-    .hero h1 span {
-      color: #5f3d98;
-    }
+.menu a:hover:after{
+  width:100%;
+}
 
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto 35px;
-      font-size: 19px;
-      color: #666;
-    }
+/* HERO */
 
-    .button {
-      display: inline-block;
-      padding: 14px 28px;
-      background: #5f3d98;
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 30px;
-      transition: 0.2s;
-    }
+.hero{
+  min-height:88vh;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
 
-    .button:hover {
-      background: #ec008c;
-      transform: translateY(-2px);
-    }
+.hero:before{
+  content:"";
+  position:absolute;
+  width:550px;
+  height:550px;
+  border:1px solid rgba(183,149,91,.25);
+  border-radius:50%;
+  right:-170px;
+  top:-120px;
+}
 
-    /* SECTIUNI */
-    section {
-      padding: 95px 25px;
-    }
+.hero:after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:var(--wine);
+  opacity:.05;
+  border-radius:50%;
+  left:-120px;
+  bottom:-100px;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
+.hero-inner{
+  width:100%;
+  max-width:1250px;
+  margin:auto;
+  padding:80px 35px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:70px;
+  align-items:center;
+}
 
-    .section-label {
-      color: #ec008c;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2.5px;
-      margin-bottom: 12px;
-    }
+.hero-copy{
+  position:relative;
+  z-index:2;
+}
 
-    h2 {
-      font-size: 40px;
-      margin-bottom: 25px;
-      color: #242424;
-    }
+.kicker{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  color:var(--wine);
+  font-size:11px;
+  letter-spacing:4px;
+  font-weight:600;
+  margin-bottom:27px;
+}
 
-    .lead {
-      max-width: 800px;
-      font-size: 18px;
-      color: #666;
-    }
+.kicker:before{
+  content:"";
+  width:45px;
+  height:1px;
+  background:var(--gold);
+}
 
-    /* DESPRE */
-    #despre {
-      background: #fafafa;
-    }
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:clamp(60px,8vw,105px);
+  line-height:.82;
+  letter-spacing:-3px;
+}
 
-    /* PROIECTE */
-    .projects {
-      margin-top: 45px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 25px;
-    }
+.hero h1 span{
+  display:block;
+  color:var(--wine);
+  font-style:italic;
+  margin-top:18px;
+}
 
-    .card {
-      min-height: 270px;
-      padding: 35px;
-      border: 1px solid #eeeeee;
-      border-radius: 18px;
-      background: white;
-      box-shadow: 0 12px 35px rgba(0,0,0,.05);
-      transition: .25s;
-    }
+.hero-subtitle{
+  max-width:520px;
+  margin-top:38px;
+  color:var(--soft);
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 45px rgba(0,0,0,.09);
-    }
+.hero-actions{
+  margin-top:38px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
 
-    .card-number {
-      color: #ec008c;
-      font-weight: 800;
-      margin-bottom: 30px;
-    }
+.btn{
+  display:inline-block;
+  padding:14px 25px;
+  border:1px solid var(--wine);
+  text-decoration:none;
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:600;
+  transition:.25s;
+}
 
-    .card h3 {
-      font-size: 25px;
-      margin-bottom: 15px;
-      color: #5f3d98;
-    }
+.btn.primary{
+  background:var(--wine);
+  color:white;
+}
 
-    .card p {
-      color: #666;
-    }
+.btn:hover{
+  background:var(--plum);
+  border-color:var(--plum);
+  color:white;
+}
 
-    /* GALERIE */
-    #galerie {
-      background: #5f3d98;
-      color: white;
-    }
+.logo-stage{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-    #galerie h2,
-    #galerie .lead {
-      color: white;
-    }
+.logo-frame{
+  position:relative;
+  width:min(470px,100%);
+  padding:40px;
+  background:rgba(255,255,255,.5);
+  border:1px solid rgba(183,149,91,.5);
+}
 
-    #galerie .section-label {
-      color: #ffb3dd;
-    }
+.logo-frame:before,
+.logo-frame:after{
+  content:"";
+  position:absolute;
+  width:65px;
+  height:65px;
+}
 
-    .gallery-placeholder {
-      margin-top: 40px;
-      padding: 70px 25px;
-      text-align: center;
-      border: 1px dashed rgba(255,255,255,.5);
-      border-radius: 18px;
-      color: rgba(255,255,255,.8);
-    }
+.logo-frame:before{
+  top:-12px;
+  left:-12px;
+  border-top:2px solid var(--gold);
+  border-left:2px solid var(--gold);
+}
 
-    /* CONTACT */
-    .contact-box {
-      margin-top: 40px;
-      padding: 40px;
-      background: #fafafa;
-      border-radius: 18px;
-    }
+.logo-frame:after{
+  right:-12px;
+  bottom:-12px;
+  border-right:2px solid var(--gold);
+  border-bottom:2px solid var(--gold);
+}
 
-    .contact-box p {
-      margin: 8px 0;
-    }
+.logo-frame img{
+  width:100%;
+  display:block;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      background: #171717;
-      color: #aaa;
-      font-size: 13px;
-    }
+/* GENERAL */
 
-    @media (max-width: 720px) {
-      nav {
-        flex-direction: column;
-        padding: 18px;
-        gap: 14px;
-      }
+section{
+  padding:115px 35px;
+}
 
-      .menu {
-        gap: 13px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+.container{
+  max-width:1180px;
+  margin:auto;
+}
 
-      .menu a {
-        font-size: 11px;
-      }
+.number{
+  font-family:'Cormorant Garamond',serif;
+  color:var(--gold);
+  font-size:18px;
+  margin-bottom:10px;
+}
 
-      .hero {
-        min-height: 70vh;
-      }
+.label{
+  font-size:10px;
+  letter-spacing:4px;
+  font-weight:600;
+  color:var(--wine);
+  margin-bottom:20px;
+}
 
-      h2 {
-        font-size: 32px;
-      }
-    }
-  </style>
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(44px,6vw,72px);
+  font-weight:500;
+  line-height:1;
+  margin-bottom:30px;
+}
+
+.section-title em{
+  color:var(--wine);
+  font-weight:400;
+}
+
+/* DESPRE */
+
+.about{
+  background:#efe7db;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:100px;
+  align-items:start;
+}
+
+.about-intro{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  line-height:1.35;
+  color:var(--plum);
+}
+
+.about-text{
+  color:#625c57;
+  font-size:15px;
+}
+
+.about-text p+p{
+  margin-top:20px;
+}
+
+/* FONDATOR */
+
+.founder{
+  background:var(--plum);
+  color:white;
+  overflow:hidden;
+}
+
+.founder-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:90px;
+  align-items:center;
+}
+
+.founder-photo{
+  height:560px;
+  border:1px solid rgba(255,255,255,.35);
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(255,255,255,.6);
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  background:rgba(255,255,255,.05);
+}
+
+.founder-photo:after{
+  content:"";
+  position:absolute;
+  top:15px;
+  left:15px;
+  right:-15px;
+  bottom:-15px;
+  border:1px solid var(--gold);
+  z-index:0;
+}
+
+.founder .label,
+.founder .number{
+  color:#d6bb88;
+}
+
+.founder h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:62px;
+  line-height:.95;
+  font-weight:500;
+  margin-bottom:12px;
+}
+
+.founder-role{
+  color:#d6bb88;
+  letter-spacing:2px;
+  font-size:11px;
+  margin-bottom:32px;
+}
+
+.founder-copy{
+  max-width:600px;
+  color:rgba(255,255,255,.78);
+  font-size:15px;
+}
+
+/* PROIECT */
+
+.project{
+  background:var(--ivory);
+}
+
+.project-card{
+  margin-top:55px;
+  position:relative;
+  padding:70px;
+  border:1px solid rgba(183,149,91,.55);
+  background:#f8f4ed;
+}
+
+.project-card:before{
+  content:"SIMFONIA";
+  position:absolute;
+  right:20px;
+  top:-35px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:120px;
+  color:rgba(116,29,43,.035);
+  letter-spacing:4px;
+  pointer-events:none;
+}
+
+.project-overline{
+  font-size:10px;
+  letter-spacing:4px;
+  color:var(--gold);
+  font-weight:600;
+  margin-bottom:20px;
+}
+
+.project-card h3{
+  max-width:800px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(45px,6vw,75px);
+  line-height:.95;
+  font-weight:500;
+  color:var(--wine);
+}
+
+.project-card p{
+  max-width:650px;
+  margin-top:28px;
+  color:var(--soft);
+}
+
+.text-link{
+  display:inline-block;
+  margin-top:30px;
+  text-decoration:none;
+  color:var(--wine);
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:600;
+  border-bottom:1px solid var(--gold);
+  padding-bottom:6px;
+}
+
+/* GALERIE */
+
+.gallery{
+  background:#211d1d;
+  color:white;
+}
+
+.gallery .label{
+  color:#d6bb88;
+}
+
+.gallery .section-title{
+  color:white;
+}
+
+.gallery-grid{
+  margin-top:50px;
+  display:grid;
+  grid-template-columns:1.4fr .8fr .8fr;
+  grid-template-rows:220px 220px;
+  gap:14px;
+}
+
+.gallery-item{
+  border:1px solid rgba(255,255,255,.15);
+  background:#2b2727;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#8f8882;
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;
+}
+
+.gallery-item:first-child{
+  grid-row:span 2;
+}
+
+/* CONTACT */
+
+.contact{
+  background:#e9dfd1;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+}
+
+.contact-info{
+  padding-top:25px;
+}
+
+.contact-info h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;
+  color:var(--wine);
+  margin-bottom:25px;
+}
+
+.contact-info p{
+  color:var(--soft);
+  margin-bottom:8px;
+}
+
+.socials{
+  margin-top:35px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.social{
+  text-decoration:none;
+  border:1px solid var(--wine);
+  padding:12px 20px;
+  font-size:10px;
+  letter-spacing:2px;
+  transition:.25s;
+}
+
+.social:hover{
+  background:var(--wine);
+  color:white;
+}
+
+/* FOOTER */
+
+footer{
+  background:#181515;
+  color:#918984;
+  padding:45px 35px;
+}
+
+.footer-inner{
+  max-width:1180px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  font-size:11px;
+  letter-spacing:1px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  nav{
+    flex-direction:column;
+    gap:14px;
+    padding:18px;
+  }
+
+  .menu{
+    gap:14px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .menu a{
+    font-size:9px;
+  }
+
+  .hero-inner,
+  .about-grid,
+  .founder-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-inner{
+    gap:50px;
+  }
+
+  .hero h1{
+    letter-spacing:-1px;
+  }
+
+  .about-grid,
+  .founder-grid{
+    gap:45px;
+  }
+
+  .founder-photo{
+    height:430px;
+  }
+
+  .project-card{
+    padding:40px 25px;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:220px 180px 180px;
+  }
+
+  .gallery-item:first-child{
+    grid-column:span 2;
+    grid-row:auto;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <nav>
-    <div class="brand">ARTĂ ȘI PASIUNE</div>
+<nav>
+  <div class="brand">Artă și Pasiune</div>
 
-    <ul class="menu">
-      <li><a href="#acasa">ACASĂ</a></li>
-      <li><a href="#despre">DESPRE NOI</a></li>
-      <li><a href="#proiecte">PROIECTE</a></li>
-      <li><a href="#galerie">GALERIE</a></li>
-      <li><a href="#contact">CONTACT</a></li>
-    </ul>
-  </nav>
+  <ul class="menu">
+    <li><a href="#acasa">ACASĂ</a></li>
+    <li><a href="#despre">DESPRE NOI</a></li>
+    <li><a href="#proiecte">PROIECTE</a></li>
+    <li><a href="#galerie">GALERIE</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+  </ul>
+</nav>
 </header>
 
 
-<section class="hero" id="acasa">
-  <div class="hero-content">
+<main>
 
-    <div class="eyebrow">
-      CULTURĂ • EDUCAȚIE • PASIUNE
+<section class="hero" id="acasa">
+  <div class="hero-inner">
+
+    <div class="hero-copy">
+
+      <div class="kicker">
+        BACĂU · ROMÂNIA
+      </div>
+
+      <h1>
+        Artă
+        <span>și Pasiune</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Asociația Cultural-Educativă „Artă și Pasiune”
+      </p>
+
+      <div class="hero-actions">
+        <a href="#despre" class="btn primary">DESPRE NOI</a>
+        <a href="#proiecte" class="btn">PROIECTELE NOASTRE</a>
+      </div>
+
     </div>
 
-    <h1>
-      Artă care inspiră.<br>
-      <span>Pasiune care unește.</span>
-    </h1>
+    <div class="logo-stage">
+      <div class="logo-frame">
+        <img src="Logo png.png"
+             alt="Asociația Cultural-Educativă Artă și Pasiune">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="about" id="despre">
+<div class="container">
+
+  <div class="number">01</div>
+  <div class="label">DESPRE NOI</div>
+
+  <div class="about-grid">
+
+    <div class="about-intro">
+      Asociația Cultural-Educativă
+      „Artă și Pasiune”
+    </div>
+
+    <div class="about-text">
+      <p>
+        Asociația desfășoară activități și proiecte
+        în domeniul cultural și educațional, cu accent
+        pe susținerea copiilor și tinerilor și pe crearea
+        unor contexte de exprimare și dezvoltare artistică.
+      </p>
+
+      <p>
+        Prin evenimentele și inițiativele sale,
+        asociația urmărește promovarea educației,
+        culturii și participării la viața artistică.
+      </p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+<section class="founder">
+<div class="container">
+
+  <div class="founder-grid">
+
+    <div class="founder-photo">
+      Fotografie fondator
+    </div>
+
+    <div>
+      <div class="number">—</div>
+      <div class="label">FONDATOR</div>
+
+      <h2>Andreea-Mihaela<br>Zodian</h2>
+
+      <div class="founder-role">
+        FONDATOR & PREȘEDINTE
+      </div>
+
+      <div class="founder-copy">
+        <p>
+          În spatele Asociației Cultural-Educative
+          „Artă și Pasiune” se află dorința de a crea
+          proiecte culturale și educaționale relevante,
+          construite cu seriozitate și continuitate.
+        </p>
+
+        <p style="margin-top:18px;">
+          Această secțiune va fi completată cu mesajul
+          personal al fondatorului.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+<section class="project" id="proiecte">
+<div class="container">
+
+  <div class="number">02</div>
+  <div class="label">PROIECTE</div>
+
+  <h2 class="section-title">
+    Proiectele <em>noastre</em>
+  </h2>
+
+  <div class="project-card">
+
+    <div class="project-overline">
+      PROIECT CULTURAL
+    </div>
+
+    <h3>
+      Festivalul de Muzică<br>
+      „Simfonia Toamnei”
+    </h3>
 
     <p>
-      Asociația Cultural-Educativă „Artă și Pasiune”
-      susține inițiative culturale și educaționale,
-      oferind copiilor și tinerilor contexte în care
-      talentul, creativitatea și expresia artistică pot evolua.
+      Un proiect al Asociației Cultural-Educative
+      „Artă și Pasiune”, dedicat muzicii și
+      afirmării artistice a copiilor și tinerilor.
     </p>
 
-    <a class="button" href="#despre">
-      Descoperă asociația
+    <a href="#" class="text-link">
+      DESCOPERĂ FESTIVALUL →
     </a>
 
   </div>
+
+</div>
 </section>
 
 
-<section id="despre">
-  <div class="container">
+<section class="gallery" id="galerie">
+<div class="container">
 
-    <div class="section-label">DESPRE NOI</div>
+  <div class="number">03</div>
+  <div class="label">GALERIE</div>
 
-    <h2>Artă. Educație. Comunitate.</h2>
+  <h2 class="section-title">
+    Din activitatea noastră
+  </h2>
 
-    <p class="lead">
-      Asociația Cultural-Educativă „Artă și Pasiune”
-      dezvoltă și susține activități dedicate educației,
-      culturii și promovării talentului artistic.
-      Prin proiectele sale, asociația creează oportunități
-      de participare, afirmare și dezvoltare pentru copii
-      și tineri.
-    </p>
-
+  <div class="gallery-grid">
+    <div class="gallery-item">Fotografie</div>
+    <div class="gallery-item">Fotografie</div>
+    <div class="gallery-item">Fotografie</div>
+    <div class="gallery-item">Fotografie</div>
+    <div class="gallery-item">Fotografie</div>
   </div>
+
+</div>
 </section>
 
 
-<section id="proiecte">
-  <div class="container">
+<section class="contact" id="contact">
+<div class="container">
 
-    <div class="section-label">PROIECTE</div>
+  <div class="number">04</div>
+  <div class="label">CONTACT</div>
 
-    <h2>Inițiativele noastre</h2>
+  <div class="contact-grid">
 
-    <p class="lead">
-      Proiecte prin care transformăm pasiunea pentru artă
-      în experiențe, întâlniri și oportunități.
-    </p>
-
-    <div class="projects">
-
-      <div class="card">
-        <div class="card-number">01</div>
-
-        <h3>Simfonia Toamnei</h3>
-
-        <p>
-          Festival dedicat tinerelor talente,
-          creat pentru a oferi copiilor și tinerilor
-          un cadru de exprimare artistică,
-          experiență scenică și valorizare a performanței.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="card-number">+</div>
-
-        <h3>Proiecte viitoare</h3>
-
-        <p>
-          Noi inițiative culturale și educaționale
-          vor fi prezentate aici pe măsură ce sunt dezvoltate.
-        </p>
-      </div>
-
+    <div>
+      <h2 class="section-title">
+        Rămânem<br>
+        <em>în contact.</em>
+      </h2>
     </div>
 
-  </div>
-</section>
+    <div class="contact-info">
 
+      <h3>
+        Asociația Cultural-Educativă<br>
+        „Artă și Pasiune”
+      </h3>
 
-<section id="galerie">
-  <div class="container">
-
-    <div class="section-label">GALERIE</div>
-
-    <h2>Momente care rămân</h2>
-
-    <p class="lead">
-      Imagini din proiectele, evenimentele și activitățile
-      Asociației Cultural-Educative „Artă și Pasiune”.
-    </p>
-
-    <div class="gallery-placeholder">
-      Galeria foto va fi completată în curând.
-    </div>
-
-  </div>
-</section>
-
-
-<section id="contact">
-  <div class="container">
-
-    <div class="section-label">CONTACT</div>
-
-    <h2>Să ținem legătura.</h2>
-
-    <p class="lead">
-      Pentru informații despre proiecte, evenimente
-      și activitățile asociației, ne puteți contacta.
-    </p>
-
-    <div class="contact-box">
-      <p><strong>Asociația Cultural-Educativă „Artă și Pasiune”</strong></p>
       <p>Bacău, România</p>
-      <p>Datele de contact vor fi completate.</p>
+
+      <div class="socials">
+        <a class="social"
+           href="#"
+           target="_blank">
+          FACEBOOK
+        </a>
+
+        <a class="social"
+           href="mailto:">
+          E-MAIL
+        </a>
+      </div>
+
     </div>
 
   </div>
+</div>
 </section>
+
+</main>
 
 
 <footer>
-  © 2026 Asociația Cultural-Educativă „Artă și Pasiune”.
-  Toate drepturile rezervate.
+<div class="footer-inner">
+
+  <div>
+    © 2026 Asociația Cultural-Educativă „Artă și Pasiune”
+  </div>
+
+  <div>
+    Bacău · România
+  </div>
+
+</div>
 </footer>
 
 </body>
