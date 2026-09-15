@@ -10,18 +10,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
-        rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-
 <body>
 
-  <!-- =========================================
-       HERO
-       ========================================= -->
+  <!-- ==================== HERO ==================== -->
 
   <header class="hero" id="acasa">
 
@@ -30,7 +28,9 @@
     <nav class="navbar">
 
       <a href="#acasa" class="logo-link">
-        <img src="Logo png.png" alt="Artă și Pasiune" class="logo">
+        <img src="Logo png.png"
+             alt="Artă și Pasiune"
+             class="logo">
       </a>
 
       <div class="menu">
@@ -63,32 +63,22 @@
   </header>
 
 
-  <!-- =========================================
-       DESPRE NOI
-       ========================================= -->
+  <!-- ==================== DESPRE NOI ==================== -->
 
   <section class="about" id="despre-noi">
 
     <div class="about-container">
 
-      <!-- TEXT -->
-
       <div class="about-content">
 
-        <p class="section-label">
-          CINE SUNTEM
-        </p>
+        <h2>Despre noi</h2>
 
-        <h2>
-          Despre noi
-        </h2>
+        <p class="about-motto">
+          Cultura creează legături, educația le dă continuitate.
+        </p>
 
         <div class="about-line"></div>
 
-        <h3>
-          Cultura creează legături.<br>
-          Educația le dă continuitate.
-        </h3>
 
         <p>
           Asociația Cultural-Educativă „Artă și Pasiune” este o
@@ -104,8 +94,6 @@
           cu precădere copiilor și tinerilor.
         </p>
 
-
-        <!-- TEXT EXTINS -->
 
         <div class="about-more" id="about-more">
 
@@ -157,14 +145,14 @@
       </div>
 
 
-      <!-- IMAGINE -->
+      <!-- Imaginea actuală; o înlocuim ulterior cu cea nouă -->
 
       <div class="about-visual">
 
         <div class="about-image-frame">
 
           <img src="imagini/despre-noi.png"
-               alt="Artă, cultură și educație">
+               alt="Artă, educație, cultură și sport">
 
         </div>
 
@@ -175,20 +163,14 @@
   </section>
 
 
-  <!-- =========================================
-       SECȚIUNI URMĂTOARE
-       ========================================= -->
+  <!-- ==================== URMĂTOARELE SECȚIUNI ==================== -->
 
   <section id="proiecte"></section>
-
   <section id="galerie"></section>
-
   <section id="contact"></section>
 
 
-  <!-- =========================================
-       CITEȘTE MAI MULT
-       ========================================= -->
+  <!-- ==================== CITEȘTE MAI MULT ==================== -->
 
   <script>
 
@@ -198,27 +180,25 @@
     const aboutMore =
       document.getElementById("about-more");
 
-
     readMoreButton.addEventListener("click", function () {
 
       const isOpen =
         aboutMore.classList.toggle("open");
-
 
       readMoreButton.setAttribute(
         "aria-expanded",
         isOpen
       );
 
-
-      readMoreButton.querySelector("span:first-child")
+      readMoreButton
+        .querySelector("span:first-child")
         .textContent =
         isOpen
           ? "ARATĂ MAI PUȚIN"
           : "CITEȘTE MAI MULT";
 
-
-      readMoreButton.querySelector(".read-arrow")
+      readMoreButton
+        .querySelector(".read-arrow")
         .textContent =
         isOpen ? "↑" : "↓";
 
@@ -226,7 +206,5 @@
 
   </script>
 
-
 </body>
-
 </html>
