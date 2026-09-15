@@ -1,6 +1,6 @@
-/* Stil principal - Artă și Pasiune */
 /* =========================================
-   ARTĂ ȘI PASIUNE — HERO
+   ARTĂ ȘI PASIUNE
+   HERO - VERSIUNEA FINALĂ
    ========================================= */
 
 :root {
@@ -23,6 +23,7 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: "Cormorant Garamond", Georgia, serif;
   background: var(--ivory);
   color: var(--burgundy-dark);
@@ -35,38 +36,39 @@ body {
 
 .hero {
   position: relative;
+  width: 100%;
   min-height: 100vh;
 
   background-image: url("../imagini/hero.png");
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
 
   overflow: hidden;
 }
 
 
-/* umbră discretă pentru lizibilitate */
+/* Umbră peste fotografie pentru ca textul
+   să rămână lizibil */
 
 .hero-overlay {
   position: absolute;
   inset: 0;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(24, 10, 10, 0.58) 0%,
-      rgba(24, 10, 10, 0.35) 38%,
-      rgba(24, 10, 10, 0.08) 70%,
-      rgba(24, 10, 10, 0.04) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(25, 8, 12, 0.67) 0%,
+    rgba(25, 8, 12, 0.48) 30%,
+    rgba(25, 8, 12, 0.20) 55%,
+    rgba(25, 8, 12, 0.04) 100%
+  );
 
   z-index: 1;
 }
 
 
 /* =========================================
-   MENIU
+   BARA DE SUS
    ========================================= */
 
 .navbar {
@@ -75,7 +77,7 @@ body {
   left: 0;
 
   width: 100%;
-  height: 92px;
+  height: 94px;
 
   padding: 0 6%;
 
@@ -83,28 +85,35 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  background: rgba(247, 240, 229, 0.93);
-  border-bottom: 1px solid rgba(90, 24, 37, 0.16);
+  background: rgba(247, 240, 229, 0.94);
+
+  border-bottom: 1px solid
+    rgba(90, 24, 37, 0.15);
 
   z-index: 10;
 }
 
 
-/* SIGLĂ */
+/* =========================================
+   SIGLĂ
+   ========================================= */
 
 .logo-link {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .logo {
-  width: 135px;
-  height: auto;
   display: block;
+  width: 125px;
+  height: auto;
 }
 
 
-/* MENIU DREAPTA */
+/* =========================================
+   MENIU
+   ========================================= */
 
 .menu {
   display: flex;
@@ -119,18 +128,26 @@ body {
 
   color: var(--burgundy-dark);
 
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
   font-size: 16px;
   font-weight: 600;
+
   letter-spacing: 1.4px;
 
-  transition: opacity 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    color 0.25s ease;
 }
 
 .menu a::after {
   content: "";
 
   position: absolute;
+
   left: 50%;
   bottom: -8px;
 
@@ -145,6 +162,7 @@ body {
 }
 
 .menu a:hover {
+  color: var(--burgundy);
   opacity: 0.72;
 }
 
@@ -162,114 +180,190 @@ body {
   z-index: 3;
 
   min-height: 100vh;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 
-  padding: 120px 8% 50px;
-
-  max-width: 850px;
+  padding:
+    130px 8%
+    60px 8%;
 
   color: var(--ivory);
 }
 
-.hero-small {
-  margin-bottom: 14px;
 
-  font-size: clamp(14px, 1.2vw, 18px);
+/* ASOCIAȚIA CULTURAL-EDUCATIVĂ */
+
+.hero-small {
+  margin-bottom: 16px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(14px, 1.2vw, 18px);
+
   font-weight: 500;
+
   letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: rgba(247, 240, 229, 0.92);
 }
+
+
+/* ARTĂ ȘI PASIUNE */
 
 .hero-content h1 {
-  font-size: clamp(54px, 7vw, 104px);
-  line-height: 0.92;
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(58px, 6.2vw, 96px);
 
   font-weight: 500;
-  letter-spacing: 2px;
-
-  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.22);
-}
-
-
-/* SLOGAN — singurul element caligrafic */
-
-.hero-slogan {
-  margin-top: 22px;
-
-  font-family: "Italianno", cursive;
-  font-size: clamp(38px, 4vw, 62px);
-  font-weight: 400;
 
   line-height: 1;
 
-  color: #f5e5c9;
+  letter-spacing: 3px;
 
-  transform: rotate(-1deg);
+  white-space: nowrap;
 
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  color: var(--ivory);
+
+  text-shadow:
+    0 3px 22px
+    rgba(0, 0, 0, 0.28);
 }
 
 
 /* =========================================
-   TELEFON / TABLETĂ
+   SLOGAN
    ========================================= */
 
-@media (max-width: 800px) {
+/* Elegant, discret.
+   Nu mai folosim fontul foarte caligrafic. */
+
+.hero-slogan {
+  margin-top: 23px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(28px, 2.5vw, 41px);
+
+  font-weight: 400;
+
+  font-style: italic;
+
+  line-height: 1.15;
+
+  letter-spacing: 0.4px;
+
+  color: #f2dfbd;
+
+  text-shadow:
+    0 2px 12px
+    rgba(0, 0, 0, 0.28);
+}
+
+
+/* Mic detaliu auriu sub slogan */
+
+.hero-slogan::after {
+  content: "";
+
+  display: block;
+
+  width: 70px;
+  height: 1px;
+
+  margin-top: 18px;
+
+  background: var(--gold);
+}
+
+
+/* =========================================
+   TABLETĂ
+   ========================================= */
+
+@media (max-width: 900px) {
 
   .navbar {
-    height: 78px;
-    padding: 0 5%;
+    height: 82px;
+    padding: 0 4%;
   }
 
   .logo {
-    width: 100px;
+    width: 105px;
   }
 
   .menu {
-    gap: 14px;
+    gap: 18px;
   }
 
   .menu a {
-    font-size: 11px;
-    letter-spacing: 0.5px;
+    font-size: 12px;
+    letter-spacing: 0.8px;
   }
 
   .hero {
     min-height: 92vh;
-    background-position: 57% center;
+
+    background-position:
+      58% center;
   }
 
   .hero-content {
     min-height: 92vh;
-    padding: 110px 7% 40px;
-    max-width: 95%;
-  }
 
-  .hero-small {
-    letter-spacing: 2px;
+    padding:
+      115px 6%
+      45px;
   }
 
   .hero-content h1 {
-    max-width: 600px;
+    font-size:
+      clamp(46px, 7vw, 72px);
+
+    letter-spacing: 2px;
   }
 
+  .hero-small {
+    letter-spacing: 2.5px;
+  }
 }
 
 
-/* telefoane mici */
+/* =========================================
+   TELEFON
+   ========================================= */
 
-@media (max-width: 520px) {
+@media (max-width: 620px) {
 
   .navbar {
+    min-height: 74px;
     height: auto;
-    min-height: 72px;
+
+    padding: 8px 4%;
   }
 
   .logo {
-    width: 82px;
+    width: 85px;
   }
 
   .menu {
@@ -278,14 +372,43 @@ body {
 
   .menu a {
     font-size: 9px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero {
+    min-height: 88vh;
+
+    background-position:
+      60% center;
+  }
+
+  .hero-content {
+    min-height: 88vh;
+
+    padding:
+      105px 6%
+      40px;
+  }
+
+  .hero-small {
+    font-size: 12px;
+    letter-spacing: 1.8px;
   }
 
   .hero-content h1 {
-    font-size: 50px;
+    font-size:
+      clamp(38px, 10vw, 58px);
+
+    letter-spacing: 1px;
+
+    white-space: normal;
   }
 
   .hero-slogan {
-    font-size: 38px;
+    margin-top: 18px;
+
+    font-size:
+      clamp(24px, 7vw, 32px);
   }
 
 }
