@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +10,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Italianno&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 
+
 <body>
+
+  <!-- =========================================
+       HERO
+       ========================================= -->
 
   <header class="hero" id="acasa">
 
+    <div class="hero-overlay"></div>
+
     <nav class="navbar">
 
-      <a href="#acasa" class="logo-link" aria-label="Artă și Pasiune - Acasă">
-        <img src="Logo png.png" alt="Asociația Cultural-Educativă Artă și Pasiune" class="logo">
+      <a href="#acasa" class="logo-link">
+        <img src="Logo png.png" alt="Artă și Pasiune" class="logo">
       </a>
 
       <div class="menu">
         <a href="#acasa">ACASĂ</a>
-        <a href="#despre">DESPRE NOI</a>
+        <a href="#despre-noi">DESPRE NOI</a>
         <a href="#proiecte">PROIECTE</a>
         <a href="#galerie">GALERIE</a>
         <a href="#contact">CONTACT</a>
@@ -34,7 +43,6 @@
 
     </nav>
 
-    <div class="hero-overlay"></div>
 
     <div class="hero-content">
 
@@ -42,9 +50,11 @@
         ASOCIAȚIA CULTURAL-EDUCATIVĂ
       </p>
 
-      <h1>ARTĂ ȘI PASIUNE</h1>
+      <h1 class="hero-title">
+        ARTĂ ȘI PASIUNE
+      </h1>
 
-      <p class="hero-slogan">
+      <p class="hero-tagline">
         Locul în care talentul prinde glas.
       </p>
 
@@ -52,5 +62,171 @@
 
   </header>
 
+
+  <!-- =========================================
+       DESPRE NOI
+       ========================================= -->
+
+  <section class="about" id="despre-noi">
+
+    <div class="about-container">
+
+      <!-- TEXT -->
+
+      <div class="about-content">
+
+        <p class="section-label">
+          CINE SUNTEM
+        </p>
+
+        <h2>
+          Despre noi
+        </h2>
+
+        <div class="about-line"></div>
+
+        <h3>
+          Cultura creează legături.<br>
+          Educația le dă continuitate.
+        </h3>
+
+        <p>
+          Asociația Cultural-Educativă „Artă și Pasiune” este o
+          organizație nonprofit înființată din dorința de a transforma
+          pasiunea pentru cultură, educație și implicare într-un cadru
+          în care ideile pot deveni proiecte, iar proiectele pot genera
+          experiențe cu valoare pentru comunitate.
+        </p>
+
+        <p>
+          Activitatea Asociației reunește cultura, educația, arta,
+          sportul și implicarea socială, prin inițiative adresate
+          cu precădere copiilor și tinerilor.
+        </p>
+
+
+        <!-- TEXT EXTINS -->
+
+        <div class="about-more" id="about-more">
+
+          <p>
+            Prin proiectele dezvoltate, ne propunem să creăm contexte
+            autentice de exprimare, învățare și participare, în care
+            talentul să fie descoperit, susținut și valorificat.
+            Credem în educația prin cultură și în puterea experiențelor
+            artistice de a contribui la dezvoltarea personală și
+            socială a copiilor și tinerilor.
+          </p>
+
+          <p>
+            Inițiativele noastre urmăresc promovarea valorilor culturale,
+            stimularea creativității, susținerea performanței și
+            dezvoltarea unor oportunități reale de participare la
+            activități culturale, educaționale și sportive.
+          </p>
+
+          <p>
+            Organizăm și susținem evenimente, festivaluri, concursuri,
+            ateliere, activități educative și proiecte interdisciplinare,
+            construind în același timp parteneriate cu instituții de
+            învățământ, organizații și profesioniști care împărtășesc
+            aceeași preocupare pentru educație, cultură și comunitate.
+          </p>
+
+          <p>
+            Pentru noi, fiecare proiect înseamnă mai mult decât o
+            activitate. Înseamnă întâlniri, experiențe, curaj,
+            descoperirea unor aptitudini și crearea unui spațiu în
+            care pasiunea poate deveni expresie, performanță și,
+            uneori, începutul unui drum.
+          </p>
+
+        </div>
+
+
+        <button class="read-more-btn"
+                id="read-more-btn"
+                type="button"
+                aria-expanded="false">
+
+          <span>CITEȘTE MAI MULT</span>
+          <span class="read-arrow">↓</span>
+
+        </button>
+
+      </div>
+
+
+      <!-- IMAGINE -->
+
+      <div class="about-visual">
+
+        <div class="about-image-frame">
+
+          <img src="imagini/despre-noi.png"
+               alt="Artă, cultură și educație">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       SECȚIUNI URMĂTOARE
+       ========================================= -->
+
+  <section id="proiecte"></section>
+
+  <section id="galerie"></section>
+
+  <section id="contact"></section>
+
+
+  <!-- =========================================
+       CITEȘTE MAI MULT
+       ========================================= -->
+
+  <script>
+
+    const readMoreButton =
+      document.getElementById("read-more-btn");
+
+    const aboutMore =
+      document.getElementById("about-more");
+
+
+    readMoreButton.addEventListener("click", function () {
+
+      const isOpen =
+        aboutMore.classList.toggle("open");
+
+
+      readMoreButton.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
+
+
+      readMoreButton.querySelector("span:first-child")
+        .textContent =
+        isOpen
+          ? "ARATĂ MAI PUȚIN"
+          : "CITEȘTE MAI MULT";
+
+
+      readMoreButton.querySelector(".read-arrow")
+        .textContent =
+        isOpen ? "↑" : "↓";
+
+    });
+
+  </script>
+
+
 </body>
+
 </html>
