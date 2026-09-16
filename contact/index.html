@@ -7,18 +7,15 @@
 
   <title>Contact | Artă și Pasiune</title>
 
-  <meta
-    name="description"
-    content="Contact Asociația Cultural-Educativă Artă și Pasiune."
-  >
+  <meta name="description"
+        content="Contact Asociația Cultural-Educativă Artă și Pasiune.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
+    rel="stylesheet">
 
   <style>
 
@@ -29,6 +26,7 @@
       --cream: #eee0cc;
       --gold: #b69a68;
       --text: #55423e;
+      --muted: #806d65;
     }
 
     * {
@@ -37,27 +35,15 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       min-height: 100vh;
-
       font-family: "Cormorant Garamond", Georgia, serif;
-
       color: var(--text);
-
       background:
         radial-gradient(
-          circle at 12% 18%,
-          rgba(182, 154, 104, 0.13),
-          transparent 27%
-        ),
-        radial-gradient(
-          circle at 88% 80%,
-          rgba(90, 24, 37, 0.07),
-          transparent 30%
+          circle at 12% 25%,
+          rgba(182, 154, 104, 0.12),
+          transparent 28%
         ),
         linear-gradient(
           135deg,
@@ -67,34 +53,31 @@
     }
 
 
-    /* ==================== MENIU ==================== */
+    /* =====================================================
+       HEADER
+       ===================================================== */
 
     .contact-header {
       width: 100%;
       height: 88px;
-
       padding: 0 6%;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      background: rgba(247, 240, 229, 0.90);
+      background: rgba(247, 240, 229, 0.92);
 
       border-bottom:
-        1px solid rgba(90, 24, 37, 0.13);
-
-      backdrop-filter: blur(10px);
+        1px solid rgba(90, 24, 37, 0.12);
     }
 
     .brand {
       color: var(--burgundy);
-
       text-decoration: none;
 
       font-size: 14px;
       font-weight: 600;
-
       letter-spacing: 2.5px;
     }
 
@@ -102,12 +85,10 @@
       position: relative;
 
       color: var(--burgundy-dark);
-
       text-decoration: none;
 
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-
       letter-spacing: 1.7px;
     }
 
@@ -115,7 +96,6 @@
       content: "";
 
       position: absolute;
-
       left: 50%;
       bottom: -8px;
 
@@ -125,8 +105,7 @@
       background: var(--burgundy);
 
       transform: translateX(-50%);
-
-      transition: width 0.3s ease;
+      transition: width .3s ease;
     }
 
     .back-link:hover::after {
@@ -134,111 +113,120 @@
     }
 
 
-    /* ==================== PAGINA ==================== */
+    /* =====================================================
+       CONTACT
+       ===================================================== */
 
     .contact-page {
-      min-height: calc(100vh - 88px - 68px);
+      min-height: calc(100vh - 88px - 70px);
 
-      padding: 85px 7% 90px;
+      padding: 85px 6% 90px;
 
       display: flex;
       align-items: center;
     }
 
     .contact-container {
-      width: min(100%, 1220px);
-
+      width: min(100%, 1450px);
       margin: 0 auto;
 
       display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
 
-      grid-template-columns: 0.9fr 1.1fr;
-
-      gap: 110px;
+      gap: 90px;
 
       align-items: center;
     }
 
 
-    /* ==================== STÂNGA ==================== */
+    /* =====================================================
+       STÂNGA
+       ===================================================== */
 
-    .contact-title {
-      color: var(--burgundy);
+    .contact-label {
+      display: flex;
+      align-items: center;
+      gap: 15px;
 
-      font-size: clamp(52px, 5vw, 75px);
+      margin-bottom: 23px;
 
-      font-weight: 400;
+      color: var(--gold);
 
-      line-height: 1;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 4px;
     }
 
-    .intro {
-      margin-top: 23px;
+    .contact-label::before {
+      content: "";
 
-      max-width: 480px;
-
-      color: #725d55;
-
-      font-size: 19px;
-
-      font-style: italic;
-
-      line-height: 1.55;
-    }
-
-    .contact-line {
-      width: 75px;
+      width: 40px;
       height: 1px;
-
-      margin: 30px 0 35px;
 
       background: var(--gold);
     }
 
+    .contact-info h1 {
+      max-width: 520px;
 
-    /* ==================== DATE CONTACT ==================== */
+      color: var(--burgundy);
 
-    .contact-list {
-      display: flex;
-      flex-direction: column;
+      font-size: clamp(48px, 5vw, 74px);
+      font-weight: 400;
 
-      gap: 12px;
+      line-height: .98;
+    }
+
+    .intro {
+      max-width: 470px;
+
+      margin-top: 27px;
+
+      color: var(--muted);
+
+      font-size: 19px;
+      line-height: 1.55;
+    }
+
+
+    /* =====================================================
+       CONTACT RAPID
+       ===================================================== */
+
+    .contact-links {
+      max-width: 470px;
+
+      margin-top: 42px;
+
+      border-top:
+        1px solid rgba(90, 24, 37, .13);
     }
 
     .contact-item {
-      width: 100%;
-
-      padding: 17px 5px;
+      padding: 16px 2px;
 
       display: flex;
       align-items: center;
 
-      gap: 20px;
-
-      color: var(--text);
+      gap: 17px;
 
       text-decoration: none;
 
       border-bottom:
-        1px solid rgba(90, 24, 37, 0.11);
+        1px solid rgba(90, 24, 37, .13);
 
-      transition:
-        padding-left 0.3s ease,
-        border-color 0.3s ease;
+      transition: padding-left .3s ease;
     }
 
     .contact-item:hover {
-      padding-left: 8px;
-
-      border-color:
-        rgba(90, 24, 37, 0.34);
+      padding-left: 7px;
     }
 
     .contact-icon {
-      width: 42px;
-      height: 42px;
+      width: 37px;
+      height: 37px;
 
-      flex: 0 0 42px;
+      flex: 0 0 37px;
 
       display: flex;
       align-items: center;
@@ -247,24 +235,107 @@
       color: var(--burgundy);
 
       border:
-        1px solid rgba(182, 154, 104, 0.55);
+        1px solid rgba(182, 154, 104, .55);
 
       border-radius: 50%;
     }
 
     .contact-icon svg {
-      width: 19px;
-      height: 19px;
+      width: 17px;
+      height: 17px;
     }
 
-    .contact-text {
+    .contact-item-text {
       display: flex;
       flex-direction: column;
-
-      gap: 3px;
+      gap: 2px;
     }
 
-    .contact-text small {
+    .contact-item-text small {
+      color: var(--gold);
+
+      font-size: 8px;
+      font-weight: 600;
+
+      letter-spacing: 2px;
+    }
+
+    .contact-item-text strong {
+      color: var(--burgundy-dark);
+
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+
+    /* =====================================================
+       FORMULAR
+       ===================================================== */
+
+    .form-panel {
+      position: relative;
+
+      padding: 58px 55px 52px;
+
+      background:
+        rgba(255, 253, 249, .80);
+
+      border:
+        1px solid rgba(90, 24, 37, .10);
+
+      border-radius: 26px;
+
+      box-shadow:
+        0 22px 65px rgba(74, 44, 32, .06);
+    }
+
+    .form-panel::before {
+      content: "";
+
+      position: absolute;
+
+      top: -11px;
+      right: 45px;
+
+      width: 110px;
+      height: 1px;
+
+      background: var(--gold);
+    }
+
+    .form-heading {
+      margin-bottom: 42px;
+    }
+
+    .form-heading h2 {
+      color: var(--burgundy);
+
+      font-size: clamp(35px, 3vw, 47px);
+      font-weight: 400;
+    }
+
+    .form-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      column-gap: 32px;
+      row-gap: 29px;
+    }
+
+    .form-field {
+      position: relative;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      display: block;
+
+      margin-bottom: 10px;
+
       color: var(--gold);
 
       font-size: 9px;
@@ -273,128 +344,85 @@
       letter-spacing: 2px;
     }
 
-    .contact-text strong {
-      color: var(--burgundy-dark);
-
-      font-size: 17px;
-      font-weight: 500;
-    }
-
-
-    /* ==================== FORMULAR ==================== */
-
-    .form-panel {
-      position: relative;
-
-      padding: 55px 58px 52px;
-
-      background:
-        rgba(255, 251, 244, 0.68);
-
-      border:
-        1px solid rgba(182, 154, 104, 0.34);
-
-      box-shadow:
-        0 22px 65px rgba(74, 44, 32, 0.07);
-
-      backdrop-filter: blur(6px);
-    }
-
-    .form-panel::before {
-      content: "";
-
-      position: absolute;
-
-      top: -13px;
-      right: -13px;
-
-      width: 115px;
-      height: 115px;
-
-      border-top:
-        1px solid rgba(90, 24, 37, 0.20);
-
-      border-right:
-        1px solid rgba(90, 24, 37, 0.20);
-
-      pointer-events: none;
-    }
-
-    .form-panel h2 {
-      margin-bottom: 37px;
-
-      color: var(--burgundy);
-
-      font-size: clamp(35px, 3vw, 47px);
-
-      font-weight: 400;
-    }
-
-    .form-field {
-      margin-bottom: 27px;
-    }
-
-    .form-field label {
-      display: block;
-
-      margin-bottom: 8px;
-
-      color: var(--burgundy);
-
-      font-size: 9px;
-      font-weight: 600;
-
-      letter-spacing: 2px;
-    }
-
     .form-field input,
+    .form-field select,
     .form-field textarea {
       width: 100%;
 
-      padding: 8px 2px 11px;
+      padding: 8px 1px 12px;
 
       border: 0;
 
       border-bottom:
-        1px solid rgba(90, 24, 37, 0.28);
+        1px solid rgba(90, 24, 37, .22);
+
+      border-radius: 0;
 
       outline: none;
-
-      resize: none;
 
       background: transparent;
 
       color: var(--burgundy-dark);
 
-      font-family: "Cormorant Garamond", Georgia, serif;
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
 
       font-size: 18px;
 
-      transition: border-color 0.25s ease;
+      transition: border-color .25s ease;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: #9b8a82;
     }
 
     .form-field input:focus,
+    .form-field select:focus,
     .form-field textarea:focus {
       border-color: var(--burgundy);
     }
 
-    .send-button {
-      margin-top: 6px;
+    .form-field select {
+      cursor: pointer;
+    }
 
-      padding: 14px 22px;
+    .form-field textarea {
+      min-height: 130px;
+
+      resize: vertical;
+    }
+
+
+    /* =====================================================
+       BUTON
+       ===================================================== */
+
+    .form-actions {
+      margin-top: 38px;
+    }
+
+    .send-button {
+      padding: 15px 25px;
 
       display: inline-flex;
       align-items: center;
 
-      gap: 14px;
+      gap: 15px;
 
-      border: 1px solid var(--burgundy);
+      border:
+        1px solid var(--burgundy);
 
       background: var(--burgundy);
 
       color: var(--ivory);
 
-      font-family: "Cormorant Garamond", Georgia, serif;
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
 
       font-size: 11px;
       font-weight: 600;
@@ -404,13 +432,13 @@
       cursor: pointer;
 
       transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        gap 0.3s ease;
+        background .3s ease,
+        color .3s ease,
+        gap .3s ease;
     }
 
     .send-button:hover {
-      gap: 20px;
+      gap: 21px;
 
       background: transparent;
 
@@ -418,20 +446,21 @@
     }
 
     .form-note {
-      margin-top: 16px;
+      margin-top: 14px;
 
-      color: #8a766d;
+      color: #927f76;
 
       font-size: 13px;
-
       font-style: italic;
     }
 
 
-    /* ==================== FOOTER ==================== */
+    /* =====================================================
+       FOOTER
+       ===================================================== */
 
     .site-footer {
-      min-height: 68px;
+      min-height: 70px;
 
       padding: 20px 6%;
 
@@ -443,7 +472,8 @@
 
       background: var(--burgundy-dark);
 
-      color: rgba(247, 240, 229, 0.68);
+      color:
+        rgba(247, 240, 229, .65);
 
       font-size: 10px;
 
@@ -451,13 +481,11 @@
     }
 
 
-    /* ==================== RESPONSIVE ==================== */
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
 
-    @media (max-width: 900px) {
-
-      .contact-page {
-        padding: 70px 7% 80px;
-      }
+    @media (max-width: 1000px) {
 
       .contact-container {
         grid-template-columns: 1fr;
@@ -466,13 +494,13 @@
       }
 
       .contact-info {
-        max-width: 620px;
+        max-width: 700px;
       }
 
     }
 
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
 
       .contact-header {
         height: 72px;
@@ -496,7 +524,7 @@
         padding: 55px 6% 65px;
       }
 
-      .contact-title {
+      .contact-info h1 {
         font-size: 48px;
       }
 
@@ -504,12 +532,22 @@
         font-size: 17px;
       }
 
-      .contact-text strong {
-        font-size: 15px;
+      .form-panel {
+        padding: 42px 27px;
+
+        border-radius: 18px;
       }
 
-      .form-panel {
-        padding: 40px 27px;
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+
+      .contact-item-text strong {
+        font-size: 14px;
       }
 
     }
@@ -520,19 +558,15 @@
 
 <body>
 
-  <!-- ==================== MENIU ==================== -->
+  <!-- ==================== HEADER ==================== -->
 
   <header class="contact-header">
 
-    <a
-      href="../index.html"
-      class="brand">
+    <a href="../index.html" class="brand">
       ARTĂ ȘI PASIUNE
     </a>
 
-    <a
-      href="../index.html"
-      class="back-link">
+    <a href="../index.html" class="back-link">
       ← ÎNAPOI LA SITE
     </a>
 
@@ -550,22 +584,25 @@
 
       <section class="contact-info">
 
-        <h1 class="contact-title">
-          Contact
+        <span class="contact-label">
+          CONTACT
+        </span>
+
+        <h1>
+          Trimite-ne câteva rânduri.
         </h1>
 
         <p class="intro">
-          Pentru informații, colaborări sau detalii despre activitatea
-          Asociației, ne poți contacta prin una dintre opțiunile de mai jos.
+          Pentru informații, colaborări sau detalii despre
+          activitatea Asociației, ne poți contacta prin una
+          dintre opțiunile de mai jos sau folosind formularul.
         </p>
 
-        <div class="contact-line"></div>
+
+        <div class="contact-links">
 
 
-        <div class="contact-list">
-
-
-          <!-- E-MAIL -->
+          <!-- EMAIL -->
 
           <a
             href="mailto:asociatia.arta.pasiune@gmail.com"
@@ -599,7 +636,7 @@
 
             </span>
 
-            <span class="contact-text">
+            <span class="contact-item-text">
 
               <small>E-MAIL</small>
 
@@ -633,7 +670,7 @@
 
             </span>
 
-            <span class="contact-text">
+            <span class="contact-item-text">
 
               <small>FACEBOOK</small>
 
@@ -679,7 +716,7 @@
 
             </span>
 
-            <span class="contact-text">
+            <span class="contact-item-text">
 
               <small>WHATSAPP</small>
 
@@ -700,75 +737,137 @@
 
       <section class="form-panel">
 
-        <h2>
-          Trimite un mesaj
-        </h2>
+        <div class="form-heading">
+
+          <h2>
+            Formular de contact
+          </h2>
+
+        </div>
+
 
         <form id="contact-form">
 
 
-          <div class="form-field">
+          <div class="form-grid">
 
-            <label for="name">
-              NUME
-            </label>
 
-            <input
-              type="text"
-              id="name"
-              name="name"
-              autocomplete="name"
-              required>
+            <!-- NUME -->
+
+            <div class="form-field">
+
+              <label for="name">
+                NUME
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Numele tău"
+                autocomplete="name"
+                required>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-field">
+
+              <label for="email">
+                E-MAIL
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="nume@exemplu.ro"
+                autocomplete="email"
+                required>
+
+            </div>
+
+
+            <!-- MOTIV -->
+
+            <div class="form-field full">
+
+              <label for="subject">
+                MOTIVUL CONTACTULUI
+              </label>
+
+              <select
+                id="subject"
+                name="subject"
+                required>
+
+                <option value="" selected disabled>
+                  Alege un motiv
+                </option>
+
+                <option value="informatii">
+                  Informații
+                </option>
+
+                <option value="colaborare">
+                  Colaborare
+                </option>
+
+                <option value="simfonia-toamnei">
+                  Festivalul de Muzică „Simfonia Toamnei”
+                </option>
+
+                <option value="altele">
+                  Altele
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- MESAJ -->
+
+            <div class="form-field full">
+
+              <label for="message">
+                MESAJ
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Scrie mesajul tău aici..."
+                required></textarea>
+
+            </div>
 
           </div>
 
 
-          <div class="form-field">
+          <div class="form-actions">
 
-            <label for="email">
-              E-MAIL
-            </label>
+            <button
+              type="submit"
+              class="send-button">
 
-            <input
-              type="email"
-              id="email"
-              name="email"
-              autocomplete="email"
-              required>
+              TRIMITE MESAJUL
 
-          </div>
+              <span>
+                →
+              </span>
 
+            </button>
 
-          <div class="form-field">
-
-            <label for="message">
-              MESAJ
-            </label>
-
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              required></textarea>
+            <p
+              class="form-note"
+              id="form-note">
+              Formularul va fi activat în curând.
+            </p>
 
           </div>
-
-
-          <button
-            type="submit"
-            class="send-button">
-
-            TRIMITE
-            <span>→</span>
-
-          </button>
-
-
-          <p
-            class="form-note"
-            id="form-note">
-            Formularul va fi activat în curând.
-          </p>
 
         </form>
 
@@ -782,9 +881,13 @@
   <!-- ==================== FOOTER ==================== -->
 
   <footer class="site-footer">
+
     ASOCIAȚIA CULTURAL-EDUCATIVĂ „ARTĂ ȘI PASIUNE” · BACĂU
+
   </footer>
 
+
+  <!-- ==================== SCRIPT ==================== -->
 
   <script>
 
