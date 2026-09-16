@@ -1,33 +1,20 @@
-/* Festivalul de Muzică „Simfonia Toamnei” */
 /* ==========================================================
-   SIMFONIA TOAMNEI
-   Festivalul de Muzică
+   SIMFONIA TOAMNEI — EDIȚIA VI
    ========================================================== */
 
 :root {
-  --ivory: #f7f0e4;
-  --cream: #ead9bf;
-  --cream-dark: #ddc5a3;
-
-  --burgundy: #651f2c;
+  --ivory: #f7efe1;
+  --cream: #ead8bc;
+  --cream-light: #fbf6ed;
+  --burgundy: #671f2d;
   --burgundy-dark: #351017;
-
-  --rust: #a4512c;
-  --autumn: #c47735;
-
+  --rust: #a6532f;
+  --orange: #c47735;
   --gold: #b58b4d;
-  --gold-light: #d7ba83;
-
-  --brown: #4a352c;
-  --text: #51423c;
-
-  --white: #fffaf2;
+  --gold-light: #d8bb83;
+  --brown: #513b31;
+  --text: #574740;
 }
-
-
-/* ==========================================================
-   RESET
-   ========================================================== */
 
 * {
   margin: 0;
@@ -40,101 +27,69 @@ html {
 }
 
 body {
-  margin: 0;
   overflow-x: hidden;
-
-  font-family: "Cormorant Garamond", Georgia, serif;
-
   background: var(--ivory);
   color: var(--text);
-
-  line-height: 1.65;
-}
-
-a {
-  color: inherit;
-}
-
-.section-container {
-  width: min(88%, 1380px);
-  margin: 0 auto;
+  font-family: "Cormorant Garamond", Georgia, serif;
 }
 
 
 /* ==========================================================
-   HEADER
+   MENIU
    ========================================================== */
 
 .festival-header {
   position: absolute;
-
   top: 0;
   left: 0;
-
   width: 100%;
-
-  z-index: 50;
+  z-index: 100;
 }
 
 .festival-nav {
-  width: 100%;
-  height: 88px;
-
-  padding: 0 5%;
+  height: 82px;
+  padding: 0 5.5%;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  background:
-    rgba(247, 240, 228, 0.90);
+  background: rgba(250, 244, 234, 0.91);
+  border-bottom: 1px solid rgba(103, 31, 45, 0.12);
 
-  border-bottom:
-    1px solid rgba(101, 31, 44, 0.12);
-
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 
-
 .back-home {
-  text-decoration: none;
-
   color: var(--burgundy);
+  text-decoration: none;
 
   font-size: 14px;
   font-weight: 600;
-
   letter-spacing: 2.5px;
 }
-
 
 .festival-menu {
   display: flex;
   align-items: center;
-
-  gap: 34px;
+  gap: 38px;
 }
-
 
 .festival-menu a {
   position: relative;
 
+  color: var(--burgundy-dark);
   text-decoration: none;
 
-  color: var(--burgundy-dark);
-
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-
-  letter-spacing: 1.2px;
+  letter-spacing: 1.3px;
 }
-
 
 .festival-menu a::after {
   content: "";
 
   position: absolute;
-
   left: 50%;
   bottom: -8px;
 
@@ -144,10 +99,8 @@ a {
   background: var(--rust);
 
   transform: translateX(-50%);
-
   transition: width 0.3s ease;
 }
-
 
 .festival-menu a:hover::after {
   width: 100%;
@@ -164,280 +117,208 @@ a {
   min-height: 100vh;
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   overflow: hidden;
 
   background:
-
     radial-gradient(
-      circle at 50% 44%,
-      rgba(255, 250, 240, 0.98) 0%,
-      rgba(247, 232, 207, 0.88) 36%,
-      rgba(224, 194, 154, 0.74) 67%,
-      rgba(173, 120, 79, 0.50) 100%
-    ),
-
-    linear-gradient(
-      135deg,
-      #f6ead7 0%,
-      #e6cba5 52%,
-      #b97851 100%
+      circle at 50% 43%,
+      rgba(255, 251, 241, 0.98) 0%,
+      rgba(250, 237, 215, 0.93) 34%,
+      rgba(235, 210, 176, 0.88) 62%,
+      rgba(207, 164, 120, 0.76) 100%
     );
 }
 
 
-/* lumină centrală */
+/* atmosferă de toamnă pe margini */
 
 .festival-hero::before {
   content: "";
 
   position: absolute;
-
-  width: 900px;
-  height: 900px;
-
-  left: 50%;
-  top: 47%;
-
-  transform:
-    translate(-50%, -50%);
-
-  border-radius: 50%;
+  inset: 0;
 
   background:
     radial-gradient(
-      circle,
-      rgba(255, 250, 238, 0.86) 0%,
-      rgba(255, 246, 225, 0.36) 38%,
-      transparent 70%
+      circle at 5% 30%,
+      rgba(151, 69, 37, 0.18),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 95% 70%,
+      rgba(103, 31, 45, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 75% 15%,
+      rgba(181, 139, 77, 0.13),
+      transparent 24%
     );
 
   pointer-events: none;
 }
 
 
-/* tranziție spre următoarea zonă */
+/* trecere naturală spre acces rapid */
 
 .festival-hero::after {
   content: "";
 
   position: absolute;
-
   left: 0;
   right: 0;
   bottom: 0;
 
-  height: 130px;
+  height: 115px;
 
   background:
     linear-gradient(
       to bottom,
-      transparent,
+      rgba(247, 239, 225, 0),
       var(--ivory)
     );
 
-  pointer-events: none;
-
   z-index: 3;
+  pointer-events: none;
 }
 
 
 /* ==========================================================
-   HERO - NOTE
-   ========================================================== */
-
-.hero-music {
-  position: absolute;
-
-  right: 7%;
-  top: 28%;
-
-  color:
-    rgba(101, 31, 44, 0.13);
-
-  font-size:
-    clamp(50px, 7vw, 110px);
-
-  letter-spacing: 25px;
-
-  transform: rotate(-8deg);
-
-  user-select: none;
-}
-
-
-/* ==========================================================
-   HERO CONTENT
+   LOGO + HERO CONTENT
    ========================================================== */
 
 .festival-hero-content {
   position: relative;
+  z-index: 10;
 
-  z-index: 5;
+  width: min(92%, 850px);
 
-  width: min(90%, 900px);
-
-  padding-top: 80px;
+  padding-top: 85px;
 
   text-align: center;
 }
 
+.festival-logo {
+  width: min(78vw, 530px);
+  height: auto;
 
-.festival-logo-placeholder {
-  position: relative;
+  margin: 0 auto 12px;
 
-  margin: 0 auto 30px;
-}
-
-
-.festival-overline {
   display: block;
 
-  margin-bottom: 13px;
+  filter:
+    drop-shadow(
+      0 14px 24px rgba(76, 43, 27, 0.10)
+    );
+}
 
-  color: var(--gold);
+.edition-label {
+  margin-top: 3px;
+
+  color: var(--burgundy);
 
   font-size: 14px;
   font-weight: 600;
 
-  letter-spacing: 5px;
-}
-
-
-.festival-logo-placeholder h1 {
-  color: var(--burgundy);
-
-  font-size:
-    clamp(62px, 7vw, 112px);
-
-  font-weight: 500;
-
-  line-height: 0.92;
-
-  letter-spacing: 1px;
-
-  text-shadow:
-    0 2px 18px
-    rgba(75, 38, 25, 0.08);
-}
-
-
-.festival-logo-placeholder::after {
-  content: "";
-
-  display: block;
-
-  width: 80px;
-  height: 1px;
-
-  margin: 30px auto 0;
-
-  background: var(--gold);
-}
-
-
-.festival-intro {
-  width: min(100%, 630px);
-
-  margin: 0 auto;
-
-  color: var(--brown);
-
-  font-size:
-    clamp(21px, 2vw, 29px);
-
-  font-weight: 400;
-  font-style: italic;
-
-  line-height: 1.35;
-}
-
-
-.hero-button {
-  margin-top: 38px;
-
-  padding: 14px 22px 12px;
-
-  display: inline-flex;
-  align-items: center;
-
-  gap: 13px;
-
-  text-decoration: none;
-
-  color: var(--burgundy);
-
-  border-bottom:
-    1px solid var(--gold);
-
-  font-size: 14px;
-  font-weight: 600;
-
-  letter-spacing: 2px;
-
-  transition:
-    gap 0.25s ease,
-    color 0.25s ease;
-}
-
-
-.hero-button:hover {
-  gap: 20px;
-
-  color: var(--rust);
+  letter-spacing: 4px;
 }
 
 
 /* ==========================================================
-   SCROLL
+   DESCOPERĂ FESTIVALUL
    ========================================================== */
 
-.scroll-indicator {
-  position: absolute;
+.discover-button {
+  margin-top: 27px;
 
-  left: 50%;
-  bottom: 34px;
+  padding: 10px 3px 8px;
 
-  z-index: 6;
-
-  transform: translateX(-50%);
-
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
   align-items: center;
+  gap: 13px;
 
-  gap: 5px;
+  color: var(--burgundy);
+  text-decoration: none;
 
-  color:
-    rgba(74, 53, 44, 0.62);
+  border-bottom: 1px solid var(--gold);
 
-  font-size: 10px;
+  font-size: 13px;
+  font-weight: 600;
 
-  letter-spacing: 3px;
+  letter-spacing: 2.3px;
+
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
 }
 
+.discover-button:hover {
+  gap: 20px;
+  color: var(--rust);
+}
 
-.scroll-arrow {
+.discover-button span {
   font-size: 18px;
 
   animation:
-    scrollMove 1.8s ease-in-out infinite;
+    arrowFloat 1.8s ease-in-out infinite;
 }
 
-
-@keyframes scrollMove {
-
+@keyframes arrowFloat {
   0%,
   100% {
     transform: translateY(0);
   }
 
   50% {
-    transform: translateY(7px);
+    transform: translateY(5px);
   }
+}
 
+
+/* ==========================================================
+   NOTE MUZICALE
+   ========================================================== */
+
+.music-note {
+  position: absolute;
+
+  z-index: 2;
+
+  color: rgba(103, 31, 45, 0.10);
+
+  user-select: none;
+  pointer-events: none;
+}
+
+.note-1 {
+  left: 9%;
+  top: 28%;
+
+  font-size: 85px;
+
+  transform: rotate(-14deg);
+}
+
+.note-2 {
+  right: 11%;
+  top: 23%;
+
+  font-size: 115px;
+
+  transform: rotate(12deg);
+}
+
+.note-3 {
+  right: 18%;
+  bottom: 17%;
+
+  font-size: 70px;
+
+  transform: rotate(-8deg);
 }
 
 
@@ -447,116 +328,74 @@ a {
 
 .leaves {
   position: absolute;
-
   inset: 0;
 
-  z-index: 2;
+  z-index: 4;
 
   overflow: hidden;
 
   pointer-events: none;
 }
 
-
 .leaf {
   position: absolute;
-
-  top: -12%;
+  top: -15%;
 
   display: block;
 
-  color: var(--rust);
+  opacity: 0;
 
-  opacity: 0.48;
+  filter:
+    sepia(0.2)
+    saturate(0.8);
 
-  font-size: 20px;
-
-  animation-name:
-    fallingLeaf;
-
-  animation-timing-function:
-    linear;
-
-  animation-iteration-count:
-    infinite;
+  animation:
+    leafFall linear infinite;
 }
-
-
-.leaf:nth-child(2n) {
-  color: var(--gold);
-}
-
-
-.leaf:nth-child(3n) {
-  color: var(--burgundy);
-}
-
 
 .leaf-1 {
-  left: 7%;
-  font-size: 18px;
-  animation-duration: 16s;
-  animation-delay: -4s;
+  left: 5%;
+  font-size: 26px;
+  animation-duration: 17s;
+  animation-delay: -7s;
 }
-
 
 .leaf-2 {
-  left: 19%;
-  font-size: 12px;
-  animation-duration: 21s;
-  animation-delay: -12s;
-}
-
-
-.leaf-3 {
-  left: 33%;
-  font-size: 21px;
-  animation-duration: 18s;
-  animation-delay: -8s;
-}
-
-
-.leaf-4 {
-  left: 48%;
-  font-size: 14px;
-  animation-duration: 24s;
-  animation-delay: -18s;
-}
-
-
-.leaf-5 {
-  left: 61%;
-  font-size: 19px;
-  animation-duration: 19s;
-  animation-delay: -3s;
-}
-
-
-.leaf-6 {
-  left: 73%;
-  font-size: 13px;
-  animation-duration: 23s;
+  left: 21%;
+  font-size: 18px;
+  animation-duration: 22s;
   animation-delay: -15s;
 }
 
-
-.leaf-7 {
-  left: 85%;
-  font-size: 22px;
-  animation-duration: 17s;
-  animation-delay: -9s;
+.leaf-3 {
+  left: 39%;
+  font-size: 23px;
+  animation-duration: 19s;
+  animation-delay: -4s;
 }
 
+.leaf-4 {
+  left: 62%;
+  font-size: 19px;
+  animation-duration: 24s;
+  animation-delay: -17s;
+}
 
-.leaf-8 {
+.leaf-5 {
+  left: 80%;
+  font-size: 27px;
+  animation-duration: 18s;
+  animation-delay: -10s;
+}
+
+.leaf-6 {
   left: 94%;
-  font-size: 15px;
-  animation-duration: 25s;
-  animation-delay: -20s;
+  font-size: 17px;
+  animation-duration: 23s;
+  animation-delay: -2s;
 }
 
-
-@keyframes fallingLeaf {
+@keyframes leafFall {
 
   0% {
     transform:
@@ -567,33 +406,36 @@ a {
   }
 
   10% {
-    opacity: 0.45;
+    opacity: 0.65;
   }
 
-  35% {
+  30% {
     transform:
       translate3d(45px, 28vh, 0)
-      rotate(120deg);
+      rotate(110deg);
   }
 
-  65% {
+  55% {
     transform:
-      translate3d(-30px, 63vh, 0)
-      rotate(245deg);
+      translate3d(-25px, 55vh, 0)
+      rotate(210deg);
   }
 
-  90% {
-    opacity: 0.40;
+  80% {
+    transform:
+      translate3d(55px, 83vh, 0)
+      rotate(315deg);
+
+    opacity: 0.55;
   }
 
   100% {
     transform:
-      translate3d(55px, 115vh, 0)
-      rotate(390deg);
+      translate3d(-10px, 115vh, 0)
+      rotate(430deg);
 
     opacity: 0;
   }
-
 }
 
 
@@ -604,503 +446,175 @@ a {
 .quick-access {
   position: relative;
 
-  padding:
-    105px 0
-    125px;
+  padding: 80px 5% 95px;
 
   background:
-    var(--ivory);
+    linear-gradient(
+      180deg,
+      var(--ivory) 0%,
+      #f4eadb 100%
+    );
 }
 
+.quick-heading {
+  max-width: 760px;
 
-.section-heading {
-  width: min(100%, 780px);
-
-  margin:
-    0 auto
-    65px;
+  margin: 0 auto 50px;
 
   text-align: center;
 }
 
-
-.eyebrow {
+.quick-heading > span {
   display: block;
 
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 
   color: var(--gold);
 
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
 
   letter-spacing: 4px;
 }
 
-
-.section-heading h2,
-.gallery-preview h2,
-.festival-contact h2 {
+.quick-heading h1 {
   color: var(--burgundy);
 
   font-size:
-    clamp(45px, 4vw, 67px);
+    clamp(42px, 4vw, 62px);
 
   font-weight: 500;
 
-  line-height: 1.05;
+  line-height: 1;
 }
 
-
-.section-heading p {
-  width: min(100%, 650px);
-
-  margin:
-    22px auto 0;
+.quick-heading p {
+  margin-top: 15px;
 
   color: var(--text);
 
   font-size: 19px;
-
-  line-height: 1.65;
+  font-style: italic;
 }
 
 
 /* ==========================================================
-   CARDURI
+   CELE 5 BUTOANE / CARDURI
    ========================================================== */
 
 .quick-grid {
+  width: min(100%, 1380px);
+
+  margin: 0 auto;
+
   display: grid;
 
   grid-template-columns:
     repeat(5, 1fr);
 
-  gap: 18px;
+  gap: 15px;
 }
-
 
 .quick-card {
   position: relative;
 
-  min-height: 390px;
+  min-height: 315px;
 
-  padding:
-    34px 25px
-    30px;
+  padding: 29px 23px 25px;
 
   display: flex;
   flex-direction: column;
 
+  color: var(--text);
+  text-decoration: none;
+
   background:
-    rgba(255, 250, 242, 0.68);
+    rgba(255, 250, 242, 0.75);
 
   border:
-    1px solid
-    rgba(181, 139, 77, 0.28);
+    1px solid rgba(181, 139, 77, 0.27);
 
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease,
-    background 0.35s ease;
+    background 0.35s ease,
+    border-color 0.35s ease;
 }
-
 
 .quick-card:hover {
-  transform:
-    translateY(-7px);
+  transform: translateY(-7px);
 
-  background:
-    rgba(255, 250, 242, 0.98);
+  background: #fffaf2;
+
+  border-color:
+    rgba(103, 31, 45, 0.30);
 
   box-shadow:
-    0 18px 50px
-    rgba(69, 40, 28, 0.08);
+    0 18px 42px
+    rgba(73, 43, 29, 0.09);
 }
 
-
-.quick-card.featured {
+.quick-card.important {
   border-top:
     3px solid var(--burgundy);
 }
 
-
 .card-number {
   position: absolute;
 
-  top: 18px;
-  right: 20px;
+  top: 17px;
+  right: 18px;
 
   color:
-    rgba(101, 31, 44, 0.16);
+    rgba(103, 31, 45, 0.14);
 
-  font-size: 28px;
+  font-size: 27px;
 }
 
+.card-symbol {
+  display: block;
 
-.card-icon {
-  margin-bottom: 28px;
+  margin-bottom: 23px;
 
   color: var(--gold);
 
   font-size: 29px;
 }
 
-
-.quick-card h3 {
-  margin-bottom: 15px;
+.quick-card h2 {
+  margin-bottom: 12px;
 
   color: var(--burgundy);
 
-  font-size: 30px;
+  font-size: 29px;
   font-weight: 500;
 }
 
-
 .quick-card p {
-  margin-bottom: 25px;
-
-  color: #62504a;
+  color: #65534b;
 
   font-size: 16px;
 
-  line-height: 1.55;
+  line-height: 1.48;
 }
 
-
-.status {
-  align-self: flex-start;
-
+.card-action {
   margin-top: auto;
-  margin-bottom: 18px;
+  padding-top: 25px;
 
-  padding:
-    5px 9px;
+  color: var(--burgundy);
 
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
 
-  letter-spacing: 1.5px;
+  letter-spacing: 1.7px;
+
+  transition:
+    letter-spacing 0.25s ease;
 }
 
-
-.status.available {
-  color: var(--burgundy);
-
-  background:
-    rgba(101, 31, 44, 0.08);
-}
-
-
-.status.pending {
-  color: var(--rust);
-
-  background:
-    rgba(164, 81, 44, 0.08);
-}
-
-
-.status.after-event {
-  color: #746354;
-
-  background:
-    rgba(116, 99, 84, 0.08);
-}
-
-
-.card-link {
-  text-decoration: none;
-
-  color: var(--burgundy);
-
-  font-size: 11px;
-  font-weight: 600;
-
-  letter-spacing: 1.2px;
-}
-
-
-/* ==========================================================
-   EDIȚIA VI
-   ========================================================== */
-
-.edition {
-  position: relative;
-
-  padding:
-    130px 0;
-
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--burgundy-dark),
-      #5a2025 55%,
-      #74362d
-    );
-
-  color: var(--ivory);
-}
-
-
-.edition::after {
-  content: "♪";
-
-  position: absolute;
-
-  right: 5%;
-  top: 0;
-
-  color:
-    rgba(255, 255, 255, 0.035);
-
-  font-size: 420px;
-
-  line-height: 1;
-}
-
-
-.edition-layout {
-  position: relative;
-
-  z-index: 2;
-
-  display: grid;
-
-  grid-template-columns:
-    0.65fr 1.35fr;
-
-  gap: 100px;
-
-  align-items: center;
-}
-
-
-.edition-number {
-  text-align: center;
-}
-
-
-.edition-number span {
-  display: block;
-
-  color: var(--gold-light);
-
-  font-size: 12px;
-
-  letter-spacing: 5px;
-}
-
-
-.edition-number strong {
-  display: block;
-
-  color: var(--cream);
-
-  font-size:
-    clamp(120px, 15vw, 230px);
-
-  font-weight: 400;
-
-  line-height: 0.9;
-}
-
-
-.edition-content {
-  max-width: 690px;
-}
-
-
-.edition-content h2 {
-  margin-bottom: 28px;
-
-  color: var(--white);
-
-  font-size:
-    clamp(45px, 4.7vw, 72px);
-
-  font-weight: 400;
-
-  line-height: 1.05;
-}
-
-
-.edition-content p {
-  margin-bottom: 18px;
-
-  color:
-    rgba(255, 250, 242, 0.82);
-
-  font-size: 19px;
-
-  line-height: 1.65;
-}
-
-
-/* ==========================================================
-   SECȚIUNI INFORMAȚII
-   ========================================================== */
-
-.info-section {
-  padding:
-    80px 0;
-
-  background:
-    #f7f0e4;
-
-  border-bottom:
-    1px solid
-    rgba(181, 139, 77, 0.15);
-}
-
-
-.info-section.alternate {
-  background:
-    #efe1cd;
-}
-
-
-.info-row {
-  display: grid;
-
-  grid-template-columns:
-    150px 1fr;
-
-  gap: 50px;
-
-  align-items: center;
-}
-
-
-.info-number {
-  color:
-    rgba(101, 31, 44, 0.15);
-
-  font-size: 70px;
-
-  line-height: 1;
-}
-
-
-.info-row h2 {
-  margin-bottom: 10px;
-
-  color: var(--burgundy);
-
-  font-size: 44px;
-  font-weight: 500;
-}
-
-
-.info-row p {
-  max-width: 700px;
-
-  color: var(--text);
-
-  font-size: 18px;
-}
-
-
-/* ==========================================================
-   GALERIE
-   ========================================================== */
-
-.gallery-preview {
-  padding:
-    125px 0;
-
-  text-align: center;
-
-  background:
-    linear-gradient(
-      180deg,
-      var(--ivory),
-      #ead7ba
-    );
-}
-
-
-.gallery-preview p {
-  width: min(90%, 650px);
-
-  margin:
-    22px auto
-    32px;
-
-  font-size: 19px;
-}
-
-
-.coming-soon {
-  display: inline-block;
-
-  padding-bottom: 7px;
-
-  color: var(--burgundy);
-
-  border-bottom:
-    1px solid var(--gold);
-
-  font-size: 12px;
-  font-weight: 600;
-
-  letter-spacing: 2px;
-}
-
-
-/* ==========================================================
-   CONTACT
-   ========================================================== */
-
-.festival-contact {
-  padding:
-    120px 0;
-
-  text-align: center;
-
-  background:
-    var(--burgundy-dark);
-
-  color: var(--ivory);
-}
-
-
-.festival-contact h2 {
-  color: var(--ivory);
-}
-
-
-.festival-contact p {
-  width: min(90%, 600px);
-
-  margin:
-    22px auto 35px;
-
-  color:
-    rgba(247, 240, 228, 0.80);
-
-  font-size: 19px;
-}
-
-
-.contact-button {
-  display: inline-block;
-
-  padding:
-    13px 0 8px;
-
-  text-decoration: none;
-
-  color: var(--gold-light);
-
-  border-bottom:
-    1px solid var(--gold);
-
-  font-size: 12px;
-  font-weight: 600;
-
-  letter-spacing: 2px;
+.quick-card:hover .card-action {
+  letter-spacing: 2.2px;
 }
 
 
@@ -1109,38 +623,36 @@ a {
    ========================================================== */
 
 .festival-footer {
-  padding:
-    45px 6%;
+  min-height: 72px;
+
+  padding: 20px 5%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 14px;
 
   text-align: center;
 
-  background:
-    #250b10;
+  background: var(--burgundy-dark);
 
   color:
-    rgba(247, 240, 228, 0.64);
-}
-
-
-.festival-footer p {
-  margin-bottom: 5px;
-
-  font-size: 14px;
-}
-
-
-.festival-footer a {
-  display: inline-block;
-
-  margin-top: 20px;
-
-  text-decoration: none;
-
-  color: var(--gold-light);
+    rgba(247, 239, 225, 0.68);
 
   font-size: 11px;
 
-  letter-spacing: 2px;
+  letter-spacing: 1.3px;
+}
+
+.festival-footer a {
+  color: var(--gold-light);
+
+  text-decoration: none;
+}
+
+.footer-dot {
+  color: var(--gold);
 }
 
 
@@ -1150,26 +662,23 @@ a {
 
 @media (max-width: 1100px) {
 
+  .festival-menu {
+    gap: 20px;
+  }
+
   .quick-grid {
     grid-template-columns:
       repeat(2, 1fr);
   }
 
-
-  .festival-menu {
-    gap: 16px;
+  .quick-card:last-child {
+    grid-column:
+      1 / -1;
   }
 
-
-  .festival-menu a {
-    font-size: 11px;
+  .festival-logo {
+    width: min(72vw, 490px);
   }
-
-
-  .edition-layout {
-    gap: 45px;
-  }
-
 }
 
 
@@ -1177,122 +686,107 @@ a {
    TELEFON
    ========================================================== */
 
-@media (max-width: 720px) {
+@media (max-width: 700px) {
 
   .festival-nav {
+    min-height: 72px;
     height: auto;
 
-    min-height: 76px;
-
-    padding:
-      12px 5%;
+    padding: 11px 4%;
   }
-
 
   .back-home {
-    font-size: 10px;
-
-    letter-spacing: 1.2px;
+    font-size: 9px;
+    letter-spacing: 1px;
   }
-
 
   .festival-menu {
     gap: 9px;
   }
 
-
   .festival-menu a {
     font-size: 8px;
-
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
   }
 
+  .festival-hero {
+    min-height: 90vh;
+  }
 
   .festival-hero-content {
-    padding-top: 100px;
+    padding-top: 85px;
   }
 
-
-  .festival-logo-placeholder h1 {
-    font-size:
-      clamp(48px, 14vw, 72px);
+  .festival-logo {
+    width: min(92vw, 430px);
   }
 
-
-  .festival-overline {
-    font-size: 10px;
-
-    letter-spacing: 3px;
+  .edition-label {
+    font-size: 11px;
+    letter-spacing: 2.5px;
   }
 
+  .discover-button {
+    margin-top: 23px;
 
-  .hero-music {
-    opacity: 0.45;
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
   }
 
+  .note-1 {
+    left: 3%;
+    font-size: 50px;
+  }
+
+  .note-2 {
+    right: 3%;
+    font-size: 65px;
+  }
+
+  .note-3 {
+    font-size: 45px;
+  }
 
   .quick-access {
-    padding:
-      80px 0
-      90px;
+    padding: 65px 6% 75px;
   }
 
+  .quick-heading {
+    margin-bottom: 38px;
+  }
+
+  .quick-heading h1 {
+    font-size: 42px;
+  }
 
   .quick-grid {
     grid-template-columns: 1fr;
   }
 
+  .quick-card,
+  .quick-card:last-child {
+    grid-column: auto;
 
-  .quick-card {
-    min-height: 330px;
+    min-height: 245px;
   }
 
+  .festival-footer {
+    flex-direction: column;
 
-  .edition {
-    padding:
-      90px 0;
+    gap: 6px;
+
+    padding: 24px 7%;
   }
 
-
-  .edition-layout {
-    grid-template-columns: 1fr;
-
-    gap: 40px;
+  .footer-dot {
+    display: none;
   }
-
-
-  .edition-number {
-    text-align: left;
-  }
-
-
-  .edition-number strong {
-    font-size: 120px;
-  }
-
-
-  .info-row {
-    grid-template-columns: 1fr;
-
-    gap: 12px;
-  }
-
-
-  .info-number {
-    font-size: 40px;
-  }
-
-
-  .info-section {
-    padding:
-      65px 0;
-  }
-
 }
 
 
 /* ==========================================================
-   ACCESIBILITATE - REDUCERE ANIMAȚII
+   ACCESIBILITATE
    ========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1302,8 +796,7 @@ a {
   }
 
   .leaf,
-  .scroll-arrow {
+  .discover-button span {
     animation: none;
   }
-
 }
