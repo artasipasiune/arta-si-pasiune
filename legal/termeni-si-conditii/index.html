@@ -43,12 +43,7 @@
 
     body {
       min-height: 100vh;
-
-      font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
+      font-family: "Cormorant Garamond", Georgia, serif;
       color: var(--text);
 
       background:
@@ -69,15 +64,13 @@
 
     .legal-header {
       height: 88px;
-
       padding: 0 6%;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      background:
-        rgba(247, 240, 229, 0.93);
+      background: rgba(247, 240, 229, 0.93);
 
       border-bottom:
         1px solid rgba(90, 24, 37, 0.12);
@@ -85,71 +78,57 @@
 
     .brand {
       color: var(--burgundy);
-
       text-decoration: none;
 
       font-size: 14px;
       font-weight: 600;
-
       letter-spacing: 2.5px;
     }
 
     .back-link {
       color: var(--burgundy-dark);
-
       text-decoration: none;
 
       font-size: 11px;
       font-weight: 600;
-
       letter-spacing: 1.6px;
     }
 
 
-    /* ==================== HERO DOCUMENT ==================== */
+    /* ==================== HERO ==================== */
 
     .legal-hero {
-      padding:
-        90px 7% 65px;
-
+      padding: 85px 7% 55px;
       text-align: center;
     }
 
     .legal-label {
       display: block;
-
       margin-bottom: 18px;
 
       color: var(--gold);
 
       font-size: 10px;
       font-weight: 600;
-
       letter-spacing: 4px;
     }
 
     .legal-hero h1 {
       color: var(--burgundy);
 
-      font-size:
-        clamp(48px, 6vw, 78px);
-
+      font-size: clamp(48px, 6vw, 76px);
       font-weight: 400;
-
       line-height: 1;
     }
 
     .legal-intro {
-      max-width: 690px;
-
-      margin:
-        25px auto 0;
+      max-width: 720px;
+      margin: 25px auto 0;
 
       color: var(--muted);
 
       font-size: 18px;
       line-height: 1.6;
-
       font-style: italic;
     }
 
@@ -157,10 +136,79 @@
       width: 70px;
       height: 1px;
 
-      margin:
-        34px auto 0;
+      margin: 34px auto 0;
 
       background: var(--gold);
+    }
+
+
+    /* ==================== CUPRINS ==================== */
+
+    .toc {
+      width: min(86%, 900px);
+      margin: 0 auto 35px;
+      padding: 38px 45px 40px;
+
+      background: rgba(255, 252, 246, 0.58);
+
+      border:
+        1px solid rgba(182, 154, 104, 0.28);
+    }
+
+    .toc-label {
+      display: block;
+      margin-bottom: 24px;
+
+      color: var(--gold);
+
+      text-align: center;
+
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 45px;
+      row-gap: 0;
+    }
+
+    .toc a {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+
+      padding: 11px 0;
+
+      color: var(--text);
+      text-decoration: none;
+
+      border-bottom:
+        1px solid rgba(90, 24, 37, 0.08);
+
+      font-size: 15px;
+      line-height: 1.3;
+
+      transition:
+        color 0.2s ease,
+        padding-left 0.2s ease;
+    }
+
+    .toc a:hover {
+      color: var(--burgundy);
+      padding-left: 4px;
+    }
+
+    .toc-number {
+      flex: 0 0 auto;
+
+      color: var(--gold);
+
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
 
 
@@ -169,11 +217,8 @@
     .legal-content {
       width: min(86%, 900px);
 
-      margin:
-        0 auto 100px;
-
-      padding:
-        55px 65px 65px;
+      margin: 0 auto 100px;
+      padding: 55px 65px 65px;
 
       background:
         rgba(255, 252, 246, 0.72);
@@ -186,33 +231,30 @@
     }
 
     .legal-section {
-      padding:
-        31px 0;
+      padding: 34px 0;
 
       border-bottom:
         1px solid rgba(90, 24, 37, 0.10);
+
+      scroll-margin-top: 30px;
     }
 
     .legal-section:first-child {
       padding-top: 0;
     }
 
-    .legal-section:last-child {
-      padding-bottom: 0;
-
+    .legal-section:last-of-type {
       border-bottom: 0;
     }
 
     .section-number {
       display: block;
-
       margin-bottom: 8px;
 
       color: var(--gold);
 
       font-size: 9px;
       font-weight: 600;
-
       letter-spacing: 2px;
     }
 
@@ -234,27 +276,53 @@
       line-height: 1.7;
     }
 
-    .legal-section p:last-child {
+    .legal-section p:last-of-type {
       margin-bottom: 0;
+    }
+
+    .legal-section ul {
+      margin: 14px 0 14px 22px;
+    }
+
+    .legal-section li {
+      margin-bottom: 8px;
+
+      font-size: 17px;
+      line-height: 1.6;
     }
 
     .legal-section a {
       color: var(--burgundy);
 
-      text-decoration:
-        underline;
-
+      text-decoration: underline;
       text-decoration-color:
         rgba(182, 154, 104, 0.65);
 
       text-underline-offset: 4px;
     }
 
+    .back-toc {
+      display: inline-block;
 
-    /* ==================== NOTĂ FINALĂ ==================== */
+      margin-top: 18px;
+
+      color: var(--gold) !important;
+
+      text-decoration: none !important;
+
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.7px;
+
+      text-transform: uppercase;
+    }
+
+    .back-toc:hover {
+      color: var(--burgundy) !important;
+    }
 
     .updated {
-      margin-top: 38px;
+      margin-top: 40px;
 
       color: #8a7770;
 
@@ -268,11 +336,9 @@
     /* ==================== FOOTER ==================== */
 
     .legal-footer {
-      padding:
-        35px 7%;
+      padding: 35px 7%;
 
-      background:
-        var(--burgundy-dark);
+      background: var(--burgundy-dark);
 
       color:
         rgba(247, 240, 229, 0.60);
@@ -280,7 +346,6 @@
       text-align: center;
 
       font-size: 10px;
-
       letter-spacing: 1.4px;
     }
 
@@ -291,37 +356,39 @@
 
       .legal-header {
         height: 72px;
-
         padding: 0 5%;
       }
 
       .brand {
         font-size: 10px;
-
         letter-spacing: 1.2px;
       }
 
       .back-link {
         font-size: 9px;
-
         letter-spacing: 1px;
       }
 
       .legal-hero {
-        padding:
-          65px 6% 50px;
+        padding: 65px 6% 45px;
       }
 
       .legal-hero h1 {
-        font-size: 48px;
+        font-size: 44px;
+      }
+
+      .toc {
+        width: 90%;
+        padding: 30px 27px;
+      }
+
+      .toc-grid {
+        grid-template-columns: 1fr;
       }
 
       .legal-content {
         width: 90%;
-
-        padding:
-          40px 27px 45px;
-
+        padding: 40px 27px 45px;
         margin-bottom: 70px;
       }
 
@@ -329,7 +396,8 @@
         font-size: 24px;
       }
 
-      .legal-section p {
+      .legal-section p,
+      .legal-section li {
         font-size: 16px;
       }
 
@@ -340,22 +408,18 @@
 </head>
 
 
-<body>
+<body id="top">
 
 
   <!-- ==================== HEADER ==================== -->
 
   <header class="legal-header">
 
-    <a
-      href="../../index.html"
-      class="brand">
+    <a href="../../index.html" class="brand">
       ARTĂ ȘI PASIUNE
     </a>
 
-    <a
-      href="../../index.html"
-      class="back-link">
+    <a href="../../index.html" class="back-link">
       ← ÎNAPOI LA SITE
     </a>
 
@@ -375,8 +439,8 @@
     </h1>
 
     <p class="legal-intro">
-      Prezenta pagină stabilește condițiile generale de utilizare
-      a site-ului Asociației Cultural-Educative „Artă și Pasiune”.
+      Condițiile generale de utilizare a site-ului
+      Asociației Cultural-Educative „Artă și Pasiune”.
     </p>
 
     <div class="gold-line"></div>
@@ -384,259 +448,474 @@
   </section>
 
 
+  <!-- ==================== CUPRINS ==================== -->
+
+  <nav class="toc" id="cuprins" aria-label="Cuprins">
+
+    <span class="toc-label">
+      CUPRINS
+    </span>
+
+    <div class="toc-grid">
+
+      <a href="#despre-site">
+        <span class="toc-number">01</span>
+        Despre site
+      </a>
+
+      <a href="#scop">
+        <span class="toc-number">02</span>
+        Scopul și utilizarea site-ului
+      </a>
+
+      <a href="#proiecte">
+        <span class="toc-number">03</span>
+        Proiecte, evenimente și înscrieri
+      </a>
+
+      <a href="#minori">
+        <span class="toc-number">04</span>
+        Participarea minorilor
+      </a>
+
+      <a href="#regulamente">
+        <span class="toc-number">05</span>
+        Regulamentele proiectelor
+      </a>
+
+      <a href="#imagini">
+        <span class="toc-number">06</span>
+        Fotografii și materiale audiovizuale
+      </a>
+
+      <a href="#proprietate">
+        <span class="toc-number">07</span>
+        Proprietate intelectuală
+      </a>
+
+      <a href="#servicii">
+        <span class="toc-number">08</span>
+        Servicii externe și disponibilitate
+      </a>
+
+      <a href="#date">
+        <span class="toc-number">09</span>
+        Protecția datelor
+      </a>
+
+      <a href="#lege">
+        <span class="toc-number">10</span>
+        Legea aplicabilă și contact
+      </a>
+
+    </div>
+
+  </nav>
+
+
   <!-- ==================== DOCUMENT ==================== -->
 
   <main class="legal-content">
 
 
-    <section class="legal-section">
+    <!-- 01 -->
 
-      <span class="section-number">
-        01
-      </span>
+    <section class="legal-section" id="despre-site">
+
+      <span class="section-number">01</span>
 
       <h2>
-        Informații generale
+        Despre site
       </h2>
 
       <p>
-        Prezentul site aparține Asociației Cultural-Educative
-        „Artă și Pasiune”, organizație nonprofit cu sediul în
-        județul Bacău, România.
+        Prezentul site este administrat de Asociația
+        Cultural-Educativă „Artă și Pasiune”, persoană juridică
+        fără scop patrimonial, cu sediul în municipiul Bacău,
+        str. Orizontului nr. 53B, județul Bacău, având
+        CUI 41244541.
       </p>
 
       <p>
-        Site-ul are rolul de a prezenta activitatea Asociației,
-        proiectele, evenimentele și inițiativele organizate sau
-        susținute de aceasta și de a facilita accesul publicului
-        la informațiile relevante privind aceste activități.
+        Site-ul constituie platforma online de prezentare a
+        Asociației, a activității sale și a proiectelor,
+        evenimentelor și inițiativelor pe care aceasta le
+        organizează sau le susține.
       </p>
+
+      <p>
+        Prin accesarea și utilizarea site-ului, utilizatorul
+        confirmă că a luat cunoștință de prezentele condiții
+        de utilizare.
+      </p>
+
+      <a href="#cuprins" class="back-toc">
+        ↑ Cuprins
+      </a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 02 -->
 
-      <span class="section-number">
-        02
-      </span>
+    <section class="legal-section" id="scop">
+
+      <span class="section-number">02</span>
 
       <h2>
-        Acceptarea condițiilor
+        Scopul și utilizarea site-ului
       </h2>
 
       <p>
-        Accesarea și utilizarea acestui site presupun respectarea
-        prezentelor condiții de utilizare.
+        Site-ul are caracter informativ și de prezentare și
+        urmărește facilitarea accesului publicului la informații
+        privind activitatea Asociației și proiectele desfășurate
+        de aceasta.
       </p>
 
       <p>
-        Utilizatorii sunt încurajați să consulte periodic această
-        pagină, întrucât conținutul acesteia poate fi actualizat
-        pentru a reflecta modificările privind funcționarea site-ului
-        sau activitatea Asociației.
+        Site-ul poate fi consultat liber, fără crearea unui cont.
+        Utilizatorii au obligația de a-l utiliza cu bună-credință,
+        în scopuri licite și fără a întreprinde acțiuni care ar
+        putea afecta securitatea, integritatea sau funcționarea
+        normală a acestuia.
       </p>
+
+      <a href="#cuprins" class="back-toc">
+        ↑ Cuprins
+      </a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 03 -->
 
-      <span class="section-number">
-        03
-      </span>
+    <section class="legal-section" id="proiecte">
+
+      <span class="section-number">03</span>
 
       <h2>
-        Conținutul site-ului
+        Proiecte, evenimente și înscrieri
       </h2>
 
       <p>
-        Informațiile publicate pe site au caracter informativ și
-        sunt prezentate cu scopul de a oferi publicului informații
-        despre Asociație și despre proiectele și activitățile acesteia.
+        Site-ul poate conține informații privind festivaluri,
+        concursuri, ateliere, activități educaționale, culturale,
+        artistice, sportive sau alte proiecte organizate ori
+        susținute de Asociație.
       </p>
 
       <p>
-        Pentru anumite proiecte, festivaluri, concursuri sau alte
-        activități pot exista regulamente, condiții de participare,
-        calendare ori documente specifice. În aceste situații,
-        prevederile documentelor publicate pentru activitatea
-        respectivă se aplică în mod corespunzător.
+        Atunci când pentru o activitate este disponibilă o
+        procedură de înscriere, persoana care completează
+        formularul sau transmite informațiile solicitate răspunde
+        pentru corectitudinea și caracterul actual al datelor
+        furnizate.
       </p>
+
+      <p>
+        Transmiterea unei solicitări sau a unui formular nu
+        garantează participarea atunci când proiectul presupune
+        verificarea condițiilor de eligibilitate, existența unui
+        număr limitat de locuri ori o confirmare ulterioară din
+        partea organizatorului.
+      </p>
+
+      <a href="#cuprins" class="back-toc">
+        ↑ Cuprins
+      </a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 04 -->
 
-      <span class="section-number">
-        04
-      </span>
+    <section class="legal-section" id="minori">
+
+      <span class="section-number">04</span>
 
       <h2>
-        Înscrieri și participarea la proiecte
+        Participarea minorilor
       </h2>
 
       <p>
-        Atunci când site-ul pune la dispoziție formulare de înscriere
-        sau trimiteri către formulare destinate proiectelor și
-        evenimentelor Asociației, utilizatorii au responsabilitatea
-        de a furniza informații corecte și complete.
+        O parte dintre proiectele și activitățile Asociației se
+        adresează copiilor și tinerilor.
       </p>
 
       <p>
-        Condițiile concrete privind eligibilitatea, categoriile,
-        termenele, documentele necesare, eventualele contribuții
-        de participare și desfășurarea activităților sunt stabilite
-        prin regulamentul sau documentația aferentă fiecărui proiect.
+        În cazul participanților minori, înscrierea, transmiterea
+        documentelor și exprimarea acordurilor necesare se
+        realizează, după caz, de către părinte sau reprezentantul
+        legal, potrivit cerințelor proiectului și dispozițiilor
+        legale aplicabile.
       </p>
+
+      <p>
+        Minorii nu sunt încurajați să transmită din proprie
+        inițiativă prin intermediul site-ului date personale care
+        nu sunt necesare participării la o activitate.
+      </p>
+
+      <p>
+        Informații suplimentare sunt disponibile în pagina
+        <a href="../protectia-minorilor/">
+          Protecția minorilor
+        </a>.
+      </p>
+
+      <a href="#cuprins" class="back-toc">
+        ↑ Cuprins
+      </a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 05 -->
 
-      <span class="section-number">
-        05
-      </span>
+    <section class="legal-section" id="regulamente">
+
+      <span class="section-number">05</span>
 
       <h2>
-        Drepturi de autor
+        Regulamentele proiectelor
       </h2>
 
       <p>
-        Textele, elementele grafice, identitatea vizuală, materialele
-        originale, fotografiile și celelalte elemente publicate pe
-        acest site pot fi protejate de legislația privind drepturile
-        de autor și de alte dispoziții legale aplicabile.
+        Anumite proiecte, festivaluri, concursuri sau evenimente
+        pot fi guvernate de regulamente proprii, publicate sau
+        puse la dispoziția participanților în legătură cu
+        activitatea respectivă.
       </p>
 
       <p>
-        Utilizarea, reproducerea, modificarea sau distribuirea
-        materialelor originale ale Asociației în alte scopuri decât
-        cele permise de lege necesită, după caz, acordul titularului
-        drepturilor.
+        Regulamentele specifice stabilesc, după caz, condițiile
+        de participare, categoriile, calendarul, documentele
+        necesare, modalitatea de înscriere și celelalte reguli
+        aplicabile proiectului.
       </p>
+
+      <p>
+        Pentru aspectele care privesc în mod direct participarea
+        la un anumit proiect, dispozițiile regulamentului
+        proiectului respectiv completează prezentele condiții
+        generale.
+      </p>
+
+      <a href="#cuprins" class="back-toc">
+        ↑ Cuprins
+      </a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 06 -->
 
-      <span class="section-number">
-        06
-      </span>
+    <section class="legal-section" id="imagini">
+
+      <span class="section-number">06</span>
 
       <h2>
-        Linkuri către servicii externe
+        Fotografii și materiale audiovizuale
       </h2>
 
       <p>
-        Site-ul poate conține trimiteri către platforme sau servicii
-        externe, precum rețele sociale, servicii de mesagerie ori
-        formulare utilizate în cadrul proiectelor.
+        În cadrul proiectelor și evenimentelor pot fi realizate
+        fotografii, înregistrări audio sau materiale video în
+        scopul documentării, promovării și prezentării
+        activității Asociației.
       </p>
 
       <p>
-        Accesarea acestor servicii este supusă propriilor condiții
-        și politici ale furnizorilor respectivi.
+        Utilizarea și publicarea materialelor în care persoanele
+        pot fi identificate se realizează cu respectarea
+        legislației aplicabile și a temeiului juridic
+        corespunzător situației concrete.
       </p>
+
+      <p>
+        În cazul minorilor, Asociația acordă o atenție deosebită
+        protejării imaginii și vieții private a acestora, iar
+        atunci când este necesar sunt solicitate acordurile
+        corespunzătoare din partea părintelui sau reprezentantului
+        legal.
+      </p>
+
+      <a href="#cuprins" class="back-toc">
+        ↑ Cuprins
+      </a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 07 -->
 
-      <span class="section-number">
-        07
-      </span>
+    <section class="legal-section" id="proprietate">
+
+      <span class="section-number">07</span>
 
       <h2>
-        Disponibilitatea site-ului
+        Proprietate intelectuală
       </h2>
 
       <p>
-        Asociația urmărește menținerea informațiilor publicate într-o
-        formă corectă și accesibilă. Cu toate acestea, pot exista
-        perioade în care anumite pagini sau funcționalități sunt
-        temporar indisponibile ca urmare a actualizărilor, mentenanței
-        ori unor cauze tehnice independente.
+        Textele, elementele grafice, materialele originale,
+        fotografiile, identitatea vizuală și celelalte elemente
+        publicate pe site pot fi protejate de legislația privind
+        dreptul de autor și drepturile conexe.
       </p>
+
+      <p>
+        Este permisă distribuirea linkurilor către paginile
+        publice ale site-ului și citarea unor fragmente în
+        limitele permise de lege, cu indicarea corespunzătoare
+        a sursei.
+      </p>
+
+      <p>
+        Reproducerea, republicarea, modificarea, distribuirea
+        substanțială sau utilizarea în scop comercial a
+        materialelor protejate necesită, atunci când legea o
+        impune, acordul titularului drepturilor.
+      </p>
+
+      <p>
+        Siglele, denumirile și materialele aparținând
+        partenerilor, finanțatorilor sau altor terți rămân
+        supuse drepturilor titularilor acestora.
+      </p>
+
+      <a href="#cuprins" class="back-toc">
+        ↑ Cuprins
+      </a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 08 -->
 
-      <span class="section-number">
-        08
-      </span>
+    <section class="legal-section" id="servicii">
+
+      <span class="section-number">08</span>
+
+      <h2>
+        Servicii externe și disponibilitatea site-ului
+      </h2>
+
+      <p>
+        Site-ul poate conține linkuri către servicii sau
+        platforme externe, precum servicii de comunicare,
+        rețele sociale ori formulare utilizate în cadrul
+        anumitor proiecte.
+      </p>
+
+      <p>
+        Aceste servicii sunt administrate independent de
+        furnizorii lor, iar accesarea lor este supusă propriilor
+        condiții și politici.
+      </p>
+
+      <p>
+        Asociația depune eforturi rezonabile pentru menținerea
+        informațiilor publicate într-o formă corectă și
+        actualizată. Site-ul sau anumite funcționalități pot fi
+        însă temporar indisponibile din motive tehnice, de
+        mentenanță ori din cauze independente de Asociație.
+      </p>
+
+      <p>
+        Conținutul site-ului poate fi actualizat, completat sau
+        modificat pentru a reflecta evoluția activităților și
+        proiectelor prezentate.
+      </p>
+
+      <a href="#cuprins" class="back-toc">
+        ↑ Cuprins
+      </a>
+
+    </section>
+
+
+    <!-- 09 -->
+
+    <section class="legal-section" id="date">
+
+      <span class="section-number">09</span>
 
       <h2>
         Protecția datelor
       </h2>
 
       <p>
-        Informațiile referitoare la modul în care sunt prelucrate
-        datele cu caracter personal prin intermediul site-ului sunt
-        prezentate separat în
+        Prelucrarea datelor cu caracter personal se realizează
+        cu respectarea legislației aplicabile în materia
+        protecției datelor și în raport cu scopul pentru care
+        informațiile sunt furnizate.
+      </p>
+
+      <p>
+        Detalii privind categoriile de date, scopurile
+        prelucrării și drepturile persoanelor vizate sunt
+        disponibile în
         <a href="../confidentialitate/">
           Politica de confidențialitate
         </a>.
       </p>
 
       <p>
-        Informațiile referitoare la tehnologiile de tip cookie sunt
-        prezentate în
+        Informații referitoare la tehnologiile utilizate de site
+        sunt disponibile în
         <a href="../cookies/">
           Politica privind cookie-urile
         </a>.
       </p>
 
-    </section>
-
-
-    <section class="legal-section">
-
-      <span class="section-number">
-        09
-      </span>
-
-      <h2>
-        Activități care implică minori
-      </h2>
-
-      <p>
-        Având în vedere caracterul cultural-educativ al activităților
-        Asociației și participarea copiilor și tinerilor la anumite
-        proiecte, informațiile specifice referitoare la această
-        categorie sunt prezentate în pagina
-        <a href="../protectia-minorilor/">
-          Protecția minorilor
-        </a>.
-      </p>
+      <a href="#cuprins" class="back-toc">
+        ↑ Cuprins
+      </a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 10 -->
 
-      <span class="section-number">
-        10
-      </span>
+    <section class="legal-section" id="lege">
+
+      <span class="section-number">10</span>
 
       <h2>
-        Contact
+        Legea aplicabilă și contact
       </h2>
 
       <p>
-        Pentru întrebări privind site-ul, proiectele Asociației sau
-        prezentele condiții de utilizare, ne poți contacta prin
-        intermediul
-        <a href="../../contact/">
-          paginii de contact
-        </a>.
+        Prezentele condiții sunt interpretate și aplicate în
+        conformitate cu legislația română și cu normele
+        europene direct aplicabile, după caz.
       </p>
+
+      <p>
+        Eventualele sesizări sau solicitări privind site-ul ori
+        conținutul acestuia pot fi transmise Asociației în
+        vederea soluționării pe cale amiabilă. În situațiile în
+        care soluționarea amiabilă nu este posibilă, sunt
+        competente autoritățile și instanțele stabilite potrivit
+        legii.
+      </p>
+
+      <p>
+        <strong>Asociația Cultural-Educativă „Artă și Pasiune”</strong><br>
+        CUI: 41244541<br>
+        Sediu: municipiul Bacău, str. Orizontului nr. 53B,
+        județul Bacău<br>
+        E-mail:
+        <a href="mailto:asociatia.arta.pasiune@gmail.com">
+          asociatia.arta.pasiune@gmail.com
+        </a>
+      </p>
+
+      <a href="#cuprins" class="back-toc">
+        ↑ Cuprins
+      </a>
 
     </section>
 
@@ -660,4 +939,4 @@
 
 </body>
 
-</html><!-- Termeni și condiții -->
+</html>
