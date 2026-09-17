@@ -1,4 +1,3 @@
-<!-- Politica de confidențialitate -->
 <!DOCTYPE html>
 <html lang="ro">
 
@@ -61,7 +60,7 @@
     }
 
 
-    /* ==================== HEADER ==================== */
+    /* ================= HEADER ================= */
 
     .legal-header {
       height: 88px;
@@ -72,9 +71,7 @@
       justify-content: space-between;
 
       background: rgba(247, 240, 229, 0.93);
-
-      border-bottom:
-        1px solid rgba(90, 24, 37, 0.12);
+      border-bottom: 1px solid rgba(90, 24, 37, 0.12);
     }
 
     .brand {
@@ -96,10 +93,10 @@
     }
 
 
-    /* ==================== HERO ==================== */
+    /* ================= HERO ================= */
 
     .legal-hero {
-      padding: 90px 7% 65px;
+      padding: 85px 7% 55px;
       text-align: center;
     }
 
@@ -117,7 +114,7 @@
     .legal-hero h1 {
       color: var(--burgundy);
 
-      font-size: clamp(46px, 6vw, 76px);
+      font-size: clamp(45px, 6vw, 72px);
       font-weight: 400;
       line-height: 1;
     }
@@ -143,7 +140,72 @@
     }
 
 
-    /* ==================== DOCUMENT ==================== */
+    /* ================= CUPRINS ================= */
+
+    .toc {
+      width: min(86%, 900px);
+      margin: 0 auto 35px;
+      padding: 38px 45px 40px;
+
+      background: rgba(255, 252, 246, 0.58);
+      border: 1px solid rgba(182, 154, 104, 0.28);
+    }
+
+    .toc-label {
+      display: block;
+      margin-bottom: 24px;
+
+      color: var(--gold);
+      text-align: center;
+
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 45px;
+    }
+
+    .toc a {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+
+      padding: 11px 0;
+
+      color: var(--text);
+      text-decoration: none;
+
+      border-bottom: 1px solid rgba(90, 24, 37, 0.08);
+
+      font-size: 15px;
+      line-height: 1.3;
+
+      transition:
+        color 0.2s ease,
+        padding-left 0.2s ease;
+    }
+
+    .toc a:hover {
+      color: var(--burgundy);
+      padding-left: 4px;
+    }
+
+    .toc-number {
+      flex: 0 0 auto;
+
+      color: var(--gold);
+
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+
+    /* ================= DOCUMENT ================= */
 
     .legal-content {
       width: min(86%, 900px);
@@ -151,21 +213,20 @@
       margin: 0 auto 100px;
       padding: 55px 65px 65px;
 
-      background:
-        rgba(255, 252, 246, 0.72);
+      background: rgba(255, 252, 246, 0.72);
 
-      border:
-        1px solid rgba(182, 154, 104, 0.25);
+      border: 1px solid rgba(182, 154, 104, 0.25);
 
       box-shadow:
         0 20px 60px rgba(70, 40, 30, 0.05);
     }
 
     .legal-section {
-      padding: 31px 0;
+      padding: 34px 0;
 
-      border-bottom:
-        1px solid rgba(90, 24, 37, 0.10);
+      border-bottom: 1px solid rgba(90, 24, 37, 0.10);
+
+      scroll-margin-top: 30px;
     }
 
     .legal-section:first-child {
@@ -203,35 +264,50 @@
 
       font-size: 17px;
       line-height: 1.7;
-    }
 
-    .legal-section p:last-child {
-      margin-bottom: 0;
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
     }
 
     .legal-section ul {
-      margin: 12px 0 12px 22px;
+      margin: 15px 0 15px 22px;
     }
 
     .legal-section li {
-      margin-bottom: 8px;
+      margin-bottom: 9px;
 
       font-size: 17px;
-      line-height: 1.6;
+      line-height: 1.65;
+
+      text-align: justify;
     }
 
     .legal-section a {
       color: var(--burgundy);
 
       text-decoration: underline;
-      text-decoration-color:
-        rgba(182, 154, 104, 0.65);
-
+      text-decoration-color: rgba(182, 154, 104, 0.65);
       text-underline-offset: 4px;
     }
 
+    .back-toc {
+      display: inline-block;
+
+      margin-top: 18px;
+
+      color: var(--gold) !important;
+      text-decoration: none !important;
+
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.7px;
+
+      text-transform: uppercase;
+    }
+
     .updated {
-      margin-top: 38px;
+      margin-top: 40px;
 
       color: #8a7770;
 
@@ -242,15 +318,14 @@
     }
 
 
-    /* ==================== FOOTER ==================== */
+    /* ================= FOOTER ================= */
 
     .legal-footer {
       padding: 35px 7%;
 
       background: var(--burgundy-dark);
 
-      color:
-        rgba(247, 240, 229, 0.60);
+      color: rgba(247, 240, 229, 0.60);
 
       text-align: center;
 
@@ -259,7 +334,7 @@
     }
 
 
-    /* ==================== RESPONSIVE ==================== */
+    /* ================= MOBILE ================= */
 
     @media (max-width: 700px) {
 
@@ -279,11 +354,20 @@
       }
 
       .legal-hero {
-        padding: 65px 6% 50px;
+        padding: 65px 6% 45px;
       }
 
       .legal-hero h1 {
-        font-size: 44px;
+        font-size: 40px;
+      }
+
+      .toc {
+        width: 90%;
+        padding: 30px 27px;
+      }
+
+      .toc-grid {
+        grid-template-columns: 1fr;
       }
 
       .legal-content {
@@ -312,26 +396,22 @@
 <body>
 
 
-  <!-- ==================== HEADER ==================== -->
+  <!-- ================= HEADER ================= -->
 
   <header class="legal-header">
 
-    <a
-      href="../../index.html"
-      class="brand">
+    <a href="../../index.html" class="brand">
       ARTĂ ȘI PASIUNE
     </a>
 
-    <a
-      href="../../index.html"
-      class="back-link">
+    <a href="../../index.html" class="back-link">
       ← ÎNAPOI LA SITE
     </a>
 
   </header>
 
 
-  <!-- ==================== TITLU ==================== -->
+  <!-- ================= HERO ================= -->
 
   <section class="legal-hero">
 
@@ -344,9 +424,9 @@
     </h1>
 
     <p class="legal-intro">
-      Respectarea vieții private și protejarea datelor cu caracter
-      personal reprezintă principii importante în desfășurarea
-      activității Asociației Cultural-Educative „Artă și Pasiune”.
+      Informații privind modul în care Asociația
+      Cultural-Educativă „Artă și Pasiune” prelucrează
+      și protejează datele cu caracter personal.
     </p>
 
     <div class="gold-line"></div>
@@ -354,197 +434,478 @@
   </section>
 
 
-  <!-- ==================== DOCUMENT ==================== -->
+  <!-- ================= CUPRINS ================= -->
+
+  <nav class="toc" id="cuprins" aria-label="Cuprins">
+
+    <span class="toc-label">
+      CUPRINS
+    </span>
+
+    <div class="toc-grid">
+
+      <a href="#operator">
+        <span class="toc-number">01</span>
+        Operatorul datelor
+      </a>
+
+      <a href="#aplicabilitate">
+        <span class="toc-number">02</span>
+        Cui se aplică această politică
+      </a>
+
+      <a href="#date">
+        <span class="toc-number">03</span>
+        Ce date prelucrăm
+      </a>
+
+      <a href="#scopuri">
+        <span class="toc-number">04</span>
+        Scopuri și temeiuri juridice
+      </a>
+
+      <a href="#destinatari">
+        <span class="toc-number">05</span>
+        Cui pot fi comunicate datele
+      </a>
+
+      <a href="#platforme">
+        <span class="toc-number">06</span>
+        Servicii și platforme externe
+      </a>
+
+      <a href="#pastrare">
+        <span class="toc-number">07</span>
+        Cât timp păstrăm datele
+      </a>
+
+      <a href="#securitate">
+        <span class="toc-number">08</span>
+        Securitatea datelor
+      </a>
+
+      <a href="#minori">
+        <span class="toc-number">09</span>
+        Datele minorilor și imaginea
+      </a>
+
+      <a href="#drepturi">
+        <span class="toc-number">10</span>
+        Drepturile persoanei vizate
+      </a>
+
+      <a href="#plangeri">
+        <span class="toc-number">11</span>
+        Plângeri și contact
+      </a>
+
+      <a href="#actualizare">
+        <span class="toc-number">12</span>
+        Actualizarea politicii
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- ================= DOCUMENT ================= -->
 
   <main class="legal-content">
 
 
-    <section class="legal-section">
+    <!-- 01 -->
+
+    <section class="legal-section" id="operator">
 
       <span class="section-number">01</span>
 
-      <h2>
-        Cine prelucrează datele
-      </h2>
+      <h2>Operatorul datelor</h2>
 
       <p>
-        Operatorul datelor cu caracter personal prelucrate în cadrul
-        activităților prezentate pe acest site este Asociația
-        Cultural-Educativă „Artă și Pasiune”, cu sediul în județul
-        Bacău, România.
+        Operatorul datelor cu caracter personal este
+        <strong>Asociația Cultural-Educativă „Artă și Pasiune”</strong>,
+        persoană juridică fără scop patrimonial, cu sediul în
+        municipiul Bacău, str. Orizontului nr. 53B, județul Bacău,
+        având CUI 41244541.
       </p>
 
       <p>
-        Pentru solicitări referitoare la protecția datelor ne puteți
-        contacta la adresa de e-mail:
+        Pentru solicitări referitoare la prelucrarea datelor cu
+        caracter personal sau pentru exercitarea drepturilor
+        prevăzute de legislația aplicabilă, ne puteți contacta la
+        adresa de e-mail
         <a href="mailto:asociatia.arta.pasiune@gmail.com">
           asociatia.arta.pasiune@gmail.com
         </a>.
       </p>
 
+      <p>
+        Prezenta politică este întocmită în conformitate cu
+        Regulamentul (UE) 2016/679 privind protecția persoanelor
+        fizice în ceea ce privește prelucrarea datelor cu caracter
+        personal și privind libera circulație a acestor date
+        (GDPR), precum și cu legislația națională aplicabilă,
+        inclusiv Legea nr. 190/2018 privind măsuri de punere în
+        aplicare a Regulamentului (UE) 2016/679, cu modificările
+        și completările ulterioare.
+      </p>
+
+      <a href="#cuprins" class="back-toc">↑ Cuprins</a>
+
     </section>
 
 
-    <section class="legal-section">
+    <!-- 02 -->
+
+    <section class="legal-section" id="aplicabilitate">
 
       <span class="section-number">02</span>
 
-      <h2>
-        Ce date pot fi prelucrate
-      </h2>
+      <h2>Cui se aplică această politică</h2>
 
       <p>
-        În funcție de modalitatea prin care o persoană interacționează
-        cu Asociația, pot fi prelucrate date precum:
+        Prezenta politică se aplică prelucrărilor de date cu
+        caracter personal realizate prin intermediul site-ului
+        și, după caz, în legătură cu proiectele, evenimentele și
+        activitățile organizate sau susținute de Asociație.
       </p>
-
-      <ul>
-        <li>numele și prenumele;</li>
-        <li>adresa de e-mail;</li>
-        <li>datele furnizate în conținutul unui mesaj;</li>
-        <li>
-          informațiile necesare înscrierii și participării la proiecte,
-          concursuri, festivaluri, ateliere sau alte activități;
-        </li>
-        <li>
-          alte date furnizate voluntar de persoana care ne contactează.
-        </li>
-      </ul>
 
       <p>
-        Categoriile concrete de date solicitate pentru fiecare proiect
-        sunt stabilite în funcție de natura și cerințele activității
-        respective.
+        Pot fi vizate, în funcție de activitatea concretă:
+        vizitatorii site-ului, persoanele care contactează
+        Asociația, participanții la proiecte și evenimente,
+        părinții sau reprezentanții legali ai participanților
+        minori, colaboratorii și alte persoane ale căror date
+        sunt prelucrate în legătură cu activitatea Asociației.
       </p>
+
+      <a href="#cuprins" class="back-toc">↑ Cuprins</a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 03 -->
+
+    <section class="legal-section" id="date">
 
       <span class="section-number">03</span>
 
-      <h2>
-        În ce scop pot fi utilizate datele
-      </h2>
+      <h2>Ce date prelucrăm</h2>
 
       <p>
-        Datele cu caracter personal pot fi utilizate, după caz,
-        pentru:
+        Categoriile de date prelucrate diferă în funcție de
+        modalitatea în care interacționați cu Asociația și de
+        activitatea la care participați.
+      </p>
+
+      <p>
+        În funcție de situație, pot fi prelucrate:
       </p>
 
       <ul>
-        <li>răspunsul la solicitările primite;</li>
-        <li>comunicarea cu persoanele interesate;</li>
         <li>
-          gestionarea înscrierilor și participării la activitățile
-          Asociației;
+          numele și prenumele;
         </li>
+
         <li>
-          organizarea și desfășurarea proiectelor, evenimentelor,
-          festivalurilor și concursurilor;
+          adresa de e-mail și alte date de contact furnizate
+          voluntar;
         </li>
+
         <li>
-          îndeplinirea obligațiilor legale sau administrative
-          aplicabile Asociației.
+          informațiile cuprinse în mesajele sau solicitările
+          adresate Asociației;
+        </li>
+
+        <li>
+          datele necesare înscrierii și participării la
+          festivaluri, concursuri, ateliere sau alte proiecte;
+        </li>
+
+        <li>
+          date privind părintele sau reprezentantul legal,
+          atunci când participantul este minor;
+        </li>
+
+        <li>
+          fotografii, înregistrări audio sau materiale video,
+          atunci când acestea sunt realizate în cadrul
+          activităților Asociației și sunt prelucrate în
+          condițiile legii;
+        </li>
+
+        <li>
+          date tehnice generate în mod obișnuit de accesarea
+          și funcționarea unui site, în măsura în care acestea
+          sunt prelucrate de infrastructura tehnică utilizată.
         </li>
       </ul>
 
+      <p>
+        Asociația urmărește să colecteze numai date adecvate,
+        relevante și limitate la ceea ce este necesar în raport
+        cu scopul prelucrării, potrivit principiului reducerii
+        la minimum a datelor prevăzut de art. 5 din GDPR.
+      </p>
+
+      <a href="#cuprins" class="back-toc">↑ Cuprins</a>
+
     </section>
 
 
-    <section class="legal-section">
+    <!-- 04 -->
+
+    <section class="legal-section" id="scopuri">
 
       <span class="section-number">04</span>
 
-      <h2>
-        Temeiul prelucrării
-      </h2>
+      <h2>Scopuri și temeiuri juridice</h2>
 
       <p>
-        Prelucrarea datelor se realizează numai în măsura în care
-        există un temei legal aplicabil, în funcție de situația
-        concretă.
+        Datele cu caracter personal sunt prelucrate numai pentru
+        scopuri determinate, explicite și legitime și numai în
+        măsura în care există un temei juridic aplicabil,
+        în conformitate cu art. 5 și art. 6 din GDPR.
       </p>
 
       <p>
-        Acesta poate consta, după caz, în consimțământul persoanei
-        vizate, efectuarea demersurilor necesare participării la o
-        activitate solicitată de aceasta, îndeplinirea unei obligații
-        legale sau existența unui interes legitim al Asociației,
-        în condițiile prevăzute de legislația aplicabilă.
+        În funcție de situația concretă, prelucrarea poate avea
+        ca scop:
       </p>
+
+      <ul>
+        <li>
+          soluționarea mesajelor, solicitărilor și cererilor
+          adresate Asociației;
+        </li>
+
+        <li>
+          organizarea și administrarea înscrierilor și
+          participării la proiecte, festivaluri, concursuri,
+          ateliere sau alte evenimente;
+        </li>
+
+        <li>
+          comunicarea cu participanții ori cu părinții sau
+          reprezentanții legali ai minorilor;
+        </li>
+
+        <li>
+          îndeplinirea obligațiilor legale, administrative,
+          contabile, contractuale ori de raportare care revin
+          Asociației;
+        </li>
+
+        <li>
+          documentarea și promovarea activităților și
+          proiectelor Asociației, în condițiile prevăzute
+          de lege;
+        </li>
+
+        <li>
+          asigurarea funcționării și securității site-ului.
+        </li>
+      </ul>
+
+      <p>
+        În funcție de natura prelucrării, temeiul juridic poate
+        fi consimțământul persoanei vizate, executarea unui
+        contract sau efectuarea unor demersuri prealabile,
+        îndeplinirea unei obligații legale ori interesul legitim
+        al Asociației, în condițiile art. 6 alin. (1) din GDPR.
+      </p>
+
+      <p>
+        Atunci când prelucrarea se bazează pe consimțământ,
+        acesta poate fi retras în orice moment, fără a afecta
+        legalitatea prelucrării efectuate anterior retragerii,
+        potrivit art. 7 alin. (3) din GDPR.
+      </p>
+
+      <a href="#cuprins" class="back-toc">↑ Cuprins</a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 05 -->
+
+    <section class="legal-section" id="destinatari">
 
       <span class="section-number">05</span>
 
-      <h2>
-        Formularul de contact
-      </h2>
+      <h2>Cui pot fi comunicate datele</h2>
 
       <p>
-        Site-ul include o interfață destinată formularului de contact.
-        La data ultimei actualizări a prezentei politici, funcția de
-        transmitere automată a formularului nu este activă.
+        Asociația nu vinde și nu închiriază date cu caracter
+        personal.
       </p>
 
       <p>
-        În momentul activării acestei funcționalități, prezenta
-        politică va fi actualizată, dacă este necesar, pentru a indica
-        modalitatea de transmitere și prelucrare a informațiilor
-        furnizate prin formular.
+        Datele pot fi comunicate numai în măsura necesară și
+        justificată, după caz, furnizorilor de servicii utilizați
+        pentru desfășurarea activității, partenerilor sau
+        finanțatorilor proiectelor atunci când raportarea o
+        impune, autorităților și instituțiilor publice atunci
+        când există o obligație legală, precum și altor
+        destinatari pentru care comunicarea este necesară
+        în raport cu activitatea concretă.
       </p>
+
+      <p>
+        Accesul la date este limitat la persoanele și entitățile
+        pentru care acesta este necesar, cu respectarea
+        obligațiilor legale și, după caz, a obligațiilor de
+        confidențialitate.
+      </p>
+
+      <a href="#cuprins" class="back-toc">↑ Cuprins</a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 06 -->
+
+    <section class="legal-section" id="platforme">
 
       <span class="section-number">06</span>
 
-      <h2>
-        Comunicarea prin servicii externe
-      </h2>
+      <h2>Servicii și platforme externe</h2>
 
       <p>
-        Pagina de contact conține legături către servicii externe,
-        precum e-mail, Facebook și WhatsApp.
+        Site-ul poate conține linkuri către servicii și
+        platforme externe, inclusiv rețele sociale sau servicii
+        de comunicare.
       </p>
 
       <p>
-        Dacă utilizatorul alege să comunice prin intermediul unei
-        platforme externe, prelucrarea datelor realizată de furnizorul
-        platformei respective este supusă propriilor condiții și
-        politici de confidențialitate ale acestuia.
+        Simpla existență a unui link nu înseamnă că Asociația
+        controlează prelucrările efectuate de furnizorul
+        platformei respective. Din momentul accesării unei
+        platforme externe, prelucrarea datelor poate fi supusă
+        propriilor condiții și politici ale furnizorului
+        respectiv.
       </p>
+
+      <p>
+        Atunci când Asociația utilizează servicii externe pentru
+        organizarea unor proiecte, formulare de înscriere,
+        comunicare sau alte funcționalități, datele sunt
+        transmise numai în măsura necesară scopului urmărit și
+        cu respectarea cerințelor legale aplicabile.
+      </p>
+
+      <a href="#cuprins" class="back-toc">↑ Cuprins</a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 07 -->
+
+    <section class="legal-section" id="pastrare">
 
       <span class="section-number">07</span>
 
-      <h2>
-        Date privind copiii și tinerii
-      </h2>
+      <h2>Cât timp păstrăm datele</h2>
 
       <p>
-        O parte dintre activitățile Asociației se adresează copiilor
-        și tinerilor. În cazul proiectelor care presupun participarea
-        minorilor, datele necesare sunt solicitate și utilizate numai
-        în raport cu scopul activității respective și cu respectarea
-        cerințelor legale aplicabile.
+        Datele cu caracter personal sunt păstrate numai pentru
+        perioada necesară îndeplinirii scopului pentru care au
+        fost colectate, cu respectarea principiului limitării
+        legate de stocare prevăzut de art. 5 din GDPR.
       </p>
 
       <p>
-        Atunci când natura prelucrării impune acest lucru, vor fi
-        solicitate acordurile sau declarațiile necesare din partea
-        părintelui ori reprezentantului legal.
+        Durata concretă poate varia în funcție de natura datelor,
+        proiectul în cadrul căruia au fost colectate, existența
+        unor obligații legale de păstrare, cerințele contractuale
+        sau de finanțare și necesitatea constatării, exercitării
+        ori apărării unor drepturi.
+      </p>
+
+      <p>
+        Atunci când datele nu mai sunt necesare și nu există un
+        temei legal pentru păstrarea lor, acestea vor fi șterse,
+        anonimizate sau arhivate, după caz, în condițiile legii.
+      </p>
+
+      <a href="#cuprins" class="back-toc">↑ Cuprins</a>
+
+    </section>
+
+
+    <!-- 08 -->
+
+    <section class="legal-section" id="securitate">
+
+      <span class="section-number">08</span>
+
+      <h2>Securitatea datelor</h2>
+
+      <p>
+        Asociația urmărește aplicarea unor măsuri tehnice și
+        organizatorice adecvate naturii datelor prelucrate și
+        riscurilor asociate, în vederea protejării acestora
+        împotriva accesului neautorizat, pierderii, modificării,
+        divulgării sau distrugerii neautorizate ori accidentale.
+      </p>
+
+      <p>
+        Accesul la date este limitat, în măsura posibilului,
+        la persoanele care au nevoie de acestea pentru
+        îndeplinirea atribuțiilor sau activităților pentru
+        care datele au fost colectate.
+      </p>
+
+      <p>
+        Nicio metodă de transmitere sau stocare electronică nu
+        poate garanta securitatea absolută. Din acest motiv,
+        recomandăm să nu fie transmise prin e-mail, mesagerie
+        sau alte mijloace date personale care nu sunt necesare
+        scopului comunicării.
+      </p>
+
+      <a href="#cuprins" class="back-toc">↑ Cuprins</a>
+
+    </section>
+
+
+    <!-- 09 -->
+
+    <section class="legal-section" id="minori">
+
+      <span class="section-number">09</span>
+
+      <h2>Datele minorilor și imaginea</h2>
+
+      <p>
+        Având în vedere că o parte dintre proiectele Asociației
+        se adresează copiilor și tinerilor, prelucrarea datelor
+        minorilor este realizată cu o atenție sporită față de
+        protejarea drepturilor și intereselor acestora.
+      </p>
+
+      <p>
+        Atunci când natura activității sau temeiul juridic al
+        prelucrării o impune, datele privind participanții
+        minori sunt furnizate, iar acordurile necesare sunt
+        exprimate de către părintele sau reprezentantul legal.
+      </p>
+
+      <p>
+        Fotografierea, filmarea și utilizarea imaginii unui
+        minor sunt analizate distinct în raport cu scopul,
+        contextul și temeiul juridic aplicabil. Participarea la
+        un eveniment nu este considerată, prin ea însăși, un
+        consimțământ general pentru orice utilizare ulterioară
+        a imaginii copilului.
+      </p>
+
+      <p>
+        Atunci când prelucrarea se întemeiază pe consimțământ,
+        acesta trebuie să îndeplinească cerințele prevăzute de
+        GDPR, iar Asociația va solicita acordul corespunzător
+        atunci când acesta este necesar.
       </p>
 
       <p>
@@ -554,120 +915,155 @@
         </a>.
       </p>
 
-    </section>
-
-
-    <section class="legal-section">
-
-      <span class="section-number">08</span>
-
-      <h2>
-        Cui pot fi transmise datele
-      </h2>
-
-      <p>
-        Datele nu sunt comunicate unor terți decât atunci când acest
-        lucru este necesar pentru desfășurarea unei activități,
-        utilizarea unui serviciu tehnic, îndeplinirea unei obligații
-        legale sau în alte situații permise de lege.
-      </p>
-
-      <p>
-        În funcție de proiect, pot fi utilizați furnizori sau platforme
-        externe pentru servicii tehnice, comunicare, formulare ori
-        organizarea activităților.
-      </p>
+      <a href="#cuprins" class="back-toc">↑ Cuprins</a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 10 -->
 
-      <span class="section-number">09</span>
-
-      <h2>
-        Perioada de păstrare
-      </h2>
-
-      <p>
-        Datele sunt păstrate numai pentru perioada necesară scopului
-        pentru care au fost colectate sau pentru perioada impusă de
-        obligațiile legale aplicabile.
-      </p>
-
-      <p>
-        Perioada concretă poate varia în funcție de tipul activității,
-        natura documentelor și obligațiile administrative sau legale
-        aferente.
-      </p>
-
-    </section>
-
-
-    <section class="legal-section">
+    <section class="legal-section" id="drepturi">
 
       <span class="section-number">10</span>
 
-      <h2>
-        Drepturile persoanelor vizate
-      </h2>
+      <h2>Drepturile persoanei vizate</h2>
 
       <p>
-        În condițiile prevăzute de legislația privind protecția
-        datelor, persoanele vizate pot beneficia, după caz, de dreptul
-        de acces la date, rectificare, ștergere, restricționarea
-        prelucrării, opoziție și portabilitatea datelor, precum și de
-        dreptul de a-și retrage consimțământul atunci când prelucrarea
-        se bazează pe acesta.
+        În condițiile și limitele prevăzute de Regulamentul
+        (UE) 2016/679, persoana vizată poate beneficia,
+        după caz, de următoarele drepturi:
       </p>
 
+      <ul>
+        <li>
+          <strong>dreptul de acces</strong> la datele cu
+          caracter personal – art. 15 GDPR;
+        </li>
+
+        <li>
+          <strong>dreptul la rectificare</strong> a datelor
+          inexacte sau incomplete – art. 16 GDPR;
+        </li>
+
+        <li>
+          <strong>dreptul la ștergerea datelor</strong>,
+          în situațiile prevăzute de lege – art. 17 GDPR;
+        </li>
+
+        <li>
+          <strong>dreptul la restricționarea prelucrării</strong>
+          – art. 18 GDPR;
+        </li>
+
+        <li>
+          <strong>dreptul la portabilitatea datelor</strong>,
+          atunci când sunt îndeplinite condițiile legale –
+          art. 20 GDPR;
+        </li>
+
+        <li>
+          <strong>dreptul la opoziție</strong>, în situațiile
+          prevăzute de art. 21 GDPR;
+        </li>
+
+        <li>
+          <strong>dreptul de retragere a consimțământului</strong>,
+          atunci când prelucrarea se bazează pe consimțământ,
+          fără afectarea legalității prelucrării realizate
+          anterior retragerii.
+        </li>
+      </ul>
+
       <p>
-        Exercitarea unui drept depinde de situația concretă și de
-        temeiul juridic al prelucrării.
+        Exercitarea unui drept nu produce automat efectul
+        solicitat în orice situație, întrucât unele drepturi
+        sunt supuse condițiilor și excepțiilor prevăzute de
+        GDPR și de legislația aplicabilă.
       </p>
+
+      <a href="#cuprins" class="back-toc">↑ Cuprins</a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 11 -->
+
+    <section class="legal-section" id="plangeri">
 
       <span class="section-number">11</span>
 
-      <h2>
-        Solicitări privind datele personale
-      </h2>
+      <h2>Plângeri și contact</h2>
 
       <p>
-        Pentru exercitarea drepturilor sau pentru orice întrebare
-        privind modul în care sunt prelucrate datele cu caracter
-        personal, ne puteți scrie la:
+        Pentru exercitarea drepturilor sau pentru orice
+        solicitare privind prelucrarea datelor cu caracter
+        personal, ne puteți contacta la:
+      </p>
+
+      <p>
+        <strong>
+          Asociația Cultural-Educativă „Artă și Pasiune”
+        </strong><br>
+        CUI: 41244541<br>
+        Sediu: municipiul Bacău, str. Orizontului nr. 53B,
+        județul Bacău<br>
+        E-mail:
         <a href="mailto:asociatia.arta.pasiune@gmail.com">
           asociatia.arta.pasiune@gmail.com
-        </a>.
+        </a>
       </p>
+
+      <p>
+        Cererile privind exercitarea drepturilor sunt soluționate
+        în termenele și condițiile prevăzute de art. 12 din GDPR.
+        Atunci când este necesar pentru protejarea datelor,
+        Asociația poate solicita informații suplimentare pentru
+        verificarea identității solicitantului.
+      </p>
+
+      <p>
+        Persoana vizată are, de asemenea, dreptul de a depune
+        o plângere la Autoritatea Națională de Supraveghere a
+        Prelucrării Datelor cu Caracter Personal (ANSPDCP),
+        în condițiile art. 77 din GDPR, fără a aduce atingere
+        celorlalte căi de atac administrative sau judiciare
+        prevăzute de lege.
+      </p>
+
+      <a href="#cuprins" class="back-toc">↑ Cuprins</a>
 
     </section>
 
 
-    <section class="legal-section">
+    <!-- 12 -->
+
+    <section class="legal-section" id="actualizare">
 
       <span class="section-number">12</span>
 
-      <h2>
-        Actualizarea politicii
-      </h2>
+      <h2>Actualizarea politicii</h2>
 
       <p>
-        Prezenta politică poate fi actualizată atunci când sunt
-        introduse funcționalități noi pe site, se modifică modul de
-        prelucrare a datelor sau intervin schimbări legislative
-        relevante.
+        Prezenta Politică de confidențialitate poate fi
+        actualizată atunci când se modifică activitatea
+        Asociației, funcționalitățile site-ului, modalitățile
+        de prelucrare a datelor ori cadrul juridic aplicabil.
       </p>
 
       <p>
-        Versiunea disponibilă pe această pagină este versiunea
-        aplicabilă la momentul consultării.
+        Versiunea aplicabilă este cea publicată pe această
+        pagină. Data ultimei actualizări este indicată mai jos.
       </p>
+
+      <p>
+        Informații referitoare la tehnologiile utilizate de
+        site sunt disponibile și în
+        <a href="../cookies/">
+          Politica privind cookie-urile
+        </a>.
+      </p>
+
+      <a href="#cuprins" class="back-toc">↑ Cuprins</a>
 
     </section>
 
@@ -679,7 +1075,7 @@
   </main>
 
 
-  <!-- ==================== FOOTER ==================== -->
+  <!-- ================= FOOTER ================= -->
 
   <footer class="legal-footer">
 
