@@ -6,17 +6,13 @@
   --ivory: #f7efe1;
   --cream: #ead8bc;
   --cream-light: #fffaf2;
-
   --burgundy: #671f2d;
   --burgundy-dark: #351017;
-
   --rust: #a6532f;
   --gold: #b58b4d;
   --gold-light: #d8bb83;
-
   --brown: #513b31;
   --text: #574740;
-
   --border: rgba(181, 139, 77, 0.28);
   --shadow: 0 20px 55px rgba(70, 40, 28, 0.08);
 }
@@ -84,7 +80,7 @@ select {
     1px solid rgba(103, 31, 45, 0.10);
 
   background:
-    rgba(255, 250, 242, 0.88);
+    rgba(255, 250, 242, 0.90);
 
   backdrop-filter: blur(12px);
 }
@@ -102,12 +98,10 @@ select {
 
 .back-festival {
   color: var(--burgundy);
-
   text-decoration: none;
 
   font-size: 12px;
   font-weight: 700;
-
   letter-spacing: 2.2px;
 
   transition:
@@ -117,7 +111,6 @@ select {
 
 .back-festival:hover {
   color: var(--rust);
-
   transform: translateX(-3px);
 }
 
@@ -126,7 +119,6 @@ select {
 
   font-size: 11px;
   font-weight: 700;
-
   letter-spacing: 4px;
 }
 
@@ -139,8 +131,7 @@ select {
   width: min(90%, 830px);
 
   margin: 0 auto;
-
-  padding: 70px 0 48px;
+  padding: 68px 0 45px;
 
   text-align: center;
 }
@@ -154,7 +145,6 @@ select {
 
   font-size: 11px;
   font-weight: 600;
-
   letter-spacing: 4px;
 }
 
@@ -165,7 +155,6 @@ select {
     clamp(52px, 7vw, 82px);
 
   font-weight: 500;
-
   line-height: 0.95;
 }
 
@@ -176,13 +165,11 @@ select {
 
   display: flex;
   align-items: center;
-
   gap: 13px;
 }
 
 .title-ornament span {
   flex: 1;
-
   height: 1px;
 
   background:
@@ -204,7 +191,6 @@ select {
 
 .title-ornament b {
   color: var(--gold);
-
   font-size: 12px;
 }
 
@@ -216,20 +202,17 @@ select {
   color: #65534b;
 
   font-size: 19px;
-
   line-height: 1.6;
 }
 
 .important-note {
-  max-width: 690px;
+  max-width: 700px;
 
   margin: 31px auto 0;
-
   padding: 18px 23px;
 
   display: flex;
   align-items: flex-start;
-
   gap: 18px;
 
   text-align: left;
@@ -250,7 +233,6 @@ select {
   color: var(--burgundy);
 
   font-size: 10px;
-
   letter-spacing: 1.8px;
 }
 
@@ -258,13 +240,12 @@ select {
   color: #65534b;
 
   font-size: 14px;
-
   line-height: 1.45;
 }
 
 
 /* ==========================================================
-   CONTAINER FORMULAR
+   CONTAINER
    ========================================================== */
 
 .form-wrapper {
@@ -273,7 +254,7 @@ select {
   margin: 0 auto 90px;
 
   background:
-    rgba(255, 250, 242, 0.84);
+    rgba(255, 250, 242, 0.86);
 
   border:
     1px solid rgba(181, 139, 77, 0.28);
@@ -284,65 +265,54 @@ select {
 
 
 /* ==========================================================
-   PROGRES
+   PROGRES — 5 PAȘI
    ========================================================== */
 
 .progress-area {
   position: relative;
 
-  padding: 31px 42px 27px;
+  padding: 29px 70px;
 
   border-bottom:
     1px solid rgba(181, 139, 77, 0.20);
 
   background:
-    rgba(247, 239, 225, 0.60);
+    rgba(247, 239, 225, 0.62);
 }
 
 .progress-line {
   position: absolute;
 
-  top: 46px;
-  left: 8.5%;
-  right: 8.5%;
+  top: 44px;
+  left: 11%;
+  right: 11%;
 
   height: 1px;
 
   background:
-    rgba(181, 139, 77, 0.28);
+    rgba(181, 139, 77, 0.32);
 }
 
 .progress-fill {
   width: 0;
   height: 100%;
 
-  background:
-    var(--burgundy);
+  background: var(--burgundy);
 
-  transition:
-    width 0.45s ease;
+  transition: width 0.45s ease;
 }
 
 .progress-steps {
   position: relative;
-
   z-index: 2;
 
   display: grid;
-
-  grid-template-columns:
-    repeat(6, 1fr);
-
-  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .progress-step {
   border: 0;
-
   background: transparent;
-
-  color:
-    rgba(87, 71, 64, 0.55);
 
   cursor: default;
 
@@ -350,82 +320,61 @@ select {
 }
 
 .progress-step span {
-  width: 31px;
-  height: 31px;
+  width: 32px;
+  height: 32px;
 
-  margin: 0 auto 9px;
+  margin: 0 auto;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background:
-    var(--cream-light);
+  color: var(--gold);
+
+  background: var(--cream-light);
 
   border:
-    1px solid rgba(181, 139, 77, 0.42);
+    1px solid rgba(181, 139, 77, 0.46);
 
   border-radius: 50%;
-
-  color: var(--gold);
 
   font-size: 10px;
   font-weight: 700;
 
-  transition: all 0.3s ease;
-}
-
-.progress-step small {
-  display: block;
-
-  color: inherit;
-
-  font-size: 10px;
-  font-weight: 600;
-
-  letter-spacing: 0.8px;
-
-  text-transform: uppercase;
-}
-
-.progress-step.active {
-  color: var(--burgundy);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .progress-step.active span {
   color: var(--cream-light);
 
-  background:
-    var(--burgundy);
+  background: var(--burgundy);
+  border-color: var(--burgundy);
 
-  border-color:
-    var(--burgundy);
-
-  transform: scale(1.08);
+  transform: scale(1.1);
 
   box-shadow:
-    0 5px 14px
-    rgba(103, 31, 45, 0.18);
+    0 5px 14px rgba(103, 31, 45, 0.18);
 }
 
 .progress-step.completed {
-  color: var(--gold);
   cursor: pointer;
 }
 
 .progress-step.completed span {
   color: var(--burgundy);
 
-  background:
-    #f4e5d0;
+  background: #f4e5d0;
 
-  border-color:
-    var(--gold);
+  border-color: var(--gold);
 }
 
 
 /* ==========================================================
-   PAȘI FORMULAR
+   PAȘI
    ========================================================== */
 
 .form-step {
@@ -433,8 +382,7 @@ select {
 
   padding: 55px 64px 50px;
 
-  animation:
-    stepAppear 0.42s ease;
+  animation: stepAppear 0.4s ease;
 }
 
 .form-step.active {
@@ -442,21 +390,15 @@ select {
 }
 
 @keyframes stepAppear {
-
   from {
     opacity: 0;
-
-    transform:
-      translateY(10px);
+    transform: translateY(9px);
   }
 
   to {
     opacity: 1;
-
-    transform:
-      translateY(0);
+    transform: translateY(0);
   }
-
 }
 
 
@@ -465,54 +407,59 @@ select {
    ========================================================== */
 
 .step-heading {
-  margin-bottom: 42px;
+  margin-bottom: 14px;
 
   display: flex;
   align-items: center;
-
   gap: 21px;
 }
 
 .step-heading > span {
+  flex: 0 0 auto;
+
   color:
-    rgba(181, 139, 77, 0.60);
+    rgba(181, 139, 77, 0.62);
 
   font-size: 42px;
   font-weight: 400;
-
   line-height: 1;
 }
 
-.step-heading div {
+.step-heading > div {
   padding-left: 20px;
 
   border-left:
     1px solid rgba(181, 139, 77, 0.42);
 }
 
-.step-heading p {
-  margin-bottom: 3px;
-
-  color: var(--gold);
-
-  font-size: 9px;
-  font-weight: 700;
-
-  letter-spacing: 2.5px;
-}
-
 .step-heading h2 {
   color: var(--burgundy);
 
-  font-size: 36px;
-  font-weight: 500;
+  font-size:
+    clamp(25px, 3vw, 36px);
 
-  line-height: 1;
+  font-weight: 500;
+  line-height: 1.05;
+
+  letter-spacing: 0.4px;
+}
+
+.required-info {
+  margin:
+    0 0 37px 66px;
+
+  color:
+    rgba(87, 71, 64, 0.58);
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 1.3px;
 }
 
 
 /* ==========================================================
-   GRID FORMULAR
+   GRID
    ========================================================== */
 
 .form-grid {
@@ -553,7 +500,6 @@ select {
 .field label em,
 .check-row em {
   color: var(--rust);
-
   font-style: normal;
 }
 
@@ -573,7 +519,7 @@ select {
   color: var(--brown);
 
   background:
-    rgba(255, 255, 255, 0.52);
+    rgba(255, 255, 255, 0.54);
 
   border:
     1px solid rgba(181, 139, 77, 0.34);
@@ -592,17 +538,26 @@ select {
   cursor: pointer;
 }
 
+.field select:disabled {
+  cursor: not-allowed;
+
+  color:
+    rgba(87, 71, 64, 0.50);
+
+  background:
+    rgba(239, 231, 218, 0.45);
+}
+
 .field input:focus,
 .field select:focus {
   background:
-    rgba(255, 255, 255, 0.92);
+    rgba(255, 255, 255, 0.94);
 
   border-color:
     rgba(103, 31, 45, 0.58);
 
   box-shadow:
-    0 0 0 3px
-    rgba(103, 31, 45, 0.06);
+    0 0 0 3px rgba(103, 31, 45, 0.06);
 }
 
 .field input::placeholder {
@@ -623,13 +578,12 @@ select {
     rgba(87, 71, 64, 0.72);
 
   font-size: 12px;
-
   line-height: 1.35;
 }
 
 
 /* ==========================================================
-   ALEGERE TIP ÎNVĂȚĂMÂNT
+   TIP ÎNVĂȚĂMÂNT
    ========================================================== */
 
 .choice-grid {
@@ -644,10 +598,9 @@ select {
 .choice-card {
   position: relative;
 
-  min-height: 125px;
+  min-height: 126px;
 
   margin: 0 !important;
-
   padding: 23px;
 
   display: block !important;
@@ -679,9 +632,7 @@ select {
 
 .choice-card input {
   position: absolute;
-
   opacity: 0;
-
   pointer-events: none;
 }
 
@@ -705,8 +656,7 @@ select {
   border-radius: 50%;
 
   box-shadow:
-    inset 0 0 0 4px
-    var(--cream-light);
+    inset 0 0 0 4px var(--cream-light);
 }
 
 .choice-content strong {
@@ -730,7 +680,6 @@ select {
 
   font-size: 13px;
   font-weight: 400;
-
   line-height: 1.4;
 }
 
@@ -738,135 +687,66 @@ select {
   background:
     rgba(247, 239, 225, 0.96);
 
-  border-color:
-    var(--burgundy);
+  border-color: var(--burgundy);
 
   box-shadow:
-    0 9px 24px
-    rgba(103, 31, 45, 0.07);
+    0 9px 24px rgba(103, 31, 45, 0.07);
 }
 
 .choice-card input:checked
 + .choice-content::before {
-  background:
-    var(--burgundy);
-
-  border-color:
-    var(--burgundy);
+  background: var(--burgundy);
+  border-color: var(--burgundy);
 }
 
 .participation-fields {
   margin-top: 32px;
 }
 
-.group-message {
-  margin-top: 22px;
-
-  padding: 14px 18px;
-
-  color: var(--burgundy);
-
-  background:
-    rgba(181, 139, 77, 0.09);
-
-  border-left:
-    2px solid var(--gold);
-
-  font-size: 14px;
-}
-
 
 /* ==========================================================
-   UPLOAD AUDIO
+   CATEGORIE AUTOMATĂ
    ========================================================== */
 
-.upload-box {
-  min-height: 185px;
+.automatic-category {
+  min-height: 52px;
 
-  margin: 0 !important;
+  padding: 15px 18px;
 
-  padding: 31px 25px;
-
-  display: flex !important;
-  flex-direction: column;
+  display: flex;
   align-items: center;
-  justify-content: center;
 
-  text-align: center;
-
-  cursor: pointer;
+  color: var(--burgundy);
 
   background:
     linear-gradient(
-      135deg,
-      rgba(247, 239, 225, 0.76),
-      rgba(255, 250, 242, 0.82)
+      90deg,
+      rgba(181, 139, 77, 0.10),
+      rgba(255, 250, 242, 0.55)
     );
 
   border:
-    1px dashed
-    rgba(103, 31, 45, 0.34);
+    1px solid rgba(181, 139, 77, 0.30);
 
-  transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease;
+  border-left:
+    3px solid var(--gold);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
 }
 
-.upload-box:hover {
-  transform:
-    translateY(-2px);
+.automatic-category.category-error {
+  color: #7d2e2e;
 
   background:
-    rgba(255, 250, 242, 0.96);
+    rgba(166, 83, 47, 0.07);
 
   border-color:
-    var(--burgundy);
-}
+    rgba(166, 83, 47, 0.30);
 
-.upload-symbol {
-  margin-bottom: 9px;
-
-  color: var(--gold);
-
-  font-size: 31px;
-}
-
-.upload-box strong {
-  color: var(--burgundy);
-
-  font-size: 12px;
-
-  letter-spacing: 2px;
-}
-
-.upload-box small {
-  margin-top: 8px;
-
-  font-size: 13px;
-  font-weight: 400;
-
-  letter-spacing: 0;
-}
-
-.upload-box input {
-  position: absolute;
-
-  width: 1px;
-  height: 1px;
-
-  opacity: 0;
-}
-
-.upload-info {
-  margin-top: 10px;
-
-  color:
-    rgba(87, 71, 64, 0.68);
-
-  font-size: 12px;
-
-  text-align: center;
+  border-left-color: var(--rust);
 }
 
 
@@ -875,9 +755,8 @@ select {
    ========================================================== */
 
 .teachers-section {
-  margin-top: 35px;
-
-  padding-top: 33px;
+  margin-top: 39px;
+  padding-top: 34px;
 
   border-top:
     1px solid rgba(181, 139, 77, 0.24);
@@ -903,11 +782,11 @@ select {
 }
 
 .teachers-heading h3 {
-  margin-top: 3px;
+  margin-top: 4px;
 
   color: var(--burgundy);
 
-  font-size: 27px;
+  font-size: 26px;
   font-weight: 500;
 }
 
@@ -918,7 +797,6 @@ select {
     rgba(87, 71, 64, 0.74);
 
   font-size: 13px;
-
   line-height: 1.4;
 }
 
@@ -975,10 +853,10 @@ select {
 
 .add-teacher {
   margin-top: 5px;
-
   padding: 11px 0;
 
   border: 0;
+
   border-bottom:
     1px solid rgba(103, 31, 45, 0.30);
 
@@ -1004,12 +882,200 @@ select {
 
 
 /* ==========================================================
+   UPLOAD
+   ========================================================== */
+
+.upload-box {
+  position: relative;
+
+  min-height: 178px;
+
+  margin: 0 !important;
+  padding: 30px 25px;
+
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(247, 239, 225, 0.76),
+      rgba(255, 250, 242, 0.84)
+    );
+
+  border:
+    1px dashed rgba(103, 31, 45, 0.34);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.upload-box:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(255, 250, 242, 0.97);
+
+  border-color: var(--burgundy);
+}
+
+.upload-symbol {
+  margin-bottom: 9px;
+
+  color: var(--gold);
+
+  font-size: 31px;
+}
+
+.upload-box strong {
+  color: var(--burgundy);
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+}
+
+.upload-box small {
+  margin-top: 8px;
+
+  color:
+    rgba(87, 71, 64, 0.75);
+
+  font-size: 13px;
+  font-weight: 400;
+
+  letter-spacing: 0;
+}
+
+.upload-box input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* ==========================================================
+   REGULĂ DENUMIRE MP3
+   ========================================================== */
+
+.file-rule {
+  margin-top: 14px;
+  padding: 16px 18px;
+
+  background:
+    rgba(181, 139, 77, 0.07);
+
+  border-left:
+    2px solid var(--gold);
+}
+
+.file-rule strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--burgundy);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.file-rule > span {
+  display: block;
+
+  color: var(--brown);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.file-rule small {
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--rust);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  overflow-wrap: anywhere;
+}
+
+.file-error {
+  margin-top: 12px;
+  padding: 13px 16px;
+
+  color: #7d2e2e;
+
+  background:
+    rgba(166, 83, 47, 0.08);
+
+  border:
+    1px solid rgba(166, 83, 47, 0.22);
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.file-error[hidden] {
+  display: none;
+}
+
+
+/* ==========================================================
+   FOTOGRAFIE
+   ========================================================== */
+
+.photo-section {
+  margin-top: 15px;
+  padding-top: 31px;
+
+  border-top:
+    1px solid rgba(181, 139, 77, 0.22);
+}
+
+.photo-upload {
+  min-height: 150px;
+}
+
+.photo-upload .upload-symbol {
+  font-size: 26px;
+}
+
+.upload-info {
+  margin-top: 10px;
+
+  color:
+    rgba(87, 71, 64, 0.68);
+
+  font-size: 12px;
+
+  text-align: center;
+}
+
+
+/* ==========================================================
    CONTACT
    ========================================================== */
 
 .contact-explanation {
   margin-bottom: 30px;
-
   padding: 17px 20px;
 
   color: #65534b;
@@ -1021,7 +1087,6 @@ select {
     2px solid var(--gold);
 
   font-size: 14px;
-
   line-height: 1.45;
 }
 
@@ -1032,7 +1097,6 @@ select {
 
 .step-actions {
   margin-top: 48px;
-
   padding-top: 27px;
 
   display: flex;
@@ -1074,8 +1138,7 @@ select {
 
   color: var(--cream-light);
 
-  background:
-    var(--burgundy);
+  background: var(--burgundy);
 }
 
 .next-button span,
@@ -1085,15 +1148,12 @@ select {
 
 .next-button:hover,
 .submit-button:hover {
-  background:
-    var(--burgundy-dark);
+  background: var(--burgundy-dark);
 
-  transform:
-    translateY(-2px);
+  transform: translateY(-2px);
 
   box-shadow:
-    0 9px 22px
-    rgba(103, 31, 45, 0.16);
+    0 9px 22px rgba(103, 31, 45, 0.16);
 }
 
 .back-button {
@@ -1112,18 +1172,16 @@ select {
 .back-button:hover {
   color: var(--burgundy);
 
-  transform:
-    translateX(-2px);
+  transform: translateX(-2px);
 }
 
 
 /* ==========================================================
-   CONFIRMARE / REZUMAT
+   REZUMAT
    ========================================================== */
 
 .review-warning {
   margin-bottom: 29px;
-
   padding: 19px 22px;
 
   background:
@@ -1136,18 +1194,18 @@ select {
 .review-warning strong {
   display: block;
 
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 
   color: var(--burgundy);
 
-  font-size: 16px;
+  font-size: 13px;
+  letter-spacing: 0.7px;
 }
 
 .review-warning p {
   color: #65534b;
 
   font-size: 14px;
-
   line-height: 1.4;
 }
 
@@ -1172,7 +1230,6 @@ select {
 
 .review-group h3 {
   margin-bottom: 17px;
-
   padding-bottom: 11px;
 
   color: var(--burgundy);
@@ -1180,8 +1237,10 @@ select {
   border-bottom:
     1px solid rgba(181, 139, 77, 0.20);
 
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
 }
 
 .review-row {
@@ -1193,8 +1252,7 @@ select {
   gap: 20px;
 
   border-bottom:
-    1px dotted
-    rgba(181, 139, 77, 0.20);
+    1px dotted rgba(181, 139, 77, 0.20);
 }
 
 .review-row:last-child {
@@ -1223,23 +1281,77 @@ select {
 
 
 /* ==========================================================
+   GDPR
+   ========================================================== */
+
+.privacy-note {
+  margin-top: 35px;
+  padding: 25px 27px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(181, 139, 77, 0.08),
+      rgba(255, 250, 242, 0.72)
+    );
+
+  border:
+    1px solid rgba(181, 139, 77, 0.24);
+
+  border-left:
+    3px solid var(--gold);
+}
+
+.privacy-note strong {
+  display: block;
+
+  margin-bottom: 11px;
+
+  color: var(--burgundy);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+}
+
+.privacy-note p {
+  margin-bottom: 10px;
+
+  color: #65534b;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.privacy-note p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-note a {
+  color: var(--burgundy);
+
+  font-weight: 600;
+
+  text-decoration-color:
+    rgba(103, 31, 45, 0.35);
+
+  text-underline-offset: 3px;
+}
+
+
+/* ==========================================================
    DECLARAȚII
    ========================================================== */
 
 .declarations {
-  margin-top: 35px;
-
-  padding-top: 30px;
-
-  border-top:
-    1px solid rgba(181, 139, 77, 0.24);
+  margin-top: 25px;
 }
 
 .check-row {
   position: relative;
 
-  margin-bottom: 14px;
-
+  margin-bottom: 12px;
   padding: 17px 19px;
 
   display: flex;
@@ -1264,20 +1376,20 @@ select {
 
   margin-top: 2px;
 
-  accent-color:
-    var(--burgundy);
+  accent-color: var(--burgundy);
 }
 
 .check-row span {
   color: #65534b;
 
   font-size: 13px;
-
-  line-height: 1.45;
+  line-height: 1.48;
 }
 
 .check-row a {
   color: var(--burgundy);
+
+  font-weight: 600;
 
   text-decoration-color:
     rgba(103, 31, 45, 0.35);
@@ -1285,47 +1397,16 @@ select {
   text-underline-offset: 3px;
 }
 
-.privacy-note {
-  margin-top: 25px;
-
-  padding: 20px 22px;
-
-  background:
-    rgba(181, 139, 77, 0.07);
-
-  border-left:
-    2px solid var(--gold);
-}
-
-.privacy-note strong {
-  display: block;
-
-  margin-bottom: 5px;
-
-  color: var(--burgundy);
-
-  font-size: 14px;
-}
-
-.privacy-note p {
-  color: #65534b;
-
-  font-size: 13px;
-
-  line-height: 1.45;
-}
-
 
 /* ==========================================================
-   STATUS FORMULAR
+   STATUS
    ========================================================== */
 
 .form-status {
   margin-top: 20px;
+  padding: 16px 18px;
 
   display: none;
-
-  padding: 16px 18px;
 
   color: var(--burgundy);
 
@@ -1363,8 +1444,7 @@ select {
   color:
     rgba(247, 239, 225, 0.68);
 
-  background:
-    var(--burgundy-dark);
+  background: var(--burgundy-dark);
 
   font-size: 11px;
 
@@ -1391,19 +1471,17 @@ select {
 @media (max-width: 900px) {
 
   .progress-area {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-
-  .progress-step small {
-    font-size: 8px;
-
-    letter-spacing: 0.3px;
+    padding-left: 45px;
+    padding-right: 45px;
   }
 
   .form-step {
     padding:
       48px 42px 45px;
+  }
+
+  .required-info {
+    margin-left: 0;
   }
 
 }
@@ -1459,8 +1537,7 @@ select {
 
     gap: 7px;
 
-    padding:
-      16px 17px;
+    padding: 16px 17px;
   }
 
 
@@ -1473,26 +1550,21 @@ select {
 
   .progress-area {
     padding:
-      22px 10px 18px;
-
-    overflow-x: auto;
+      21px 18px;
   }
 
   .progress-line {
-    display: none;
-  }
+    top: 36px;
 
-  .progress-steps {
-    min-width: 530px;
-
-    gap: 4px;
+    left: 12%;
+    right: 12%;
   }
 
   .progress-step span {
-    width: 28px;
-    height: 28px;
+    width: 29px;
+    height: 29px;
 
-    margin-bottom: 6px;
+    font-size: 9px;
   }
 
 
@@ -1501,22 +1573,36 @@ select {
       37px 21px 35px;
   }
 
-  .step-heading {
-    margin-bottom: 32px;
 
-    gap: 14px;
+  .step-heading {
+    margin-bottom: 13px;
+
+    align-items: flex-start;
+
+    gap: 13px;
   }
 
   .step-heading > span {
-    font-size: 34px;
+    margin-top: 2px;
+
+    font-size: 31px;
   }
 
-  .step-heading div {
-    padding-left: 14px;
+  .step-heading > div {
+    padding-left: 13px;
   }
 
   .step-heading h2 {
-    font-size: 30px;
+    font-size: 24px;
+
+    line-height: 1.1;
+  }
+
+  .required-info {
+    margin:
+      0 0 30px 0;
+
+    font-size: 8px;
   }
 
 
@@ -1555,14 +1641,21 @@ select {
   }
 
 
+  .upload-box {
+    min-height: 155px;
+
+    padding:
+      25px 15px;
+  }
+
+
   .step-actions {
     gap: 20px;
   }
 
   .next-button,
   .submit-button {
-    padding:
-      0 17px;
+    padding: 0 17px;
 
     font-size: 9px;
 
@@ -1586,6 +1679,17 @@ select {
     max-width: 100%;
 
     text-align: left;
+  }
+
+
+  .privacy-note {
+    padding:
+      21px 18px;
+  }
+
+  .check-row {
+    padding:
+      15px 14px;
   }
 
 
@@ -1632,7 +1736,12 @@ select {
   }
 
   .step-heading h2 {
-    font-size: 27px;
+    font-size: 21px;
+  }
+
+  .progress-area {
+    padding-left: 11px;
+    padding-right: 11px;
   }
 
 }
