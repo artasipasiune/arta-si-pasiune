@@ -1,5 +1,5 @@
 /* ==========================================================
-   SIMFONIA TOAMNEI — ÎNSCRIERE
+   SIMFONIA TOAMNEI — FORMULAR ÎNSCRIERE
    ========================================================== */
 
 :root {
@@ -13,7 +13,9 @@
   --gold-light: #d8bb83;
   --brown: #513b31;
   --text: #574740;
+
   --border: rgba(181, 139, 77, 0.28);
+  --border-light: rgba(181, 139, 77, 0.18);
   --shadow: 0 20px 55px rgba(70, 40, 28, 0.08);
 }
 
@@ -76,11 +78,11 @@ select {
 .registration-header {
   width: 100%;
 
+  background:
+    rgba(255, 250, 242, 0.92);
+
   border-bottom:
     1px solid rgba(103, 31, 45, 0.10);
-
-  background:
-    rgba(255, 250, 242, 0.90);
 
   backdrop-filter: blur(12px);
 }
@@ -98,6 +100,7 @@ select {
 
 .back-festival {
   color: var(--burgundy);
+
   text-decoration: none;
 
   font-size: 12px;
@@ -151,9 +154,7 @@ select {
 .registration-intro h1 {
   color: var(--burgundy);
 
-  font-size:
-    clamp(52px, 7vw, 82px);
-
+  font-size: clamp(52px, 7vw, 82px);
   font-weight: 500;
   line-height: 0.95;
 }
@@ -205,8 +206,13 @@ select {
   line-height: 1.6;
 }
 
+
+/* ==========================================================
+   NOTĂ IMPORTANTĂ
+   ========================================================== */
+
 .important-note {
-  max-width: 700px;
+  max-width: 720px;
 
   margin: 31px auto 0;
   padding: 18px 23px;
@@ -233,6 +239,7 @@ select {
   color: var(--burgundy);
 
   font-size: 10px;
+  font-weight: 700;
   letter-spacing: 1.8px;
 }
 
@@ -245,7 +252,7 @@ select {
 
 
 /* ==========================================================
-   CONTAINER
+   FORMULAR — CONTAINER
    ========================================================== */
 
 .form-wrapper {
@@ -254,18 +261,17 @@ select {
   margin: 0 auto 90px;
 
   background:
-    rgba(255, 250, 242, 0.86);
+    rgba(255, 250, 242, 0.88);
 
   border:
     1px solid rgba(181, 139, 77, 0.28);
 
-  box-shadow:
-    var(--shadow);
+  box-shadow: var(--shadow);
 }
 
 
 /* ==========================================================
-   PROGRES — 5 PAȘI
+   BARA DE PROGRES — DOAR 01 02 03 04 05
    ========================================================== */
 
 .progress-area {
@@ -273,11 +279,11 @@ select {
 
   padding: 29px 70px;
 
-  border-bottom:
-    1px solid rgba(181, 139, 77, 0.20);
-
   background:
     rgba(247, 239, 225, 0.62);
+
+  border-bottom:
+    1px solid rgba(181, 139, 77, 0.20);
 }
 
 .progress-line {
@@ -312,16 +318,18 @@ select {
 
 .progress-step {
   border: 0;
+  outline: none;
+
   background: transparent;
 
-  cursor: default;
+  cursor: pointer;
 
   text-align: center;
 }
 
 .progress-step span {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
 
   margin: 0 auto;
 
@@ -340,12 +348,18 @@ select {
 
   font-size: 10px;
   font-weight: 700;
+  letter-spacing: 0.5px;
 
   transition:
     background 0.3s ease,
     color 0.3s ease,
     transform 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.progress-step:hover span {
+  border-color: var(--burgundy);
 }
 
 .progress-step.active span {
@@ -354,14 +368,10 @@ select {
   background: var(--burgundy);
   border-color: var(--burgundy);
 
-  transform: scale(1.1);
+  transform: scale(1.12);
 
   box-shadow:
     0 5px 14px rgba(103, 31, 45, 0.18);
-}
-
-.progress-step.completed {
-  cursor: pointer;
 }
 
 .progress-step.completed span {
@@ -390,6 +400,7 @@ select {
 }
 
 @keyframes stepAppear {
+
   from {
     opacity: 0;
     transform: translateY(9px);
@@ -399,6 +410,7 @@ select {
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
 
@@ -435,11 +447,9 @@ select {
 .step-heading h2 {
   color: var(--burgundy);
 
-  font-size:
-    clamp(25px, 3vw, 36px);
-
+  font-size: clamp(25px, 3vw, 36px);
   font-weight: 500;
-  line-height: 1.05;
+  line-height: 1.08;
 
   letter-spacing: 0.4px;
 }
@@ -453,7 +463,6 @@ select {
 
   font-size: 9px;
   font-weight: 600;
-
   letter-spacing: 1.3px;
 }
 
@@ -493,13 +502,14 @@ select {
 
   font-size: 10px;
   font-weight: 700;
-
   letter-spacing: 1.5px;
 }
 
 .field label em,
-.check-row em {
+.check-row em,
+.teachers-heading h3 em {
   color: var(--rust);
+
   font-style: normal;
 }
 
@@ -632,7 +642,9 @@ select {
 
 .choice-card input {
   position: absolute;
+
   opacity: 0;
+
   pointer-events: none;
 }
 
@@ -751,7 +763,7 @@ select {
 
 
 /* ==========================================================
-   PROFESORI
+   PROFESORI COORDONATORI
    ========================================================== */
 
 .teachers-section {
@@ -800,6 +812,11 @@ select {
   line-height: 1.4;
 }
 
+
+/* ==========================================================
+   PROFESOR INDIVIDUAL
+   ========================================================== */
+
 .teacher-row {
   position: relative;
 
@@ -845,11 +862,22 @@ select {
   cursor: pointer;
 
   font-size: 23px;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .remove-teacher:hover {
   color: var(--burgundy);
+
+  transform: scale(1.08);
 }
+
+
+/* ==========================================================
+   ADAUGĂ PROFESOR
+   ========================================================== */
 
 .add-teacher {
   margin-top: 5px;
@@ -870,6 +898,10 @@ select {
   font-weight: 700;
 
   letter-spacing: 1.6px;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .add-teacher span {
@@ -880,9 +912,48 @@ select {
   font-size: 15px;
 }
 
+.add-teacher:hover {
+  color: var(--rust);
+
+  border-color: var(--rust);
+}
+
+.teacher-help {
+  max-width: 650px;
+
+  margin-top: 12px;
+
+  color:
+    rgba(87, 71, 64, 0.68);
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
 
 /* ==========================================================
-   UPLOAD
+   DATE DE CONTACT
+   ========================================================== */
+
+.contact-explanation {
+  margin-bottom: 30px;
+  padding: 17px 20px;
+
+  color: #65534b;
+
+  background:
+    rgba(181, 139, 77, 0.07);
+
+  border-left:
+    2px solid var(--gold);
+
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+
+/* ==========================================================
+   UPLOAD NEGATIV
    ========================================================== */
 
 .upload-box {
@@ -915,7 +986,8 @@ select {
   transition:
     background 0.25s ease,
     border-color 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .upload-box:hover {
@@ -925,6 +997,9 @@ select {
     rgba(255, 250, 242, 0.97);
 
   border-color: var(--burgundy);
+
+  box-shadow:
+    0 10px 28px rgba(103, 31, 45, 0.06);
 }
 
 .upload-symbol {
@@ -968,7 +1043,7 @@ select {
 
 
 /* ==========================================================
-   REGULĂ DENUMIRE MP3
+   REGULA MP3
    ========================================================== */
 
 .file-rule {
@@ -1039,60 +1114,7 @@ select {
 
 
 /* ==========================================================
-   FOTOGRAFIE
-   ========================================================== */
-
-.photo-section {
-  margin-top: 15px;
-  padding-top: 31px;
-
-  border-top:
-    1px solid rgba(181, 139, 77, 0.22);
-}
-
-.photo-upload {
-  min-height: 150px;
-}
-
-.photo-upload .upload-symbol {
-  font-size: 26px;
-}
-
-.upload-info {
-  margin-top: 10px;
-
-  color:
-    rgba(87, 71, 64, 0.68);
-
-  font-size: 12px;
-
-  text-align: center;
-}
-
-
-/* ==========================================================
-   CONTACT
-   ========================================================== */
-
-.contact-explanation {
-  margin-bottom: 30px;
-  padding: 17px 20px;
-
-  color: #65534b;
-
-  background:
-    rgba(181, 139, 77, 0.07);
-
-  border-left:
-    2px solid var(--gold);
-
-  font-size: 14px;
-  line-height: 1.45;
-}
-
-
-/* ==========================================================
-   BUTOANE
+   BUTOANE NAVIGARE
    ========================================================== */
 
 .step-actions {
@@ -1177,7 +1199,7 @@ select {
 
 
 /* ==========================================================
-   REZUMAT
+   PASUL 05 — AVERTIZARE
    ========================================================== */
 
 .review-warning {
@@ -1208,6 +1230,11 @@ select {
   font-size: 14px;
   line-height: 1.4;
 }
+
+
+/* ==========================================================
+   REZUMATUL ÎNSCRIERII
+   ========================================================== */
 
 .review-container {
   display: grid;
@@ -1281,7 +1308,7 @@ select {
 
 
 /* ==========================================================
-   GDPR
+   PROTECȚIA DATELOR
    ========================================================== */
 
 .privacy-note {
@@ -1366,6 +1393,18 @@ select {
 
   border:
     1px solid rgba(181, 139, 77, 0.22);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.check-row:hover {
+  background:
+    rgba(255, 255, 255, 0.62);
+
+  border-color:
+    rgba(181, 139, 77, 0.38);
 }
 
 .check-row input {
@@ -1399,7 +1438,7 @@ select {
 
 
 /* ==========================================================
-   STATUS
+   STATUS FORMULAR
    ========================================================== */
 
 .form-status {
@@ -1417,6 +1456,7 @@ select {
     1px solid rgba(166, 83, 47, 0.18);
 
   font-size: 13px;
+  line-height: 1.45;
 
   text-align: center;
 }
@@ -1457,6 +1497,12 @@ select {
   color: var(--gold-light);
 
   text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.registration-footer a:hover {
+  color: var(--ivory);
 }
 
 .footer-dot {
@@ -1500,16 +1546,16 @@ select {
 
   .back-festival {
     font-size: 9px;
-
     letter-spacing: 1.1px;
   }
 
   .nav-title {
     font-size: 9px;
-
     letter-spacing: 2.3px;
   }
 
+
+  /* INTRO */
 
   .registration-intro {
     width: 88%;
@@ -1520,7 +1566,6 @@ select {
 
   .eyebrow {
     font-size: 9px;
-
     letter-spacing: 2.3px;
   }
 
@@ -1541,12 +1586,16 @@ select {
   }
 
 
+  /* FORMULAR */
+
   .form-wrapper {
     width: 94%;
 
     margin-bottom: 55px;
   }
 
+
+  /* PROGRES */
 
   .progress-area {
     padding:
@@ -1568,11 +1617,12 @@ select {
   }
 
 
+  /* PAS */
+
   .form-step {
     padding:
       37px 21px 35px;
   }
-
 
   .step-heading {
     margin-bottom: 13px;
@@ -1594,7 +1644,6 @@ select {
 
   .step-heading h2 {
     font-size: 24px;
-
     line-height: 1.1;
   }
 
@@ -1605,6 +1654,8 @@ select {
     font-size: 8px;
   }
 
+
+  /* GRID */
 
   .form-grid,
   .choice-grid,
@@ -1617,17 +1668,24 @@ select {
   }
 
 
+  /* TIP ÎNVĂȚĂMÂNT */
+
   .choice-card {
     min-height: auto;
   }
 
 
+  /* PROFESORI */
+
   .teachers-heading {
     align-items: flex-start;
-
     flex-direction: column;
 
     gap: 9px;
+  }
+
+  .teachers-heading h3 {
+    font-size: 23px;
   }
 
   .teacher-row {
@@ -1640,6 +1698,12 @@ select {
     left: 16px;
   }
 
+  .teacher-help {
+    font-size: 11px;
+  }
+
+
+  /* UPLOAD */
 
   .upload-box {
     min-height: 155px;
@@ -1648,6 +1712,8 @@ select {
       25px 15px;
   }
 
+
+  /* BUTOANE */
 
   .step-actions {
     gap: 20px;
@@ -1669,6 +1735,8 @@ select {
   }
 
 
+  /* REZUMAT */
+
   .review-row {
     flex-direction: column;
 
@@ -1682,6 +1750,8 @@ select {
   }
 
 
+  /* GDPR */
+
   .privacy-note {
     padding:
       21px 18px;
@@ -1693,9 +1763,10 @@ select {
   }
 
 
+  /* FINAL */
+
   .final-actions {
     align-items: stretch;
-
     flex-direction: column-reverse;
   }
 
@@ -1703,6 +1774,8 @@ select {
     min-height: 38px;
   }
 
+
+  /* FOOTER */
 
   .registration-footer {
     flex-direction: column;
