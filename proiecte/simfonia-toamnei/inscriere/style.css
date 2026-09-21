@@ -1,0 +1,1661 @@
+/* ==========================================================
+   SIMFONIA TOAMNEI — ÎNSCRIERE
+   ========================================================== */
+
+:root {
+  --ivory: #f7efe1;
+  --cream: #ead8bc;
+  --cream-light: #fffaf2;
+
+  --burgundy: #671f2d;
+  --burgundy-dark: #351017;
+
+  --rust: #a6532f;
+  --gold: #b58b4d;
+  --gold-light: #d8bb83;
+
+  --brown: #513b31;
+  --text: #574740;
+
+  --border: rgba(181, 139, 77, 0.28);
+  --shadow: 0 20px 55px rgba(70, 40, 28, 0.08);
+}
+
+
+/* ==========================================================
+   RESET
+   ========================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 12% 12%,
+      rgba(181, 139, 77, 0.08),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 88% 35%,
+      rgba(103, 31, 45, 0.05),
+      transparent 24%
+    ),
+    linear-gradient(
+      180deg,
+      #fffaf2 0%,
+      #f7efe1 52%,
+      #f1e3cf 100%
+    );
+
+  color: var(--text);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.registration-header {
+  width: 100%;
+
+  border-bottom:
+    1px solid rgba(103, 31, 45, 0.10);
+
+  background:
+    rgba(255, 250, 242, 0.88);
+
+  backdrop-filter: blur(12px);
+}
+
+.registration-nav {
+  width: min(92%, 1320px);
+  min-height: 78px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-festival {
+  color: var(--burgundy);
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2.2px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.back-festival:hover {
+  color: var(--rust);
+
+  transform: translateX(-3px);
+}
+
+.nav-title {
+  color: var(--gold);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+
+/* ==========================================================
+   INTRO
+   ========================================================== */
+
+.registration-intro {
+  width: min(90%, 830px);
+
+  margin: 0 auto;
+
+  padding: 70px 0 48px;
+
+  text-align: center;
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 13px;
+
+  color: var(--gold);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 4px;
+}
+
+.registration-intro h1 {
+  color: var(--burgundy);
+
+  font-size:
+    clamp(52px, 7vw, 82px);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+}
+
+.title-ornament {
+  width: 185px;
+
+  margin: 24px auto 25px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.title-ornament span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold)
+    );
+}
+
+.title-ornament span:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold),
+      transparent
+    );
+}
+
+.title-ornament b {
+  color: var(--gold);
+
+  font-size: 12px;
+}
+
+.registration-intro > p {
+  max-width: 670px;
+
+  margin: 0 auto;
+
+  color: #65534b;
+
+  font-size: 19px;
+
+  line-height: 1.6;
+}
+
+.important-note {
+  max-width: 690px;
+
+  margin: 31px auto 0;
+
+  padding: 18px 23px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 18px;
+
+  text-align: left;
+
+  background:
+    rgba(255, 250, 242, 0.68);
+
+  border:
+    1px solid rgba(181, 139, 77, 0.30);
+
+  border-left:
+    3px solid var(--burgundy);
+}
+
+.important-note strong {
+  flex: 0 0 auto;
+
+  color: var(--burgundy);
+
+  font-size: 10px;
+
+  letter-spacing: 1.8px;
+}
+
+.important-note span {
+  color: #65534b;
+
+  font-size: 14px;
+
+  line-height: 1.45;
+}
+
+
+/* ==========================================================
+   CONTAINER FORMULAR
+   ========================================================== */
+
+.form-wrapper {
+  width: min(92%, 1080px);
+
+  margin: 0 auto 90px;
+
+  background:
+    rgba(255, 250, 242, 0.84);
+
+  border:
+    1px solid rgba(181, 139, 77, 0.28);
+
+  box-shadow:
+    var(--shadow);
+}
+
+
+/* ==========================================================
+   PROGRES
+   ========================================================== */
+
+.progress-area {
+  position: relative;
+
+  padding: 31px 42px 27px;
+
+  border-bottom:
+    1px solid rgba(181, 139, 77, 0.20);
+
+  background:
+    rgba(247, 239, 225, 0.60);
+}
+
+.progress-line {
+  position: absolute;
+
+  top: 46px;
+  left: 8.5%;
+  right: 8.5%;
+
+  height: 1px;
+
+  background:
+    rgba(181, 139, 77, 0.28);
+}
+
+.progress-fill {
+  width: 0;
+  height: 100%;
+
+  background:
+    var(--burgundy);
+
+  transition:
+    width 0.45s ease;
+}
+
+.progress-steps {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, 1fr);
+
+  gap: 10px;
+}
+
+.progress-step {
+  border: 0;
+
+  background: transparent;
+
+  color:
+    rgba(87, 71, 64, 0.55);
+
+  cursor: default;
+
+  text-align: center;
+}
+
+.progress-step span {
+  width: 31px;
+  height: 31px;
+
+  margin: 0 auto 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    var(--cream-light);
+
+  border:
+    1px solid rgba(181, 139, 77, 0.42);
+
+  border-radius: 50%;
+
+  color: var(--gold);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  transition: all 0.3s ease;
+}
+
+.progress-step small {
+  display: block;
+
+  color: inherit;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+}
+
+.progress-step.active {
+  color: var(--burgundy);
+}
+
+.progress-step.active span {
+  color: var(--cream-light);
+
+  background:
+    var(--burgundy);
+
+  border-color:
+    var(--burgundy);
+
+  transform: scale(1.08);
+
+  box-shadow:
+    0 5px 14px
+    rgba(103, 31, 45, 0.18);
+}
+
+.progress-step.completed {
+  color: var(--gold);
+  cursor: pointer;
+}
+
+.progress-step.completed span {
+  color: var(--burgundy);
+
+  background:
+    #f4e5d0;
+
+  border-color:
+    var(--gold);
+}
+
+
+/* ==========================================================
+   PAȘI FORMULAR
+   ========================================================== */
+
+.form-step {
+  display: none;
+
+  padding: 55px 64px 50px;
+
+  animation:
+    stepAppear 0.42s ease;
+}
+
+.form-step.active {
+  display: block;
+}
+
+@keyframes stepAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* ==========================================================
+   TITLU PAS
+   ========================================================== */
+
+.step-heading {
+  margin-bottom: 42px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 21px;
+}
+
+.step-heading > span {
+  color:
+    rgba(181, 139, 77, 0.60);
+
+  font-size: 42px;
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.step-heading div {
+  padding-left: 20px;
+
+  border-left:
+    1px solid rgba(181, 139, 77, 0.42);
+}
+
+.step-heading p {
+  margin-bottom: 3px;
+
+  color: var(--gold);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.step-heading h2 {
+  color: var(--burgundy);
+
+  font-size: 36px;
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+
+/* ==========================================================
+   GRID FORMULAR
+   ========================================================== */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 29px 30px;
+}
+
+.full-field {
+  grid-column: 1 / -1;
+}
+
+
+/* ==========================================================
+   CÂMPURI
+   ========================================================== */
+
+.field {
+  min-width: 0;
+}
+
+.field label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: var(--burgundy-dark);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.field label em,
+.check-row em {
+  color: var(--rust);
+
+  font-style: normal;
+}
+
+.field input[type="text"],
+.field input[type="date"],
+.field input[type="number"],
+.field input[type="tel"],
+.field input[type="email"],
+.field select {
+  width: 100%;
+  height: 52px;
+
+  padding: 0 15px;
+
+  outline: none;
+
+  color: var(--brown);
+
+  background:
+    rgba(255, 255, 255, 0.52);
+
+  border:
+    1px solid rgba(181, 139, 77, 0.34);
+
+  border-radius: 0;
+
+  font-size: 16px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.field select {
+  cursor: pointer;
+}
+
+.field input:focus,
+.field select:focus {
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  border-color:
+    rgba(103, 31, 45, 0.58);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(103, 31, 45, 0.06);
+}
+
+.field input::placeholder {
+  color:
+    rgba(87, 71, 64, 0.40);
+
+  font-size: 12px;
+
+  letter-spacing: 0.7px;
+}
+
+.field small {
+  display: block;
+
+  margin-top: 7px;
+
+  color:
+    rgba(87, 71, 64, 0.72);
+
+  font-size: 12px;
+
+  line-height: 1.35;
+}
+
+
+/* ==========================================================
+   ALEGERE TIP ÎNVĂȚĂMÂNT
+   ========================================================== */
+
+.choice-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 17px;
+}
+
+.choice-card {
+  position: relative;
+
+  min-height: 125px;
+
+  margin: 0 !important;
+
+  padding: 23px;
+
+  display: block !important;
+
+  cursor: pointer;
+
+  background:
+    rgba(255, 255, 255, 0.42);
+
+  border:
+    1px solid rgba(181, 139, 77, 0.32);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.choice-card:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(255, 255, 255, 0.76);
+
+  border-color:
+    rgba(103, 31, 45, 0.35);
+}
+
+.choice-card input {
+  position: absolute;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.choice-content {
+  display: block;
+}
+
+.choice-content::before {
+  content: "";
+
+  width: 15px;
+  height: 15px;
+
+  margin-bottom: 17px;
+
+  display: block;
+
+  border:
+    1px solid var(--gold);
+
+  border-radius: 50%;
+
+  box-shadow:
+    inset 0 0 0 4px
+    var(--cream-light);
+}
+
+.choice-content strong {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--burgundy);
+
+  font-size: 13px;
+
+  letter-spacing: 1px;
+}
+
+.choice-content small {
+  display: block;
+
+  margin: 0;
+
+  color: #6c5950;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.4;
+}
+
+.choice-card:has(input:checked) {
+  background:
+    rgba(247, 239, 225, 0.96);
+
+  border-color:
+    var(--burgundy);
+
+  box-shadow:
+    0 9px 24px
+    rgba(103, 31, 45, 0.07);
+}
+
+.choice-card input:checked
++ .choice-content::before {
+  background:
+    var(--burgundy);
+
+  border-color:
+    var(--burgundy);
+}
+
+.participation-fields {
+  margin-top: 32px;
+}
+
+.group-message {
+  margin-top: 22px;
+
+  padding: 14px 18px;
+
+  color: var(--burgundy);
+
+  background:
+    rgba(181, 139, 77, 0.09);
+
+  border-left:
+    2px solid var(--gold);
+
+  font-size: 14px;
+}
+
+
+/* ==========================================================
+   UPLOAD AUDIO
+   ========================================================== */
+
+.upload-box {
+  min-height: 185px;
+
+  margin: 0 !important;
+
+  padding: 31px 25px;
+
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(247, 239, 225, 0.76),
+      rgba(255, 250, 242, 0.82)
+    );
+
+  border:
+    1px dashed
+    rgba(103, 31, 45, 0.34);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.upload-box:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    rgba(255, 250, 242, 0.96);
+
+  border-color:
+    var(--burgundy);
+}
+
+.upload-symbol {
+  margin-bottom: 9px;
+
+  color: var(--gold);
+
+  font-size: 31px;
+}
+
+.upload-box strong {
+  color: var(--burgundy);
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+}
+
+.upload-box small {
+  margin-top: 8px;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  letter-spacing: 0;
+}
+
+.upload-box input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+}
+
+.upload-info {
+  margin-top: 10px;
+
+  color:
+    rgba(87, 71, 64, 0.68);
+
+  font-size: 12px;
+
+  text-align: center;
+}
+
+
+/* ==========================================================
+   PROFESORI
+   ========================================================== */
+
+.teachers-section {
+  margin-top: 35px;
+
+  padding-top: 33px;
+
+  border-top:
+    1px solid rgba(181, 139, 77, 0.24);
+}
+
+.teachers-heading {
+  margin-bottom: 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 30px;
+}
+
+.teachers-heading span {
+  color: var(--gold);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2.4px;
+}
+
+.teachers-heading h3 {
+  margin-top: 3px;
+
+  color: var(--burgundy);
+
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.teachers-heading p {
+  max-width: 360px;
+
+  color:
+    rgba(87, 71, 64, 0.74);
+
+  font-size: 13px;
+
+  line-height: 1.4;
+}
+
+.teacher-row {
+  position: relative;
+
+  margin-bottom: 15px;
+
+  padding: 20px 20px 20px 65px;
+
+  background:
+    rgba(255, 255, 255, 0.38);
+
+  border:
+    1px solid rgba(181, 139, 77, 0.24);
+}
+
+.teacher-number {
+  position: absolute;
+
+  top: 24px;
+  left: 20px;
+
+  color:
+    rgba(103, 31, 45, 0.28);
+
+  font-size: 19px;
+}
+
+.remove-teacher {
+  position: absolute;
+
+  top: 8px;
+  right: 11px;
+
+  width: 28px;
+  height: 28px;
+
+  border: 0;
+
+  background: transparent;
+
+  color:
+    rgba(103, 31, 45, 0.62);
+
+  cursor: pointer;
+
+  font-size: 23px;
+}
+
+.remove-teacher:hover {
+  color: var(--burgundy);
+}
+
+.add-teacher {
+  margin-top: 5px;
+
+  padding: 11px 0;
+
+  border: 0;
+  border-bottom:
+    1px solid rgba(103, 31, 45, 0.30);
+
+  background: transparent;
+
+  color: var(--burgundy);
+
+  cursor: pointer;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.6px;
+}
+
+.add-teacher span {
+  margin-right: 7px;
+
+  color: var(--gold);
+
+  font-size: 15px;
+}
+
+
+/* ==========================================================
+   CONTACT
+   ========================================================== */
+
+.contact-explanation {
+  margin-bottom: 30px;
+
+  padding: 17px 20px;
+
+  color: #65534b;
+
+  background:
+    rgba(181, 139, 77, 0.07);
+
+  border-left:
+    2px solid var(--gold);
+
+  font-size: 14px;
+
+  line-height: 1.45;
+}
+
+
+/* ==========================================================
+   BUTOANE
+   ========================================================== */
+
+.step-actions {
+  margin-top: 48px;
+
+  padding-top: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top:
+    1px solid rgba(181, 139, 77, 0.20);
+}
+
+.step-actions.right {
+  justify-content: flex-end;
+}
+
+.next-button,
+.submit-button,
+.back-button {
+  min-height: 45px;
+
+  border: 0;
+
+  cursor: pointer;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.next-button,
+.submit-button {
+  padding: 0 24px;
+
+  color: var(--cream-light);
+
+  background:
+    var(--burgundy);
+}
+
+.next-button span,
+.submit-button span {
+  margin-left: 11px;
+}
+
+.next-button:hover,
+.submit-button:hover {
+  background:
+    var(--burgundy-dark);
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 9px 22px
+    rgba(103, 31, 45, 0.16);
+}
+
+.back-button {
+  padding: 0;
+
+  background: transparent;
+
+  color:
+    rgba(87, 71, 64, 0.72);
+}
+
+.back-button span {
+  margin-right: 8px;
+}
+
+.back-button:hover {
+  color: var(--burgundy);
+
+  transform:
+    translateX(-2px);
+}
+
+
+/* ==========================================================
+   CONFIRMARE / REZUMAT
+   ========================================================== */
+
+.review-warning {
+  margin-bottom: 29px;
+
+  padding: 19px 22px;
+
+  background:
+    rgba(103, 31, 45, 0.045);
+
+  border-left:
+    3px solid var(--burgundy);
+}
+
+.review-warning strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--burgundy);
+
+  font-size: 16px;
+}
+
+.review-warning p {
+  color: #65534b;
+
+  font-size: 14px;
+
+  line-height: 1.4;
+}
+
+.review-container {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 17px;
+}
+
+.review-group {
+  padding: 23px;
+
+  background:
+    rgba(255, 255, 255, 0.38);
+
+  border:
+    1px solid rgba(181, 139, 77, 0.25);
+}
+
+.review-group h3 {
+  margin-bottom: 17px;
+
+  padding-bottom: 11px;
+
+  color: var(--burgundy);
+
+  border-bottom:
+    1px solid rgba(181, 139, 77, 0.20);
+
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.review-row {
+  padding: 7px 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom:
+    1px dotted
+    rgba(181, 139, 77, 0.20);
+}
+
+.review-row:last-child {
+  border-bottom: 0;
+}
+
+.review-row span {
+  color:
+    rgba(87, 71, 64, 0.70);
+
+  font-size: 12px;
+}
+
+.review-row strong {
+  max-width: 62%;
+
+  color: var(--brown);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-align: right;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ==========================================================
+   DECLARAȚII
+   ========================================================== */
+
+.declarations {
+  margin-top: 35px;
+
+  padding-top: 30px;
+
+  border-top:
+    1px solid rgba(181, 139, 77, 0.24);
+}
+
+.check-row {
+  position: relative;
+
+  margin-bottom: 14px;
+
+  padding: 17px 19px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+
+  cursor: pointer;
+
+  background:
+    rgba(255, 255, 255, 0.35);
+
+  border:
+    1px solid rgba(181, 139, 77, 0.22);
+}
+
+.check-row input {
+  flex: 0 0 auto;
+
+  width: 17px;
+  height: 17px;
+
+  margin-top: 2px;
+
+  accent-color:
+    var(--burgundy);
+}
+
+.check-row span {
+  color: #65534b;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+}
+
+.check-row a {
+  color: var(--burgundy);
+
+  text-decoration-color:
+    rgba(103, 31, 45, 0.35);
+
+  text-underline-offset: 3px;
+}
+
+.privacy-note {
+  margin-top: 25px;
+
+  padding: 20px 22px;
+
+  background:
+    rgba(181, 139, 77, 0.07);
+
+  border-left:
+    2px solid var(--gold);
+}
+
+.privacy-note strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--burgundy);
+
+  font-size: 14px;
+}
+
+.privacy-note p {
+  color: #65534b;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+}
+
+
+/* ==========================================================
+   STATUS FORMULAR
+   ========================================================== */
+
+.form-status {
+  margin-top: 20px;
+
+  display: none;
+
+  padding: 16px 18px;
+
+  color: var(--burgundy);
+
+  background:
+    rgba(166, 83, 47, 0.08);
+
+  border:
+    1px solid rgba(166, 83, 47, 0.18);
+
+  font-size: 13px;
+
+  text-align: center;
+}
+
+.form-status.visible {
+  display: block;
+}
+
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+.registration-footer {
+  min-height: 70px;
+
+  padding: 20px 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  color:
+    rgba(247, 239, 225, 0.68);
+
+  background:
+    var(--burgundy-dark);
+
+  font-size: 11px;
+
+  letter-spacing: 1.3px;
+
+  text-align: center;
+}
+
+.registration-footer a {
+  color: var(--gold-light);
+
+  text-decoration: none;
+}
+
+.footer-dot {
+  color: var(--gold);
+}
+
+
+/* ==========================================================
+   TABLETĂ
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+  .progress-area {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .progress-step small {
+    font-size: 8px;
+
+    letter-spacing: 0.3px;
+  }
+
+  .form-step {
+    padding:
+      48px 42px 45px;
+  }
+
+}
+
+
+/* ==========================================================
+   TELEFON
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+  .registration-nav {
+    width: 90%;
+    min-height: 68px;
+  }
+
+  .back-festival {
+    font-size: 9px;
+
+    letter-spacing: 1.1px;
+  }
+
+  .nav-title {
+    font-size: 9px;
+
+    letter-spacing: 2.3px;
+  }
+
+
+  .registration-intro {
+    width: 88%;
+
+    padding:
+      52px 0 38px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 2.3px;
+  }
+
+  .registration-intro h1 {
+    font-size: 54px;
+  }
+
+  .registration-intro > p {
+    font-size: 17px;
+  }
+
+  .important-note {
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding:
+      16px 17px;
+  }
+
+
+  .form-wrapper {
+    width: 94%;
+
+    margin-bottom: 55px;
+  }
+
+
+  .progress-area {
+    padding:
+      22px 10px 18px;
+
+    overflow-x: auto;
+  }
+
+  .progress-line {
+    display: none;
+  }
+
+  .progress-steps {
+    min-width: 530px;
+
+    gap: 4px;
+  }
+
+  .progress-step span {
+    width: 28px;
+    height: 28px;
+
+    margin-bottom: 6px;
+  }
+
+
+  .form-step {
+    padding:
+      37px 21px 35px;
+  }
+
+  .step-heading {
+    margin-bottom: 32px;
+
+    gap: 14px;
+  }
+
+  .step-heading > span {
+    font-size: 34px;
+  }
+
+  .step-heading div {
+    padding-left: 14px;
+  }
+
+  .step-heading h2 {
+    font-size: 30px;
+  }
+
+
+  .form-grid,
+  .choice-grid,
+  .review-container {
+    grid-template-columns: 1fr;
+  }
+
+  .full-field {
+    grid-column: auto;
+  }
+
+
+  .choice-card {
+    min-height: auto;
+  }
+
+
+  .teachers-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 9px;
+  }
+
+  .teacher-row {
+    padding:
+      51px 15px 17px;
+  }
+
+  .teacher-number {
+    top: 16px;
+    left: 16px;
+  }
+
+
+  .step-actions {
+    gap: 20px;
+  }
+
+  .next-button,
+  .submit-button {
+    padding:
+      0 17px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.1px;
+  }
+
+  .back-button {
+    font-size: 9px;
+
+    letter-spacing: 1px;
+  }
+
+
+  .review-row {
+    flex-direction: column;
+
+    gap: 3px;
+  }
+
+  .review-row strong {
+    max-width: 100%;
+
+    text-align: left;
+  }
+
+
+  .final-actions {
+    align-items: stretch;
+
+    flex-direction: column-reverse;
+  }
+
+  .final-actions .back-button {
+    min-height: 38px;
+  }
+
+
+  .registration-footer {
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding:
+      23px 7%;
+  }
+
+  .registration-footer .footer-dot {
+    display: none;
+  }
+
+}
+
+
+/* ==========================================================
+   ECRANE FOARTE MICI
+   ========================================================== */
+
+@media (max-width: 390px) {
+
+  .registration-intro h1 {
+    font-size: 46px;
+  }
+
+  .form-step {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .step-heading h2 {
+    font-size: 27px;
+  }
+
+}
+
+
+/* ==========================================================
+   REDUCERE ANIMAȚII
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .form-step {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+
+}
