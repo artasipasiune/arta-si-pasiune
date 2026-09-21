@@ -42,10 +42,6 @@
 
 <main>
 
-  <!-- =====================================================
-       INTRO
-       ===================================================== -->
-
   <section class="registration-intro">
 
     <span class="eyebrow">
@@ -81,13 +77,9 @@
   </section>
 
 
-  <!-- =====================================================
-       FORMULAR
-       ===================================================== -->
-
   <section class="form-wrapper">
 
-    <!-- BARA DE PROGRES -->
+    <!-- PROGRES -->
 
     <div class="progress-area">
 
@@ -97,48 +89,23 @@
 
       <div class="progress-steps">
 
-        <button
-          type="button"
-          class="progress-step active"
-          data-step="1"
-          aria-label="Pasul 1"
-        >
+        <button type="button" class="progress-step active" data-step="1">
           <span>01</span>
         </button>
 
-        <button
-          type="button"
-          class="progress-step"
-          data-step="2"
-          aria-label="Pasul 2"
-        >
+        <button type="button" class="progress-step" data-step="2">
           <span>02</span>
         </button>
 
-        <button
-          type="button"
-          class="progress-step"
-          data-step="3"
-          aria-label="Pasul 3"
-        >
+        <button type="button" class="progress-step" data-step="3">
           <span>03</span>
         </button>
 
-        <button
-          type="button"
-          class="progress-step"
-          data-step="4"
-          aria-label="Pasul 4"
-        >
+        <button type="button" class="progress-step" data-step="4">
           <span>04</span>
         </button>
 
-        <button
-          type="button"
-          class="progress-step"
-          data-step="5"
-          aria-label="Pasul 5"
-        >
+        <button type="button" class="progress-step" data-step="5">
           <span>05</span>
         </button>
 
@@ -157,13 +124,11 @@
       <section class="form-step active" data-step="1">
 
         <div class="step-heading">
-
           <span>01</span>
 
           <div>
             <h2>DATE DE IDENTIFICARE PARTICIPANT</h2>
           </div>
-
         </div>
 
         <p class="required-info">
@@ -308,13 +273,11 @@
       <section class="form-step" data-step="2">
 
         <div class="step-heading">
-
           <span>02</span>
 
           <div>
             <h2>ÎNCADRAREA ÎN SECȚIUNE</h2>
           </div>
-
         </div>
 
         <p class="required-info">
@@ -457,22 +420,16 @@
         </div>
 
 
-        <!-- PROFESORI -->
-
         <div class="teachers-section">
 
           <div class="teachers-heading">
 
             <div>
-
-              <span>
-                ÎNDRUMARE ARTISTICĂ
-              </span>
+              <span>ÎNDRUMARE ARTISTICĂ</span>
 
               <h3>
                 PROFESOR COORDONATOR <em>*</em>
               </h3>
-
             </div>
 
             <p>
@@ -524,7 +481,7 @@
 
           <p class="teacher-help">
             Poți adăuga mai mulți profesori coordonatori dacă dorești
-            ca aceștia să fie menționați în documentele aferente participării.
+            emiterea diplomei și pentru aceștia.
           </p>
 
         </div>
@@ -554,13 +511,11 @@
       <section class="form-step" data-step="3">
 
         <div class="step-heading">
-
           <span>03</span>
 
           <div>
             <h2>DATE DE CONTACT</h2>
           </div>
-
         </div>
 
         <p class="required-info">
@@ -655,19 +610,17 @@
 
 
       <!-- ===================================================
-           PASUL 04 — REPERTORIU
+           PASUL 04
            =================================================== -->
 
       <section class="form-step" data-step="4">
 
         <div class="step-heading">
-
           <span>04</span>
 
           <div>
             <h2>REPERTORIU</h2>
           </div>
-
         </div>
 
         <p class="required-info">
@@ -752,7 +705,7 @@
               </strong>
 
               <small id="file-name">
-                EXCLUSIV FIȘIER MP3
+                MP3 · MAXIMUM 20 MB
               </small>
 
               <input
@@ -816,7 +769,6 @@
       <section class="form-step" data-step="5">
 
         <div class="step-heading">
-
           <span>05</span>
 
           <div>
@@ -824,7 +776,6 @@
               CONFIRMARE ȘI PROTECȚIA DATELOR CU CARACTER PERSONAL
             </h2>
           </div>
-
         </div>
 
 
@@ -963,12 +914,20 @@
 
         <div class="step-actions final-actions">
 
-          <button type="button" class="back-button">
+          <button
+            type="button"
+            class="back-button"
+            id="final-back-button"
+          >
             <span>←</span>
             MODIFICĂ DATELE
           </button>
 
-          <button type="submit" class="submit-button">
+          <button
+            type="submit"
+            class="submit-button"
+            id="submit-button"
+          >
             TRIMITE ÎNSCRIEREA
             <span>→</span>
           </button>
@@ -979,10 +938,8 @@
         <p
           class="form-status"
           id="form-status"
-        >
-          Formularul este în curs de configurare.
-          Datele nu sunt încă transmise către organizator.
-        </p>
+          aria-live="polite"
+        ></p>
 
       </section>
 
@@ -1016,11 +973,18 @@
      CONFIGURARE
      ========================================================= */
 
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycby_QXCn2REofESMl2-l_UkqR5743ICxMKQcRZTccHNRngPQvbV6YHZo6IT5S9nXuLGl/exec";
+
+  const MAX_AUDIO_SIZE =
+    20 * 1024 * 1024;
+
   const totalSteps = 5;
 
   let currentStep = 1;
   let highestUnlockedStep = 1;
   let teacherCount = 1;
+  let submissionInProgress = false;
 
 
   const form =
@@ -1080,6 +1044,9 @@
   const formStatus =
     document.getElementById("form-status");
 
+  const submitButton =
+    document.getElementById("submit-button");
+
 
   /* =========================================================
      SECȚIUNI
@@ -1111,7 +1078,6 @@
   function showStep(stepNumber) {
 
     currentStep = stepNumber;
-
 
     steps.forEach(step => {
 
@@ -1165,20 +1131,18 @@
 
   /* =========================================================
      BARA DE PROGRES
-     NU SE POATE SĂRI PESTE PAȘI
      ========================================================= */
 
   progressSteps.forEach(button => {
 
     button.addEventListener("click", () => {
 
+      if (submissionInProgress) {
+        return;
+      }
+
       const target =
         Number(button.dataset.step);
-
-      /*
-        Poate accesa doar pașii care au fost
-        deja deblocați prin completarea formularului.
-      */
 
       if (target <= highestUnlockedStep) {
         showStep(target);
@@ -1190,7 +1154,7 @@
 
 
   /* =========================================================
-     VALIDAREA PASULUI CURENT
+     VALIDARE PAS
      ========================================================= */
 
   function validateCurrentStep() {
@@ -1208,19 +1172,15 @@
         continue;
       }
 
-
       if (!field.checkValidity()) {
 
         field.reportValidity();
 
         try {
           field.focus();
-        }
-
-        catch (error) {}
+        } catch (error) {}
 
         return false;
-
       }
 
     }
@@ -1250,7 +1210,7 @@
 
 
   /* =========================================================
-     CONTINUĂ — DEBLOCHEAZĂ URMĂTORUL PAS
+     CONTINUĂ
      ========================================================= */
 
   document
@@ -1259,29 +1219,24 @@
 
       button.addEventListener("click", () => {
 
-        if (!validateCurrentStep()) {
+        if (submissionInProgress) {
           return;
         }
 
+        if (!validateCurrentStep()) {
+          return;
+        }
 
         if (currentStep < totalSteps) {
 
           const nextStep =
             currentStep + 1;
 
-
-          /*
-            Următorul pas se deblochează numai după
-            validarea pasului curent.
-          */
-
           if (nextStep > highestUnlockedStep) {
             highestUnlockedStep = nextStep;
           }
 
-
           showStep(nextStep);
-
         }
 
       });
@@ -1299,6 +1254,10 @@
 
       button.addEventListener("click", () => {
 
+        if (submissionInProgress) {
+          return;
+        }
+
         if (currentStep > 1) {
           showStep(currentStep - 1);
         }
@@ -1309,7 +1268,7 @@
 
 
   /* =========================================================
-     MAJUSCULE AUTOMAT
+     MAJUSCULE
      ========================================================= */
 
   document.addEventListener("input", event => {
@@ -1322,21 +1281,12 @@
       const end =
         event.target.selectionEnd;
 
-
       event.target.value =
         event.target.value.toLocaleUpperCase("ro-RO");
 
-
       try {
-
-        event.target.setSelectionRange(
-          start,
-          end
-        );
-
-      }
-
-      catch (error) {}
+        event.target.setSelectionRange(start, end);
+      } catch (error) {}
 
     }
 
@@ -1344,7 +1294,7 @@
 
 
   /* =========================================================
-     TIPUL DE ÎNVĂȚĂMÂNT
+     TIP ÎNVĂȚĂMÂNT
      ========================================================= */
 
   document
@@ -1356,7 +1306,6 @@
         const isHobby =
           radio.value ===
           "ÎNVĂȚĂMÂNT DE MASĂ / HOBBY";
-
 
         const availableSections =
           isHobby
@@ -1395,7 +1344,6 @@
     () => calculateCategory()
   );
 
-
   ageInput.addEventListener(
     "input",
     () => calculateCategory()
@@ -1403,7 +1351,7 @@
 
 
   /* =========================================================
-     CATEGORIA AUTOMATĂ
+     CATEGORIE AUTOMATĂ
      ========================================================= */
 
   function calculateCategory(showError = false) {
@@ -1433,11 +1381,8 @@
         "Categoria va fi stabilită automat în funcție de vârsta participantului și tipul de învățământ.";
 
       return false;
-
     }
 
-
-    /* GRUPURILE NU AU CATEGORIE DE VÂRSTĂ */
 
     if (section.includes("GRUP")) {
 
@@ -1448,14 +1393,11 @@
         "NU SE APLICĂ — SECȚIUNE DE GRUP";
 
       return true;
-
     }
 
 
     let category = "";
 
-
-    /* ÎNVĂȚĂMÂNT DE MASĂ / HOBBY */
 
     if (
       education.value ===
@@ -1493,8 +1435,6 @@
     }
 
 
-    /* ÎNVĂȚĂMÂNT VOCAȚIONAL */
-
     if (
       education.value ===
       "ÎNVĂȚĂMÂNT VOCAȚIONAL"
@@ -1530,7 +1470,6 @@
       }
 
       return false;
-
     }
 
 
@@ -1546,21 +1485,18 @@
 
 
   /* =========================================================
-     PROFESORI COORDONATORI
+     PROFESORI
      ========================================================= */
 
   addTeacherButton.addEventListener("click", () => {
 
     teacherCount++;
 
-
     const row =
       document.createElement("div");
 
-
     row.className =
       "teacher-row additional-teacher";
-
 
     row.innerHTML = `
 
@@ -1595,23 +1531,19 @@
 
     `;
 
-
     teachersContainer.appendChild(row);
-
 
     row
       .querySelector(".remove-teacher")
       .addEventListener("click", () => {
-
         row.remove();
-
       });
 
   });
 
 
   /* =========================================================
-     DENUMIREA CORECTĂ A NEGATIVULUI
+     NUME MP3
      ========================================================= */
 
   function normalizeFileText(text) {
@@ -1631,11 +1563,8 @@
         `${nameInput.value} ${firstNameInput.value}`
       );
 
-
     const song =
-      normalizeFileText(
-        songInput.value
-      );
+      normalizeFileText(songInput.value);
 
 
     if (!participant.trim() || !song.trim()) {
@@ -1653,13 +1582,11 @@
     const expected =
       expectedAudioBaseName();
 
-
     if (!expected) {
 
       expectedFileName.textContent = "";
 
       return;
-
     }
 
 
@@ -1674,12 +1601,10 @@
     updateExpectedFileName
   );
 
-
   firstNameInput.addEventListener(
     "input",
     updateExpectedFileName
   );
-
 
   songInput.addEventListener(
     "input",
@@ -1688,7 +1613,7 @@
 
 
   /* =========================================================
-     VALIDARE NEGATIV MP3
+     VALIDARE MP3
      ========================================================= */
 
   function validateAudioFile() {
@@ -1707,7 +1632,6 @@
       audioInput.reportValidity();
 
       return false;
-
     }
 
 
@@ -1715,22 +1639,33 @@
       audioInput.files[0];
 
 
-    if (
-      !file.name.toLowerCase().endsWith(".mp3")
-    ) {
+    if (!file.name.toLowerCase().endsWith(".mp3")) {
 
       audioError.textContent =
         "Fișierul trebuie să fie obligatoriu în format MP3.";
 
       audioError.hidden = false;
 
-
       audioInput.setCustomValidity(
         "Este acceptat exclusiv formatul MP3."
       );
 
       return false;
+    }
 
+
+    if (file.size > MAX_AUDIO_SIZE) {
+
+      audioError.textContent =
+        "Fișierul depășește limita maximă de 20 MB.";
+
+      audioError.hidden = false;
+
+      audioInput.setCustomValidity(
+        "Dimensiunea maximă permisă este de 20 MB."
+      );
+
+      return false;
     }
 
 
@@ -1746,7 +1681,6 @@
       audioError.hidden = false;
 
       return false;
-
     }
 
 
@@ -1769,13 +1703,11 @@
 
       audioError.hidden = false;
 
-
       audioInput.setCustomValidity(
         "Denumirea fișierului MP3 nu respectă formatul solicitat."
       );
 
       return false;
-
     }
 
 
@@ -1793,16 +1725,14 @@
     if (!audioInput.files.length) {
 
       audioFileName.textContent =
-        "EXCLUSIV FIȘIER MP3";
+        "MP3 · MAXIMUM 20 MB";
 
       return;
-
     }
 
 
     audioFileName.textContent =
       audioInput.files[0].name;
-
 
     validateAudioFile();
 
@@ -1810,7 +1740,7 @@
 
 
   /* =========================================================
-     PROFESORI — REZUMAT
+     PROFESORI — LISTĂ
      ========================================================= */
 
   function getTeacherNames() {
@@ -1827,14 +1757,13 @@
 
 
   /* =========================================================
-     GRUP REZUMAT
+     REZUMAT
      ========================================================= */
 
   function addReviewGroup(title, items) {
 
     const group =
       document.createElement("section");
-
 
     group.className =
       "review-group";
@@ -1843,10 +1772,8 @@
     const heading =
       document.createElement("h3");
 
-
     heading.textContent =
       title;
-
 
     group.appendChild(heading);
 
@@ -1861,7 +1788,6 @@
       const row =
         document.createElement("div");
 
-
       row.className =
         "review-row";
 
@@ -1869,14 +1795,12 @@
       const label =
         document.createElement("span");
 
-
       label.textContent =
         item.label;
 
 
       const value =
         document.createElement("strong");
-
 
       value.textContent =
         item.value;
@@ -1894,10 +1818,6 @@
 
   }
 
-
-  /* =========================================================
-     REZUMATUL ÎNSCRIERII
-     ========================================================= */
 
   function buildReview() {
 
@@ -1978,14 +1898,12 @@
 
         {
           label: "Secțiune",
-          value:
-            sectionSelect.value
+          value: sectionSelect.value
         },
 
         {
           label: "Categorie",
-          value:
-            categoryInput.value
+          value: categoryInput.value
         },
 
         {
@@ -2052,8 +1970,7 @@
 
         {
           label: "Titlul piesei",
-          value:
-            songInput.value
+          value: songInput.value
         },
 
         {
@@ -2087,96 +2004,452 @@
 
 
   /* =========================================================
-     TRIMITERE
+     FIȘIER → BASE64
      ========================================================= */
 
-  form.addEventListener("submit", event => {
+  function fileToBase64(file) {
 
-    event.preventDefault();
+    return new Promise((resolve, reject) => {
+
+      const reader =
+        new FileReader();
 
 
-    const requiredFields =
-      [...form.querySelectorAll("[required]")];
+      reader.onload = () => {
+
+        const result =
+          String(reader.result);
+
+        const commaIndex =
+          result.indexOf(",");
+
+        if (commaIndex === -1) {
+
+          reject(
+            new Error(
+              "Fișierul audio nu a putut fi pregătit pentru trimitere."
+            )
+          );
+
+          return;
+        }
 
 
-    for (const field of requiredFields) {
+        resolve(
+          result.substring(commaIndex + 1)
+        );
 
-      if (field.disabled) {
-        continue;
+      };
+
+
+      reader.onerror = () => {
+
+        reject(
+          new Error(
+            "Fișierul MP3 nu a putut fi citit."
+          )
+        );
+
+      };
+
+
+      reader.readAsDataURL(file);
+
+    });
+
+  }
+
+
+  /* =========================================================
+     DATE PENTRU SERVER
+     ========================================================= */
+
+  async function buildSubmissionData() {
+
+    const education =
+      document.querySelector(
+        'input[name="tip_invatamant"]:checked'
+      );
+
+
+    const audioFile =
+      audioInput.files[0];
+
+
+    const audioBase64 =
+      await fileToBase64(audioFile);
+
+
+    return {
+
+      nume:
+        nameInput.value.trim(),
+
+      prenume:
+        firstNameInput.value.trim(),
+
+      data_nasterii:
+        document.getElementById(
+          "data-nasterii"
+        ).value,
+
+      varsta:
+        ageInput.value,
+
+      localitate:
+        document.getElementById(
+          "localitate"
+        ).value.trim(),
+
+      judet_tara:
+        document.getElementById(
+          "judet"
+        ).value.trim(),
+
+      tip_invatamant:
+        education
+          ? education.value
+          : "",
+
+      sectiune:
+        sectionSelect.value,
+
+      categorie:
+        categoryInput.value,
+
+      institutie:
+        document.getElementById(
+          "institutie"
+        ).value.trim(),
+
+      profesori:
+        getTeacherNames(),
+
+      contact_nume:
+        document.getElementById(
+          "contact-nume"
+        ).value.trim(),
+
+      telefon:
+        document.getElementById(
+          "telefon"
+        ).value.trim(),
+
+      email:
+        document.getElementById(
+          "email"
+        ).value.trim(),
+
+      titlu_piesa:
+        songInput.value.trim(),
+
+      autor_compozitor:
+        document.getElementById(
+          "autor"
+        ).value.trim(),
+
+      minutaj:
+        document.getElementById(
+          "minutaj"
+        ).value.trim(),
+
+      audio: {
+
+        fileName:
+          audioFile.name,
+
+        mimeType:
+          audioFile.type ||
+          "audio/mpeg",
+
+        size:
+          audioFile.size,
+
+        base64:
+          audioBase64
+
+      }
+
+    };
+
+  }
+
+
+  /* =========================================================
+     STARE TRIMITERE
+     ========================================================= */
+
+  function setSubmittingState(isSubmitting) {
+
+    submissionInProgress =
+      isSubmitting;
+
+
+    submitButton.disabled =
+      isSubmitting;
+
+
+    document
+      .querySelectorAll(
+        ".next-button, .back-button, .progress-step, .add-teacher, .remove-teacher"
+      )
+      .forEach(button => {
+
+        button.disabled =
+          isSubmitting;
+
+      });
+
+
+    if (isSubmitting) {
+
+      submitButton.innerHTML =
+        "SE TRIMITE ÎNSCRIEREA...";
+
+    }
+
+    else {
+
+      submitButton.innerHTML =
+        'TRIMITE ÎNSCRIEREA <span>→</span>';
+
+    }
+
+  }
+
+
+  /* =========================================================
+     TRIMITERE REALĂ
+     ========================================================= */
+
+  form.addEventListener(
+    "submit",
+    async event => {
+
+      event.preventDefault();
+
+
+      if (submissionInProgress) {
+        return;
       }
 
 
-      if (!field.checkValidity()) {
-
-        const parentStep =
-          field.closest(".form-step");
+      const requiredFields =
+        [...form.querySelectorAll("[required]")];
 
 
-        if (parentStep) {
+      for (const field of requiredFields) {
 
-          const invalidStep =
-            Number(parentStep.dataset.step);
+        if (field.disabled) {
+          continue;
+        }
 
 
-          /*
-            Dacă există o eroare într-un pas anterior,
-            utilizatorul este trimis automat acolo.
-          */
+        if (!field.checkValidity()) {
 
-          showStep(invalidStep);
+          const parentStep =
+            field.closest(".form-step");
+
+
+          if (parentStep) {
+
+            const invalidStep =
+              Number(
+                parentStep.dataset.step
+              );
+
+            showStep(invalidStep);
+
+          }
+
+
+          field.reportValidity();
+
+
+          try {
+            field.focus();
+          } catch (error) {}
+
+
+          return;
+        }
+
+      }
+
+
+      if (!calculateCategory(true)) {
+
+        showStep(2);
+
+        return;
+      }
+
+
+      if (!validateAudioFile()) {
+
+        showStep(4);
+
+        return;
+      }
+
+
+      try {
+
+        setSubmittingState(true);
+
+
+        formStatus.classList.add(
+          "visible"
+        );
+
+        formStatus.textContent =
+          "Se pregătesc datele și fișierul MP3. Nu închide această pagină.";
+
+
+        const submissionData =
+          await buildSubmissionData();
+
+
+        formStatus.textContent =
+          "Înscrierea este în curs de transmitere. Fișierul audio poate necesita câteva momente pentru încărcare.";
+
+
+        /*
+          text/plain evită un preflight CORS pentru cererea
+          trimisă din GitHub Pages către Apps Script.
+          Conținutul rămâne JSON și este citit de doPost().
+        */
+
+        const response =
+          await fetch(
+            SCRIPT_URL,
+            {
+
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "text/plain;charset=utf-8"
+              },
+
+              body:
+                JSON.stringify(
+                  submissionData
+                )
+
+            }
+          );
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            "Serverul nu a putut procesa înscrierea."
+          );
 
         }
 
 
-        field.reportValidity();
+        const responseText =
+          await response.text();
+
+
+        let result;
 
 
         try {
-          field.focus();
+
+          result =
+            JSON.parse(responseText);
+
         }
 
-        catch (error) {}
+        catch (error) {
+
+          throw new Error(
+            "Răspunsul primit de la server nu este valid."
+          );
+
+        }
 
 
-        return;
+        if (!result.success) {
+
+          throw new Error(
+            result.message ||
+            "Înscrierea nu a putut fi salvată."
+          );
+
+        }
+
+
+        /*
+          SUCCES
+        */
+
+        formStatus.innerHTML =
+          `<strong>ÎNSCRIEREA A FOST TRANSMISĂ CU SUCCES.</strong><br>
+           ID ÎNSCRIERE: <strong>${result.registrationId}</strong><br>
+           Păstrează acest ID pentru eventuale comunicări cu organizatorul.`;
+
+
+        formStatus.classList.add(
+          "success"
+        );
+
+
+        submitButton.innerHTML =
+          "ÎNSCRIERE TRANSMISĂ ✓";
+
+
+        /*
+          Nu resetăm formularul automat.
+          Participantul poate vedea în continuare
+          datele pe care le-a transmis.
+        */
+
+        submissionInProgress = true;
+
+        submitButton.disabled = true;
+
+
+        document
+          .querySelectorAll(
+            ".next-button, .back-button, .progress-step, .add-teacher, .remove-teacher"
+          )
+          .forEach(button => {
+
+            button.disabled = true;
+
+          });
+
+      }
+
+      catch (error) {
+
+        setSubmittingState(false);
+
+
+        formStatus.classList.add(
+          "visible"
+        );
+
+        formStatus.classList.remove(
+          "success"
+        );
+
+
+        formStatus.textContent =
+          "Înscrierea nu a fost transmisă. " +
+          (
+            error.message ||
+            "A apărut o eroare. Te rugăm să încerci din nou."
+          );
 
       }
 
     }
-
-
-    if (!calculateCategory(true)) {
-
-      showStep(2);
-
-      return;
-
-    }
-
-
-    if (!validateAudioFile()) {
-
-      showStep(4);
-
-      return;
-
-    }
-
-
-    /*
-      FORMULARUL ESTE ÎNCĂ ÎN MOD DEMO.
-      BACKEND-UL VA FI CONECTAT ULTERIOR.
-    */
-
-    formStatus.textContent =
-      "Formularul este complet, însă transmiterea online nu este încă activată. Datele nu au fost trimise către organizator.";
-
-
-    formStatus.classList.add(
-      "visible"
-    );
-
-  });
+  );
 
 
   /* =========================================================
