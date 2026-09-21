@@ -87,7 +87,6 @@
 
   <section class="form-wrapper">
 
-
     <!-- BARA DE PROGRES -->
 
     <div class="progress-area">
@@ -153,7 +152,6 @@
 
       <!-- ===================================================
            PASUL 01
-           DATE DE IDENTIFICARE PARTICIPANT
            =================================================== -->
 
       <section class="form-step active" data-step="1">
@@ -305,7 +303,6 @@
 
       <!-- ===================================================
            PASUL 02
-           ÎNCADRAREA ÎN SECȚIUNE
            =================================================== -->
 
       <section class="form-step" data-step="2">
@@ -325,8 +322,6 @@
         </p>
 
 
-        <!-- TIP ÎNVĂȚĂMÂNT -->
-
         <div class="field full-field">
 
           <label>
@@ -334,7 +329,6 @@
           </label>
 
           <div class="choice-grid">
-
 
             <label class="choice-card">
 
@@ -393,9 +387,6 @@
 
         <div class="form-grid participation-fields">
 
-
-          <!-- SECȚIUNE -->
-
           <div class="field full-field">
 
             <label for="sectiune">
@@ -417,8 +408,6 @@
 
           </div>
 
-
-          <!-- CATEGORIE AUTOMATĂ -->
 
           <div class="field full-field">
 
@@ -442,8 +431,6 @@
 
           </div>
 
-
-          <!-- INSTITUȚIE -->
 
           <div class="field full-field">
 
@@ -470,7 +457,7 @@
         </div>
 
 
-        <!-- PROFESOR / PROFESORI -->
+        <!-- PROFESORI -->
 
         <div class="teachers-section">
 
@@ -535,7 +522,6 @@
             ADAUGĂ PROFESOR COORDONATOR
           </button>
 
-
           <p class="teacher-help">
             Poți adăuga mai mulți profesori coordonatori dacă dorești
             ca aceștia să fie menționați în documentele aferente participării.
@@ -563,7 +549,6 @@
 
       <!-- ===================================================
            PASUL 03
-           DATE DE CONTACT
            =================================================== -->
 
       <section class="form-step" data-step="3">
@@ -670,8 +655,7 @@
 
 
       <!-- ===================================================
-           PASUL 04
-           REPERTORIU
+           PASUL 04 — REPERTORIU
            =================================================== -->
 
       <section class="form-step" data-step="4">
@@ -693,9 +677,6 @@
 
         <div class="form-grid">
 
-
-          <!-- TITLU -->
-
           <div class="field full-field">
 
             <label for="titlu-piesa">
@@ -714,8 +695,6 @@
           </div>
 
 
-          <!-- AUTOR -->
-
           <div class="field">
 
             <label for="autor">
@@ -732,8 +711,6 @@
 
           </div>
 
-
-          <!-- MINUTAJ -->
 
           <div class="field">
 
@@ -757,8 +734,6 @@
 
           </div>
 
-
-          <!-- NEGATIV -->
 
           <div class="field full-field">
 
@@ -836,7 +811,6 @@
 
       <!-- ===================================================
            PASUL 05
-           CONFIRMARE + GDPR
            =================================================== -->
 
       <section class="form-step" data-step="5">
@@ -868,15 +842,11 @@
         </div>
 
 
-        <!-- REZUMAT -->
-
         <div
           class="review-container"
           id="review-container"
         ></div>
 
-
-        <!-- GDPR -->
 
         <div class="privacy-note">
 
@@ -908,10 +878,7 @@
         </div>
 
 
-        <!-- DECLARAȚII -->
-
         <div class="declarations">
-
 
           <label class="check-row">
 
@@ -1052,6 +1019,7 @@
   const totalSteps = 5;
 
   let currentStep = 1;
+  let highestUnlockedStep = 1;
   let teacherCount = 1;
 
 
@@ -1167,14 +1135,19 @@
 
       step.classList.toggle(
         "completed",
-        number < stepNumber
+        number < highestUnlockedStep
+      );
+
+      step.classList.toggle(
+        "locked",
+        number > highestUnlockedStep
       );
 
     });
 
 
     progressFill.style.width =
-      `${((stepNumber - 1) / (totalSteps - 1)) * 100}%`;
+      `${((highestUnlockedStep - 1) / (totalSteps - 1)) * 100}%`;
 
 
     if (stepNumber === 5) {
@@ -1191,19 +1164,25 @@
 
 
   /* =========================================================
-     TOȚI PAȘII SUNT ACCESIBILI
+     BARA DE PROGRES
+     NU SE POATE SĂRI PESTE PAȘI
      ========================================================= */
 
   progressSteps.forEach(button => {
-
-    button.style.cursor = "pointer";
 
     button.addEventListener("click", () => {
 
       const target =
         Number(button.dataset.step);
 
-      showStep(target);
+      /*
+        Poate accesa doar pașii care au fost
+        deja deblocați prin completarea formularului.
+      */
+
+      if (target <= highestUnlockedStep) {
+        showStep(target);
+      }
 
     });
 
@@ -1229,13 +1208,16 @@
         continue;
       }
 
+
       if (!field.checkValidity()) {
 
         field.reportValidity();
 
         try {
           field.focus();
-        } catch (error) {}
+        }
+
+        catch (error) {}
 
         return false;
 
@@ -1268,7 +1250,7 @@
 
 
   /* =========================================================
-     CONTINUĂ
+     CONTINUĂ — DEBLOCHEAZĂ URMĂTORUL PAS
      ========================================================= */
 
   document
@@ -1281,8 +1263,25 @@
           return;
         }
 
+
         if (currentStep < totalSteps) {
-          showStep(currentStep + 1);
+
+          const nextStep =
+            currentStep + 1;
+
+
+          /*
+            Următorul pas se deblochează numai după
+            validarea pasului curent.
+          */
+
+          if (nextStep > highestUnlockedStep) {
+            highestUnlockedStep = nextStep;
+          }
+
+
+          showStep(nextStep);
+
         }
 
       });
@@ -1438,7 +1437,7 @@
     }
 
 
-    /* SECȚIUNILE DE GRUP NU AU CATEGORIE DE VÂRSTĂ */
+    /* GRUPURILE NU AU CATEGORIE DE VÂRSTĂ */
 
     if (section.includes("GRUP")) {
 
@@ -1464,45 +1463,31 @@
     ) {
 
       if (age >= 4 && age <= 5) {
-
         category = "4–5 ANI";
-
       }
 
       else if (age >= 6 && age <= 7) {
-
         category = "6–7 ANI";
-
       }
 
       else if (age >= 8 && age <= 10) {
-
         category = "8–10 ANI";
-
       }
 
       else if (age >= 11 && age <= 13) {
-
         category = "11–13 ANI";
-
       }
 
       else if (age >= 14 && age <= 16) {
-
         category = "14–16 ANI";
-
       }
 
       else if (age >= 17 && age <= 19) {
-
         category = "17–19 ANI";
-
       }
 
       else if (age >= 20) {
-
         category = "+20 ANI";
-
       }
 
     }
@@ -1516,15 +1501,11 @@
     ) {
 
       if (age >= 15 && age <= 16) {
-
         category = "15–16 ANI";
-
       }
 
       else if (age >= 17 && age <= 19) {
-
         category = "17–19 ANI";
-
       }
 
     }
@@ -1734,8 +1715,6 @@
       audioInput.files[0];
 
 
-    /* FORMAT */
-
     if (
       !file.name.toLowerCase().endsWith(".mp3")
     ) {
@@ -1754,8 +1733,6 @@
 
     }
 
-
-    /* NUME + PRENUME + TITLU */
 
     const expected =
       expectedAudioBaseName();
@@ -1906,7 +1883,6 @@
 
 
       row.appendChild(label);
-
       row.appendChild(value);
 
       group.appendChild(row);
@@ -1937,8 +1913,6 @@
     const teachers =
       getTeacherNames();
 
-
-    /* PARTICIPANT */
 
     addReviewGroup(
       "PARTICIPANT",
@@ -1990,8 +1964,6 @@
     );
 
 
-    /* ÎNCADRARE */
-
     addReviewGroup(
       "ÎNCADRARE ÎN SECȚIUNE",
       [
@@ -2038,8 +2010,6 @@
     );
 
 
-    /* CONTACT */
-
     addReviewGroup(
       "DATE DE CONTACT",
       [
@@ -2075,8 +2045,6 @@
       ]
     );
 
-
-    /* REPERTORIU */
 
     addReviewGroup(
       "REPERTORIU",
@@ -2127,8 +2095,6 @@
     event.preventDefault();
 
 
-    /* LA TRIMITERE VERIFICĂM ÎNTREG FORMULARUL */
-
     const requiredFields =
       [...form.querySelectorAll("[required]")];
 
@@ -2148,9 +2114,16 @@
 
         if (parentStep) {
 
-          showStep(
-            Number(parentStep.dataset.step)
-          );
+          const invalidStep =
+            Number(parentStep.dataset.step);
+
+
+          /*
+            Dacă există o eroare într-un pas anterior,
+            utilizatorul este trimis automat acolo.
+          */
+
+          showStep(invalidStep);
 
         }
 
@@ -2172,8 +2145,6 @@
     }
 
 
-    /* CATEGORIE */
-
     if (!calculateCategory(true)) {
 
       showStep(2);
@@ -2182,8 +2153,6 @@
 
     }
 
-
-    /* MP3 */
 
     if (!validateAudioFile()) {
 
@@ -2196,7 +2165,7 @@
 
     /*
       FORMULARUL ESTE ÎNCĂ ÎN MOD DEMO.
-      AICI VA FI CONECTAT BACKEND-UL.
+      BACKEND-UL VA FI CONECTAT ULTERIOR.
     */
 
     formStatus.textContent =
