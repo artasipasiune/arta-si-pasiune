@@ -9,7 +9,7 @@
 
   <meta
     name="description"
-    content="Festivalul de Muzică Simfonia Toamnei – Ediția a VI-a, 2026."
+    content="Festivalul de Muzică Simfonia Toamnei – regulament, înscriere, program și rezultate."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,33 +26,17 @@
 
 <body>
 
-  <!-- FRUNZE ANIMATE -->
+  <!-- =====================================================
+       MENIU
+       ===================================================== -->
 
-  <div class="leaves" aria-hidden="true">
-    <span>🍂</span>
-    <span>🍁</span>
-    <span>🍂</span>
-    <span>🍁</span>
-    <span>🍂</span>
-    <span>🍁</span>
-  </div>
-
-
-  <!-- =========================
-       HERO
-       ========================= -->
-
-  <header class="festival-hero" id="festival">
+  <header class="festival-header">
 
     <nav class="festival-nav">
 
-      <a
-        href="../../index.html"
-        class="festival-brand"
-      >
-        ← ARTĂ ȘI PASIUNE
+      <a href="../../index.html" class="back-home">
+        ARTĂ ȘI PASIUNE
       </a>
-
 
       <div class="festival-menu">
 
@@ -76,47 +60,84 @@
 
     </nav>
 
-
-    <div class="festival-hero-content">
-
-      <img
-        src="imagini/logo festival.png"
-        alt="Festivalul de Muzică Simfonia Toamnei"
-        class="festival-logo"
-      >
-
-      <p class="festival-edition">
-        EDIȚIA A VI-A · 2026
-      </p>
-
-      <a
-        href="#editia"
-        class="festival-button"
-      >
-        DESCOPERĂ FESTIVALUL ↓
-      </a>
-
-    </div>
-
   </header>
 
 
-  <!-- =========================
-       ACCES RAPID
-       ========================= -->
-
   <main>
 
-    <section class="festival-access" id="editia">
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
-      <div class="festival-section-heading">
+    <section class="festival-hero" id="festival">
 
-        <span class="festival-small-title">
-          INFORMAȚII PENTRU PARTICIPARE
+
+      <!-- FRUNZE ANIMATE -->
+
+      <div class="leaves" aria-hidden="true">
+
+        <span class="leaf leaf-1">🍂</span>
+        <span class="leaf leaf-2">🍁</span>
+        <span class="leaf leaf-3">🍂</span>
+        <span class="leaf leaf-4">🍁</span>
+        <span class="leaf leaf-5">🍂</span>
+        <span class="leaf leaf-6">🍁</span>
+
+      </div>
+
+
+      <!-- CONȚINUT CENTRAL -->
+
+      <div class="festival-hero-content">
+
+
+        <!-- LOGO ORIGINAL -->
+
+        <img
+          src="imagini/logo festival.png"
+          alt="Festivalul de Muzică Simfonia Toamnei"
+          class="festival-logo"
+        >
+
+
+        <p
+          class="edition-label"
+          id="editia"
+        >
+          EDIȚIA A VI-A · 2026
+        </p>
+
+
+        <a
+          href="#acces-rapid"
+          class="discover-button"
+        >
+          DESCOPERĂ FESTIVALUL
+          <span>↓</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ACCES RAPID
+         ===================================================== -->
+
+    <section
+      class="quick-access"
+      id="acces-rapid"
+    >
+
+      <div class="quick-heading">
+
+        <span>
+          SIMFONIA TOAMNEI · EDIȚIA VI
         </span>
 
         <h1>
-          Ediția a VI-a
+          Informații pentru participare
         </h1>
 
         <p>
@@ -126,18 +147,24 @@
       </div>
 
 
-      <div class="festival-cards">
+      <div class="quick-grid">
 
 
-        <!-- REGULAMENT -->
+        <!-- =================================================
+             01 — REGULAMENT
+             ================================================= -->
 
         <a
           href="regulament/"
-          class="festival-card"
+          class="quick-card"
         >
 
-          <span class="festival-card-number">
+          <span class="card-number">
             01
+          </span>
+
+          <span class="card-symbol">
+            §
           </span>
 
           <h2>
@@ -146,25 +173,31 @@
 
           <p>
             Condiții de participare, secțiuni,
-            categorii și informații despre festival.
+            categorii și informații oficiale.
           </p>
 
-          <span class="festival-card-link">
-            VEZI REGULAMENTUL →
+          <span class="card-action">
+            DESCHIDE →
           </span>
 
         </a>
 
 
-        <!-- ÎNSCRIERE -->
+        <!-- =================================================
+             02 — ÎNSCRIERE
+             ================================================= -->
 
         <a
           href="https://script.google.com/macros/s/AKfycby_QXCn2REofESMl2-l_UkqR5743ICxMKQcRZTccHNRngPQvbV6YHZo6IT5S9nXuLGl/exec"
-          class="festival-card"
+          class="quick-card important"
         >
 
-          <span class="festival-card-number">
+          <span class="card-number">
             02
+          </span>
+
+          <span class="card-symbol">
+            ✦
           </span>
 
           <h2>
@@ -172,23 +205,33 @@
           </h2>
 
           <p>
-            Completează formularul de înscriere
-            pentru participarea la festival.
+            Formularul oficial pentru înscrierea
+            la ediția a VI-a.
           </p>
 
-          <span class="festival-card-link">
-            COMPLETEAZĂ FORMULARUL →
+          <span class="card-action">
+            DESCHIDE →
           </span>
 
         </a>
 
 
-        <!-- PROGRAM -->
+        <!-- =================================================
+             03 — PROGRAM
+             MOMENTAN INACTIV
+             ================================================= -->
 
-        <div class="festival-card festival-card-disabled">
+        <div
+          class="quick-card unavailable"
+          aria-disabled="true"
+        >
 
-          <span class="festival-card-number">
+          <span class="card-number">
             03
+          </span>
+
+          <span class="card-symbol">
+            ◷
           </span>
 
           <h2>
@@ -196,23 +239,33 @@
           </h2>
 
           <p>
-            Programul festivalului va fi publicat
-            după încheierea perioadei de înscriere.
+            Programul și ordinea momentelor
+            vor fi publicate înaintea festivalului.
           </p>
 
-          <span class="festival-card-status">
+          <span class="card-status">
             VA URMA
           </span>
 
         </div>
 
 
-        <!-- REZULTATE -->
+        <!-- =================================================
+             04 — REZULTATE
+             MOMENTAN INACTIV
+             ================================================= -->
 
-        <div class="festival-card festival-card-disabled">
+        <div
+          class="quick-card unavailable"
+          aria-disabled="true"
+        >
 
-          <span class="festival-card-number">
+          <span class="card-number">
             04
+          </span>
+
+          <span class="card-symbol">
+            ★
           </span>
 
           <h2>
@@ -220,11 +273,11 @@
           </h2>
 
           <p>
-            Rezultatele festivalului vor fi
-            disponibile aici după desfășurarea competiției.
+            Rezultatele ediției a VI-a
+            vor fi publicate după desfășurarea festivalului.
           </p>
 
-          <span class="festival-card-status">
+          <span class="card-status">
             VA URMA
           </span>
 
@@ -237,22 +290,26 @@
   </main>
 
 
-  <!-- =========================
+  <!-- =====================================================
        FOOTER
-       ========================= -->
+       ===================================================== -->
 
   <footer class="festival-footer">
+
+    <span>
+      FESTIVALUL DE MUZICĂ „SIMFONIA TOAMNEI”
+    </span>
+
+    <span class="footer-dot">
+      •
+    </span>
 
     <a href="../../index.html">
       ASOCIAȚIA CULTURAL-EDUCATIVĂ „ARTĂ ȘI PASIUNE”
     </a>
 
-    <p>
-      Festivalul de Muzică „Simfonia Toamnei” · 2026
-    </p>
-
   </footer>
 
-
 </body>
+
 </html>
