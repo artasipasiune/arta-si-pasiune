@@ -25,1146 +25,1314 @@
 
 <body>
 
-  <!-- =====================================================
-       HEADER
-       ===================================================== -->
+<header class="registration-header">
+  <nav class="registration-nav">
 
-  <header class="registration-header">
-    <nav class="registration-nav">
+    <a href="../" class="back-festival">
+      ← SIMFONIA TOAMNEI
+    </a>
 
-      <a href="../" class="back-festival">
-        ← SIMFONIA TOAMNEI
-      </a>
+    <span class="nav-title">
+      ÎNSCRIERE
+    </span>
 
-      <span class="nav-title">
-        ÎNSCRIERE
+  </nav>
+</header>
+
+
+<main>
+
+  <!-- INTRO -->
+
+  <section class="registration-intro">
+
+    <span class="eyebrow">
+      FESTIVALUL DE MUZICĂ „SIMFONIA TOAMNEI”
+    </span>
+
+    <h1>Înscriere</h1>
+
+    <div class="title-ornament">
+      <span></span>
+      <b>✦</b>
+      <span></span>
+    </div>
+
+    <p>
+      Completează cu atenție formularul de participare.
+      Informațiile introduse vor fi utilizate pentru organizarea
+      festivalului și pentru redactarea documentelor aferente.
+    </p>
+
+    <div class="important-note">
+      <strong>IMPORTANT</strong>
+
+      <span>
+        Completează numele, prenumele, instituția și numele profesorilor
+        cu diacritice, exact în forma în care trebuie să apară în
+        documentele festivalului. Câmpurile marcate cu * sunt obligatorii.
       </span>
+    </div>
 
-    </nav>
-  </header>
+  </section>
 
 
-  <main>
+  <!-- FORMULAR -->
 
-    <!-- =====================================================
-         INTRO
-         ===================================================== -->
+  <section class="form-wrapper">
 
-    <section class="registration-intro">
+    <!-- PROGRES -->
 
-      <span class="eyebrow">
-        FESTIVALUL DE MUZICĂ „SIMFONIA TOAMNEI”
-      </span>
+    <div class="progress-area">
 
-      <h1>Înscriere</h1>
-
-      <div class="title-ornament">
-        <span></span>
-        <b>✦</b>
-        <span></span>
+      <div class="progress-line">
+        <div class="progress-fill" id="progress-fill"></div>
       </div>
 
-      <p>
-        Completează cu atenție formularul de participare.
-        Informațiile introduse vor fi utilizate pentru organizarea
-        festivalului și pentru redactarea documentelor aferente.
-      </p>
+      <div class="progress-steps">
 
-      <div class="important-note">
-        <strong>IMPORTANT</strong>
-        <span>
-          Numele, prenumele, instituția și numele profesorilor trebuie
-          completate corect, cu diacritice. Aceste informații vor fi
-          preluate pentru redactarea diplomelor.
-        </span>
-      </div>
+        <button type="button" class="progress-step active" data-step="1">
+          <span>01</span>
+        </button>
 
-    </section>
+        <button type="button" class="progress-step" data-step="2">
+          <span>02</span>
+        </button>
 
+        <button type="button" class="progress-step" data-step="3">
+          <span>03</span>
+        </button>
 
-    <!-- =====================================================
-         PROGRES
-         ===================================================== -->
+        <button type="button" class="progress-step" data-step="4">
+          <span>04</span>
+        </button>
 
-    <section class="form-wrapper">
-
-      <div class="progress-area">
-
-        <div class="progress-line">
-          <div class="progress-fill" id="progress-fill"></div>
-        </div>
-
-        <div class="progress-steps">
-
-          <button type="button" class="progress-step active" data-step="1">
-            <span>01</span>
-            <small>Participant</small>
-          </button>
-
-          <button type="button" class="progress-step" data-step="2">
-            <span>02</span>
-            <small>Participare</small>
-          </button>
-
-          <button type="button" class="progress-step" data-step="3">
-            <span>03</span>
-            <small>Moment artistic</small>
-          </button>
-
-          <button type="button" class="progress-step" data-step="4">
-            <span>04</span>
-            <small>Profesor</small>
-          </button>
-
-          <button type="button" class="progress-step" data-step="5">
-            <span>05</span>
-            <small>Contact</small>
-          </button>
-
-          <button type="button" class="progress-step" data-step="6">
-            <span>06</span>
-            <small>Confirmare</small>
-          </button>
-
-        </div>
+        <button type="button" class="progress-step" data-step="5">
+          <span>05</span>
+        </button>
 
       </div>
+
+    </div>
+
+
+    <form id="festival-form" novalidate>
 
 
       <!-- ===================================================
-           FORMULAR
+           01 — PARTICIPANT
            =================================================== -->
 
-      <form id="festival-form" novalidate>
+      <section class="form-step active" data-step="1">
 
+        <div class="step-heading">
 
-        <!-- =================================================
-             PASUL 1 — PARTICIPANT
-             ================================================= -->
+          <span>01</span>
 
-        <section class="form-step active" data-step="1">
-
-          <div class="step-heading">
-            <span>01</span>
-
-            <div>
-              <p>DATE DE IDENTIFICARE</p>
-              <h2>Participant</h2>
-            </div>
+          <div>
+            <h2>DATE DE IDENTIFICARE PARTICIPANT</h2>
           </div>
 
+        </div>
 
-          <div class="form-grid">
-
-            <div class="field">
-              <label for="nume">
-                NUME <em>*</em>
-              </label>
-
-              <input
-                type="text"
-                id="nume"
-                name="nume"
-                required
-                autocomplete="family-name"
-                data-uppercase
-                placeholder="EX.: POPESCU"
-              >
-            </div>
+        <p class="required-info">
+          CÂMPURILE MARCATE CU * SUNT OBLIGATORII.
+        </p>
 
 
-            <div class="field">
-              <label for="prenume">
-                PRENUME <em>*</em>
-              </label>
+        <div class="form-grid">
 
-              <input
-                type="text"
-                id="prenume"
-                name="prenume"
-                required
-                autocomplete="given-name"
-                data-uppercase
-                placeholder="EX.: MARIA-IOANA"
-              >
-            </div>
+          <div class="field">
 
+            <label for="nume">
+              NUME <em>*</em>
+            </label>
 
-            <div class="field">
-              <label for="data-nasterii">
-                DATA NAȘTERII <em>*</em>
-              </label>
-
-              <input
-                type="date"
-                id="data-nasterii"
-                name="data_nasterii"
-                required
-              >
-
-              <small>
-                Vârsta participantului va fi raportată la data desfășurării festivalului.
-              </small>
-            </div>
-
-
-            <div class="field">
-              <label for="varsta">
-                VÂRSTA LA DATA FESTIVALULUI <em>*</em>
-              </label>
-
-              <input
-                type="number"
-                id="varsta"
-                name="varsta"
-                required
-                min="4"
-                max="99"
-                inputmode="numeric"
-                placeholder="EX.: 12"
-              >
-
-              <small>
-                Introdu vârsta pe care participantul o va avea la momentul concursului.
-              </small>
-            </div>
-
-
-            <div class="field">
-              <label for="localitate">
-                LOCALITATEA DE PROVENIENȚĂ <em>*</em>
-              </label>
-
-              <input
-                type="text"
-                id="localitate"
-                name="localitate"
-                required
-                data-uppercase
-                placeholder="EX.: BACĂU"
-              >
-            </div>
-
-
-            <div class="field">
-              <label for="judet">
-                JUDEȚ / ȚARĂ <em>*</em>
-              </label>
-
-              <input
-                type="text"
-                id="judet"
-                name="judet_tara"
-                required
-                data-uppercase
-                placeholder="EX.: BACĂU / ROMÂNIA"
-              >
-            </div>
+            <input
+              type="text"
+              id="nume"
+              name="nume"
+              required
+              data-uppercase
+              autocomplete="family-name"
+              placeholder="EX.: POPESCU"
+            >
 
           </div>
 
 
-          <div class="step-actions right">
-            <button type="button" class="next-button">
-              CONTINUĂ
-              <span>→</span>
-            </button>
+          <div class="field">
+
+            <label for="prenume">
+              PRENUME <em>*</em>
+            </label>
+
+            <input
+              type="text"
+              id="prenume"
+              name="prenume"
+              required
+              data-uppercase
+              autocomplete="given-name"
+              placeholder="EX.: MARIA-IOANA"
+            >
+
           </div>
 
-        </section>
+
+          <div class="field">
+
+            <label for="data-nasterii">
+              DATA NAȘTERII <em>*</em>
+            </label>
+
+            <input
+              type="date"
+              id="data-nasterii"
+              name="data_nasterii"
+              required
+            >
+
+          </div>
 
 
-        <!-- =================================================
-             PASUL 2 — PARTICIPARE
-             ================================================= -->
+          <div class="field">
 
-        <section class="form-step" data-step="2">
+            <label for="varsta">
+              VÂRSTA <em>*</em>
+            </label>
 
-          <div class="step-heading">
-            <span>02</span>
+            <input
+              type="number"
+              id="varsta"
+              name="varsta"
+              required
+              min="4"
+              max="99"
+              inputmode="numeric"
+              placeholder="EX.: 12"
+            >
 
-            <div>
-              <p>ÎNCADRAREA ÎN FESTIVAL</p>
-              <h2>Participare</h2>
-            </div>
+            <small>
+              Vârsta împlinită la data desfășurării festivalului.
+            </small>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="localitate">
+              LOCALITATEA DE PROVENIENȚĂ <em>*</em>
+            </label>
+
+            <input
+              type="text"
+              id="localitate"
+              name="localitate"
+              required
+              data-uppercase
+              placeholder="EX.: BACĂU"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="judet">
+              JUDEȚ / ȚARĂ <em>*</em>
+            </label>
+
+            <input
+              type="text"
+              id="judet"
+              name="judet_tara"
+              required
+              data-uppercase
+              placeholder="EX.: BACĂU / ROMÂNIA"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="step-actions right">
+
+          <button type="button" class="next-button">
+            CONTINUĂ
+            <span>→</span>
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           02 — ÎNCADRAREA ÎN SECȚIUNE
+           =================================================== -->
+
+      <section class="form-step" data-step="2">
+
+        <div class="step-heading">
+
+          <span>02</span>
+
+          <div>
+            <h2>ÎNCADRAREA ÎN SECȚIUNE</h2>
+          </div>
+
+        </div>
+
+        <p class="required-info">
+          CÂMPURILE MARCATE CU * SUNT OBLIGATORII.
+        </p>
+
+
+        <div class="field full-field">
+
+          <label>
+            TIPUL DE ÎNVĂȚĂMÂNT <em>*</em>
+          </label>
+
+
+          <div class="choice-grid">
+
+            <label class="choice-card">
+
+              <input
+                type="radio"
+                name="tip_invatamant"
+                value="ÎNVĂȚĂMÂNT DE MASĂ / HOBBY"
+                required
+              >
+
+              <span class="choice-content">
+
+                <strong>
+                  ÎNVĂȚĂMÂNT DE MASĂ / HOBBY
+                </strong>
+
+                <small>
+                  Școli, Palate și Cluburi ale Copiilor,
+                  Școli Populare de Arte, cluburi și
+                  instituții din mediul privat.
+                </small>
+
+              </span>
+
+            </label>
+
+
+            <label class="choice-card">
+
+              <input
+                type="radio"
+                name="tip_invatamant"
+                value="ÎNVĂȚĂMÂNT VOCAȚIONAL"
+                required
+              >
+
+              <span class="choice-content">
+
+                <strong>
+                  ÎNVĂȚĂMÂNT VOCAȚIONAL
+                </strong>
+
+                <small>
+                  Participanți care urmează o formă de
+                  învățământ vocațional de specialitate.
+                </small>
+
+              </span>
+
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-grid participation-fields">
+
+          <div class="field full-field">
+
+            <label for="sectiune">
+              SECȚIUNEA <em>*</em>
+            </label>
+
+            <select
+              id="sectiune"
+              name="sectiune"
+              required
+              disabled
+            >
+
+              <option value="">
+                SELECTEAZĂ MAI ÎNTÂI TIPUL DE ÎNVĂȚĂMÂNT
+              </option>
+
+            </select>
+
           </div>
 
 
           <div class="field full-field">
+
             <label>
-              TIPUL DE ÎNVĂȚĂMÂNT <em>*</em>
+              CATEGORIA DE VÂRSTĂ
             </label>
 
-            <div class="choice-grid">
-
-              <label class="choice-card">
-                <input
-                  type="radio"
-                  name="tip_invatamant"
-                  value="ÎNVĂȚĂMÂNT DE MASĂ / HOBBY"
-                  required
-                >
-
-                <span class="choice-content">
-                  <strong>ÎNVĂȚĂMÂNT DE MASĂ / HOBBY</strong>
-                  <small>
-                    Școli, Palate și Cluburi ale Copiilor,
-                    Școli Populare de Arte, cluburi și mediul privat.
-                  </small>
-                </span>
-              </label>
-
-
-              <label class="choice-card">
-                <input
-                  type="radio"
-                  name="tip_invatamant"
-                  value="ÎNVĂȚĂMÂNT VOCAȚIONAL"
-                  required
-                >
-
-                <span class="choice-content">
-                  <strong>ÎNVĂȚĂMÂNT VOCAȚIONAL</strong>
-                  <small>
-                    Elevi care urmează o formă de învățământ
-                    vocațional de specialitate.
-                  </small>
-                </span>
-              </label>
-
-            </div>
-          </div>
-
-
-          <div class="form-grid participation-fields">
-
-            <div class="field">
-              <label for="sectiune">
-                SECȚIUNEA <em>*</em>
-              </label>
-
-              <select
-                id="sectiune"
-                name="sectiune"
-                required
-                disabled
-              >
-                <option value="">
-                  Selectează mai întâi tipul de învățământ
-                </option>
-              </select>
-            </div>
-
-
-            <div class="field" id="category-field">
-              <label for="categorie">
-                CATEGORIA DE VÂRSTĂ <em>*</em>
-              </label>
-
-              <select
-                id="categorie"
-                name="categorie"
-                required
-                disabled
-              >
-                <option value="">
-                  Selectează secțiunea
-                </option>
-              </select>
-            </div>
-
-          </div>
-
-
-          <div
-            class="group-message"
-            id="group-message"
-            hidden
-          >
-            Pentru secțiunile de grup nu se aplică o categorie de vârstă.
-          </div>
-
-
-          <div class="step-actions">
-            <button type="button" class="back-button">
-              <span>←</span>
-              ÎNAPOI
-            </button>
-
-            <button type="button" class="next-button">
-              CONTINUĂ
-              <span>→</span>
-            </button>
-          </div>
-
-        </section>
-
-
-        <!-- =================================================
-             PASUL 3 — MOMENT ARTISTIC
-             ================================================= -->
-
-        <section class="form-step" data-step="3">
-
-          <div class="step-heading">
-            <span>03</span>
-
-            <div>
-              <p>REPERTORIU</p>
-              <h2>Moment artistic</h2>
-            </div>
-          </div>
-
-
-          <div class="form-grid">
-
-            <div class="field full-field">
-              <label for="titlu-piesa">
-                TITLUL PIESEI <em>*</em>
-              </label>
-
-              <input
-                type="text"
-                id="titlu-piesa"
-                name="titlu_piesa"
-                required
-                data-uppercase
-                placeholder="SCRIE TITLUL COMPLET AL PIESEI"
-              >
-            </div>
-
-
-            <div class="field">
-              <label for="minutaj">
-                MINUTAJ <em>*</em>
-              </label>
-
-              <input
-                type="text"
-                id="minutaj"
-                name="minutaj"
-                required
-                inputmode="numeric"
-                pattern="^[0-9]{1,2}:[0-5][0-9]$"
-                placeholder="EX.: 03:45"
-              >
-
-              <small>
-                Completează în format minute:secunde.
-              </small>
-            </div>
-
-
-            <div class="field">
-              <label for="autor">
-                AUTOR / COMPOZITOR <em>*</em>
-              </label>
-
-              <input
-                type="text"
-                id="autor"
-                name="autor_compozitor"
-                required
-                data-uppercase
-                placeholder="NUME AUTOR / COMPOZITOR"
-              >
-            </div>
-
-
-            <div class="field full-field">
-
-              <label for="negativ">
-                NEGATIVUL / SUPORTUL AUDIO AL PIESEI <em>*</em>
-              </label>
-
-              <label class="upload-box" for="negativ">
-
-                <span class="upload-symbol">♫</span>
-
-                <strong>
-                  ÎNCARCĂ NEGATIVUL
-                </strong>
-
-                <small id="file-name">
-                  Selectează fișierul audio de pe dispozitiv
-                </small>
-
-                <input
-                  type="file"
-                  id="negativ"
-                  name="negativ"
-                  required
-                  accept=".mp3,.wav,.m4a,audio/*"
-                >
-
-              </label>
-
-              <p class="upload-info">
-                Verifică înainte de încărcare calitatea și funcționalitatea fișierului audio.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="step-actions">
-            <button type="button" class="back-button">
-              <span>←</span>
-              ÎNAPOI
-            </button>
-
-            <button type="button" class="next-button">
-              CONTINUĂ
-              <span>→</span>
-            </button>
-          </div>
-
-        </section>
-
-
-        <!-- =================================================
-             PASUL 4 — PROFESOR
-             ================================================= -->
-
-        <section class="form-step" data-step="4">
-
-          <div class="step-heading">
-            <span>04</span>
-
-            <div>
-              <p>ÎNDRUMARE ARTISTICĂ</p>
-              <h2>Profesor coordonator</h2>
-            </div>
-          </div>
-
-
-          <div class="form-grid">
-
-            <div class="field full-field">
-              <label for="institutie">
-                INSTITUȚIA / CLUBUL REPREZENTAT <em>*</em>
-              </label>
-
-              <input
-                type="text"
-                id="institutie"
-                name="institutie"
-                required
-                data-uppercase
-                placeholder="DENUMIREA COMPLETĂ"
-              >
-
-              <small>
-                Dacă participantul nu reprezintă o instituție sau un club,
-                completează „INDEPENDENT”.
-              </small>
-            </div>
-
-          </div>
-
-
-          <div class="teachers-section">
-
-            <div class="teachers-heading">
-              <div>
-                <span>PROFESOR COORDONATOR</span>
-                <h3>Date pentru diplomă</h3>
-              </div>
-
-              <p>
-                Introdu numele complet, cu diacritice, exact în forma
-                în care trebuie să apară pe diplomă.
-              </p>
-            </div>
-
-
-            <div id="teachers-container">
-
-              <div class="teacher-row" data-teacher="1">
-
-                <span class="teacher-number">
-                  01
-                </span>
-
-                <div class="field">
-                  <label for="profesor-1">
-                    NUMELE ȘI PRENUMELE PROFESORULUI <em>*</em>
-                  </label>
-
-                  <input
-                    type="text"
-                    id="profesor-1"
-                    name="profesor_1"
-                    required
-                    data-uppercase
-                    placeholder="NUME ȘI PRENUME"
-                  >
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <button
-              type="button"
-              class="add-teacher"
-              id="add-teacher"
+            <div
+              id="categorie-automata"
+              class="automatic-category"
             >
-              <span>＋</span>
-              ADAUGĂ ÎNCĂ UN PROFESOR COORDONATOR
-            </button>
+              Categoria va fi stabilită automat în funcție de
+              vârsta participantului și tipul de învățământ.
+            </div>
+
+            <input
+              type="hidden"
+              id="categorie"
+              name="categorie"
+            >
 
           </div>
 
 
-          <div class="step-actions">
-            <button type="button" class="back-button">
-              <span>←</span>
-              ÎNAPOI
-            </button>
+          <div class="field full-field">
 
-            <button type="button" class="next-button">
-              CONTINUĂ
-              <span>→</span>
-            </button>
+            <label for="institutie">
+              INSTITUȚIA / CLUBUL REPREZENTAT <em>*</em>
+            </label>
+
+            <input
+              type="text"
+              id="institutie"
+              name="institutie"
+              required
+              data-uppercase
+              placeholder="DENUMIREA COMPLETĂ"
+            >
+
+            <small>
+              Dacă participantul nu reprezintă o instituție sau
+              un club, completează „INDEPENDENT”.
+            </small>
+
           </div>
 
-        </section>
+        </div>
 
 
-        <!-- =================================================
-             PASUL 5 — CONTACT
-             ================================================= -->
+        <!-- PROFESORI -->
 
-        <section class="form-step" data-step="5">
+        <div class="teachers-section">
 
-          <div class="step-heading">
-            <span>05</span>
+          <div class="teachers-heading">
 
             <div>
-              <p>COMUNICARE</p>
-              <h2>Date de contact</h2>
+              <span>ÎNDRUMARE ARTISTICĂ</span>
+              <h3>PROFESOR COORDONATOR</h3>
             </div>
+
+            <p>
+              Completează numele cu diacritice, exact în forma
+              în care trebuie să apară pe diplomă.
+            </p>
+
           </div>
 
 
-          <div class="contact-explanation">
-            Datele de contact vor fi utilizate pentru comunicările
-            organizatorice referitoare la participarea în festival.
+          <div id="teachers-container">
+
+            <div class="teacher-row" data-teacher="1">
+
+              <span class="teacher-number">
+                01
+              </span>
+
+              <div class="field">
+
+                <label for="profesor-1">
+                  NUMELE ȘI PRENUMELE PROFESORULUI <em>*</em>
+                </label>
+
+                <input
+                  type="text"
+                  id="profesor-1"
+                  name="profesor_1"
+                  required
+                  data-uppercase
+                  placeholder="NUME ȘI PRENUME"
+                >
+
+              </div>
+
+            </div>
+
           </div>
 
 
-          <div class="form-grid">
+          <button
+            type="button"
+            class="add-teacher"
+            id="add-teacher"
+          >
+            <span>＋</span>
+            ADAUGĂ PROFESOR COORDONATOR
+          </button>
 
-            <div class="field full-field">
-              <label for="contact-nume">
-                NUMELE ȘI PRENUMELE PERSOANEI DE CONTACT <em>*</em>
-              </label>
+        </div>
 
-              <input
-                type="text"
-                id="contact-nume"
-                name="contact_nume"
-                required
-                data-uppercase
-                placeholder="NUME ȘI PRENUME"
-              >
 
-              <small>
-                Pentru participanții minori, completează datele părintelui /
-                reprezentantului legal.
+        <div class="step-actions">
+
+          <button type="button" class="back-button">
+            <span>←</span>
+            ÎNAPOI
+          </button>
+
+          <button type="button" class="next-button">
+            CONTINUĂ
+            <span>→</span>
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           03 — REPERTORIU
+           =================================================== -->
+
+      <section class="form-step" data-step="3">
+
+        <div class="step-heading">
+
+          <span>03</span>
+
+          <div>
+            <h2>REPERTORIU</h2>
+          </div>
+
+        </div>
+
+        <p class="required-info">
+          CÂMPURILE MARCATE CU * SUNT OBLIGATORII.
+        </p>
+
+
+        <div class="form-grid">
+
+          <div class="field full-field">
+
+            <label for="titlu-piesa">
+              TITLUL PIESEI <em>*</em>
+            </label>
+
+            <input
+              type="text"
+              id="titlu-piesa"
+              name="titlu_piesa"
+              required
+              data-uppercase
+              placeholder="TITLUL COMPLET AL PIESEI"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="autor">
+              AUTOR / COMPOZITOR
+            </label>
+
+            <input
+              type="text"
+              id="autor"
+              name="autor_compozitor"
+              data-uppercase
+              placeholder="OPȚIONAL"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="minutaj">
+              MINUTAJ <em>*</em>
+            </label>
+
+            <input
+              type="text"
+              id="minutaj"
+              name="minutaj"
+              required
+              inputmode="numeric"
+              pattern="^[0-9]{1,2}:[0-5][0-9]$"
+              placeholder="EX.: 03:45"
+            >
+
+            <small>
+              Format minute:secunde.
+            </small>
+
+          </div>
+
+
+          <!-- NEGATIV -->
+
+          <div class="field full-field">
+
+            <label for="negativ">
+              NEGATIVUL / SUPORTUL AUDIO <em>*</em>
+            </label>
+
+            <label class="upload-box" for="negativ">
+
+              <span class="upload-symbol">
+                ♫
+              </span>
+
+              <strong>
+                ÎNCARCĂ NEGATIVUL
+              </strong>
+
+              <small id="file-name">
+                FIȘIER MP3
               </small>
-            </div>
-
-
-            <div class="field">
-              <label for="telefon">
-                NUMĂR DE TELEFON <em>*</em>
-              </label>
 
               <input
-                type="tel"
-                id="telefon"
-                name="telefon"
+                type="file"
+                id="negativ"
+                name="negativ"
                 required
-                autocomplete="tel"
-                placeholder="07XXXXXXXX"
+                accept=".mp3,audio/mpeg"
               >
+
+            </label>
+
+
+            <div class="file-rule">
+
+              <strong>
+                DENUMIRE OBLIGATORIE:
+              </strong>
+
+              <span>
+                NUME ȘI PRENUME - TITLUL PIESEI.mp3
+              </span>
+
+              <small id="expected-file-name"></small>
+
             </div>
 
 
-            <div class="field">
-              <label for="email">
-                E-MAIL <em>*</em>
-              </label>
+            <p
+              id="audio-error"
+              class="file-error"
+              hidden
+            ></p>
+
+          </div>
+
+
+          <!-- FOTOGRAFIE -->
+
+          <div class="field full-field photo-section">
+
+            <label for="fotografie">
+              FOTOGRAFIE PENTRU BROȘURA FESTIVALULUI
+            </label>
+
+            <label
+              class="upload-box photo-upload"
+              for="fotografie"
+            >
+
+              <span class="upload-symbol">
+                ◇
+              </span>
+
+              <strong>
+                ÎNCARCĂ FOTOGRAFIA
+              </strong>
+
+              <small id="photo-file-name">
+                JPG, JPEG SAU PNG
+              </small>
 
               <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                autocomplete="email"
-                placeholder="exemplu@email.ro"
+                type="file"
+                id="fotografie"
+                name="fotografie"
+                accept=".jpg,.jpeg,.png,image/jpeg,image/png"
               >
-            </div>
 
-          </div>
+            </label>
 
-
-          <div class="step-actions">
-            <button type="button" class="back-button">
-              <span>←</span>
-              ÎNAPOI
-            </button>
-
-            <button type="button" class="next-button">
-              VERIFICĂ ÎNSCRIEREA
-              <span>→</span>
-            </button>
-          </div>
-
-        </section>
-
-
-        <!-- =================================================
-             PASUL 6 — CONFIRMARE
-             ================================================= -->
-
-        <section class="form-step" data-step="6">
-
-          <div class="step-heading">
-            <span>06</span>
-
-            <div>
-              <p>VERIFICARE FINALĂ</p>
-              <h2>Confirmarea înscrierii</h2>
-            </div>
-          </div>
-
-
-          <div class="review-warning">
-            <strong>Verifică atent informațiile.</strong>
-            <p>
-              Datele introduse vor fi utilizate pentru organizarea
-              festivalului și pentru redactarea documentelor aferente.
+            <p class="upload-info">
+              Fotografia trebuie să fie clară și potrivită
+              pentru materialele de prezentare ale festivalului.
             </p>
+
           </div>
 
-
-          <div
-            class="review-container"
-            id="review-container"
-          ></div>
+        </div>
 
 
-          <div class="declarations">
+        <div class="step-actions">
 
-            <label class="check-row">
-              <input
-                type="checkbox"
-                id="regulament-check"
-                name="accept_regulament"
-                required
-              >
+          <button type="button" class="back-button">
+            <span>←</span>
+            ÎNAPOI
+          </button>
 
-              <span>
-                Am citit și am luat la cunoștință
-                <a href="../regulament/" target="_blank">
-                  Regulamentul Festivalului de Muzică „Simfonia Toamnei”
-                </a>
-                și mă oblig să respect prevederile acestuia.
-                <em>*</em>
-              </span>
+          <button type="button" class="next-button">
+            CONTINUĂ
+            <span>→</span>
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           04 — CONTACT
+           =================================================== -->
+
+      <section class="form-step" data-step="4">
+
+        <div class="step-heading">
+
+          <span>04</span>
+
+          <div>
+            <h2>DATE DE CONTACT</h2>
+          </div>
+
+        </div>
+
+        <p class="required-info">
+          CÂMPURILE MARCATE CU * SUNT OBLIGATORII.
+        </p>
+
+
+        <div class="contact-explanation">
+          Datele de contact vor fi utilizate pentru comunicările
+          organizatorice referitoare la participarea la festival.
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="field full-field">
+
+            <label for="contact-nume">
+              PĂRINTE / REPREZENTANT LEGAL / PROF. COORDONATOR <em>*</em>
             </label>
 
+            <input
+              type="text"
+              id="contact-nume"
+              name="contact_nume"
+              required
+              data-uppercase
+              placeholder="NUME ȘI PRENUME"
+            >
 
-            <label class="check-row">
-              <input
-                type="checkbox"
-                id="date-check"
-                name="confirm_date"
-                required
-              >
+            <small>
+              Persoana indicată va fi utilizată ca persoană de
+              contact pentru comunicările privind participarea
+              la festival.
+            </small>
 
-              <span>
-                Confirm că informațiile completate în formular sunt
-                corecte și pot fi utilizate în scopul organizării
-                festivalului și al întocmirii documentelor aferente.
-                <em>*</em>
-              </span>
+          </div>
+
+
+          <div class="field">
+
+            <label for="telefon">
+              NUMĂR DE TELEFON <em>*</em>
             </label>
 
+            <input
+              type="tel"
+              id="telefon"
+              name="telefon"
+              required
+              autocomplete="tel"
+              placeholder="07XXXXXXXX"
+            >
 
-            <label class="check-row">
-              <input
-                type="checkbox"
-                id="minor-check"
-                name="confirm_reprezentant"
-                required
-              >
+          </div>
 
-              <span>
-                Declar că sunt participantul major sau, după caz,
-                părintele / reprezentantul legal al participantului minor
-                ori persoana autorizată să realizeze înscrierea acestuia.
-                <em>*</em>
-              </span>
+
+          <div class="field">
+
+            <label for="email">
+              E-MAIL <em>*</em>
             </label>
 
-          </div>
-
-
-          <div class="privacy-note">
-            <strong>Protecția datelor</strong>
-
-            <p>
-              Datele furnizate prin formular vor fi prelucrate exclusiv
-              în scopurile necesare organizării și desfășurării festivalului,
-              în conformitate cu informațiile privind protecția datelor
-              publicate de organizator.
-            </p>
-          </div>
-
-
-          <div class="step-actions final-actions">
-
-            <button type="button" class="back-button">
-              <span>←</span>
-              MODIFICĂ DATELE
-            </button>
-
-            <button type="submit" class="submit-button">
-              TRIMITE ÎNSCRIEREA
-              <span>→</span>
-            </button>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="exemplu@email.ro"
+            >
 
           </div>
 
+        </div>
 
-          <p class="form-status" id="form-status">
-            Formularul este în curs de configurare.
-            Datele nu sunt încă transmise către organizator.
+
+        <div class="step-actions">
+
+          <button type="button" class="back-button">
+            <span>←</span>
+            ÎNAPOI
+          </button>
+
+          <button type="button" class="next-button">
+            VERIFICĂ ÎNSCRIEREA
+            <span>→</span>
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           05 — CONFIRMARE + GDPR
+           =================================================== -->
+
+      <section class="form-step" data-step="5">
+
+        <div class="step-heading">
+
+          <span>05</span>
+
+          <div>
+            <h2>CONFIRMARE ȘI PROTECȚIA DATELOR CU CARACTER PERSONAL</h2>
+          </div>
+
+        </div>
+
+
+        <div class="review-warning">
+
+          <strong>
+            VERIFICĂ ATENT INFORMAȚIILE ÎNAINTE DE TRIMITERE.
+          </strong>
+
+          <p>
+            Datele introduse vor fi utilizate pentru organizarea
+            festivalului și pentru redactarea documentelor aferente.
           </p>
 
-        </section>
+        </div>
 
-      </form>
 
-    </section>
+        <div
+          class="review-container"
+          id="review-container"
+        ></div>
 
-  </main>
 
+        <!-- GDPR -->
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
+        <div class="privacy-note">
 
-  <footer class="registration-footer">
+          <strong>
+            PROTECȚIA DATELOR CU CARACTER PERSONAL
+          </strong>
 
-    <span>
-      FESTIVALUL DE MUZICĂ „SIMFONIA TOAMNEI”
-    </span>
+          <p>
+            Asociația Cultural-Educativă „Artă și Pasiune” prelucrează
+            datele furnizate prin prezentul formular în scopul gestionării
+            înscrierii, comunicării cu participanții, organizării și
+            desfășurării Festivalului de Muzică „Simfonia Toamnei”,
+            precum și al întocmirii documentelor aferente participării.
+          </p>
 
-    <span class="footer-dot">
-      •
-    </span>
+          <p>
+            Informații suplimentare privind prelucrarea datelor cu
+            caracter personal și exercitarea drepturilor persoanelor
+            vizate sunt disponibile în
+            <a
+              href="../../../legal/confidentialitate/"
+              target="_blank"
+            >
+              Politica de confidențialitate
+            </a>.
+          </p>
 
-    <a href="../../../index.html">
-      ASOCIAȚIA CULTURAL-EDUCATIVĂ „ARTĂ ȘI PASIUNE”
-    </a>
+        </div>
 
-  </footer>
 
+        <div class="declarations">
 
-  <!-- =====================================================
-       JAVASCRIPT
-       ===================================================== -->
+          <label class="check-row">
 
-  <script>
+            <input
+              type="checkbox"
+              name="accept_regulament"
+              required
+            >
 
-    /* =====================================================
-       CONFIGURARE
-       ===================================================== */
+            <span>
+              Am citit și am luat la cunoștință
+              <a href="../regulament/" target="_blank">
+                Regulamentul Festivalului de Muzică „Simfonia Toamnei”
+              </a>
+              și mă oblig să respect prevederile acestuia.
+              <em>*</em>
+            </span>
 
-    const totalSteps = 6;
+          </label>
 
-    let currentStep = 1;
-    let teacherCount = 1;
 
+          <label class="check-row">
 
-    /* =====================================================
-       ELEMENTE
-       ===================================================== */
+            <input
+              type="checkbox"
+              name="confirm_date"
+              required
+            >
 
-    const form = document.getElementById("festival-form");
+            <span>
+              Confirm că informațiile introduse în formular sunt
+              corecte și complete și că pot fi utilizate în scopurile
+              necesare organizării și desfășurării festivalului și
+              întocmirii documentelor aferente participării.
+              <em>*</em>
+            </span>
 
-    const steps =
-      [...document.querySelectorAll(".form-step")];
+          </label>
 
-    const progressSteps =
-      [...document.querySelectorAll(".progress-step")];
 
-    const progressFill =
-      document.getElementById("progress-fill");
+          <label class="check-row">
 
-    const educationRadios =
-      [...document.querySelectorAll('input[name="tip_invatamant"]')];
+            <input
+              type="checkbox"
+              name="confirm_calitate"
+              required
+            >
 
-    const sectionSelect =
-      document.getElementById("sectiune");
+            <span>
+              Declar că realizez înscrierea în calitate de participant
+              major, părinte/reprezentant legal sau persoană autorizată
+              să efectueze înscrierea participantului.
+              <em>*</em>
+            </span>
 
-    const categorySelect =
-      document.getElementById("categorie");
+          </label>
 
-    const categoryField =
-      document.getElementById("category-field");
 
-    const groupMessage =
-      document.getElementById("group-message");
+          <label class="check-row">
 
-    const ageInput =
-      document.getElementById("varsta");
+            <input
+              type="checkbox"
+              name="acord_fotografie"
+              id="acord-fotografie"
+            >
 
-    const fileInput =
-      document.getElementById("negativ");
+            <span>
+              În cazul în care am încărcat o fotografie, sunt de acord
+              cu utilizarea acesteia pentru realizarea broșurii și a
+              materialelor de prezentare aferente ediției festivalului.
+            </span>
 
-    const fileName =
-      document.getElementById("file-name");
+          </label>
 
-    const teachersContainer =
-      document.getElementById("teachers-container");
+        </div>
 
-    const addTeacherButton =
-      document.getElementById("add-teacher");
 
-    const reviewContainer =
-      document.getElementById("review-container");
+        <div class="step-actions final-actions">
 
-    const formStatus =
-      document.getElementById("form-status");
+          <button type="button" class="back-button">
+            <span>←</span>
+            MODIFICĂ DATELE
+          </button>
 
+          <button type="submit" class="submit-button">
+            TRIMITE ÎNSCRIEREA
+            <span>→</span>
+          </button>
 
-    /* =====================================================
-       SECȚIUNI
-       ===================================================== */
+        </div>
 
-    const sections = {
 
-      hobby: [
-        "MUZICĂ UȘOARĂ – INDIVIDUAL",
-        "MUZICĂ UȘOARĂ – GRUP",
-        "MUZICĂ POPULARĂ – INDIVIDUAL",
-        "MUZICĂ POPULARĂ – GRUP",
-        "CANTO CLASIC – INDIVIDUAL"
-      ],
+        <p
+          class="form-status"
+          id="form-status"
+        >
+          Formularul este în curs de configurare.
+          Datele nu sunt încă transmise către organizator.
+        </p>
 
-      vocational: [
-        "MUZICĂ UȘOARĂ – INDIVIDUAL",
-        "MUZICĂ POPULARĂ – INDIVIDUAL",
-        "CANTO CLASIC – INDIVIDUAL"
-      ]
+      </section>
 
-    };
+    </form>
 
+  </section>
 
-    /* =====================================================
-       CATEGORII
-       ===================================================== */
+</main>
 
-    const hobbyCategories = [
-      "4–5 ANI",
-      "6–7 ANI",
-      "8–10 ANI",
-      "11–13 ANI",
-      "14–16 ANI",
-      "17–19 ANI",
-      "+20 ANI"
-    ];
 
-    const vocationalCategories = [
-      "15–16 ANI",
-      "17–19 ANI"
-    ];
+<footer class="registration-footer">
 
+  <span>
+    FESTIVALUL DE MUZICĂ „SIMFONIA TOAMNEI”
+  </span>
 
-    /* =====================================================
-       AFIȘAREA PASULUI
-       ===================================================== */
+  <span class="footer-dot">
+    •
+  </span>
 
-    function showStep(stepNumber) {
+  <a href="../../../index.html">
+    ASOCIAȚIA CULTURAL-EDUCATIVĂ „ARTĂ ȘI PASIUNE”
+  </a>
 
-      currentStep = stepNumber;
+</footer>
 
-      steps.forEach(step => {
-        step.classList.toggle(
-          "active",
-          Number(step.dataset.step) === stepNumber
-        );
-      });
 
-      progressSteps.forEach(step => {
+<script>
 
-        const number =
-          Number(step.dataset.step);
+  /* =========================================================
+     CONFIGURARE
+     ========================================================= */
 
-        step.classList.toggle(
-          "active",
-          number === stepNumber
-        );
+  const totalSteps = 5;
 
-        step.classList.toggle(
-          "completed",
-          number < stepNumber
-        );
+  let currentStep = 1;
+  let teacherCount = 1;
 
-      });
 
-      const progress =
-        ((stepNumber - 1) / (totalSteps - 1)) * 100;
+  const form =
+    document.getElementById("festival-form");
 
-      progressFill.style.width =
-        `${progress}%`;
+  const steps =
+    [...document.querySelectorAll(".form-step")];
 
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+  const progressSteps =
+    [...document.querySelectorAll(".progress-step")];
 
-      if (stepNumber === 6) {
-        buildReview();
-      }
+  const progressFill =
+    document.getElementById("progress-fill");
 
-    }
+  const sectionSelect =
+    document.getElementById("sectiune");
 
+  const categoryInput =
+    document.getElementById("categorie");
 
-    /* =====================================================
-       VALIDARE PAS
-       ===================================================== */
+  const automaticCategory =
+    document.getElementById("categorie-automata");
 
-    function validateCurrentStep() {
+  const ageInput =
+    document.getElementById("varsta");
 
-      const activeStep =
-        document.querySelector(".form-step.active");
+  const nameInput =
+    document.getElementById("nume");
 
-      const requiredFields =
-        [...activeStep.querySelectorAll("[required]")];
+  const firstNameInput =
+    document.getElementById("prenume");
 
-      for (const field of requiredFields) {
+  const songInput =
+    document.getElementById("titlu-piesa");
 
-        if (
-          field.disabled ||
-          field.closest("[hidden]")
-        ) {
-          continue;
-        }
+  const audioInput =
+    document.getElementById("negativ");
 
-        if (!field.checkValidity()) {
+  const audioFileName =
+    document.getElementById("file-name");
 
-          field.reportValidity();
+  const expectedFileName =
+    document.getElementById("expected-file-name");
 
-          field.focus();
+  const audioError =
+    document.getElementById("audio-error");
 
-          return false;
-        }
+  const photoInput =
+    document.getElementById("fotografie");
 
-      }
+  const photoFileName =
+    document.getElementById("photo-file-name");
 
-      return true;
-    }
+  const photoConsent =
+    document.getElementById("acord-fotografie");
 
+  const teachersContainer =
+    document.getElementById("teachers-container");
 
-    /* =====================================================
-       BUTOANE CONTINUĂ
-       ===================================================== */
+  const addTeacherButton =
+    document.getElementById("add-teacher");
 
-    document
-      .querySelectorAll(".next-button")
-      .forEach(button => {
+  const reviewContainer =
+    document.getElementById("review-container");
 
-        button.addEventListener("click", () => {
+  const formStatus =
+    document.getElementById("form-status");
 
-          if (!validateCurrentStep()) {
-            return;
-          }
 
-          if (currentStep < totalSteps) {
-            showStep(currentStep + 1);
-          }
+  /* =========================================================
+     SECȚIUNI
+     ========================================================= */
 
-        });
+  const sections = {
 
-      });
+    hobby: [
+      "MUZICĂ UȘOARĂ – INDIVIDUAL",
+      "MUZICĂ UȘOARĂ – GRUP",
+      "MUZICĂ POPULARĂ – INDIVIDUAL",
+      "MUZICĂ POPULARĂ – GRUP",
+      "CANTO CLASIC – INDIVIDUAL"
+    ],
 
+    vocational: [
+      "MUZICĂ UȘOARĂ – INDIVIDUAL",
+      "MUZICĂ POPULARĂ – INDIVIDUAL",
+      "CANTO CLASIC – INDIVIDUAL"
+    ]
 
-    /* =====================================================
-       BUTOANE ÎNAPOI
-       ===================================================== */
+  };
 
-    document
-      .querySelectorAll(".back-button")
-      .forEach(button => {
 
-        button.addEventListener("click", () => {
+  /* =========================================================
+     AFIȘARE PAS
+     ========================================================= */
 
-          if (currentStep > 1) {
-            showStep(currentStep - 1);
-          }
+  function showStep(stepNumber) {
 
-        });
+    currentStep = stepNumber;
 
-      });
+    steps.forEach(step => {
 
-
-    /* =====================================================
-       MAJUSCULE AUTOMATE
-       ===================================================== */
-
-    document.addEventListener("input", event => {
-
-      if (
-        event.target.matches("[data-uppercase]")
-      ) {
-
-        const start =
-          event.target.selectionStart;
-
-        const end =
-          event.target.selectionEnd;
-
-        event.target.value =
-          event.target.value.toLocaleUpperCase("ro-RO");
-
-        try {
-          event.target.setSelectionRange(start, end);
-        } catch (error) {
-          /* fără acțiune */
-        }
-
-      }
+      step.classList.toggle(
+        "active",
+        Number(step.dataset.step) === stepNumber
+      );
 
     });
 
 
-    /* =====================================================
-       TIP ÎNVĂȚĂMÂNT
-       ===================================================== */
+    progressSteps.forEach(step => {
 
-    educationRadios.forEach(radio => {
+      const number =
+        Number(step.dataset.step);
+
+      step.classList.toggle(
+        "active",
+        number === stepNumber
+      );
+
+      step.classList.toggle(
+        "completed",
+        number < stepNumber
+      );
+
+    });
+
+
+    progressFill.style.width =
+      `${((stepNumber - 1) / (totalSteps - 1)) * 100}%`;
+
+
+    if (stepNumber === 5) {
+      buildReview();
+    }
+
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+
+  /* =========================================================
+     VALIDARE
+     ========================================================= */
+
+  function validateCurrentStep() {
+
+    const activeStep =
+      document.querySelector(".form-step.active");
+
+    const requiredFields =
+      [...activeStep.querySelectorAll("[required]")];
+
+    for (const field of requiredFields) {
+
+      if (field.disabled) {
+        continue;
+      }
+
+      if (!field.checkValidity()) {
+
+        field.reportValidity();
+        field.focus();
+
+        return false;
+
+      }
+
+    }
+
+
+    if (currentStep === 2) {
+
+      if (!calculateCategory(true)) {
+        return false;
+      }
+
+    }
+
+
+    if (currentStep === 3) {
+
+      if (!validateAudioFile()) {
+        return false;
+      }
+
+      if (
+        photoInput.files.length &&
+        !photoConsent.checked
+      ) {
+
+        /* acordul se bifează la pasul final;
+           nu blocăm aici */
+
+      }
+
+    }
+
+
+    return true;
+
+  }
+
+
+  /* =========================================================
+     CONTINUĂ / ÎNAPOI
+     ========================================================= */
+
+  document
+    .querySelectorAll(".next-button")
+    .forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        if (!validateCurrentStep()) {
+          return;
+        }
+
+        if (currentStep < totalSteps) {
+          showStep(currentStep + 1);
+        }
+
+      });
+
+    });
+
+
+  document
+    .querySelectorAll(".back-button")
+    .forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        if (currentStep > 1) {
+          showStep(currentStep - 1);
+        }
+
+      });
+
+    });
+
+
+  progressSteps.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      const target =
+        Number(button.dataset.step);
+
+      if (target < currentStep) {
+        showStep(target);
+      }
+
+    });
+
+  });
+
+
+  /* =========================================================
+     MAJUSCULE
+     ========================================================= */
+
+  document.addEventListener("input", event => {
+
+    if (event.target.matches("[data-uppercase]")) {
+
+      const start =
+        event.target.selectionStart;
+
+      const end =
+        event.target.selectionEnd;
+
+      event.target.value =
+        event.target.value.toLocaleUpperCase("ro-RO");
+
+      try {
+
+        event.target.setSelectionRange(
+          start,
+          end
+        );
+
+      } catch (error) {}
+
+    }
+
+  });
+
+
+  /* =========================================================
+     TIP ÎNVĂȚĂMÂNT
+     ========================================================= */
+
+  document
+    .querySelectorAll('input[name="tip_invatamant"]')
+    .forEach(radio => {
 
       radio.addEventListener("change", () => {
 
         const isHobby =
-          radio.value === "ÎNVĂȚĂMÂNT DE MASĂ / HOBBY";
+          radio.value ===
+          "ÎNVĂȚĂMÂNT DE MASĂ / HOBBY";
 
         const availableSections =
           isHobby
             ? sections.hobby
             : sections.vocational;
 
+
         sectionSelect.innerHTML =
           '<option value="">SELECTEAZĂ SECȚIUNEA</option>';
+
 
         availableSections.forEach(section => {
 
@@ -1178,442 +1346,728 @@
 
         });
 
+
         sectionSelect.disabled = false;
 
-        categorySelect.innerHTML =
-          '<option value="">SELECTEAZĂ SECȚIUNEA</option>';
-
-        categorySelect.disabled = true;
-
-        categoryField.hidden = false;
-        groupMessage.hidden = true;
+        calculateCategory();
 
       });
 
     });
 
 
-    /* =====================================================
-       SECȚIUNE → CATEGORIE
-       ===================================================== */
+  sectionSelect.addEventListener(
+    "change",
+    () => calculateCategory()
+  );
 
-    sectionSelect.addEventListener("change", () => {
 
-      const selectedSection =
-        sectionSelect.value;
+  ageInput.addEventListener(
+    "input",
+    () => calculateCategory()
+  );
 
-      const selectedEducation =
-        document.querySelector(
-          'input[name="tip_invatamant"]:checked'
+
+  /* =========================================================
+     CATEGORIA AUTOMATĂ
+     ========================================================= */
+
+  function calculateCategory(showError = false) {
+
+    const age =
+      Number(ageInput.value);
+
+    const education =
+      document.querySelector(
+        'input[name="tip_invatamant"]:checked'
+      );
+
+    const section =
+      sectionSelect.value;
+
+
+    categoryInput.value = "";
+
+
+    if (!age || !education) {
+
+      automaticCategory.textContent =
+        "Categoria va fi stabilită automat în funcție de vârsta participantului și tipul de învățământ.";
+
+      return false;
+
+    }
+
+
+    if (section.includes("GRUP")) {
+
+      categoryInput.value =
+        "NU SE APLICĂ";
+
+      automaticCategory.textContent =
+        "NU SE APLICĂ — SECȚIUNE DE GRUP";
+
+      return true;
+
+    }
+
+
+    let category = "";
+
+
+    if (
+      education.value ===
+      "ÎNVĂȚĂMÂNT DE MASĂ / HOBBY"
+    ) {
+
+      if (age >= 4 && age <= 5) {
+        category = "4–5 ANI";
+      }
+
+      else if (age >= 6 && age <= 7) {
+        category = "6–7 ANI";
+      }
+
+      else if (age >= 8 && age <= 10) {
+        category = "8–10 ANI";
+      }
+
+      else if (age >= 11 && age <= 13) {
+        category = "11–13 ANI";
+      }
+
+      else if (age >= 14 && age <= 16) {
+        category = "14–16 ANI";
+      }
+
+      else if (age >= 17 && age <= 19) {
+        category = "17–19 ANI";
+      }
+
+      else if (age >= 20) {
+        category = "+20 ANI";
+      }
+
+    }
+
+
+    if (
+      education.value ===
+      "ÎNVĂȚĂMÂNT VOCAȚIONAL"
+    ) {
+
+      if (age >= 15 && age <= 16) {
+        category = "15–16 ANI";
+      }
+
+      else if (age >= 17 && age <= 19) {
+        category = "17–19 ANI";
+      }
+
+    }
+
+
+    if (!category) {
+
+      automaticCategory.textContent =
+        "VÂRSTA INTRODUSĂ NU CORESPUNDE UNEI CATEGORII DISPONIBILE.";
+
+      automaticCategory.classList.add("category-error");
+
+      if (showError) {
+
+        alert(
+          "Vârsta participantului nu corespunde categoriilor disponibile pentru tipul de învățământ selectat."
         );
 
-      if (!selectedSection || !selectedEducation) {
-        return;
       }
 
-      const isGroup =
-        selectedSection.includes("GRUP");
+      return false;
 
-      if (isGroup) {
+    }
 
-        categoryField.hidden = true;
-        groupMessage.hidden = false;
 
-        categorySelect.required = false;
-        categorySelect.disabled = true;
-        categorySelect.value = "";
+    automaticCategory.classList.remove(
+      "category-error"
+    );
 
-        return;
-      }
+    categoryInput.value =
+      category;
 
-      categoryField.hidden = false;
-      groupMessage.hidden = true;
+    automaticCategory.textContent =
+      category;
 
-      categorySelect.required = true;
-      categorySelect.disabled = false;
+    return true;
 
-      const categories =
-        selectedEducation.value ===
-        "ÎNVĂȚĂMÂNT DE MASĂ / HOBBY"
-          ? hobbyCategories
-          : vocationalCategories;
+  }
 
-      categorySelect.innerHTML =
-        '<option value="">SELECTEAZĂ CATEGORIA</option>';
 
-      categories.forEach(category => {
+  /* =========================================================
+     NUMELE CORECT AL MP3-ULUI
+     ========================================================= */
 
-        const option =
-          document.createElement("option");
+  function normalizeFileText(text) {
 
-        option.value = category;
-        option.textContent = category;
+    return text
+      .trim()
+      .replace(/\s+/g, " ")
+      .toLocaleUpperCase("ro-RO");
 
-        categorySelect.appendChild(option);
+  }
+
+
+  function expectedAudioBaseName() {
+
+    const participant =
+      normalizeFileText(
+        `${nameInput.value} ${firstNameInput.value}`
+      );
+
+    const song =
+      normalizeFileText(
+        songInput.value
+      );
+
+
+    if (!participant.trim() || !song.trim()) {
+      return "";
+    }
+
+
+    return `${participant} - ${song}`;
+
+  }
+
+
+  function updateExpectedFileName() {
+
+    const expected =
+      expectedAudioBaseName();
+
+    if (!expected) {
+
+      expectedFileName.textContent = "";
+
+      return;
+
+    }
+
+    expectedFileName.textContent =
+      `EXEMPLU PENTRU ACEASTĂ ÎNSCRIERE: ${expected}.mp3`;
+
+  }
+
+
+  nameInput.addEventListener(
+    "input",
+    updateExpectedFileName
+  );
+
+  firstNameInput.addEventListener(
+    "input",
+    updateExpectedFileName
+  );
+
+  songInput.addEventListener(
+    "input",
+    updateExpectedFileName
+  );
+
+
+  /* =========================================================
+     VALIDARE MP3
+     ========================================================= */
+
+  function validateAudioFile() {
+
+    audioError.hidden = true;
+
+    audioInput.setCustomValidity("");
+
+
+    if (!audioInput.files.length) {
+
+      audioInput.setCustomValidity(
+        "Încărcarea negativului este obligatorie."
+      );
+
+      audioInput.reportValidity();
+
+      return false;
+
+    }
+
+
+    const file =
+      audioInput.files[0];
+
+
+    if (!file.name.toLowerCase().endsWith(".mp3")) {
+
+      audioError.textContent =
+        "Fișierul trebuie să fie obligatoriu în format MP3.";
+
+      audioError.hidden = false;
+
+      audioInput.setCustomValidity(
+        "Este acceptat exclusiv formatul MP3."
+      );
+
+      return false;
+
+    }
+
+
+    const expected =
+      expectedAudioBaseName();
+
+
+    if (!expected) {
+
+      audioError.textContent =
+        "Completează mai întâi numele participantului și titlul piesei.";
+
+      audioError.hidden = false;
+
+      return false;
+
+    }
+
+
+    const actualBase =
+      normalizeFileText(
+        file.name.replace(/\.mp3$/i, "")
+      )
+      .replace(/[–—]/g, "-");
+
+
+    const expectedBase =
+      normalizeFileText(expected)
+      .replace(/[–—]/g, "-");
+
+
+    if (actualBase !== expectedBase) {
+
+      audioError.innerHTML =
+        `Denumirea fișierului nu este corectă. Redenumește fișierul astfel: <strong>${expected}.mp3</strong>`;
+
+      audioError.hidden = false;
+
+      audioInput.setCustomValidity(
+        "Denumirea fișierului MP3 nu respectă formatul solicitat."
+      );
+
+      return false;
+
+    }
+
+
+    audioInput.setCustomValidity("");
+
+    audioError.hidden = true;
+
+    return true;
+
+  }
+
+
+  audioInput.addEventListener("change", () => {
+
+    if (!audioInput.files.length) {
+
+      audioFileName.textContent =
+        "FIȘIER MP3";
+
+      return;
+
+    }
+
+
+    audioFileName.textContent =
+      audioInput.files[0].name;
+
+    validateAudioFile();
+
+  });
+
+
+  /* =========================================================
+     FOTOGRAFIE
+     ========================================================= */
+
+  photoInput.addEventListener("change", () => {
+
+    if (photoInput.files.length) {
+
+      photoFileName.textContent =
+        photoInput.files[0].name;
+
+    }
+
+    else {
+
+      photoFileName.textContent =
+        "JPG, JPEG SAU PNG";
+
+    }
+
+  });
+
+
+  /* =========================================================
+     PROFESORI
+     ========================================================= */
+
+  addTeacherButton.addEventListener("click", () => {
+
+    teacherCount++;
+
+
+    const row =
+      document.createElement("div");
+
+
+    row.className =
+      "teacher-row additional-teacher";
+
+
+    row.innerHTML = `
+
+      <span class="teacher-number">
+        ${String(teacherCount).padStart(2, "0")}
+      </span>
+
+      <div class="field">
+
+        <label for="profesor-${teacherCount}">
+          NUMELE ȘI PRENUMELE PROFESORULUI <em>*</em>
+        </label>
+
+        <input
+          type="text"
+          id="profesor-${teacherCount}"
+          name="profesor_${teacherCount}"
+          required
+          data-uppercase
+          placeholder="NUME ȘI PRENUME"
+        >
+
+      </div>
+
+      <button
+        type="button"
+        class="remove-teacher"
+        aria-label="Elimină profesorul"
+      >
+        ×
+      </button>
+
+    `;
+
+
+    teachersContainer.appendChild(row);
+
+
+    row
+      .querySelector(".remove-teacher")
+      .addEventListener("click", () => {
+
+        row.remove();
 
       });
 
-    });
+  });
 
 
-    /* =====================================================
-       FIȘIER AUDIO
-       ===================================================== */
+  /* =========================================================
+     REZUMAT
+     ========================================================= */
 
-    fileInput.addEventListener("change", () => {
+  function getTeacherNames() {
 
-      if (fileInput.files.length) {
+    return [
+      ...document.querySelectorAll(
+        '#teachers-container input[type="text"]'
+      )
+    ]
+    .map(input => input.value.trim())
+    .filter(Boolean);
 
-        fileName.textContent =
-          fileInput.files[0].name;
+  }
 
-      } else {
 
-        fileName.textContent =
-          "Selectează fișierul audio de pe dispozitiv";
+  function addReviewGroup(title, items) {
 
+    const group =
+      document.createElement("section");
+
+    group.className =
+      "review-group";
+
+
+    const heading =
+      document.createElement("h3");
+
+    heading.textContent =
+      title;
+
+    group.appendChild(heading);
+
+
+    items.forEach(item => {
+
+      if (!item.value) {
+        return;
       }
 
-    });
-
-
-    /* =====================================================
-       PROFESORI SUPLIMENTARI
-       ===================================================== */
-
-    addTeacherButton.addEventListener("click", () => {
-
-      teacherCount++;
 
       const row =
         document.createElement("div");
 
       row.className =
-        "teacher-row additional-teacher";
+        "review-row";
 
-      row.dataset.teacher =
-        teacherCount;
 
-      row.innerHTML = `
+      const label =
+        document.createElement("span");
 
-        <span class="teacher-number">
-          ${String(teacherCount).padStart(2, "0")}
-        </span>
+      label.textContent =
+        item.label;
 
-        <div class="field">
 
-          <label for="profesor-${teacherCount}">
-            NUMELE ȘI PRENUMELE PROFESORULUI
-            <em>*</em>
-          </label>
+      const value =
+        document.createElement("strong");
 
-          <input
-            type="text"
-            id="profesor-${teacherCount}"
-            name="profesor_${teacherCount}"
-            required
-            data-uppercase
-            placeholder="NUME ȘI PRENUME"
-          >
+      value.textContent =
+        item.value;
 
-        </div>
 
-        <button
-          type="button"
-          class="remove-teacher"
-          aria-label="Elimină profesorul"
-        >
-          ×
-        </button>
+      row.appendChild(label);
+      row.appendChild(value);
 
-      `;
-
-      teachersContainer.appendChild(row);
-
-      row
-        .querySelector(".remove-teacher")
-        .addEventListener("click", () => {
-          row.remove();
-        });
+      group.appendChild(row);
 
     });
 
 
-    /* =====================================================
-       REZUMAT
-       ===================================================== */
+    reviewContainer.appendChild(group);
 
-    function getTeacherNames() {
+  }
 
-      return [
-        ...document.querySelectorAll(
-          '#teachers-container input[type="text"]'
-        )
+
+  function buildReview() {
+
+    reviewContainer.innerHTML = "";
+
+
+    const education =
+      document.querySelector(
+        'input[name="tip_invatamant"]:checked'
+      );
+
+
+    const teachers =
+      getTeacherNames();
+
+
+    addReviewGroup(
+      "PARTICIPANT",
+      [
+        {
+          label: "Nume",
+          value: nameInput.value
+        },
+        {
+          label: "Prenume",
+          value: firstNameInput.value
+        },
+        {
+          label: "Data nașterii",
+          value:
+            document.getElementById(
+              "data-nasterii"
+            ).value
+        },
+        {
+          label: "Vârsta",
+          value:
+            `${ageInput.value} ANI`
+        },
+        {
+          label: "Localitate",
+          value:
+            document.getElementById(
+              "localitate"
+            ).value
+        },
+        {
+          label: "Județ / Țară",
+          value:
+            document.getElementById(
+              "judet"
+            ).value
+        }
       ]
-        .map(input => input.value.trim())
-        .filter(Boolean);
-
-    }
+    );
 
 
-    function addReviewGroup(title, items) {
-
-      const group =
-        document.createElement("section");
-
-      group.className =
-        "review-group";
-
-      const heading =
-        document.createElement("h3");
-
-      heading.textContent =
-        title;
-
-      group.appendChild(heading);
-
-      items.forEach(item => {
-
-        if (
-          item.value === "" ||
-          item.value === null ||
-          item.value === undefined
-        ) {
-          return;
+    addReviewGroup(
+      "ÎNCADRARE",
+      [
+        {
+          label: "Tip învățământ",
+          value:
+            education
+              ? education.value
+              : ""
+        },
+        {
+          label: "Secțiune",
+          value:
+            sectionSelect.value
+        },
+        {
+          label: "Categorie",
+          value:
+            categoryInput.value
+        },
+        {
+          label: "Instituție / Club",
+          value:
+            document.getElementById(
+              "institutie"
+            ).value
+        },
+        {
+          label:
+            teachers.length > 1
+              ? "Profesori coordonatori"
+              : "Profesor coordonator",
+          value:
+            teachers.join(" · ")
         }
-
-        const row =
-          document.createElement("div");
-
-        row.className =
-          "review-row";
-
-        const label =
-          document.createElement("span");
-
-        label.textContent =
-          item.label;
-
-        const value =
-          document.createElement("strong");
-
-        value.textContent =
-          item.value;
-
-        row.appendChild(label);
-        row.appendChild(value);
-
-        group.appendChild(row);
-
-      });
-
-      reviewContainer.appendChild(group);
-
-    }
+      ]
+    );
 
 
-    function buildReview() {
-
-      reviewContainer.innerHTML = "";
-
-      const education =
-        document.querySelector(
-          'input[name="tip_invatamant"]:checked'
-        );
-
-      const teachers =
-        getTeacherNames();
-
-      const selectedSection =
-        sectionSelect.value;
-
-      const categoryValue =
-        selectedSection.includes("GRUP")
-          ? "NU SE APLICĂ"
-          : categorySelect.value;
-
-      addReviewGroup(
-        "Participant",
-        [
-          {
-            label: "Nume",
-            value:
-              document.getElementById("nume").value
-          },
-          {
-            label: "Prenume",
-            value:
-              document.getElementById("prenume").value
-          },
-          {
-            label: "Data nașterii",
-            value:
-              document.getElementById("data-nasterii").value
-          },
-          {
-            label: "Vârsta la festival",
-            value:
-              `${ageInput.value} ANI`
-          },
-          {
-            label: "Localitate",
-            value:
-              document.getElementById("localitate").value
-          },
-          {
-            label: "Județ / Țară",
-            value:
-              document.getElementById("judet").value
-          }
-        ]
-      );
-
-
-      addReviewGroup(
-        "Participare",
-        [
-          {
-            label: "Tip învățământ",
-            value:
-              education ? education.value : ""
-          },
-          {
-            label: "Secțiune",
-            value:
-              selectedSection
-          },
-          {
-            label: "Categorie",
-            value:
-              categoryValue
-          }
-        ]
-      );
-
-
-      addReviewGroup(
-        "Moment artistic",
-        [
-          {
-            label: "Titlul piesei",
-            value:
-              document.getElementById("titlu-piesa").value
-          },
-          {
-            label: "Autor / Compozitor",
-            value:
-              document.getElementById("autor").value
-          },
-          {
-            label: "Minutaj",
-            value:
-              document.getElementById("minutaj").value
-          },
-          {
-            label: "Negativ",
-            value:
-              fileInput.files.length
-                ? fileInput.files[0].name
-                : ""
-          }
-        ]
-      );
-
-
-      addReviewGroup(
-        "Îndrumare artistică",
-        [
-          {
-            label: "Instituție / Club",
-            value:
-              document.getElementById("institutie").value
-          },
-          {
-            label:
-              teachers.length > 1
-                ? "Profesori coordonatori"
-                : "Profesor coordonator",
-            value:
-              teachers.join(" · ")
-          }
-        ]
-      );
-
-
-      addReviewGroup(
-        "Contact",
-        [
-          {
-            label: "Persoană de contact",
-            value:
-              document.getElementById("contact-nume").value
-          },
-          {
-            label: "Telefon",
-            value:
-              document.getElementById("telefon").value
-          },
-          {
-            label: "E-mail",
-            value:
-              document.getElementById("email").value
-          }
-        ]
-      );
-
-    }
-
-
-    /* =====================================================
-       CLICK PE PROGRES
-       Permitem revenirea doar la pașii deja parcurși
-       ===================================================== */
-
-    progressSteps.forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        const target =
-          Number(button.dataset.step);
-
-        if (target < currentStep) {
-          showStep(target);
+    addReviewGroup(
+      "REPERTORIU",
+      [
+        {
+          label: "Titlul piesei",
+          value:
+            songInput.value
+        },
+        {
+          label: "Autor / Compozitor",
+          value:
+            document.getElementById(
+              "autor"
+            ).value
+        },
+        {
+          label: "Minutaj",
+          value:
+            document.getElementById(
+              "minutaj"
+            ).value
+        },
+        {
+          label: "Negativ",
+          value:
+            audioInput.files.length
+              ? audioInput.files[0].name
+              : ""
+        },
+        {
+          label: "Fotografie",
+          value:
+            photoInput.files.length
+              ? photoInput.files[0].name
+              : "NU A FOST ÎNCĂRCATĂ"
         }
-
-      });
-
-    });
+      ]
+    );
 
 
-    /* =====================================================
-       TRIMITERE
-       Momentan blocată până conectăm baza de date / serviciul
-       ===================================================== */
+    addReviewGroup(
+      "CONTACT",
+      [
+        {
+          label:
+            "Părinte / Reprezentant legal / Prof. coordonator",
+          value:
+            document.getElementById(
+              "contact-nume"
+            ).value
+        },
+        {
+          label: "Telefon",
+          value:
+            document.getElementById(
+              "telefon"
+            ).value
+        },
+        {
+          label: "E-mail",
+          value:
+            document.getElementById(
+              "email"
+            ).value
+        }
+      ]
+    );
 
-    form.addEventListener("submit", event => {
-
-      event.preventDefault();
-
-      if (!validateCurrentStep()) {
-        return;
-      }
-
-      formStatus.textContent =
-        "Formularul este complet, dar transmiterea online nu este încă activată. Nu au fost trimise date.";
-
-      formStatus.classList.add("visible");
-
-    });
+  }
 
 
-    /* =====================================================
-       START
-       ===================================================== */
+  /* =========================================================
+     TRIMITERE
+     ========================================================= */
 
-    showStep(1);
+  form.addEventListener("submit", event => {
 
-  </script>
+    event.preventDefault();
+
+
+    if (!validateCurrentStep()) {
+      return;
+    }
+
+
+    if (
+      photoInput.files.length &&
+      !photoConsent.checked
+    ) {
+
+      alert(
+        "Ai încărcat o fotografie. Pentru utilizarea acesteia în broșura și materialele de prezentare ale festivalului este necesar acordul corespunzător."
+      );
+
+      photoConsent.focus();
+
+      return;
+
+    }
+
+
+    formStatus.textContent =
+      "Formularul este complet, însă transmiterea online nu este încă activată. Datele nu au fost trimise către organizator.";
+
+    formStatus.classList.add(
+      "visible"
+    );
+
+  });
+
+
+  /* =========================================================
+     START
+     ========================================================= */
+
+  showStep(1);
+
+</script>
 
 </body>
-
 </html>
