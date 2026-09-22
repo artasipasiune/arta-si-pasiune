@@ -1,973 +1,1700 @@
 <!DOCTYPE html>
 <html lang="ro">
-
 <head>
+  <base target="_top">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Înscriere | Simfonia Toamnei</title>
 
-  <meta
-    name="description"
-    content="Formular oficial de înscriere la Festivalul de Muzică Simfonia Toamnei."
-  >
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+<style>
+:root{
+  --ivory:#f7efe1;
+  --ivory-soft:#fffaf2;
+  --cream:#ead8bc;
+  --cream-dark:#d7c09b;
+  --burgundy:#671f2d;
+  --burgundy-dark:#351017;
+  --burgundy-soft:#8a3a49;
+  --gold:#b58b4d;
+  --gold-light:#d8bb83;
+  --brown:#513b31;
+  --text:#574740;
+  --white:#fffdf9;
+  --shadow:0 18px 55px rgba(53,16,23,.09);
+}
 
-  <link rel="stylesheet" href="style.css">
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 15% 15%,rgba(181,139,77,.07),transparent 28%),
+    radial-gradient(circle at 85% 40%,rgba(103,31,45,.05),transparent 25%),
+    var(--ivory-soft);
+  color:var(--text);
+  font-family:"Cormorant Garamond",serif;
+  font-size:18px;
+  line-height:1.55;
+}
+
+button,input,select{font-family:inherit}
+
+.topbar{
+  min-height:78px;
+  padding:0 6%;
+  background:var(--burgundy-dark);
+  border-bottom:1px solid rgba(216,187,131,.28);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.topbar a{
+  color:var(--ivory);
+  text-decoration:none;
+  font-size:.86rem;
+  letter-spacing:.13em;
+  font-weight:600;
+}
+
+.topbar a:hover{color:var(--gold-light)}
+
+.topbar-title{
+  color:var(--gold-light);
+  font-size:.82rem;
+  letter-spacing:.22em;
+  font-weight:600;
+}
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:70px 20px 56px;
+  text-align:center;
+  background:linear-gradient(180deg,rgba(103,31,45,.045),transparent 80%);
+}
+
+.hero::before,.hero::after{
+  content:"";
+  position:absolute;
+  width:230px;
+  height:230px;
+  border:1px solid rgba(181,139,77,.14);
+  border-radius:50%;
+}
+
+.hero::before{left:-120px;top:-90px}
+.hero::after{right:-130px;bottom:-130px}
+
+.eyebrow{
+  margin-bottom:12px;
+  color:var(--gold);
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.21em;
+}
+
+.hero h1{
+  margin:0;
+  color:var(--burgundy);
+  font-size:clamp(3rem,7vw,5rem);
+  font-weight:500;
+  line-height:.95;
+}
+
+.ornament{
+  margin:22px 0 20px;
+  color:var(--gold);
+  font-size:.9rem;
+  letter-spacing:.22em;
+}
+
+.hero p{
+  max-width:690px;
+  margin:0 auto;
+  font-size:1.08rem;
+}
+
+.important{
+  max-width:780px;
+  margin:32px auto 0;
+  padding:19px 24px;
+  border-top:1px solid var(--gold-light);
+  border-bottom:1px solid var(--gold-light);
+  background:rgba(255,253,249,.65);
+  font-size:.96rem;
+}
+
+.important strong{
+  color:var(--burgundy);
+  letter-spacing:.09em;
+}
+
+.form-shell{
+  width:min(1040px,92%);
+  margin:0 auto 90px;
+}
+
+.progress-wrap{
+  position:relative;
+  max-width:780px;
+  margin:0 auto 38px;
+}
+
+.progress-line{
+  position:absolute;
+  top:23px;
+  left:8%;
+  right:8%;
+  height:1px;
+  background:var(--cream-dark);
+  z-index:0;
+}
+
+.progress-fill{
+  position:absolute;
+  top:23px;
+  left:8%;
+  height:1px;
+  width:0;
+  background:var(--burgundy);
+  transition:.35s ease;
+  z-index:1;
+}
+
+.progress{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:space-between;
+}
+
+.progress-item{width:82px;text-align:center}
+
+.progress button{
+  width:47px;
+  height:47px;
+  padding:0;
+  border:1px solid var(--cream-dark);
+  border-radius:50%;
+  background:var(--ivory-soft);
+  color:#927e70;
+  font-size:.84rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.progress button.active{
+  border-color:var(--burgundy);
+  background:var(--burgundy);
+  color:white;
+  box-shadow:0 7px 20px rgba(103,31,45,.16);
+}
+
+.progress button.completed{
+  border-color:var(--gold);
+  background:var(--ivory);
+  color:var(--burgundy);
+}
+
+.progress button:disabled{cursor:default}
+
+.progress-label{
+  display:block;
+  margin-top:8px;
+  color:#8b786c;
+  font-size:.68rem;
+  letter-spacing:.08em;
+}
+
+.form-card{
+  position:relative;
+  overflow:hidden;
+  background:rgba(255,253,249,.94);
+  border:1px solid rgba(181,139,77,.35);
+  box-shadow:var(--shadow);
+}
+
+.form-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:3px;
+  background:linear-gradient(90deg,var(--burgundy),var(--gold),var(--burgundy));
+}
+
+.step{display:none;padding:52px 58px 48px}
+
+.step.active{
+  display:block;
+  animation:stepIn .32s ease;
+}
+
+@keyframes stepIn{
+  from{opacity:0;transform:translateY(6px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.step-head{
+  margin-bottom:38px;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--cream);
+}
+
+.step-number{
+  display:block;
+  margin-bottom:5px;
+  color:var(--gold);
+  font-size:.76rem;
+  font-weight:700;
+  letter-spacing:.18em;
+}
+
+.step h2{
+  margin:0;
+  color:var(--burgundy);
+  font-size:2rem;
+  font-weight:600;
+  line-height:1.1;
+}
+
+.step-description{
+  max-width:700px;
+  margin:10px 0 0;
+  color:#806e63;
+  font-size:.96rem;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:25px 28px;
+}
+
+.full{grid-column:1/-1}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.field > label,.field-label{
+  color:var(--brown);
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.07em;
+}
+
+.required{color:var(--burgundy)}
+
+input,select{
+  width:100%;
+  min-height:52px;
+  padding:12px 15px;
+  border:1px solid #d9cbb9;
+  border-radius:2px;
+  outline:none;
+  background:#fffefa;
+  color:var(--brown);
+  font-size:1rem;
+  transition:.2s ease;
+}
+
+input:hover,select:hover{border-color:#c4aa83}
+
+input:focus,select:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(181,139,77,.09);
+}
+
+input::placeholder{color:#aa9a8f}
+
+.helper{
+  color:#8b786c;
+  font-size:.84rem;
+  line-height:1.35;
+}
+
+.choice-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.choice-card{
+  position:relative;
+  display:block;
+  padding:23px 23px 21px 52px;
+  border:1px solid #d9cbb9;
+  background:#fffefa;
+  cursor:pointer;
+  transition:.22s ease;
+}
+
+.choice-card:hover{
+  border-color:var(--gold);
+  transform:translateY(-1px);
+}
+
+.choice-card input{
+  position:absolute;
+  left:19px;
+  top:24px;
+  width:18px;
+  min-height:auto;
+  height:18px;
+  accent-color:var(--burgundy);
+}
+
+.choice-card strong{
+  display:block;
+  margin-bottom:5px;
+  color:var(--burgundy);
+  font-size:.95rem;
+  letter-spacing:.035em;
+}
+
+.choice-card small{
+  display:block;
+  color:#806e63;
+  line-height:1.35;
+}
+
+.category-box{
+  min-height:52px;
+  display:flex;
+  align-items:center;
+  padding:12px 16px;
+  border:1px solid var(--cream-dark);
+  background:var(--ivory);
+  color:var(--burgundy);
+  font-weight:700;
+}
+
+.subsection-title{
+  margin:35px 0 17px;
+  padding-top:28px;
+  border-top:1px solid var(--cream);
+  color:var(--burgundy);
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.14em;
+}
+
+.teacher-row{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
+  margin-bottom:11px;
+}
+
+.remove-teacher{
+  width:52px;
+  min-height:52px;
+  border:1px solid #d9cbb9;
+  background:#fffefa;
+  color:var(--burgundy);
+  font-size:1.45rem;
+  cursor:pointer;
+}
+
+.add-teacher{
+  margin-top:4px;
+  padding:8px 0;
+  border:0;
+  background:transparent;
+  color:var(--burgundy);
+  font-size:.88rem;
+  font-weight:700;
+  letter-spacing:.055em;
+  cursor:pointer;
+}
+
+.upload-box{
+  position:relative;
+  display:block;
+  padding:34px 25px;
+  border:1px dashed var(--gold);
+  background:linear-gradient(135deg,rgba(247,239,225,.72),rgba(255,253,249,.9));
+  text-align:center;
+  cursor:pointer;
+  transition:.22s ease;
+}
+
+.upload-box:hover{background:var(--ivory)}
+
+.upload-icon{
+  display:block;
+  margin-bottom:8px;
+  color:var(--gold);
+  font-size:2rem;
+}
+
+.upload-title{
+  display:block;
+  color:var(--burgundy);
+  font-size:1.08rem;
+  font-weight:700;
+  letter-spacing:.055em;
+}
+
+.upload-info{
+  display:block;
+  margin-top:3px;
+  color:#8b786c;
+  font-size:.82rem;
+  letter-spacing:.07em;
+}
+
+.upload-box input{
+  margin-top:17px;
+  min-height:auto;
+  border:0;
+  background:transparent;
+}
+
+.filename-rule{
+  margin:18px 0 0;
+  padding:14px 17px;
+  border-left:2px solid var(--gold);
+  background:var(--ivory);
+  font-size:.9rem;
+}
+
+.expected-name{
+  margin-top:10px;
+  color:var(--burgundy);
+  font-size:.88rem;
+  font-weight:600;
+  overflow-wrap:anywhere;
+}
+
+.duration-box{
+  margin-top:18px;
+  padding:17px;
+  border:1px solid var(--cream);
+  background:#fffefa;
+}
+
+.duration-main{color:var(--burgundy);font-weight:700}
+
+.duration-limit{
+  margin-top:4px;
+  color:#806e63;
+  font-size:.87rem;
+}
+
+.error{
+  margin:12px 0 0;
+  color:#8f2134;
+  font-size:.9rem;
+  font-weight:700;
+}
+
+.actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-top:45px;
+  padding-top:28px;
+  border-top:1px solid var(--cream);
+}
+
+.actions.end{justify-content:flex-end}
+
+.action{
+  min-width:155px;
+  padding:13px 22px;
+  border:1px solid var(--burgundy);
+  background:transparent;
+  color:var(--burgundy);
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.09em;
+  cursor:pointer;
+  transition:.22s ease;
+}
+
+.action:hover{background:var(--ivory)}
+
+.action.primary{
+  background:var(--burgundy);
+  color:white;
+}
+
+.action.primary:hover{background:#561824}
+
+.action:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+.review-intro{
+  margin-bottom:25px;
+  padding:16px 19px;
+  border-left:2px solid var(--gold);
+  background:var(--ivory);
+}
+
+.review-section{margin-bottom:28px}
+
+.review-section h3{
+  margin:0 0 13px;
+  padding-bottom:8px;
+  border-bottom:1px solid var(--cream);
+  color:var(--burgundy);
+  font-size:.86rem;
+  letter-spacing:.13em;
+}
+
+.review-row{
+  display:grid;
+  grid-template-columns:210px 1fr;
+  gap:18px;
+  padding:7px 0;
+}
+
+.review-row span{color:#8a786c}
+
+.review-row strong{
+  color:var(--brown);
+  font-weight:600;
+}
+
+.privacy-box{
+  margin:34px 0 25px;
+  padding:22px;
+  border:1px solid var(--cream);
+  background:var(--ivory);
+  font-size:.92rem;
+}
+
+.privacy-box a,.check-row a{
+  color:var(--burgundy);
+  font-weight:600;
+}
+
+.check-row{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  margin:16px 0;
+  cursor:pointer;
+}
+
+.check-row input{
+  flex:0 0 auto;
+  width:17px;
+  height:17px;
+  min-height:auto;
+  margin-top:5px;
+  accent-color:var(--burgundy);
+}
+
+.check-row span{font-size:.94rem}
+
+.sending{
+  margin-top:32px;
+  padding:34px 26px;
+  border:1px solid var(--gold);
+  background:var(--ivory);
+  text-align:center;
+}
+
+.sending-title{
+  color:var(--burgundy);
+  font-size:1.35rem;
+  font-weight:700;
+  letter-spacing:.09em;
+}
+
+.spinner{
+  width:38px;
+  height:38px;
+  margin:20px auto;
+  border:3px solid var(--cream-dark);
+  border-top-color:var(--burgundy);
+  border-radius:50%;
+  animation:spin .75s linear infinite;
+}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.sending-warning{
+  max-width:650px;
+  margin:15px auto;
+  color:var(--burgundy);
+  font-weight:700;
+}
+
+.success{
+  margin-top:30px;
+  padding:40px 28px;
+  border:1px solid var(--gold);
+  background:
+    radial-gradient(circle at center,rgba(181,139,77,.08),transparent 55%),
+    var(--ivory);
+  text-align:center;
+}
+
+.success-mark{
+  width:58px;
+  height:58px;
+  margin:0 auto 18px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--burgundy);
+  font-size:1.5rem;
+}
+
+.success h3{
+  margin:0 0 12px;
+  color:var(--burgundy);
+  font-size:1.7rem;
+}
+
+.success-id{
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 15px;
+  border:1px solid var(--cream-dark);
+  background:#fffefa;
+  color:var(--burgundy);
+  font-weight:700;
+}
+
+.server-error{
+  margin-top:25px;
+  padding:18px;
+  border:1px solid #9a3445;
+  background:#fff8f7;
+  color:#8f2134;
+  font-weight:700;
+}
+
+footer{
+  padding:28px 20px;
+  border-top:1px solid rgba(181,139,77,.22);
+  background:var(--burgundy-dark);
+  color:var(--cream);
+  text-align:center;
+  font-size:.8rem;
+  letter-spacing:.12em;
+}
+
+[hidden]{display:none !important}
+
+@media(max-width:760px){
+  .topbar{min-height:68px;padding:0 5%}
+  .topbar-title{display:none}
+  .hero{padding:52px 20px 45px}
+  .hero h1{font-size:3rem}
+  .form-shell{width:94%}
+  .progress-label{display:none}
+  .progress-item{width:auto}
+  .progress-line,.progress-fill{left:7%;right:7%}
+  .step{padding:37px 22px 32px}
+  .grid,.choice-grid{grid-template-columns:1fr}
+  .full{grid-column:auto}
+  .review-row{grid-template-columns:1fr;gap:0;padding:8px 0}
+  .actions{flex-direction:column-reverse}
+  .actions.end{flex-direction:column}
+  .action{width:100%}
+}
+</style>
 </head>
-
 <body>
 
-<header class="registration-header">
-  <nav class="registration-nav">
-    <a href="../" class="back-festival">← SIMFONIA TOAMNEI</a>
-    <span class="nav-title">ÎNSCRIERE</span>
-  </nav>
+<header class="topbar">
+  <a href="https://artasipasiune.ro/proiecte/simfonia-toamnei/">
+    ← ÎNAPOI LA FESTIVAL
+  </a>
+
+  <div class="topbar-title">
+    SIMFONIA TOAMNEI · EDIȚIA VI
+  </div>
 </header>
 
+<section class="hero">
 
-<main>
+  <div class="eyebrow">
+    FESTIVALUL DE MUZICĂ
+  </div>
 
-<section class="registration-intro">
+  <h1>
+    Simfonia Toamnei
+  </h1>
 
-  <span class="eyebrow">
-    FESTIVALUL DE MUZICĂ „SIMFONIA TOAMNEI”
-  </span>
-
-  <h1>Înscriere</h1>
-
-  <div class="title-ornament">
-    <span></span>
-    <b>✦</b>
-    <span></span>
+  <div class="ornament">
+    ◆ · ◆ · ◆
   </div>
 
   <p>
-    Completează cu atenție formularul de participare.
-    Informațiile introduse vor fi utilizate pentru organizarea
-    festivalului și pentru redactarea documentelor aferente.
+    Formular oficial de înscriere · Ediția a VI-a
   </p>
 
-  <div class="important-note">
-    <strong>IMPORTANT</strong>
-
-    <span>
-      Completează numele, prenumele, instituția și numele profesorilor
-      cu diacritice, exact în forma în care trebuie să apară în
-      documentele festivalului. Câmpurile marcate cu * sunt obligatorii.
-    </span>
+  <div class="important">
+    <strong>IMPORTANT</strong><br>
+    Completează cu atenție toate informațiile.
+    Datele introduse în formular vor fi utilizate pentru
+    evidența oficială a participanților și organizarea festivalului.
   </div>
 
 </section>
 
+<main class="form-shell">
 
-<section class="form-wrapper">
+  <div class="progress-wrap">
 
-<div class="progress-area">
+    <div class="progress-line"></div>
+    <div class="progress-fill" id="progressFill"></div>
 
-  <div class="progress-line">
-    <div class="progress-fill" id="progress-fill"></div>
-  </div>
+    <div class="progress">
 
-  <div class="progress-steps">
-
-    <button type="button" class="progress-step active" data-step="1">
-      <span>01</span>
-    </button>
-
-    <button type="button" class="progress-step" data-step="2">
-      <span>02</span>
-    </button>
-
-    <button type="button" class="progress-step" data-step="3">
-      <span>03</span>
-    </button>
-
-    <button type="button" class="progress-step" data-step="4">
-      <span>04</span>
-    </button>
-
-    <button type="button" class="progress-step" data-step="5">
-      <span>05</span>
-    </button>
-
-  </div>
-</div>
-
-
-<form id="festival-form" novalidate>
-
-
-<!-- PASUL 01 -->
-
-<section class="form-step active" data-step="1">
-
-  <div class="step-heading">
-    <span>01</span>
-    <div>
-      <h2>DATE DE IDENTIFICARE PARTICIPANT</h2>
-    </div>
-  </div>
-
-  <p class="required-info">
-    CÂMPURILE MARCATE CU * SUNT OBLIGATORII.
-  </p>
-
-
-  <div class="form-grid">
-
-    <div class="field">
-      <label for="nume">NUME <em>*</em></label>
-
-      <input
-        type="text"
-        id="nume"
-        name="nume"
-        required
-        data-uppercase
-        autocomplete="family-name"
-        placeholder="EX.: POPESCU"
-      >
-    </div>
-
-
-    <div class="field">
-      <label for="prenume">PRENUME <em>*</em></label>
-
-      <input
-        type="text"
-        id="prenume"
-        name="prenume"
-        required
-        data-uppercase
-        autocomplete="given-name"
-        placeholder="EX.: MARIA-IOANA"
-      >
-    </div>
-
-
-    <div class="field">
-      <label for="data-nasterii">DATA NAȘTERII <em>*</em></label>
-
-      <input
-        type="date"
-        id="data-nasterii"
-        name="data_nasterii"
-        required
-      >
-    </div>
-
-
-    <div class="field">
-      <label for="varsta">VÂRSTA <em>*</em></label>
-
-      <input
-        type="number"
-        id="varsta"
-        name="varsta"
-        required
-        min="4"
-        max="99"
-        placeholder="EX.: 12"
-      >
-
-      <small>
-        Vârsta împlinită la data desfășurării festivalului.
-      </small>
-    </div>
-
-
-    <div class="field">
-      <label for="localitate">
-        LOCALITATEA DE PROVENIENȚĂ <em>*</em>
-      </label>
-
-      <input
-        type="text"
-        id="localitate"
-        required
-        data-uppercase
-        placeholder="EX.: BACĂU"
-      >
-    </div>
-
-
-    <div class="field">
-      <label for="judet">JUDEȚ / ȚARĂ <em>*</em></label>
-
-      <input
-        type="text"
-        id="judet"
-        required
-        data-uppercase
-        placeholder="EX.: BACĂU / ROMÂNIA"
-      >
-    </div>
-
-  </div>
-
-
-  <div class="step-actions right">
-    <button type="button" class="next-button">
-      CONTINUĂ <span>→</span>
-    </button>
-  </div>
-
-</section>
-
-
-<!-- PASUL 02 -->
-
-<section class="form-step" data-step="2">
-
-  <div class="step-heading">
-    <span>02</span>
-    <div>
-      <h2>ÎNCADRAREA ÎN SECȚIUNE</h2>
-    </div>
-  </div>
-
-  <p class="required-info">
-    CÂMPURILE MARCATE CU * SUNT OBLIGATORII.
-  </p>
-
-
-  <div class="field full-field">
-
-    <label>TIPUL DE ÎNVĂȚĂMÂNT <em>*</em></label>
-
-    <div class="choice-grid">
-
-      <label class="choice-card">
-
-        <input
-          type="radio"
-          name="tip_invatamant"
-          value="ÎNVĂȚĂMÂNT DE MASĂ / HOBBY"
-          required
-        >
-
-        <span class="choice-content">
-
-          <strong>ÎNVĂȚĂMÂNT DE MASĂ / HOBBY</strong>
-
-          <small>
-            Școli, Palate și Cluburi ale Copiilor,
-            Școli Populare de Arte, cluburi și
-            instituții din mediul privat.
-          </small>
-
-        </span>
-
-      </label>
-
-
-      <label class="choice-card">
-
-        <input
-          type="radio"
-          name="tip_invatamant"
-          value="ÎNVĂȚĂMÂNT VOCAȚIONAL"
-          required
-        >
-
-        <span class="choice-content">
-
-          <strong>ÎNVĂȚĂMÂNT VOCAȚIONAL</strong>
-
-          <small>
-            Participanți care urmează o formă de
-            învățământ vocațional de specialitate.
-          </small>
-
-        </span>
-
-      </label>
-
-    </div>
-  </div>
-
-
-  <div class="form-grid">
-
-    <div class="field full-field">
-
-      <label for="sectiune">
-        SECȚIUNEA <em>*</em>
-      </label>
-
-      <select id="sectiune" required disabled>
-        <option value="">
-          SELECTEAZĂ MAI ÎNTÂI TIPUL DE ÎNVĂȚĂMÂNT
-        </option>
-      </select>
-
-    </div>
-
-
-    <div class="field full-field">
-
-      <label>CATEGORIA DE VÂRSTĂ</label>
-
-      <div
-        id="categorie-automata"
-        class="automatic-category"
-      >
-        Categoria va fi stabilită automat.
+      <div class="progress-item">
+        <button type="button" data-progress="1" class="active">1</button>
+        <span class="progress-label">PARTICIPANT</span>
       </div>
 
-      <input type="hidden" id="categorie">
+      <div class="progress-item">
+        <button type="button" data-progress="2" disabled>2</button>
+        <span class="progress-label">SECȚIUNE</span>
+      </div>
 
-    </div>
+      <div class="progress-item">
+        <button type="button" data-progress="3" disabled>3</button>
+        <span class="progress-label">CONTACT</span>
+      </div>
 
+      <div class="progress-item">
+        <button type="button" data-progress="4" disabled>4</button>
+        <span class="progress-label">REPERTORIU</span>
+      </div>
 
-    <div class="field full-field">
-
-      <label for="institutie">
-        INSTITUȚIA / CLUBUL REPREZENTAT <em>*</em>
-      </label>
-
-      <input
-        type="text"
-        id="institutie"
-        required
-        data-uppercase
-        placeholder="DENUMIREA COMPLETĂ"
-      >
-
-      <small>
-        Dacă participantul nu reprezintă o instituție sau
-        un club, completează „INDEPENDENT”.
-      </small>
-
-    </div>
-
-  </div>
-
-
-  <div class="teachers-section">
-
-    <div class="teachers-heading">
-
-      <div>
-        <span>ÎNDRUMARE ARTISTICĂ</span>
-        <h3>PROFESOR COORDONATOR <em>*</em></h3>
+      <div class="progress-item">
+        <button type="button" data-progress="5" disabled>5</button>
+        <span class="progress-label">FINALIZARE</span>
       </div>
 
     </div>
 
+  </div>
 
-    <div id="teachers-container">
+  <form id="registrationForm" class="form-card">
 
-      <div class="teacher-row">
+    <!-- PASUL 1 -->
 
-        <span class="teacher-number">01</span>
+    <section class="step active" data-step="1">
+
+      <div class="step-head">
+        <span class="step-number">PASUL 01</span>
+        <h2>Datele participantului</h2>
+
+        <p class="step-description">
+          Introdu datele participantului exact așa cum dorești
+          să apară în documentele festivalului.
+        </p>
+      </div>
+
+      <div class="grid">
 
         <div class="field">
-
-          <label for="profesor-1">
-            NUMELE ȘI PRENUMELE PROFESORULUI <em>*</em>
+          <label>
+            NUME
+            <span class="required">*</span>
           </label>
 
           <input
             type="text"
-            id="profesor-1"
+            name="nume"
+            id="nume"
             required
-            data-uppercase
+            data-upper
+            autocomplete="family-name"
+            placeholder="NUME"
+          >
+        </div>
+
+        <div class="field">
+          <label>
+            PRENUME
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            name="prenume"
+            id="prenume"
+            required
+            data-upper
+            autocomplete="given-name"
+            placeholder="PRENUME"
+          >
+        </div>
+
+        <div class="field">
+          <label>
+            DATA NAȘTERII
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="date"
+            name="data_nasterii"
+            id="data_nasterii"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label>
+            VÂRSTA
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="number"
+            name="varsta"
+            id="varsta"
+            required
+            min="4"
+            max="99"
+            inputmode="numeric"
+            placeholder="VÂRSTA ÎMPLINITĂ"
+          >
+
+          <span class="helper">
+            Introdu vârsta împlinită a participantului.
+          </span>
+        </div>
+
+        <div class="field">
+          <label>
+            LOCALITATE
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            name="localitate"
+            id="localitate"
+            required
+            data-upper
+            placeholder="LOCALITATE"
+          >
+        </div>
+
+        <div class="field">
+          <label>
+            JUDEȚ / ȚARĂ
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            name="judet_tara"
+            id="judet_tara"
+            required
+            data-upper
+            placeholder="JUDEȚ / ȚARĂ"
+          >
+        </div>
+
+      </div>
+
+      <div class="actions end">
+
+        <button
+          type="button"
+          class="action primary next"
+        >
+          CONTINUĂ →
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- PASUL 2 -->
+
+    <section class="step" data-step="2">
+
+      <div class="step-head">
+        <span class="step-number">PASUL 02</span>
+        <h2>Secțiunea de concurs</h2>
+
+        <p class="step-description">
+          Selectează tipul de învățământ și secțiunea.
+          Categoria de vârstă este stabilită automat.
+        </p>
+      </div>
+
+      <div class="grid">
+
+        <div class="field full">
+
+          <span class="field-label">
+            TIP ÎNVĂȚĂMÂNT
+            <span class="required">*</span>
+          </span>
+
+          <div class="choice-grid">
+
+            <label class="choice-card">
+
+              <input
+                type="radio"
+                name="tip_invatamant"
+                value="ÎNVĂȚĂMÂNT DE MASĂ / HOBBY"
+                required
+              >
+
+              <strong>
+                ÎNVĂȚĂMÂNT DE MASĂ / HOBBY
+              </strong>
+
+              <small>
+                Pentru participanții care nu urmează
+                învățământ muzical vocațional.
+              </small>
+
+            </label>
+
+            <label class="choice-card">
+
+              <input
+                type="radio"
+                name="tip_invatamant"
+                value="ÎNVĂȚĂMÂNT VOCAȚIONAL"
+                required
+              >
+
+              <strong>
+                ÎNVĂȚĂMÂNT VOCAȚIONAL
+              </strong>
+
+              <small>
+                Pentru elevii înscriși în unități
+                de învățământ muzical vocațional.
+              </small>
+
+            </label>
+
+          </div>
+
+        </div>        <div class="field full">
+
+          <label>
+            SECȚIUNE
+            <span class="required">*</span>
+          </label>
+
+          <select
+            name="sectiune"
+            id="sectiune"
+            required
+            disabled
+          >
+            <option value="">
+              SELECTEAZĂ MAI ÎNTÂI TIPUL DE ÎNVĂȚĂMÂNT
+            </option>
+          </select>
+
+        </div>
+
+        <div class="field">
+
+          <label>
+            CATEGORIE DE VÂRSTĂ
+          </label>
+
+          <div
+            class="category-box"
+            id="categoryDisplay"
+          >
+            Categoria va fi stabilită automat.
+          </div>
+
+          <input
+            type="hidden"
+            name="categorie"
+            id="categorie"
+          >
+
+        </div>
+
+        <div class="field">
+
+          <label>
+            INSTITUȚIE / CLUB
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            name="institutie"
+            id="institutie"
+            required
+            data-upper
+            placeholder="DENUMIREA INSTITUȚIEI / CLUBULUI"
+          >
+
+        </div>
+
+        <div class="field full">
+
+          <div class="subsection-title">
+            PROFESOR / PROFESORI COORDONATORI
+          </div>
+
+          <div id="teachers">
+
+            <div class="teacher-row">
+
+              <input
+                type="text"
+                name="profesor_1"
+                class="teacherInput"
+                required
+                data-upper
+                placeholder="NUME ȘI PRENUME"
+              >
+
+              <button
+                type="button"
+                class="remove-teacher"
+                title="Șterge profesorul"
+                disabled
+              >
+                ×
+              </button>
+
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            id="addTeacher"
+            class="add-teacher"
+          >
+            + ADAUGĂ ÎNCĂ UN PROFESOR
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="actions">
+
+        <button
+          type="button"
+          class="action back"
+        >
+          ← ÎNAPOI
+        </button>
+
+        <button
+          type="button"
+          class="action primary next"
+        >
+          CONTINUĂ →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- PASUL 3 -->
+
+    <section class="step" data-step="3">
+
+      <div class="step-head">
+
+        <span class="step-number">PASUL 03</span>
+
+        <h2>Date de contact</h2>
+
+        <p class="step-description">
+          Aceste informații vor fi utilizate exclusiv
+          pentru comunicările referitoare la festival.
+        </p>
+
+      </div>
+
+      <div class="grid">
+
+        <div class="field full">
+
+          <label>
+            PERSOANĂ DE CONTACT
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            name="contact_nume"
+            id="contact_nume"
+            required
+            data-upper
             placeholder="NUME ȘI PRENUME"
+          >
+
+        </div>
+
+        <div class="field">
+
+          <label>
+            TELEFON
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="tel"
+            name="telefon"
+            id="telefon"
+            required
+            autocomplete="tel"
+            placeholder="07..."
+          >
+
+        </div>
+
+        <div class="field">
+
+          <label>
+            E-MAIL
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            autocomplete="email"
+            placeholder="exemplu@email.ro"
           >
 
         </div>
 
       </div>
 
-    </div>
+      <div class="actions">
+
+        <button
+          type="button"
+          class="action back"
+        >
+          ← ÎNAPOI
+        </button>
+
+        <button
+          type="button"
+          class="action primary next"
+        >
+          CONTINUĂ →
+        </button>
+
+      </div>
+
+    </section>
 
 
-    <button
-      type="button"
-      class="add-teacher"
-      id="add-teacher"
-    >
-      <span>＋</span>
-      ADAUGĂ PROFESOR COORDONATOR
-    </button>
+    <!-- PASUL 4 -->
 
-    <p class="teacher-help">
-      Poți adăuga mai mulți profesori coordonatori dacă dorești
-      emiterea diplomei și pentru aceștia.
-    </p>
+    <section class="step" data-step="4">
 
-  </div>
+      <div class="step-head">
+
+        <span class="step-number">PASUL 04</span>
+
+        <h2>Repertoriu și fișiere</h2>
+
+        <p class="step-description">
+          Completează informațiile despre piesa prezentată
+          și încarcă negativul orchestral în format MP3.
+        </p>
+
+      </div>
+
+      <div class="grid">
+
+        <div class="field">
+
+          <label>
+            TITLUL PIESEI
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            name="titlu_piesa"
+            id="titlu_piesa"
+            required
+            data-upper
+            placeholder="TITLUL PIESEI"
+          >
+
+        </div>
+
+        <div class="field">
+
+          <label>
+            AUTOR / COMPOZITOR
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            name="autor_compozitor"
+            id="autor_compozitor"
+            required
+            data-upper
+            placeholder="AUTOR / COMPOZITOR"
+          >
+
+        </div>
+
+        <div class="field full">
+
+          <label>
+            NEGATIV ORCHESTRAL MP3
+            <span class="required">*</span>
+          </label>
+
+          <label class="upload-box">
+
+            <span class="upload-icon">↥</span>
+
+            <span class="upload-title">
+              ÎNCARCĂ NEGATIVUL ORCHESTRAL
+            </span>
+
+            <span class="upload-info">
+              EXCLUSIV MP3 · MAXIMUM 20 MB
+            </span>
+
+            <input
+              type="file"
+              name="audio"
+              id="audio"
+              accept=".mp3,audio/mpeg"
+              required
+            >
+
+          </label>
+
+          <div class="filename-rule">
+
+            <strong>
+              DENUMIREA OBLIGATORIE A FIȘIERULUI:
+            </strong>
+
+            <br>
+
+            NUME PRENUME - TITLU PIESĂ.mp3
+
+            <div
+              id="expectedName"
+              class="expected-name"
+            ></div>
+
+          </div>
+
+          <div class="duration-box">
+
+            <div
+              id="durationDisplay"
+              class="duration-main"
+            >
+              DURATA PIESEI VA FI DETECTATĂ AUTOMAT.
+            </div>
+
+            <div
+              id="durationLimit"
+              class="duration-limit"
+            ></div>
+
+          </div>
+
+          <p
+            id="audioError"
+            class="error"
+          ></p>
+
+          <input
+            type="hidden"
+            name="durationSeconds"
+            id="durationSeconds"
+          >
+
+          <input
+            type="hidden"
+            name="minutaj"
+            id="minutaj"
+          >
+
+        </div>
+
+        <div class="field full">
+
+          <label>
+            DOVADA DONAȚIEI
+            <span class="required">*</span>
+          </label>
+
+          <label class="upload-box">
+
+            <span class="upload-icon">↥</span>
+
+            <span class="upload-title">
+              ÎNCARCĂ DOVADA DONAȚIEI
+            </span>
+
+            <span class="upload-info">
+              PDF / JPG / JPEG / PNG · MAXIMUM 10 MB
+            </span>
+
+            <input
+              type="file"
+              name="dovada_donatie"
+              id="dovada_donatie"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              required
+            >
+
+          </label>
+
+          <p
+            id="donationError"
+            class="error"
+          ></p>
+
+        </div>
+
+      </div>
+
+      <div class="actions">
+
+        <button
+          type="button"
+          class="action back"
+        >
+          ← ÎNAPOI
+        </button>
+
+        <button
+          type="button"
+          class="action primary next"
+        >
+          CONTINUĂ →
+        </button>
+
+      </div>
+
+    </section>
 
 
-  <div class="step-actions">
+    <!-- PASUL 5 -->
 
-    <button type="button" class="back-button">
-      <span>←</span> ÎNAPOI
-    </button>
+    <section class="step" data-step="5">
 
-    <button type="button" class="next-button">
-      CONTINUĂ <span>→</span>
-    </button>
+      <div class="step-head">
 
-  </div>
+        <span class="step-number">PASUL 05</span>
 
-</section>
+        <h2>Verificare și trimitere</h2>
 
+        <p class="step-description">
+          Verifică informațiile înainte de transmiterea
+          formularului.
+        </p>
 
-<!-- PASUL 03 -->
+      </div>
 
-<section class="form-step" data-step="3">
+      <div class="review-intro">
+        Verifică atent datele de mai jos.
+        Dacă este necesară o modificare,
+        poți reveni la pașii anteriori.
+      </div>
 
-  <div class="step-heading">
-    <span>03</span>
-    <div>
-      <h2>DATE DE CONTACT</h2>
-    </div>
-  </div>
+      <div id="review"></div>
 
+      <div class="privacy-box">
 
-  <div class="form-grid">
+        Datele furnizate sunt utilizate pentru
+        organizarea și desfășurarea Festivalului de Muzică
+        „Simfonia Toamnei” – Ediția a VI-a.
 
-    <div class="field full-field">
+        Prin transmiterea formularului confirmi că
+        informațiile completate sunt corecte.
 
-      <label for="contact-nume">
-        PĂRINTE / REPREZENTANT LEGAL / PROF. COORDONATOR <em>*</em>
-      </label>
+      </div>
 
-      <input
-        type="text"
-        id="contact-nume"
-        required
-        data-uppercase
-        placeholder="NUME ȘI PRENUME"
-      >
-
-    </div>
-
-
-    <div class="field">
-
-      <label for="telefon">
-        NUMĂR DE TELEFON <em>*</em>
-      </label>
-
-      <input
-        type="tel"
-        id="telefon"
-        required
-        placeholder="07XXXXXXXX"
-      >
-
-    </div>
-
-
-    <div class="field">
-
-      <label for="email">E-MAIL <em>*</em></label>
-
-      <input
-        type="email"
-        id="email"
-        required
-        placeholder="exemplu@email.ro"
-      >
-
-    </div>
-
-  </div>
-
-
-  <div class="step-actions">
-
-    <button type="button" class="back-button">
-      <span>←</span> ÎNAPOI
-    </button>
-
-    <button type="button" class="next-button">
-      CONTINUĂ <span>→</span>
-    </button>
-
-  </div>
-
-</section>
-
-
-<!-- PASUL 04 -->
-
-<section class="form-step" data-step="4">
-
-  <div class="step-heading">
-    <span>04</span>
-    <div>
-      <h2>REPERTORIU</h2>
-    </div>
-  </div>
-
-
-  <div class="form-grid">
-
-    <div class="field full-field">
-
-      <label for="titlu-piesa">
-        TITLUL PIESEI <em>*</em>
-      </label>
-
-      <input
-        type="text"
-        id="titlu-piesa"
-        required
-        data-uppercase
-        placeholder="TITLUL COMPLET AL PIESEI"
-      >
-
-    </div>
-
-
-    <div class="field full-field">
-
-      <label for="autor">
-        AUTOR / COMPOZITOR
-      </label>
-
-      <input
-        type="text"
-        id="autor"
-        data-uppercase
-        placeholder="OPȚIONAL"
-      >
-
-    </div>
-
-
-    <div class="field full-field">
-
-      <label for="negativ">
-        NEGATIVUL / SUPORTUL AUDIO <em>*</em>
-      </label>
-
-      <label class="upload-box" for="negativ">
-
-        <span class="upload-symbol">♫</span>
-
-        <strong>ÎNCARCĂ NEGATIVUL</strong>
-
-        <small id="file-name">
-          MP3 · MAXIMUM 20 MB
-        </small>
+      <label class="check-row">
 
         <input
-          type="file"
-          id="negativ"
+          type="checkbox"
+          name="confirmare_date"
           required
-          accept=".mp3,audio/mpeg"
         >
+
+        <span>
+          Confirm că datele introduse în formular
+          sunt complete și corecte.
+          <span class="required">*</span>
+        </span>
 
       </label>
 
+      <label class="check-row">
 
-      <div class="file-rule">
-
-        <strong>DENUMIRE OBLIGATORIE A FIȘIERULUI:</strong>
+        <input
+          type="checkbox"
+          name="acord_regulament"
+          required
+        >
 
         <span>
-          NUME ȘI PRENUME - TITLUL PIESEI.mp3
+          Confirm că am luat la cunoștință și accept
+          Regulamentul Festivalului de Muzică
+          „Simfonia Toamnei”.
+          <span class="required">*</span>
         </span>
 
-        <small id="expected-file-name"></small>
+      </label>
 
-      </div>
+      <label class="check-row">
 
+        <input
+          type="checkbox"
+          name="acord_date"
+          required
+        >
+
+        <span>
+          Sunt de acord cu prelucrarea datelor furnizate
+          în scopul organizării și desfășurării festivalului.
+          <span class="required">*</span>
+        </span>
+
+      </label>
 
       <div
-        id="duration-box"
-        class="automatic-category"
-        style="margin-top:18px;"
+        class="actions"
+        id="finalActions"
       >
-        DURATA PIESEI VA FI DETECTATĂ AUTOMAT DUPĂ ÎNCĂRCAREA FIȘIERULUI MP3.
+
+        <button
+          type="button"
+          class="action back"
+        >
+          ← ÎNAPOI
+        </button>
+
+        <button
+          type="submit"
+          class="action primary"
+          id="submitButton"
+        >
+          TRIMITE ÎNSCRIEREA
+        </button>
+
       </div>
 
-      <p
-        id="duration-rule"
-        style="margin-top:10px;"
-      ></p>
-
-      <p
-        id="audio-error"
-        class="file-error"
+      <div
+        id="sending"
+        class="sending"
         hidden
-      ></p>
-
-    </div>
-
-  </div>
-
-
-  <div class="step-actions">
-
-    <button type="button" class="back-button">
-      <span>←</span> ÎNAPOI
-    </button>
-
-    <button type="button" class="next-button">
-      VERIFICĂ ÎNSCRIEREA <span>→</span>
-    </button>
-
-  </div>
-
-</section>
-
-
-<!-- PASUL 05 -->
-
-<section class="form-step" data-step="5">
-
-  <div class="step-heading">
-    <span>05</span>
-
-    <div>
-      <h2>
-        CONFIRMARE ȘI PROTECȚIA DATELOR CU CARACTER PERSONAL
-      </h2>
-    </div>
-  </div>
-
-
-  <div class="review-warning">
-
-    <strong>
-      VERIFICĂ ATENT INFORMAȚIILE ÎNAINTE DE TRIMITERE.
-    </strong>
-
-    <p>
-      Datele introduse vor fi utilizate pentru organizarea
-      festivalului și pentru redactarea documentelor aferente.
-    </p>
-
-  </div>
-
-
-  <div
-    class="review-container"
-    id="review-container"
-  ></div>
-
-
-  <div class="privacy-note">
-
-    <strong>
-      PROTECȚIA DATELOR CU CARACTER PERSONAL
-    </strong>
-
-    <p>
-      Asociația Cultural-Educativă „Artă și Pasiune” prelucrează
-      datele furnizate prin prezentul formular în scopul gestionării
-      înscrierii, comunicării cu participanții, organizării și
-      desfășurării Festivalului de Muzică „Simfonia Toamnei”,
-      precum și al întocmirii documentelor aferente participării.
-    </p>
-
-    <p>
-      Informații suplimentare sunt disponibile în
-      <a
-        href="../../../legal/confidentialitate/"
-        target="_blank"
-        rel="noopener"
-      >
-        Politica de confidențialitate
-      </a>.
-    </p>
-
-  </div>
-
-
-  <div class="declarations">
-
-    <label class="check-row">
-
-      <input
-        type="checkbox"
-        required
       >
 
-      <span>
-        Am citit și am luat la cunoștință
-        <a
-          href="../regulament/"
-          target="_blank"
-          rel="noopener"
-        >
-          Regulamentul Festivalului de Muzică „Simfonia Toamnei”
-        </a>
-        și mă oblig să respect prevederile acestuia.
-        <em>*</em>
-      </span>
+        <div class="sending-title">
+          ÎNSCRIEREA SE TRANSMITE
+        </div>
 
-    </label>
+        <div class="spinner"></div>
 
+        <p>
+          Datele de participare, fișierul audio și
+          dovada donației sunt în curs de încărcare.
+        </p>
 
-    <label class="check-row">
+        <p class="sending-warning">
+          Nu închide pagina și nu apăsa butonul
+          Înapoi până la afișarea confirmării.
+        </p>
 
-      <input
-        type="checkbox"
-        required
+      </div>
+
+      <div
+        id="success"
+        class="success"
+        hidden
       >
 
-      <span>
-        Confirm că informațiile introduse în formular sunt
-        corecte și complete.
-        <em>*</em>
-      </span>
+        <div class="success-mark">
+          ✓
+        </div>
 
-    </label>
+        <h3>
+          Înscriere înregistrată
+        </h3>
 
+        <p>
+          Datele participantului, fișierul audio și
+          dovada donației au fost înregistrate.
+        </p>
 
-    <label class="check-row">
+        <p>
+          ID ÎNSCRIERE:
+        </p>
 
-      <input
-        type="checkbox"
-        required
-      >
+        <div
+          id="successId"
+          class="success-id"
+        ></div>
 
-      <span>
-        Declar că realizez înscrierea în calitate de participant
-        major, părinte/reprezentant legal sau persoană autorizată
-        să efectueze înscrierea participantului.
-        <em>*</em>
-      </span>
+      </div>
 
-    </label>
+      <div
+        id="serverError"
+        class="server-error"
+        hidden
+      ></div>
 
+    </section>
 
-    <label class="check-row">
+  </form>
 
-      <input
-        type="checkbox"
-        required
-      >
-
-      <span>
-        Confirm că am luat la cunoștință informațiile privind
-        prelucrarea datelor cu caracter personal.
-        <em>*</em>
-      </span>
-
-    </label>
-
-  </div>
-
-
-  <div
-    id="sending-message"
-    hidden
-    style="
-      margin:30px 0;
-      padding:25px;
-      border:1px solid #b58b4d;
-      text-align:center;
-    "
-  >
-
-    <strong
-      style="
-        display:block;
-        font-size:1.25rem;
-        margin-bottom:12px;
-      "
-    >
-      ÎNSCRIEREA SE TRANSMITE...
-    </strong>
-
-    <p>
-      Datele de participare și fișierul audio sunt în curs de încărcare.
-    </p>
-
-    <p>
-      <strong>
-        Vă rugăm să nu închideți, să nu reîncărcați și să nu părăsiți
-        această pagină până la afișarea confirmării.
-      </strong>
-    </p>
-
-    <p>
-      Procesul poate dura câteva momente, în funcție de dimensiunea
-      fișierului și de conexiunea la internet.
-    </p>
-
-  </div>
-
-
-  <div class="step-actions final-actions">
-
-    <button
-      type="button"
-      class="back-button"
-    >
-      <span>←</span>
-      MODIFICĂ DATELE
-    </button>
-
-    <button
-      type="submit"
-      class="submit-button"
-      id="submit-button"
-    >
-      TRIMITE ÎNSCRIEREA <span>→</span>
-    </button>
-
-  </div>
-
-
-  <p
-    class="form-status"
-    id="form-status"
-    aria-live="polite"
-  ></p>
-
-</section>
-
-</form>
-
-</section>
 </main>
 
-
-<footer class="registration-footer">
-
-  <span>
-    FESTIVALUL DE MUZICĂ „SIMFONIA TOAMNEI”
-  </span>
-
-  <span class="footer-dot">•</span>
-
-  <a href="../../../index.html">
-    ASOCIAȚIA CULTURAL-EDUCATIVĂ „ARTĂ ȘI PASIUNE”
-  </a>
-
+<footer>
+  ASOCIAȚIA CULTURAL-EDUCATIVĂ „ARTĂ ȘI PASIUNE”
+  · FESTIVALUL DE MUZICĂ „SIMFONIA TOAMNEI”
 </footer>
-
 
 <script>
 
-const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycby_QXCn2REofESMl2-l_UkqR5743ICxMKQcRZTccHNRngPQvbV6YHZo6IT5S9nXuLGl/exec";
-
-const MAX_AUDIO_SIZE =
-20 * 1024 * 1024;
-
-const INDIVIDUAL_MAX_SECONDS = 250;
-const GROUP_MAX_SECONDS = 370;
-
 let currentStep = 1;
-let highestUnlockedStep = 1;
+let highestStep = 1;
 let teacherCount = 1;
-
-let audioDurationSeconds = null;
-let audioDurationText = "";
-
-let submissionInProgress = false;
-
+let durationSeconds = 0;
+let durationText = "";
+let submitting = false;
 
 const form =
-document.getElementById("festival-form");
+  document.getElementById("registrationForm");
 
 const steps =
-[...document.querySelectorAll(".form-step")];
+  [...document.querySelectorAll(".step")];
 
-const progressSteps =
-[...document.querySelectorAll(".progress-step")];
+const progress =
+  [...document.querySelectorAll("[data-progress]")];
 
 const progressFill =
-document.getElementById("progress-fill");
+  document.getElementById("progressFill");
 
-const sectionSelect =
-document.getElementById("sectiune");
+const age =
+  document.getElementById("varsta");
 
-const categoryInput =
-document.getElementById("categorie");
+const section =
+  document.getElementById("sectiune");
 
-const automaticCategory =
-document.getElementById("categorie-automata");
+const category =
+  document.getElementById("categorie");
 
-const ageInput =
-document.getElementById("varsta");
+const categoryDisplay =
+  document.getElementById("categoryDisplay");
 
-const nameInput =
-document.getElementById("nume");
-
-const firstNameInput =
-document.getElementById("prenume");
-
-const songInput =
-document.getElementById("titlu-piesa");
-
-const audioInput =
-document.getElementById("negativ");
-
-const audioFileName =
-document.getElementById("file-name");
-
-const expectedFileName =
-document.getElementById("expected-file-name");
+const audio =
+  document.getElementById("audio");
 
 const audioError =
-document.getElementById("audio-error");
+  document.getElementById("audioError");
 
-const durationBox =
-document.getElementById("duration-box");
+const donation =
+  document.getElementById("dovada_donatie");
 
-const durationRule =
-document.getElementById("duration-rule");
+const donationError =
+  document.getElementById("donationError");
 
-const reviewContainer =
-document.getElementById("review-container");
+const durationDisplay =
+  document.getElementById("durationDisplay");
 
-const formStatus =
-document.getElementById("form-status");
+const durationLimit =
+  document.getElementById("durationLimit");
+
+const sending =
+  document.getElementById("sending");
+
+const success =
+  document.getElementById("success");
+
+const serverError =
+  document.getElementById("serverError");
 
 const submitButton =
-document.getElementById("submit-button");
+  document.getElementById("submitButton");
 
-const sendingMessage =
-document.getElementById("sending-message");
-
-
-const sections = {
-
-  hobby: [
-    "MUZICĂ UȘOARĂ – INDIVIDUAL",
-    "MUZICĂ UȘOARĂ – GRUP",
-    "MUZICĂ POPULARĂ – INDIVIDUAL",
-    "MUZICĂ POPULARĂ – GRUP",
-    "CANTO CLASIC – INDIVIDUAL"
-  ],
-
-  vocational: [
-    "MUZICĂ UȘOARĂ – INDIVIDUAL",
-    "MUZICĂ POPULARĂ – INDIVIDUAL",
-    "CANTO CLASIC – INDIVIDUAL"
-  ]
-
-};
+const finalActions =
+  document.getElementById("finalActions");
 
 
-/* =========================================================
+const hobbySections = [
+  "MUZICĂ UȘOARĂ – INDIVIDUAL",
+  "MUZICĂ UȘOARĂ – GRUP",
+  "MUZICĂ POPULARĂ – INDIVIDUAL",
+  "MUZICĂ POPULARĂ – GRUP",
+  "CANTO CLASIC – INDIVIDUAL"
+];
+
+const vocationalSections = [
+  "MUZICĂ UȘOARĂ – INDIVIDUAL",
+  "MUZICĂ POPULARĂ – INDIVIDUAL",
+  "CANTO CLASIC – INDIVIDUAL"
+];
+
+
+/* =========================================
+   MAJUSCULE
+   ========================================= */
+
+document.addEventListener("input", function(event){
+
+  if(event.target.matches("[data-upper]")){
+    event.target.value =
+      event.target.value.toLocaleUpperCase("ro-RO");
+  }
+
+});
+
+
+/* =========================================
    PAȘI
-   ========================================================= */
+   ========================================= */
 
-function showStep(number) {
+function showStep(number){
 
   currentStep = number;
 
-  steps.forEach(step => {
+  steps.forEach(function(step){
 
     step.classList.toggle(
       "active",
@@ -976,53 +1703,57 @@ function showStep(number) {
 
   });
 
-  progressSteps.forEach(step => {
+  progress.forEach(function(button){
 
     const n =
-      Number(step.dataset.step);
+      Number(button.dataset.progress);
 
-    step.classList.toggle(
+    button.classList.toggle(
       "active",
       n === number
     );
 
-    step.classList.toggle(
+    button.classList.toggle(
       "completed",
-      n < highestUnlockedStep
+      n < highestStep && n !== number
     );
 
-    step.classList.toggle(
-      "locked",
-      n > highestUnlockedStep
-    );
+    button.disabled =
+      submitting || n > highestStep;
 
   });
 
-  progressFill.style.width =
-    `${((highestUnlockedStep - 1) / 4) * 100}%`;
+  const percent =
+    ((highestStep - 1) / 4) * 84;
 
-  if (number === 5) {
+  progressFill.style.width =
+    percent + "%";
+
+  if(number === 5){
     buildReview();
   }
 
   window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+    top:0,
+    behavior:"smooth"
   });
+
 }
 
 
-progressSteps.forEach(button => {
+progress.forEach(function(button){
 
-  button.addEventListener("click", () => {
+  button.addEventListener("click",function(){
 
-    if (submissionInProgress) return;
+    if(submitting){
+      return;
+    }
 
-    const target =
-      Number(button.dataset.step);
+    const number =
+      Number(button.dataset.progress);
 
-    if (target <= highestUnlockedStep) {
-      showStep(target);
+    if(number <= highestStep){
+      showStep(number);
     }
 
   });
@@ -1030,37 +1761,51 @@ progressSteps.forEach(button => {
 });
 
 
-function validateCurrentStep() {
+/* =========================================
+   VALIDARE PAS
+   ========================================= */
+
+function validateStep(){
 
   const active =
-    document.querySelector(".form-step.active");
+    document.querySelector(".step.active");
 
-  const fields =
+  const required =
     [...active.querySelectorAll("[required]")];
 
-  for (const field of fields) {
+  for(const field of required){
 
-    if (field.disabled) continue;
+    if(field.disabled){
+      continue;
+    }
 
-    if (!field.checkValidity()) {
+    if(!field.checkValidity()){
 
       field.reportValidity();
 
       return false;
     }
+
   }
 
-  if (
+  if(
     currentStep === 2 &&
     !calculateCategory(true)
-  ) {
+  ){
     return false;
   }
 
-  if (
+  if(
     currentStep === 4 &&
-    !validateAudioFile()
-  ) {
+    !validateAudio()
+  ){
+    return false;
+  }
+
+  if(
+    currentStep === 4 &&
+    !validateDonation()
+  ){
     return false;
   }
 
@@ -1068,378 +1813,311 @@ function validateCurrentStep() {
 }
 
 
+/* =========================================
+   CONTINUĂ
+   ========================================= */
+
 document
-.querySelectorAll(".next-button")
-.forEach(button => {
+  .querySelectorAll(".next")
+  .forEach(function(button){
 
-  button.addEventListener("click", () => {
+    button.addEventListener("click",function(){
 
-    if (submissionInProgress) return;
+      if(!validateStep()){
+        return;
+      }
 
-    if (!validateCurrentStep()) return;
-
-    if (currentStep < 5) {
-
-      highestUnlockedStep =
+      highestStep =
         Math.max(
-          highestUnlockedStep,
+          highestStep,
           currentStep + 1
         );
 
       showStep(currentStep + 1);
-    }
+
+    });
 
   });
 
-});
 
+/* =========================================
+   ÎNAPOI
+   ========================================= */
 
 document
-.querySelectorAll(".back-button")
-.forEach(button => {
+  .querySelectorAll(".back")
+  .forEach(function(button){
 
-  button.addEventListener("click", () => {
+    button.addEventListener("click",function(){
 
-    if (submissionInProgress) return;
+      if(
+        !submitting &&
+        currentStep > 1
+      ){
+        showStep(currentStep - 1);
+      }
 
-    if (currentStep > 1) {
-      showStep(currentStep - 1);
-    }
+    });
 
   });
 
-});
 
-
-/* =========================================================
-   MAJUSCULE
-   ========================================================= */
-
-document.addEventListener(
-  "input",
-  event => {
-
-    if (
-      event.target.matches(
-        "[data-uppercase]"
-      )
-    ) {
-
-      event.target.value =
-        event.target.value
-          .toLocaleUpperCase("ro-RO");
-    }
-
-  }
-);
-
-
-/* =========================================================
-   SECȚIUNI
-   ========================================================= */
+/* =========================================
+   TIP ÎNVĂȚĂMÂNT
+   ========================================= */
 
 document
-.querySelectorAll(
-  'input[name="tip_invatamant"]'
-)
-.forEach(radio => {
+  .querySelectorAll(
+    'input[name="tip_invatamant"]'
+  )
+  .forEach(function(radio){
 
-  radio.addEventListener(
-    "change",
-    () => {
+    radio.addEventListener(
+      "change",
+      function(){
 
-      const list =
-        radio.value ===
-        "ÎNVĂȚĂMÂNT DE MASĂ / HOBBY"
-          ? sections.hobby
-          : sections.vocational;
+        const values =
+          this.value ===
+          "ÎNVĂȚĂMÂNT DE MASĂ / HOBBY"
+            ? hobbySections
+            : vocationalSections;
 
-      sectionSelect.innerHTML =
-        '<option value="">SELECTEAZĂ SECȚIUNEA</option>';
+        section.innerHTML =
+          '<option value="">SELECTEAZĂ SECȚIUNEA</option>';
 
-      list.forEach(value => {
+        values.forEach(function(value){
 
-        const option =
-          document.createElement("option");
+          const option =
+            document.createElement("option");
 
-        option.value = value;
-        option.textContent = value;
+          option.value = value;
+          option.textContent = value;
 
-        sectionSelect.appendChild(option);
+          section.appendChild(option);
 
-      });
+        });
 
-      sectionSelect.disabled = false;
+        section.disabled = false;
 
-      calculateCategory();
-      updateDurationRule();
+        calculateCategory();
+        updateDurationLimit();
 
-    }
-  );
+      }
+    );
 
-});
+  });
 
 
-sectionSelect.addEventListener(
+section.addEventListener(
   "change",
-  () => {
+  function(){
 
     calculateCategory();
-    updateDurationRule();
+    updateDurationLimit();
 
-    if (audioInput.files.length) {
-      validateAudioFile();
+    if(audio.files.length){
+      validateAudio();
     }
 
   }
 );
 
 
-ageInput.addEventListener(
+age.addEventListener(
   "input",
   calculateCategory
 );
 
 
-/* =========================================================
-   CATEGORIE
-   ========================================================= */
+/* =========================================
+   CATEGORIE AUTOMATĂ
+   ========================================= */
 
-function calculateCategory(showError = false) {
+function calculateCategory(showError){
 
-  const age =
-    Number(ageInput.value);
+  const value =
+    Number(age.value);
 
   const education =
     document.querySelector(
       'input[name="tip_invatamant"]:checked'
     );
 
-  const section =
-    sectionSelect.value;
+  category.value = "";
 
-  categoryInput.value = "";
+  if(
+    !value ||
+    !education
+  ){
+    categoryDisplay.textContent =
+      "Categoria va fi stabilită automat.";
 
-  if (!age || !education) {
     return false;
   }
 
-  if (section.includes("GRUP")) {
+  if(
+    section.value &&
+    section.value.includes("GRUP")
+  ){
 
-    categoryInput.value =
+    category.value =
       "NU SE APLICĂ";
 
-    automaticCategory.textContent =
+    categoryDisplay.textContent =
       "NU SE APLICĂ — SECȚIUNE DE GRUP";
 
     return true;
   }
 
-  let category = "";
+  let result = "";
 
-  if (
+  if(
     education.value ===
     "ÎNVĂȚĂMÂNT DE MASĂ / HOBBY"
-  ) {
+  ){
 
-    if (age >= 4 && age <= 5)
-      category = "4–5 ANI";
+    if(value >= 4 && value <= 5){
+      result = "4–5 ANI";
+    }
+    else if(value >= 6 && value <= 7){
+      result = "6–7 ANI";
+    }
+    else if(value >= 8 && value <= 10){
+      result = "8–10 ANI";
+    }
+    else if(value >= 11 && value <= 13){
+      result = "11–13 ANI";
+    }
+    else if(value >= 14 && value <= 16){
+      result = "14–16 ANI";
+    }
+    else if(value >= 17 && value <= 19){
+      result = "17–19 ANI";
+    }
+    else if(value >= 20){
+      result = "+20 ANI";
+    }
 
-    else if (age >= 6 && age <= 7)
-      category = "6–7 ANI";
+  }
+  else{
 
-    else if (age >= 8 && age <= 10)
-      category = "8–10 ANI";
+    if(value >= 14 && value <= 15){
+      result = "14–15 ANI";
+    }
+    else if(value >= 16 && value <= 17){
+      result = "16–17 ANI";
+    }
+    else if(value >= 18 && value <= 19){
+      result = "18–19 ANI";
+    }
 
-    else if (age >= 11 && age <= 13)
-      category = "11–13 ANI";
-
-    else if (age >= 14 && age <= 16)
-      category = "14–16 ANI";
-
-    else if (age >= 17 && age <= 19)
-      category = "17–19 ANI";
-
-    else if (age >= 20)
-      category = "+20 ANI";
-
-  } else {
-
-    if (age >= 15 && age <= 16)
-      category = "15–16 ANI";
-
-    else if (age >= 17 && age <= 19)
-      category = "17–19 ANI";
   }
 
-  if (!category) {
+  if(!result){
 
-    automaticCategory.textContent =
+    categoryDisplay.textContent =
       "VÂRSTA NU CORESPUNDE UNEI CATEGORII DISPONIBILE.";
 
-    if (showError) {
-
+    if(showError){
       alert(
-        "Vârsta participantului nu corespunde categoriilor disponibile."
+        "Vârsta nu corespunde categoriilor disponibile."
       );
     }
 
     return false;
   }
 
-  categoryInput.value = category;
-  automaticCategory.textContent = category;
+  category.value = result;
+  categoryDisplay.textContent = result;
 
   return true;
 }
 
 
-/* =========================================================
+/* =========================================
    PROFESORI
-   ========================================================= */
+   ========================================= */
 
 document
-.getElementById("add-teacher")
-.addEventListener("click", () => {
+  .getElementById("addTeacher")
+  .addEventListener(
+    "click",
+    function(){
 
-  teacherCount++;
+      teacherCount++;
 
-  const row =
-    document.createElement("div");
+      const row =
+        document.createElement("div");
 
-  row.className =
-    "teacher-row additional-teacher";
+      row.className =
+        "teacher-row";
 
-  row.innerHTML = `
+      row.innerHTML = `
+        <input
+          name="profesor_${teacherCount}"
+          class="teacherInput"
+          required
+          data-upper
+          placeholder="NUME ȘI PRENUME"
+        >
 
-    <span class="teacher-number">
-      ${String(teacherCount).padStart(2, "0")}
-    </span>
+        <button
+          type="button"
+          class="remove-teacher"
+          title="Șterge profesorul"
+        >
+          ×
+        </button>
+      `;
 
-    <div class="field">
+      document
+        .getElementById("teachers")
+        .appendChild(row);
 
-      <label>
-        NUMELE ȘI PRENUMELE PROFESORULUI <em>*</em>
-      </label>
+      row
+        .querySelector(".remove-teacher")
+        .addEventListener(
+          "click",
+          function(){
+            row.remove();
+          }
+        );
 
-      <input
-        type="text"
-        required
-        data-uppercase
-        placeholder="NUME ȘI PRENUME"
-      >
-
-    </div>
-
-    <button
-      type="button"
-      class="remove-teacher"
-    >
-      ×
-    </button>
-
-  `;
-
-  document
-    .getElementById(
-      "teachers-container"
-    )
-    .appendChild(row);
-
-  row
-    .querySelector(".remove-teacher")
-    .addEventListener(
-      "click",
-      () => row.remove()
-    );
-
-});
+    }
+  );
 
 
-function getTeacherNames() {
+/* =========================================
+   DURATĂ
+   ========================================= */
 
-  return [
-    ...document.querySelectorAll(
-      "#teachers-container input"
-    )
-  ]
-  .map(input => input.value.trim())
-  .filter(Boolean);
+function isGroup(){
+
+  return section.value
+    .toUpperCase()
+    .includes("GRUP");
+
 }
 
 
-/* =========================================================
-   MP3
-   ========================================================= */
+function updateDurationLimit(){
 
-function normalizeFileText(text) {
+  if(!section.value){
 
-  return text
-    .trim()
-    .replace(/\s+/g, " ")
-    .toLocaleUpperCase("ro-RO");
-}
+    durationLimit.textContent = "";
 
-
-function expectedAudioBaseName() {
-
-  const participant =
-    normalizeFileText(
-      `${nameInput.value} ${firstNameInput.value}`
-    );
-
-  const song =
-    normalizeFileText(
-      songInput.value
-    );
-
-  if (!participant || !song) {
-    return "";
+    return;
   }
 
-  return `${participant} - ${song}`;
+  durationLimit.textContent =
+    isGroup()
+      ? "Durată maximă permisă pentru grup: 06:10"
+      : "Durată maximă permisă pentru individual: 04:10";
+
 }
 
 
-function updateExpectedFileName() {
-
-  const expected =
-    expectedAudioBaseName();
-
-  expectedFileName.textContent =
-    expected
-      ? `PENTRU ACEASTĂ ÎNSCRIERE: ${expected}.mp3`
-      : "";
-}
-
-
-nameInput.addEventListener(
-  "input",
-  updateExpectedFileName
-);
-
-firstNameInput.addEventListener(
-  "input",
-  updateExpectedFileName
-);
-
-songInput.addEventListener(
-  "input",
-  updateExpectedFileName
-);
-
-
-/* =========================================================
-   DURATĂ
-   ========================================================= */
-
-function formatDuration(seconds) {
-
-  /*
-    Rotunjim în sus pentru afișare.
-    Astfel 250,1 secunde este afișat 04:11,
-    nu 04:10.
-  */
+function formatDuration(seconds){
 
   const total =
     Math.ceil(seconds);
@@ -1447,186 +2125,247 @@ function formatDuration(seconds) {
   const minutes =
     Math.floor(total / 60);
 
-  const secs =
+  const secondsRemaining =
     total % 60;
 
   return (
-    String(minutes).padStart(2, "0") +
+    String(minutes).padStart(2,"0") +
     ":" +
-    String(secs).padStart(2, "0")
+    String(secondsRemaining).padStart(2,"0")
   );
+
 }
 
 
-function isGroupSection() {
+/* =========================================
+   NUME FIȘIER
+   ========================================= */
 
-  return sectionSelect.value
-    .toUpperCase()
-    .includes("GRUP");
-}
+function expectedFileName(){
 
+  const participant =
+    (
+      document.getElementById("nume").value +
+      " " +
+      document.getElementById("prenume").value
+    )
+      .trim()
+      .replace(/\s+/g," ")
+      .toLocaleUpperCase("ro-RO");
 
-function updateDurationRule() {
+  const song =
+    document
+      .getElementById("titlu_piesa")
+      .value
+      .trim()
+      .replace(/\s+/g," ")
+      .toLocaleUpperCase("ro-RO");
 
-  if (!sectionSelect.value) {
-
-    durationRule.textContent =
-      "Limita va fi stabilită automat după selectarea secțiunii.";
-
-    return;
+  if(
+    !participant ||
+    !song
+  ){
+    return "";
   }
 
-  durationRule.innerHTML =
-    isGroupSection()
-      ? "<strong>DURATĂ MAXIMĂ ADMISĂ PENTRU GRUP: 06:10</strong>"
-      : "<strong>DURATĂ MAXIMĂ ADMISĂ PENTRU INDIVIDUAL: 04:10</strong>";
+  return (
+    participant +
+    " - " +
+    song +
+    ".mp3"
+  );
+
 }
 
 
-function readAudioDuration(file) {
+function updateExpected(){
 
-  return new Promise(
-    (resolve, reject) => {
+  const expected =
+    expectedFileName();
 
-      const audio =
-        document.createElement("audio");
+  const element =
+    document.getElementById("expectedName");
 
-      const url =
-        URL.createObjectURL(file);
+  element.textContent =
+    expected
+      ? "Pentru această înscriere: " + expected
+      : "";
 
-      audio.preload = "metadata";
+}
 
-      audio.onloadedmetadata = () => {
 
-        const duration =
-          audio.duration;
+[
+  "nume",
+  "prenume",
+  "titlu_piesa"
+].forEach(function(id){
 
-        URL.revokeObjectURL(url);
+  document
+    .getElementById(id)
+    .addEventListener(
+      "input",
+      updateExpected
+    );
 
-        if (
-          !Number.isFinite(duration) ||
-          duration <= 0
-        ) {
+});
 
-          reject(
-            new Error(
-              "Durata fișierului nu a putut fi identificată."
-            )
+
+/* =========================================
+   CITIRE MP3
+   ========================================= */
+
+audio.addEventListener(
+  "change",
+  function(){
+
+    audioError.textContent = "";
+
+    durationSeconds = 0;
+    durationText = "";
+
+    document
+      .getElementById("durationSeconds")
+      .value = "";
+
+    document
+      .getElementById("minutaj")
+      .value = "";
+
+    if(!audio.files.length){
+      return;
+    }
+
+    const file =
+      audio.files[0];
+
+    const objectUrl =
+      URL.createObjectURL(file);
+
+    const player =
+      document.createElement("audio");
+
+    durationDisplay.textContent =
+      "SE DETECTEAZĂ DURATA PIESEI...";
+
+    player.preload =
+      "metadata";
+
+    player.onloadedmetadata =
+      function(){
+
+        durationSeconds =
+          player.duration;
+
+        durationText =
+          formatDuration(
+            durationSeconds
           );
 
-          return;
-        }
+        document
+          .getElementById("durationSeconds")
+          .value =
+            durationSeconds;
 
-        resolve(duration);
-      };
+        document
+          .getElementById("minutaj")
+          .value =
+            durationText;
 
-      audio.onerror = () => {
+        durationDisplay.textContent =
+          "DURATA PIESEI: " +
+          durationText;
 
-        URL.revokeObjectURL(url);
-
-        reject(
-          new Error(
-            "Fișierul MP3 nu a putut fi citit."
-          )
+        URL.revokeObjectURL(
+          objectUrl
         );
+
+        validateAudio();
+
       };
 
-      audio.src = url;
-    }
-  );
-}
+    player.onerror =
+      function(){
 
+        URL.revokeObjectURL(
+          objectUrl
+        );
 
-function validateAudioFile() {
+        durationDisplay.textContent =
+          "DURATA PIESEI NU A PUTUT FI DETECTATĂ.";
 
-  audioError.hidden = true;
+        audioError.textContent =
+          "Fișierul MP3 nu a putut fi citit.";
 
-  if (!audioInput.files.length) {
+      };
+
+    player.src =
+      objectUrl;
+
+  }
+);/* =========================================
+   VALIDARE MP3
+   ========================================= */
+
+function validateAudio(){
+
+  audioError.textContent = "";
+
+  if(!audio.files.length){
+
+    audioError.textContent =
+      "Negativul orchestral MP3 este obligatoriu.";
+
     return false;
   }
 
   const file =
-    audioInput.files[0];
+    audio.files[0];
 
-  if (
+  if(
     !file.name
       .toLowerCase()
       .endsWith(".mp3")
-  ) {
+  ){
 
     audioError.textContent =
       "Este acceptat exclusiv formatul MP3.";
 
-    audioError.hidden = false;
-
     return false;
   }
 
-  if (file.size > MAX_AUDIO_SIZE) {
+  if(
+    file.size >
+    20 * 1024 * 1024
+  ){
 
     audioError.textContent =
-      "Fișierul depășește limita maximă de 20 MB.";
-
-    audioError.hidden = false;
+      "Fișierul MP3 depășește limita maximă de 20 MB.";
 
     return false;
   }
 
-  const expected =
-    expectedAudioBaseName();
-
-  const actual =
-    normalizeFileText(
-      file.name.replace(/\.mp3$/i, "")
-    )
-    .replace(/[–—]/g, "-");
-
-  const wanted =
-    normalizeFileText(expected)
-    .replace(/[–—]/g, "-");
-
-  if (actual !== wanted) {
-
-    audioError.innerHTML =
-      `Denumirea fișierului nu este corectă.<br>
-       Denumește fișierul: <strong>${expected}.mp3</strong>`;
-
-    audioError.hidden = false;
-
-    return false;
-  }
-
-  if (
-    audioDurationSeconds === null
-  ) {
+  if(
+    !durationSeconds ||
+    !Number.isFinite(durationSeconds)
+  ){
 
     audioError.textContent =
-      "Durata piesei nu a putut fi identificată.";
-
-    audioError.hidden = false;
+      "Așteaptă detectarea duratei fișierului MP3.";
 
     return false;
   }
 
   const maximum =
-    isGroupSection()
-      ? GROUP_MAX_SECONDS
-      : INDIVIDUAL_MAX_SECONDS;
+    isGroup()
+      ? 370
+      : 250;
 
-  if (
-    audioDurationSeconds > maximum
-  ) {
+  if(durationSeconds > maximum){
 
-    const limit =
-      isGroupSection()
-        ? "06:10"
-        : "04:10";
-
-    audioError.innerHTML =
-      `Piesa are durata <strong>${audioDurationText}</strong>
-       și depășește limita de <strong>${limit}</strong>.`;
-
-    audioError.hidden = false;
+    audioError.textContent =
+      isGroup()
+        ? "Durata piesei depășește limita maximă de 06:10."
+        : "Durata piesei depășește limita maximă de 04:10.";
 
     return false;
   }
@@ -1635,739 +2374,436 @@ function validateAudioFile() {
 }
 
 
-audioInput.addEventListener(
-  "change",
-  async () => {
+/* =========================================
+   VALIDARE DOVADĂ DONAȚIE
+   ========================================= */
 
-    audioDurationSeconds = null;
-    audioDurationText = "";
+function validateDonation(){
 
-    audioError.hidden = true;
+  donationError.textContent = "";
 
-    if (!audioInput.files.length) {
-      return;
-    }
+  if(!donation.files.length){
 
-    const file =
-      audioInput.files[0];
+    donationError.textContent =
+      "Dovada donației este obligatorie.";
 
-    audioFileName.textContent =
-      file.name;
-
-    durationBox.textContent =
-      "SE DETECTEAZĂ DURATA PIESEI...";
-
-    try {
-
-      audioDurationSeconds =
-        await readAudioDuration(file);
-
-      audioDurationText =
-        formatDuration(
-          audioDurationSeconds
-        );
-
-      durationBox.textContent =
-        `DURATA PIESEI: ${audioDurationText}`;
-
-      validateAudioFile();
-
-    } catch (error) {
-
-      durationBox.textContent =
-        "DURATA PIESEI NU A PUTUT FI DETECTATĂ.";
-
-      audioError.textContent =
-        error.message;
-
-      audioError.hidden = false;
-    }
-
+    return false;
   }
+
+  const file =
+    donation.files[0];
+
+  const extension =
+    file.name
+      .toLowerCase()
+      .split(".")
+      .pop();
+
+  const allowed =
+    ["pdf","jpg","jpeg","png"];
+
+  if(!allowed.includes(extension)){
+
+    donationError.textContent =
+      "Dovada donației trebuie să fie în format PDF, JPG, JPEG sau PNG.";
+
+    return false;
+  }
+
+  if(
+    file.size >
+    10 * 1024 * 1024
+  ){
+
+    donationError.textContent =
+      "Dovada donației depășește limita maximă de 10 MB.";
+
+    return false;
+  }
+
+  return true;
+}
+
+
+donation.addEventListener(
+  "change",
+  validateDonation
 );
 
 
-/* =========================================================
+/* =========================================
    REVIEW
-   ========================================================= */
+   ========================================= */
 
-function reviewGroup(
-  title,
-  items
-) {
+function escapeHtml(value){
 
-  const section =
-    document.createElement("section");
+  return String(value || "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
 
-  section.className =
-    "review-group";
-
-  const heading =
-    document.createElement("h3");
-
-  heading.textContent = title;
-
-  section.appendChild(heading);
-
-  items.forEach(item => {
-
-    if (!item[1]) return;
-
-    const row =
-      document.createElement("div");
-
-    row.className =
-      "review-row";
-
-    const label =
-      document.createElement("span");
-
-    label.textContent =
-      item[0];
-
-    const value =
-      document.createElement("strong");
-
-    value.textContent =
-      item[1];
-
-    row.append(label, value);
-
-    section.appendChild(row);
-  });
-
-  reviewContainer.appendChild(section);
 }
 
 
-function buildReview() {
+function valueOf(id){
 
-  reviewContainer.innerHTML = "";
+  const element =
+    document.getElementById(id);
+
+  return element
+    ? element.value.trim()
+    : "";
+
+}
+
+
+function reviewRow(label,value){
+
+  return `
+    <div class="review-row">
+      <span>${escapeHtml(label)}</span>
+      <strong>${escapeHtml(value || "—")}</strong>
+    </div>
+  `;
+
+}
+
+
+function buildReview(){
 
   const education =
     document.querySelector(
       'input[name="tip_invatamant"]:checked'
     );
 
-  reviewGroup(
-    "PARTICIPANT",
-    [
-      ["Nume", nameInput.value],
-      ["Prenume", firstNameInput.value],
-      [
+  const teachers =
+    [...document.querySelectorAll(".teacherInput")]
+      .map(function(input){
+        return input.value.trim();
+      })
+      .filter(Boolean)
+      .join(" | ");
+
+  const audioName =
+    audio.files.length
+      ? audio.files[0].name
+      : "—";
+
+  const donationName =
+    donation.files.length
+      ? donation.files[0].name
+      : "—";
+
+  let html = "";
+
+  html += `
+    <div class="review-section">
+      <h3>PARTICIPANT</h3>
+
+      ${reviewRow(
+        "Nume",
+        valueOf("nume")
+      )}
+
+      ${reviewRow(
+        "Prenume",
+        valueOf("prenume")
+      )}
+
+      ${reviewRow(
         "Data nașterii",
-        document.getElementById("data-nasterii").value
-      ],
-      ["Vârsta", ageInput.value + " ANI"],
-      [
+        valueOf("data_nasterii")
+      )}
+
+      ${reviewRow(
+        "Vârsta",
+        valueOf("varsta")
+      )}
+
+      ${reviewRow(
         "Localitate",
-        document.getElementById("localitate").value
-      ],
-      [
+        valueOf("localitate")
+      )}
+
+      ${reviewRow(
         "Județ / Țară",
-        document.getElementById("judet").value
-      ]
-    ]
-  );
+        valueOf("judet_tara")
+      )}
+    </div>
+  `;
 
-  reviewGroup(
-    "ÎNCADRARE ÎN SECȚIUNE",
-    [
-      [
+  html += `
+    <div class="review-section">
+      <h3>SECȚIUNE</h3>
+
+      ${reviewRow(
         "Tip învățământ",
-        education ? education.value : ""
-      ],
-      ["Secțiune", sectionSelect.value],
-      ["Categorie", categoryInput.value],
-      [
-        "Instituție / Club",
-        document.getElementById("institutie").value
-      ],
-      [
-        "Profesor / Profesori",
-        getTeacherNames().join(" · ")
-      ]
-    ]
-  );
-
-  reviewGroup(
-    "DATE DE CONTACT",
-    [
-      [
-        "Persoană de contact",
-        document.getElementById("contact-nume").value
-      ],
-      [
-        "Telefon",
-        document.getElementById("telefon").value
-      ],
-      [
-        "E-mail",
-        document.getElementById("email").value
-      ]
-    ]
-  );
-
-  reviewGroup(
-    "REPERTORIU",
-    [
-      ["Titlul piesei", songInput.value],
-      [
-        "Autor / Compozitor",
-        document.getElementById("autor").value
-      ],
-      ["Durata piesei", audioDurationText],
-      [
-        "Negativ",
-        audioInput.files.length
-          ? audioInput.files[0].name
+        education
+          ? education.value
           : ""
-      ]
-    ]
-  );
+      )}
+
+      ${reviewRow(
+        "Secțiune",
+        valueOf("sectiune")
+      )}
+
+      ${reviewRow(
+        "Categorie",
+        valueOf("categorie")
+      )}
+
+      ${reviewRow(
+        "Instituție / Club",
+        valueOf("institutie")
+      )}
+
+      ${reviewRow(
+        "Profesor / Profesori",
+        teachers
+      )}
+    </div>
+  `;
+
+  html += `
+    <div class="review-section">
+      <h3>CONTACT</h3>
+
+      ${reviewRow(
+        "Persoană de contact",
+        valueOf("contact_nume")
+      )}
+
+      ${reviewRow(
+        "Telefon",
+        valueOf("telefon")
+      )}
+
+      ${reviewRow(
+        "E-mail",
+        valueOf("email")
+      )}
+    </div>
+  `;
+
+  html += `
+    <div class="review-section">
+      <h3>REPERTORIU ȘI FIȘIERE</h3>
+
+      ${reviewRow(
+        "Titlul piesei",
+        valueOf("titlu_piesa")
+      )}
+
+      ${reviewRow(
+        "Autor / Compozitor",
+        valueOf("autor_compozitor")
+      )}
+
+      ${reviewRow(
+        "Durata",
+        valueOf("minutaj")
+      )}
+
+      ${reviewRow(
+        "Negativ MP3",
+        audioName
+      )}
+
+      ${reviewRow(
+        "Dovada donației",
+        donationName
+      )}
+    </div>
+  `;
+
+  document
+    .getElementById("review")
+    .innerHTML = html;
+
 }
 
 
-/* =========================================================
-   BASE64
-   ========================================================= */
+/* =========================================
+   BLOCARE ÎN TIMPUL TRIMITERII
+   ========================================= */
 
-function fileToBase64(file) {
+function setSubmitting(value){
 
-  return new Promise(
-    (resolve, reject) => {
+  submitting = value;
 
-      const reader =
-        new FileReader();
+  submitButton.disabled =
+    value;
 
-      reader.onload = () => {
+  document
+    .querySelectorAll(
+      ".next,.back,#addTeacher,.remove-teacher"
+    )
+    .forEach(function(button){
 
-        const result =
-          String(reader.result);
+      button.disabled =
+        value;
 
-        resolve(
-          result.substring(
-            result.indexOf(",") + 1
-          )
-        );
-      };
+    });
 
-      reader.onerror = () =>
-        reject(
-          new Error(
-            "Fișierul MP3 nu a putut fi citit."
-          )
-        );
+  progress.forEach(
+    function(button){
 
-      reader.readAsDataURL(file);
-    }
-  );
-}
+      const number =
+        Number(button.dataset.progress);
 
-
-/* =========================================================
-   ID
-   ========================================================= */
-
-function generateRegistrationId() {
-
-  const now = new Date();
-
-  const pad =
-    n => String(n).padStart(2, "0");
-
-  const stamp =
-    now.getFullYear() +
-    pad(now.getMonth() + 1) +
-    pad(now.getDate()) +
-    "-" +
-    pad(now.getHours()) +
-    pad(now.getMinutes()) +
-    pad(now.getSeconds());
-
-  const random =
-    Math.random()
-      .toString(36)
-      .substring(2, 8)
-      .toUpperCase();
-
-  return `ST-${stamp}-${random}`;
-}
-
-
-/* =========================================================
-   PAYLOAD
-   ========================================================= */
-
-async function buildPayload(
-  registrationId
-) {
-
-  const education =
-    document.querySelector(
-      'input[name="tip_invatamant"]:checked'
-    );
-
-  const file =
-    audioInput.files[0];
-
-  const base64 =
-    await fileToBase64(file);
-
-  return {
-
-    registrationId,
-
-    nume:
-      nameInput.value.trim(),
-
-    prenume:
-      firstNameInput.value.trim(),
-
-    data_nasterii:
-      document.getElementById(
-        "data-nasterii"
-      ).value,
-
-    varsta:
-      ageInput.value,
-
-    localitate:
-      document.getElementById(
-        "localitate"
-      ).value.trim(),
-
-    judet_tara:
-      document.getElementById(
-        "judet"
-      ).value.trim(),
-
-    tip_invatamant:
-      education.value,
-
-    sectiune:
-      sectionSelect.value,
-
-    categorie:
-      categoryInput.value,
-
-    institutie:
-      document.getElementById(
-        "institutie"
-      ).value.trim(),
-
-    profesori:
-      getTeacherNames(),
-
-    contact_nume:
-      document.getElementById(
-        "contact-nume"
-      ).value.trim(),
-
-    telefon:
-      document.getElementById(
-        "telefon"
-      ).value.trim(),
-
-    email:
-      document.getElementById(
-        "email"
-      ).value.trim(),
-
-    titlu_piesa:
-      songInput.value.trim(),
-
-    autor_compozitor:
-      document.getElementById(
-        "autor"
-      ).value.trim(),
-
-    minutaj:
-      audioDurationText,
-
-    durationSeconds:
-      audioDurationSeconds,
-
-    audio: {
-      fileName: file.name,
-      base64: base64
-    }
-
-  };
-}
-
-
-/* =========================================================
-   TRIMITERE PRIN FORMULAR REAL
-   ========================================================= */
-
-function sendRegistration(payload) {
-
-  return new Promise(
-    (resolve, reject) => {
-
-      const iframeName =
-        "simfonia_transport_" +
-        Date.now();
-
-      const iframe =
-        document.createElement("iframe");
-
-      iframe.name = iframeName;
-      iframe.style.display = "none";
-
-      document.body.appendChild(iframe);
-
-
-      const transport =
-        document.createElement("form");
-
-      transport.method = "POST";
-      transport.action = SCRIPT_URL;
-      transport.target = iframeName;
-      transport.style.display = "none";
-
-
-      const input =
-        document.createElement("input");
-
-      input.type = "hidden";
-      input.name = "payload";
-      input.value =
-        JSON.stringify(payload);
-
-      transport.appendChild(input);
-
-      document.body.appendChild(transport);
-
-
-      let submitted = false;
-      let finished = false;
-
-
-      const timeout =
-        setTimeout(() => {
-
-          if (finished) return;
-
-          finished = true;
-
-          transport.remove();
-          iframe.remove();
-
-          reject(
-            new Error(
-              "Transmiterea a durat prea mult."
-            )
-          );
-
-        }, 120000);
-
-
-      iframe.addEventListener(
-        "load",
-        () => {
-
-          if (!submitted || finished) {
-            return;
-          }
-
-          finished = true;
-
-          clearTimeout(timeout);
-
-          setTimeout(() => {
-
-            transport.remove();
-            iframe.remove();
-
-          }, 500);
-
-          resolve();
-        }
-      );
-
-
-      submitted = true;
-
-      transport.submit();
+      button.disabled =
+        value ||
+        number > highestStep;
 
     }
   );
+
 }
 
 
-/* =========================================================
-   VERIFICARE JSONP
-   ========================================================= */
-
-function checkRegistration(id) {
-
-  return new Promise(
-    (resolve, reject) => {
-
-      const callback =
-        "__st_" +
-        Date.now() +
-        "_" +
-        Math.random()
-          .toString(36)
-          .substring(2);
-
-      const script =
-        document.createElement("script");
-
-      const timer =
-        setTimeout(() => {
-
-          cleanup();
-
-          reject();
-
-        }, 10000);
-
-
-      function cleanup() {
-
-        clearTimeout(timer);
-
-        try {
-          delete window[callback];
-        } catch (error) {}
-
-        script.remove();
-      }
-
-
-      window[callback] =
-        result => {
-
-          cleanup();
-
-          resolve(
-            Boolean(
-              result &&
-              result.found
-            )
-          );
-        };
-
-
-      script.onerror = () => {
-
-        cleanup();
-        reject();
-      };
-
-
-      script.src =
-        SCRIPT_URL +
-        "?id=" +
-        encodeURIComponent(id) +
-        "&callback=" +
-        encodeURIComponent(callback) +
-        "&_=" +
-        Date.now();
-
-
-      document.body.appendChild(script);
-
-    }
-  );
-}
-
-
-async function waitForConfirmation(id) {
-
-  for (let i = 0; i < 8; i++) {
-
-    try {
-
-      if (
-        await checkRegistration(id)
-      ) {
-        return true;
-      }
-
-    } catch (error) {}
-
-    await new Promise(
-      resolve =>
-        setTimeout(resolve, 2500)
-    );
-  }
-
-  return false;
-}
-
-
-/* =========================================================
-   SUBMIT
-   ========================================================= */
+/* =========================================
+   TRIMITERE CĂTRE CLOUDFLARE
+   ========================================= */
 
 form.addEventListener(
   "submit",
-  async event => {
+  async function(event){
 
     event.preventDefault();
 
-    if (submissionInProgress) {
+    if(submitting){
       return;
     }
 
-    if (!form.checkValidity()) {
+    if(!form.checkValidity()){
 
       form.reportValidity();
+
       return;
     }
 
-    if (!calculateCategory(true)) {
+    if(!calculateCategory(true)){
+
       showStep(2);
+
       return;
     }
 
-    if (!validateAudioFile()) {
+    if(!validateAudio()){
+
       showStep(4);
+
       return;
     }
 
+    if(!validateDonation()){
 
-    const registrationId =
-      generateRegistrationId();
+      showStep(4);
 
+      return;
+    }
 
-    try {
+    serverError.hidden = true;
+    success.hidden = true;
+    sending.hidden = false;
 
-      submissionInProgress = true;
+    setSubmitting(true);
 
-      submitButton.disabled = true;
+    try{
 
-      /*
-        BUTONUL RĂMÂNE CU ACELAȘI TEXT.
-      */
+      const formData =
+        new FormData(form);
 
-      submitButton.innerHTML =
-        'TRIMITE ÎNSCRIEREA <span>→</span>';
-
-
-      document
-        .querySelectorAll(
-          ".back-button, .next-button, .progress-step, .add-teacher, .remove-teacher"
-        )
-        .forEach(button => {
-          button.disabled = true;
-        });
-
-
-      sendingMessage.hidden = false;
-
-      formStatus.textContent = "";
-
-
-      /*
-        Pregătire MP3.
-      */
-
-      const payload =
-        await buildPayload(
-          registrationId
+      const response =
+        await fetch(
+          "https://simfonia-toamnei-inscrieri.asociatia-arta-pasiune.workers.dev/inscriere",
+          {
+            method:"POST",
+            body:formData
+          }
         );
 
+      let result;
 
-      /*
-        Trimitere reală către Apps Script.
-      */
+      try{
 
-      await sendRegistration(
-        payload
-      );
+        result =
+          await response.json();
 
-
-      formStatus.textContent =
-        "Datele au fost încărcate. Se verifică înregistrarea înscrierii...";
-
-
-      /*
-        Confirmăm că ID-ul există efectiv în Sheet.
-      */
-
-      const confirmed =
-        await waitForConfirmation(
-          registrationId
-        );
-
-
-      if (!confirmed) {
+      }
+      catch(error){
 
         throw new Error(
-          "Nu am putut confirma salvarea înscrierii."
+          "Serverul nu a trimis un răspuns valid."
         );
+
       }
 
+      sending.hidden = true;
 
-      sendingMessage.hidden = true;
+      if(
+        !response.ok ||
+        !result ||
+        !result.success
+      ){
 
-
-      formStatus.innerHTML = `
-        <strong>
-          ÎNSCRIEREA A FOST TRANSMISĂ CU SUCCES.
-        </strong>
-        <br><br>
-        ID ÎNSCRIERE:
-        <strong>${registrationId}</strong>
-        <br><br>
-        Păstrează acest cod pentru eventuale comunicări
-        cu organizatorul.
-      `;
-
-      formStatus.classList.add(
-        "success",
-        "visible"
-      );
-
-
-      /*
-        Rămâne blocat după succes,
-        prevenind dublarea înscrierii.
-      */
-
-      submissionInProgress = false;
-
-      submitButton.disabled = true;
-
-    }
-
-    catch (error) {
-
-      submissionInProgress = false;
-
-      sendingMessage.hidden = true;
-
-      submitButton.disabled = false;
-
-      submitButton.innerHTML =
-        'TRIMITE ÎNSCRIEREA <span>→</span>';
-
-
-      document
-        .querySelectorAll(
-          ".back-button, .next-button, .progress-step, .add-teacher, .remove-teacher"
-        )
-        .forEach(button => {
-          button.disabled = false;
-        });
-
-
-      formStatus.textContent =
-        "Înscrierea nu a putut fi confirmată. " +
-        (
-          error.message ||
-          "A apărut o eroare."
+        throw new Error(
+          result &&
+          result.message
+            ? result.message
+            : "Înscrierea nu a putut fi salvată."
         );
 
-      formStatus.classList.add(
-        "visible"
+      }
+
+      submitting = false;
+
+      success.hidden = false;
+
+      document
+        .getElementById("successId")
+        .textContent =
+          result.registrationId;
+
+      finalActions.style.display =
+        "none";
+
+      progress.forEach(
+        function(button){
+          button.disabled = true;
+        }
       );
+
+      success.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      });
+
+    }
+    catch(error){
+
+      sending.hidden = true;
+
+      setSubmitting(false);
+
+      serverError.textContent =
+        "Înscrierea nu a putut fi transmisă: " +
+        (
+          error &&
+          error.message
+            ? error.message
+            : "eroare necunoscută"
+        );
+
+      serverError.hidden = false;
+
+      serverError.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      });
 
     }
 
@@ -2375,30 +2811,33 @@ form.addEventListener(
 );
 
 
-/* =========================================================
-   AVERTIZARE LA ÎNCHIDERE
-   ========================================================= */
+/* =========================================
+   AVERTIZARE DACĂ SE ÎNCHIDE PAGINA
+   ÎN TIMPUL TRIMITERII
+   ========================================= */
 
 window.addEventListener(
   "beforeunload",
-  event => {
+  function(event){
 
-    if (!submissionInProgress) {
-      return;
+    if(submitting){
+
+      event.preventDefault();
+
+      event.returnValue = "";
+
     }
 
-    event.preventDefault();
-
-    event.returnValue = "";
   }
 );
 
 
-/* =========================================================
-   START
-   ========================================================= */
+/* =========================================
+   INIȚIALIZARE
+   ========================================= */
 
-updateDurationRule();
+updateExpected();
+updateDurationLimit();
 showStep(1);
 
 </script>
